@@ -1,50 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render App component 1`] = `
+exports[`should render Layout component 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div
-        class="container-fluid"
-      >
-        <div
-          class="row"
-        >
-          <div
-            class="col-md-12"
-          >
-            <div
-              class="row layout-header"
-            >
-              <div
-                class="col-md-12"
-              >
-                <div>
-                  Header
-                </div>
-              </div>
-            </div>
-            <div
-              class="row layout-body"
-            >
-              <div
-                class="col-md-12"
-              >
-                <div>
-                  Body
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="container-fluid"
-    >
       <div
         class="row"
       >
@@ -56,23 +16,39 @@ Object {
           >
             <div
               class="col-md-12"
-            >
-              <div>
-                Header
-              </div>
-            </div>
+            />
           </div>
           <div
             class="row layout-body"
           >
             <div
               class="col-md-12"
-            >
-              <div>
-                Body
-              </div>
-            </div>
+            />
           </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="row"
+    >
+      <div
+        class="col-md-12"
+      >
+        <div
+          class="row layout-header"
+        >
+          <div
+            class="col-md-12"
+          />
+        </div>
+        <div
+          class="row layout-body"
+        >
+          <div
+            class="col-md-12"
+          />
         </div>
       </div>
     </div>

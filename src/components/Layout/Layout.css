@@ -1,0 +1,7 @@
+.layout-header {
+  height: 50px;
+}
+
+.layout-body {
+  height: calc(100vh - 50px);
+}
