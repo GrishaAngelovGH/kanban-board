@@ -1,9 +1,11 @@
+import Button from "react-bootstrap/Button"
+
 import "./KanbanBoard.css"
 
 const KanbanBoard = () => (
   <div className="row">
     <div className="col-md-12">
-      <button className="btn btn-primary position-fixed create-btn">New Column</button>
+      <Button variant="primary" className="position-fixed create-btn">New Column</Button>
     </div>
   </div>
 )
