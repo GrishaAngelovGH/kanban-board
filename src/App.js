@@ -1,10 +1,11 @@
-import Layout from "./components/Layout"
+import Layout from "components/Layout"
+import Header from "components/Header"
 
 function App() {
   return (
     <div className="container-fluid">
       <Layout
-        header={<div>Header</div>}
+        header={<Header />}
         body={<div>Body</div>}
       />
     </div>

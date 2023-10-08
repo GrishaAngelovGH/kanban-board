@@ -1,99 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render App component 1`] = `
+exports[`should render Header component 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <div
-        class="container-fluid"
+        class="row bg-secondary-subtle p-2"
       >
         <div
-          class="row"
+          class="col-md-2"
         >
-          <div
-            class="col-md-12"
+          <h3
+            class="m-0"
           >
-            <div
-              class="row layout-header"
-            >
-              <div
-                class="col-md-12"
-              >
-                <div
-                  class="row bg-secondary-subtle p-2"
-                >
-                  <div
-                    class="col-md-2"
-                  >
-                    <h3
-                      class="m-0"
-                    >
-                      Kanban Board
-                    </h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="row layout-body"
-            >
-              <div
-                class="col-md-12"
-              >
-                <div>
-                  Body
-                </div>
-              </div>
-            </div>
-          </div>
+            Kanban Board
+          </h3>
         </div>
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="container-fluid"
+      class="row bg-secondary-subtle p-2"
     >
       <div
-        class="row"
+        class="col-md-2"
       >
-        <div
-          class="col-md-12"
+        <h3
+          class="m-0"
         >
-          <div
-            class="row layout-header"
-          >
-            <div
-              class="col-md-12"
-            >
-              <div
-                class="row bg-secondary-subtle p-2"
-              >
-                <div
-                  class="col-md-2"
-                >
-                  <h3
-                    class="m-0"
-                  >
-                    Kanban Board
-                  </h3>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="row layout-body"
-          >
-            <div
-              class="col-md-12"
-            >
-              <div>
-                Body
-              </div>
-            </div>
-          </div>
-        </div>
+          Kanban Board
+        </h3>
       </div>
     </div>
   </div>,
