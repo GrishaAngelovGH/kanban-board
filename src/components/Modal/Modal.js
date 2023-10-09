@@ -1,7 +1,7 @@
 import Button from "react-bootstrap/Button"
 import Modal from "react-bootstrap/Modal"
 
-const ModalWrapper = ({ show, onClose, onConfirm, title, body }) => (
+const ModalWrapper = ({ show, onClose, onConfirm, title, body, disabledConfirm }) => (
   <Modal show={show} onHide={onClose}>
     <Modal.Header>
       <Modal.Title>{title}</Modal.Title>
@@ -11,7 +11,7 @@ const ModalWrapper = ({ show, onClose, onConfirm, title, body }) => (
       <Button variant="secondary" onClick={onClose}>
         Close
       </Button>
-      <Button variant="primary" onClick={onConfirm}>
+      <Button variant="primary" disabled={disabledConfirm} onClick={onConfirm}>
         Confirm
       </Button>
     </Modal.Footer>

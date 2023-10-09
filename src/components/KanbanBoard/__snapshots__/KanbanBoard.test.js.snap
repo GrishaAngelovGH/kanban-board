@@ -12,7 +12,8 @@ Object {
           class="col-md-12"
         >
           <button
-            class="btn btn-primary position-fixed create-btn"
+            class="position-fixed create-btn btn btn-primary"
+            type="button"
           >
             New Column
           </button>
@@ -28,7 +29,8 @@ Object {
         class="col-md-12"
       >
         <button
-          class="btn btn-primary position-fixed create-btn"
+          class="position-fixed create-btn btn btn-primary"
+          type="button"
         >
           New Column
         </button>
