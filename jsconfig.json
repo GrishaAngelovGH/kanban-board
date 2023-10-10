@@ -3,6 +3,8 @@
     "baseUrl": "src"
   },
   "include": [
-    "src"
+    "src",
+    "components",
+    "persistent"
   ]
 }
