@@ -6,16 +6,25 @@ import Form from "react-bootstrap/Form"
 
 const ColumnModal = ({ show, onClose, onConfirm }) => {
   const [title, setTitle] = useState("")
+  const [description, setDescription] = useState("")
 
-  const handleTitleInputChange = ({ target: { value } }) => {
+  const handleTitleChange = ({ target: { value } }) => {
     setTitle(value)
+  }
+
+  const handleDescriptionChange = ({ target: { value } }) => {
+    setDescription(value)
+  }
+
+  const handleConfirm = () => {
+    onConfirm(title, description)
   }
 
   return (
     <Modal
       show={show}
       onClose={onClose}
-      onConfirm={onConfirm}
+      onConfirm={handleConfirm}
       title="Create New Column"
       disabledConfirm={!title.length}
       body={
@@ -25,13 +34,13 @@ const ColumnModal = ({ show, onClose, onConfirm }) => {
               value={title}
               placeholder="Title"
               className="mb-3"
-              onChange={handleTitleInputChange}
+              onChange={handleTitleChange}
             />
 
             <FloatingLabel
               label="Description (optional)"
             >
-              <Form.Control as="textarea" />
+              <Form.Control as="textarea" value={description} onChange={handleDescriptionChange} />
             </FloatingLabel>
           </div>
         </div>
