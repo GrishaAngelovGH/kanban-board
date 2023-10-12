@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 
 import ColumnModal from "./ColumnModal"
 import ButtonPanel from "./ButtonPanel"
+import Column from "./Column"
 
 import persistentKanbanBoardRepostory from "persistent/persistentKanbanBoardRepostory"
 
@@ -28,14 +29,14 @@ const KanbanBoard = () => {
   return (
     <div className="row">
       <div className="col-md-12">
-        {
-          columns.map((v, i) => (
-            <div key={i}>
-              <h1>{v.title}</h1>
-              <h3>{v.description}</h3>
-            </div>
-          ))
-        }
+
+        <div className="row justify-content-around p-5">
+          {
+            columns.map((v, i) => (
+              <Column key={i} title={v.title} description={v.description} />
+            ))
+          }
+        </div>
 
         {
           showColumnModal && (

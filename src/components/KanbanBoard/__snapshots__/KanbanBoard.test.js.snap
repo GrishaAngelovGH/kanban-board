@@ -12,10 +12,13 @@ Object {
           class="col-md-12"
         >
           <div
+            class="row justify-content-around p-5"
+          />
+          <div
             class="row border-top border-secondary-subtle fixed-bottom p-2 justify-content-end text-end button-panel"
           >
             <div
-              class="col-md-2"
+              class="col col-md-3 col-lg-2"
             >
               <button
                 class="create-btn btn btn-primary"
@@ -37,10 +40,13 @@ Object {
         class="col-md-12"
       >
         <div
+          class="row justify-content-around p-5"
+        />
+        <div
           class="row border-top border-secondary-subtle fixed-bottom p-2 justify-content-end text-end button-panel"
         >
           <div
-            class="col-md-2"
+            class="col col-md-3 col-lg-2"
           >
             <button
               class="create-btn btn btn-primary"

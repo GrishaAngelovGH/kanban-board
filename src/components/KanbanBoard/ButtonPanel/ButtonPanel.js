@@ -4,7 +4,7 @@ import "./ButtonPanel.css"
 
 const ButtonPanel = ({ onColumnButtonClick }) => (
   <div className="row border-top border-secondary-subtle fixed-bottom p-2 justify-content-end text-end button-panel">
-    <div className="col-md-2">
+    <div className="col col-md-3 col-lg-2">
       <Button
         variant="primary"
         className="create-btn"

@@ -24,7 +24,7 @@ Object {
                   class="row bg-secondary-subtle p-2"
                 >
                   <div
-                    class="col-md-2"
+                    class="col col-md-3 col-lg-2"
                   >
                     <h3
                       class="m-0"
@@ -48,10 +48,13 @@ Object {
                     class="col-md-12"
                   >
                     <div
+                      class="row justify-content-around p-5"
+                    />
+                    <div
                       class="row border-top border-secondary-subtle fixed-bottom p-2 justify-content-end text-end button-panel"
                     >
                       <div
-                        class="col-md-2"
+                        class="col col-md-3 col-lg-2"
                       >
                         <button
                           class="create-btn btn btn-primary"
@@ -90,7 +93,7 @@ Object {
                 class="row bg-secondary-subtle p-2"
               >
                 <div
-                  class="col-md-2"
+                  class="col col-md-3 col-lg-2"
                 >
                   <h3
                     class="m-0"
@@ -114,10 +117,13 @@ Object {
                   class="col-md-12"
                 >
                   <div
+                    class="row justify-content-around p-5"
+                  />
+                  <div
                     class="row border-top border-secondary-subtle fixed-bottom p-2 justify-content-end text-end button-panel"
                   >
                     <div
-                      class="col-md-2"
+                      class="col col-md-3 col-lg-2"
                     >
                       <button
                         class="create-btn btn btn-primary"
