@@ -47,12 +47,20 @@ Object {
                   <div
                     class="col-md-12"
                   >
-                    <button
-                      class="position-fixed create-btn btn btn-primary"
-                      type="button"
+                    <div
+                      class="row border-top border-secondary-subtle fixed-bottom p-2 justify-content-end text-end button-panel"
                     >
-                      New Column
-                    </button>
+                      <div
+                        class="col-md-2"
+                      >
+                        <button
+                          class="create-btn btn btn-primary"
+                          type="button"
+                        >
+                          New Column
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -105,12 +113,20 @@ Object {
                 <div
                   class="col-md-12"
                 >
-                  <button
-                    class="position-fixed create-btn btn btn-primary"
-                    type="button"
+                  <div
+                    class="row border-top border-secondary-subtle fixed-bottom p-2 justify-content-end text-end button-panel"
                   >
-                    New Column
-                  </button>
+                    <div
+                      class="col-md-2"
+                    >
+                      <button
+                        class="create-btn btn btn-primary"
+                        type="button"
+                      >
+                        New Column
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

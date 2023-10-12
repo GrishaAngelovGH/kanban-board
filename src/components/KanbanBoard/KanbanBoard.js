@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react"
 
-import Button from "react-bootstrap/Button"
 
 import ColumnModal from "./ColumnModal"
+import ButtonPanel from "./ButtonPanel"
 
 import persistentKanbanBoardRepostory from "persistent/persistentKanbanBoardRepostory"
 
@@ -37,14 +37,6 @@ const KanbanBoard = () => {
           ))
         }
 
-        <Button
-          variant="primary"
-          className="position-fixed create-btn"
-          onClick={toggleColumnModal}
-        >
-          New Column
-        </Button>
-
         {
           showColumnModal && (
             <ColumnModal
@@ -54,6 +46,8 @@ const KanbanBoard = () => {
             />
           )
         }
+
+        <ButtonPanel onColumnButtonClick={toggleColumnModal} />
       </div>
     </div>
   )

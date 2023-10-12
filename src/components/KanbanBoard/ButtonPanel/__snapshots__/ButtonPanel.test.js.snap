@@ -1,55 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render KanbanBoard component 1`] = `
+exports[`should render ButtonPanel component 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <div
-        class="row"
+        class="row border-top border-secondary-subtle fixed-bottom p-2 justify-content-end text-end button-panel"
       >
         <div
-          class="col-md-12"
+          class="col-md-2"
         >
-          <div
-            class="row border-top border-secondary-subtle fixed-bottom p-2 justify-content-end text-end button-panel"
+          <button
+            class="create-btn btn btn-primary"
+            type="button"
           >
-            <div
-              class="col-md-2"
-            >
-              <button
-                class="create-btn btn btn-primary"
-                type="button"
-              >
-                New Column
-              </button>
-            </div>
-          </div>
+            New Column
+          </button>
         </div>
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="row"
+      class="row border-top border-secondary-subtle fixed-bottom p-2 justify-content-end text-end button-panel"
     >
       <div
-        class="col-md-12"
+        class="col-md-2"
       >
-        <div
-          class="row border-top border-secondary-subtle fixed-bottom p-2 justify-content-end text-end button-panel"
+        <button
+          class="create-btn btn btn-primary"
+          type="button"
         >
-          <div
-            class="col-md-2"
-          >
-            <button
-              class="create-btn btn btn-primary"
-              type="button"
-            >
-              New Column
-            </button>
-          </div>
-        </div>
+          New Column
+        </button>
       </div>
     </div>
   </div>,
