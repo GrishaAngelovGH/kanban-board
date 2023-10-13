@@ -1,3 +1,7 @@
 .button-panel {
   backdrop-filter: blur(10px);
 }
+
+.button-panel .btn-group>.btn {
+  position: static;
+}

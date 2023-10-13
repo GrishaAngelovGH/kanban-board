@@ -4,9 +4,7 @@ import ButtonPanel from "./ButtonPanel"
 import Column from "./Column"
 import ColumnModal from "./ColumnModal"
 
-import persistentKanbanBoardRepostory from "persistent/persistentKanbanBoardRepostory"
-
-import "./KanbanBoard.css"
+import boardRepository from "persistent/persistentKanbanBoardRepository"
 
 const KanbanBoard = () => {
   const [showColumnModal, setShowColumnModal] = useState(false)
@@ -17,24 +15,29 @@ const KanbanBoard = () => {
   }
 
   const handleConfirm = (title, description) => {
-    persistentKanbanBoardRepostory.createColumn(title, description)
+    boardRepository.createColumn(title, description)
     setShowColumnModal(!showColumnModal)
   }
 
   const handleDeleteColumn = title => {
-    persistentKanbanBoardRepostory.deleteColumn(title)
-    setColumns(persistentKanbanBoardRepostory.getColumns())
+    boardRepository.deleteColumn(title)
+    setColumns(boardRepository.getColumns())
+  }
+
+  const handleClearBoard = () => {
+    boardRepository.deleteAllColumns()
+    setColumns(boardRepository.getColumns())
   }
 
   useEffect(() => {
-    setColumns(persistentKanbanBoardRepostory.getColumns())
+    setColumns(boardRepository.getColumns())
   }, [showColumnModal])
 
   return (
     <div className="row">
       <div className="col-md-12">
 
-        <div className="row justify-content-around p-5">
+        <div className="row p-5">
           {
             columns.map((v, i) => (
               <Column
@@ -57,7 +60,10 @@ const KanbanBoard = () => {
           )
         }
 
-        <ButtonPanel onColumnButtonClick={toggleColumnModal} />
+        <ButtonPanel
+          onColumnButtonClick={toggleColumnModal}
+          onClearBoardButtonClick={handleClearBoard}
+        />
       </div>
     </div>
   )
