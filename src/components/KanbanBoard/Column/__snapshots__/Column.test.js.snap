@@ -8,7 +8,29 @@ Object {
       <div
         class="col-md-5 col-lg-3 bg-secondary-subtle rounded shadow p-3 overflow-auto kanban-column"
       >
-        <h3 />
+        <div
+          class="row"
+        >
+          <div
+            class="col-md-9"
+          >
+            <h3 />
+          </div>
+          <div
+            class="col-md-3"
+          >
+            <div
+              class="dropdown"
+            >
+              <button
+                aria-expanded="false"
+                class="bi bi-three-dots-vertical dropdown-toggle btn btn-success"
+                id="react-aria-:r0:"
+                type="button"
+              />
+            </div>
+          </div>
+        </div>
         <p
           class="text-secondary"
         />
@@ -19,7 +41,29 @@ Object {
     <div
       class="col-md-5 col-lg-3 bg-secondary-subtle rounded shadow p-3 overflow-auto kanban-column"
     >
-      <h3 />
+      <div
+        class="row"
+      >
+        <div
+          class="col-md-9"
+        >
+          <h3 />
+        </div>
+        <div
+          class="col-md-3"
+        >
+          <div
+            class="dropdown"
+          >
+            <button
+              aria-expanded="false"
+              class="bi bi-three-dots-vertical dropdown-toggle btn btn-success"
+              id="react-aria-:r0:"
+              type="button"
+            />
+          </div>
+        </div>
+      </div>
       <p
         class="text-secondary"
       />

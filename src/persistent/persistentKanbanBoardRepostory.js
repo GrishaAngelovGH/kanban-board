@@ -9,6 +9,12 @@ const persistentKanbanBoardRepository = {
 
     localStorage.setItem("columns", newColumn)
   },
+  deleteColumn: title => {
+    const columns = JSON.parse(localStorage.getItem("columns"))
+    const { [title]: value, ...restColumns } = columns
+
+    localStorage.setItem("columns", JSON.stringify(restColumns))
+  },
   getColumns: () => {
     const columns = JSON.parse(localStorage.getItem("columns"))
 

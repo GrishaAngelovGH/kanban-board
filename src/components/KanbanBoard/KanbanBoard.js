@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react"
 
-
-import ColumnModal from "./ColumnModal"
 import ButtonPanel from "./ButtonPanel"
 import Column from "./Column"
+import ColumnModal from "./ColumnModal"
 
 import persistentKanbanBoardRepostory from "persistent/persistentKanbanBoardRepostory"
 
@@ -22,6 +21,11 @@ const KanbanBoard = () => {
     setShowColumnModal(!showColumnModal)
   }
 
+  const handleDeleteColumn = title => {
+    persistentKanbanBoardRepostory.deleteColumn(title)
+    setColumns(persistentKanbanBoardRepostory.getColumns())
+  }
+
   useEffect(() => {
     setColumns(persistentKanbanBoardRepostory.getColumns())
   }, [showColumnModal])
@@ -33,7 +37,12 @@ const KanbanBoard = () => {
         <div className="row justify-content-around p-5">
           {
             columns.map((v, i) => (
-              <Column key={i} title={v.title} description={v.description} />
+              <Column
+                key={i}
+                title={v.title}
+                description={v.description}
+                onDelete={handleDeleteColumn}
+              />
             ))
           }
         </div>
