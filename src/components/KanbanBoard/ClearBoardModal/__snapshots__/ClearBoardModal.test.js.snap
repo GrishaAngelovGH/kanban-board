@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render ColumnModal component 1`] = `
+exports[`should render ClearBoardModal component 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body
@@ -31,35 +31,15 @@ Object {
             <div
               class="modal-title h4"
             >
-              Create New Column
+              Clear Kanban Board
             </div>
           </div>
           <div
             class="modal-body"
           >
-            <div
-              class="row"
-            >
-              <div
-                class="col-md-12"
-              >
-                <input
-                  class="mb-3 form-control"
-                  placeholder="Title"
-                  value=""
-                />
-                <div
-                  class="form-floating"
-                >
-                  <textarea
-                    class="form-control"
-                  />
-                  <label>
-                    Description (optional)
-                  </label>
-                </div>
-              </div>
-            </div>
+            <p>
+              Are you sure that you want to clear Kanban Board?
+            </p>
           </div>
           <div
             class="modal-footer"
@@ -72,7 +52,6 @@ Object {
             </button>
             <button
               class="btn btn-primary"
-              disabled=""
               type="button"
             >
               Confirm

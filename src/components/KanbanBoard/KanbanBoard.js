@@ -2,30 +2,38 @@ import { useState, useEffect } from "react"
 
 import ButtonPanel from "./ButtonPanel"
 import Column from "./Column"
+
 import ColumnModal from "./ColumnModal"
+import ClearBoardModal from "./ClearBoardModal"
 
 import boardRepository from "persistent/persistentKanbanBoardRepository"
 
 const KanbanBoard = () => {
   const [showColumnModal, setShowColumnModal] = useState(false)
+  const [showClearBoardModal, setShowClearBoardModal] = useState(false)
   const [columns, setColumns] = useState([])
 
   const toggleColumnModal = () => {
     setShowColumnModal(!showColumnModal)
   }
 
-  const handleConfirm = (title, description) => {
+  const toggleClearBoardModal = () => {
+    setShowClearBoardModal(!showClearBoardModal)
+  }
+
+  const handleConfirmCreateColumn = (title, description) => {
     boardRepository.createColumn(title, description)
     setShowColumnModal(!showColumnModal)
   }
 
-  const handleDeleteColumn = title => {
-    boardRepository.deleteColumn(title)
-    setColumns(boardRepository.getColumns())
+  const handleConfirmClearBoard = () => {
+    boardRepository.deleteAllColumns()
+    setColumns([])
+    setShowClearBoardModal(!showClearBoardModal)
   }
 
-  const handleClearBoard = () => {
-    boardRepository.deleteAllColumns()
+  const handleDeleteColumn = title => {
+    boardRepository.deleteColumn(title)
     setColumns(boardRepository.getColumns())
   }
 
@@ -55,14 +63,24 @@ const KanbanBoard = () => {
             <ColumnModal
               show={showColumnModal}
               onClose={toggleColumnModal}
-              onConfirm={handleConfirm}
+              onConfirm={handleConfirmCreateColumn}
+            />
+          )
+        }
+
+        {
+          showClearBoardModal && (
+            <ClearBoardModal
+              show={showClearBoardModal}
+              onClose={toggleClearBoardModal}
+              onConfirm={handleConfirmClearBoard}
             />
           )
         }
 
         <ButtonPanel
           onColumnButtonClick={toggleColumnModal}
-          onClearBoardButtonClick={handleClearBoard}
+          onClearBoardButtonClick={toggleClearBoardModal}
         />
       </div>
     </div>

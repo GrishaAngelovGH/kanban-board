@@ -18,7 +18,7 @@ const Column = ({ title, description, onDelete }) => {
           <Dropdown>
             <Dropdown.Toggle variant="success" className="bi bi-three-dots-vertical" />
             <Dropdown.Menu>
-              <Dropdown.Item onClick={handleDeleteAction}>Delete</Dropdown.Item>
+              <Dropdown.Item className="bi bi-x" onClick={handleDeleteAction}>Delete</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </div>
