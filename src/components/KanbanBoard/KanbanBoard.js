@@ -3,8 +3,8 @@ import { useState, useEffect } from "react"
 import ButtonPanel from "./ButtonPanel"
 import Column from "./Column"
 
-import ColumnModal from "./ColumnModal"
-import ClearBoardModal from "./ClearBoardModal"
+import ClearBoardModal from "./modals/ClearBoardModal"
+import ColumnModal from "./modals/ColumnModal"
 
 import boardRepository from "persistent/persistentKanbanBoardRepository"
 
@@ -58,25 +58,17 @@ const KanbanBoard = () => {
           }
         </div>
 
-        {
-          showColumnModal && (
-            <ColumnModal
-              show={showColumnModal}
-              onClose={toggleColumnModal}
-              onConfirm={handleConfirmCreateColumn}
-            />
-          )
-        }
+        <ColumnModal
+          show={showColumnModal}
+          onClose={toggleColumnModal}
+          onConfirm={handleConfirmCreateColumn}
+        />
 
-        {
-          showClearBoardModal && (
-            <ClearBoardModal
-              show={showClearBoardModal}
-              onClose={toggleClearBoardModal}
-              onConfirm={handleConfirmClearBoard}
-            />
-          )
-        }
+        <ClearBoardModal
+          show={showClearBoardModal}
+          onClose={toggleClearBoardModal}
+          onConfirm={handleConfirmClearBoard}
+        />
 
         <ButtonPanel
           onColumnButtonClick={toggleColumnModal}
