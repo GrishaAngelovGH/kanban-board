@@ -5,12 +5,14 @@ import Column from "./Column"
 
 import ClearBoardModal from "./modals/ClearBoardModal"
 import ColumnModal from "./modals/ColumnModal"
+import TaskModal from "./modals/TaskModal"
 
 import boardRepository from "persistent/persistentKanbanBoardRepository"
 
 const KanbanBoard = () => {
   const [showColumnModal, setShowColumnModal] = useState(false)
   const [showClearBoardModal, setShowClearBoardModal] = useState(false)
+  const [showAddTaskModal, setShowAddTaskModal] = useState(false)
   const [columns, setColumns] = useState([])
 
   const toggleColumnModal = () => {
@@ -19,6 +21,10 @@ const KanbanBoard = () => {
 
   const toggleClearBoardModal = () => {
     setShowClearBoardModal(!showClearBoardModal)
+  }
+
+  const toggleAddTaskModal = () => {
+    setShowAddTaskModal(!showAddTaskModal)
   }
 
   const handleConfirmCreateColumn = (title, description) => {
@@ -44,7 +50,6 @@ const KanbanBoard = () => {
   return (
     <div className="row">
       <div className="col-md-12">
-
         <div className="row p-5">
           {
             columns.map((v, i) => (
@@ -52,7 +57,8 @@ const KanbanBoard = () => {
                 key={i}
                 title={v.title}
                 description={v.description}
-                onDelete={handleDeleteColumn}
+                onDeleteColumn={handleDeleteColumn}
+                onAddTask={toggleAddTaskModal}
               />
             ))
           }
@@ -68,6 +74,11 @@ const KanbanBoard = () => {
           show={showClearBoardModal}
           onClose={toggleClearBoardModal}
           onConfirm={handleConfirmClearBoard}
+        />
+
+        <TaskModal
+          show={showAddTaskModal}
+          onClose={toggleAddTaskModal}
         />
 
         <ButtonPanel

@@ -2,23 +2,29 @@ import Dropdown from "react-bootstrap/Dropdown"
 
 import "./Column.css"
 
-const Column = ({ title, description, onDelete }) => {
+const Column = ({ title, description, onDeleteColumn, onAddTask }) => {
   const handleDeleteAction = () => {
-    onDelete(title)
+    onDeleteColumn(title)
   }
 
   return (
     <div className="col-md-5 col-lg-3 bg-secondary-subtle rounded shadow p-3 overflow-auto kanban-column">
-
       <div className="row">
-        <div className="col-md-9">
+        <div className="col-9">
           <h3>{title}</h3>
         </div>
-        <div className="col-md-3">
+        <div className="col-3">
           <Dropdown>
             <Dropdown.Toggle variant="success" className="bi bi-three-dots-vertical" />
             <Dropdown.Menu>
-              <Dropdown.Item className="bi bi-x" onClick={handleDeleteAction}>Delete</Dropdown.Item>
+              <Dropdown.Item onClick={onAddTask}>
+                <i className="bi bi-plus-circle-fill text-primary mx-1"></i>
+                Add Task
+              </Dropdown.Item>
+              <Dropdown.Item onClick={handleDeleteAction}>
+                <i className="bi bi-x-circle-fill text-danger mx-1"></i>
+                Delete Column
+              </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </div>
