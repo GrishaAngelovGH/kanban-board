@@ -2,7 +2,7 @@ import Button from "react-bootstrap/Button"
 import Modal from "react-bootstrap/Modal"
 
 const ModalWrapper = ({ show, onClose, onConfirm, title, body, disabledConfirm }) => (
-  <Modal show={show} onHide={onClose}>
+  <Modal show={show} onHide={onClose} backdrop="static">
     <Modal.Header>
       <Modal.Title>{title}</Modal.Title>
     </Modal.Header>
