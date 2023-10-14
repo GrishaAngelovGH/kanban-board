@@ -18,6 +18,8 @@ const TaskModal = ({ show, onClose, onConfirm }) => {
 
   const handleConfirm = () => {
     onConfirm(title, description)
+    setTitle("")
+    setDescription("")
   }
 
   return (

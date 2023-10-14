@@ -7,6 +7,10 @@ const Column = ({ title, description, onDeleteColumn, onAddTask }) => {
     onDeleteColumn(title)
   }
 
+  const hadleAddTask = () => {
+    onAddTask(title)
+  }
+
   return (
     <div className="col-md-5 col-lg-3 bg-secondary-subtle rounded shadow p-3 overflow-auto kanban-column">
       <div className="row">
@@ -17,7 +21,7 @@ const Column = ({ title, description, onDeleteColumn, onAddTask }) => {
           <Dropdown>
             <Dropdown.Toggle variant="success" className="bi bi-three-dots-vertical" />
             <Dropdown.Menu>
-              <Dropdown.Item onClick={onAddTask}>
+              <Dropdown.Item onClick={hadleAddTask}>
                 <i className="bi bi-plus-circle-fill text-primary mx-1"></i>
                 Add Task
               </Dropdown.Item>

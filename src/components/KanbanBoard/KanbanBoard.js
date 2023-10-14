@@ -13,6 +13,7 @@ const KanbanBoard = () => {
   const [showColumnModal, setShowColumnModal] = useState(false)
   const [showClearBoardModal, setShowClearBoardModal] = useState(false)
   const [showAddTaskModal, setShowAddTaskModal] = useState(false)
+  const [columnName, setColumnName] = useState("")
   const [columns, setColumns] = useState([])
 
   const toggleColumnModal = () => {
@@ -23,7 +24,8 @@ const KanbanBoard = () => {
     setShowClearBoardModal(!showClearBoardModal)
   }
 
-  const toggleAddTaskModal = () => {
+  const toggleAddTaskModal = columnName => {
+    setColumnName(columnName)
     setShowAddTaskModal(!showAddTaskModal)
   }
 
@@ -36,6 +38,11 @@ const KanbanBoard = () => {
     boardRepository.deleteAllColumns()
     setColumns([])
     setShowClearBoardModal(!showClearBoardModal)
+  }
+
+  const handleConfirmCreateTask = (title, description) => {
+    boardRepository.createTask(columnName, title, description)
+    setShowAddTaskModal(!showAddTaskModal)
   }
 
   const handleDeleteColumn = title => {
@@ -79,6 +86,7 @@ const KanbanBoard = () => {
         <TaskModal
           show={showAddTaskModal}
           onClose={toggleAddTaskModal}
+          onConfirm={handleConfirmCreateTask}
         />
 
         <ButtonPanel

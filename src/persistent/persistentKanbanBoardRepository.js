@@ -9,6 +9,14 @@ const persistentKanbanBoardRepository = {
 
     localStorage.setItem("columns", newColumn)
   },
+  createTask: (columnTitle, taskTitle, taskDescription) => {
+    const columns = JSON.parse(localStorage.getItem("columns"))
+
+    const currentColumn = columns[columnTitle]
+    currentColumn.items.push({ title: taskTitle, description: taskDescription })
+
+    localStorage.setItem("columns", JSON.stringify({ ...columns, [columnTitle]: currentColumn }))
+  },
   getColumns: () => {
     const columns = JSON.parse(localStorage.getItem("columns"))
 
