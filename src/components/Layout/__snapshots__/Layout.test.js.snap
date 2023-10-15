@@ -16,14 +16,22 @@ Object {
           >
             <div
               class="col-md-12"
-            />
+            >
+              <div>
+                Header
+              </div>
+            </div>
           </div>
           <div
             class="row layout-body"
           >
             <div
               class="col-md-12"
-            />
+            >
+              <div>
+                Body
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -41,14 +49,22 @@ Object {
         >
           <div
             class="col-md-12"
-          />
+          >
+            <div>
+              Header
+            </div>
+          </div>
         </div>
         <div
           class="row layout-body"
         >
           <div
             class="col-md-12"
-          />
+          >
+            <div>
+              Body
+            </div>
+          </div>
         </div>
       </div>
     </div>
