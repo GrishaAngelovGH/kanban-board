@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="col-md-5 col-lg-3 bg-secondary-subtle rounded shadow p-3 overflow-auto kanban-column"
+        class="col-md-5 col-lg-3 bg-secondary-subtle rounded shadow p-4 overflow-auto kanban-column"
       >
         <div
           class="row"
@@ -14,7 +14,9 @@ Object {
           <div
             class="col-9"
           >
-            <h3 />
+            <h3>
+              Column Title
+            </h3>
           </div>
           <div
             class="col-3"
@@ -33,13 +35,51 @@ Object {
         </div>
         <p
           class="text-secondary"
-        />
+        >
+          Column Description
+        </p>
+        <div
+          class="row bg-white mt-3 rounded shadow p-1"
+        >
+          <div
+            class="col-md-12"
+          >
+            <p
+              class="fw-bold"
+            >
+              Task 1
+            </p>
+            <p
+              class="text-secondary m-0"
+            >
+              Description 1
+            </p>
+          </div>
+        </div>
+        <div
+          class="row bg-white mt-3 rounded shadow p-1"
+        >
+          <div
+            class="col-md-12"
+          >
+            <p
+              class="fw-bold"
+            >
+              Task 2
+            </p>
+            <p
+              class="text-secondary m-0"
+            >
+              Description 2
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="col-md-5 col-lg-3 bg-secondary-subtle rounded shadow p-3 overflow-auto kanban-column"
+      class="col-md-5 col-lg-3 bg-secondary-subtle rounded shadow p-4 overflow-auto kanban-column"
     >
       <div
         class="row"
@@ -47,7 +87,9 @@ Object {
         <div
           class="col-9"
         >
-          <h3 />
+          <h3>
+            Column Title
+          </h3>
         </div>
         <div
           class="col-3"
@@ -66,7 +108,45 @@ Object {
       </div>
       <p
         class="text-secondary"
-      />
+      >
+        Column Description
+      </p>
+      <div
+        class="row bg-white mt-3 rounded shadow p-1"
+      >
+        <div
+          class="col-md-12"
+        >
+          <p
+            class="fw-bold"
+          >
+            Task 1
+          </p>
+          <p
+            class="text-secondary m-0"
+          >
+            Description 1
+          </p>
+        </div>
+      </div>
+      <div
+        class="row bg-white mt-3 rounded shadow p-1"
+      >
+        <div
+          class="col-md-12"
+        >
+          <p
+            class="fw-bold"
+          >
+            Task 2
+          </p>
+          <p
+            class="text-secondary m-0"
+          >
+            Description 2
+          </p>
+        </div>
+      </div>
     </div>
   </div>,
   "debug": [Function],

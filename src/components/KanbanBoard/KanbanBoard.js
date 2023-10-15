@@ -59,15 +59,20 @@ const KanbanBoard = () => {
       <div className="col-md-12">
         <div className="row p-5">
           {
-            columns.map((v, i) => (
-              <Column
-                key={i}
-                title={v.title}
-                description={v.description}
-                onDeleteColumn={handleDeleteColumn}
-                onAddTask={toggleAddTaskModal}
-              />
-            ))
+            columns.map((v, i) => {
+              const tasks = boardRepository.getTasksForColumn(v.title)
+
+              return (
+                <Column
+                  key={i}
+                  title={v.title}
+                  description={v.description}
+                  tasks={tasks}
+                  onDeleteColumn={handleDeleteColumn}
+                  onAddTask={toggleAddTaskModal}
+                />
+              )
+            })
           }
         </div>
 

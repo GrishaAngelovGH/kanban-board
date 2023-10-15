@@ -22,6 +22,10 @@ const persistentKanbanBoardRepository = {
 
     return (columns && Object.values(columns)) || []
   },
+  getTasksForColumn: columnTitle => {
+    const columns = JSON.parse(localStorage.getItem("columns"))
+    return columns[columnTitle].items
+  },
   deleteColumn: title => {
     const columns = JSON.parse(localStorage.getItem("columns"))
     const { [title]: value, ...restColumns } = columns

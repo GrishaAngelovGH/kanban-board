@@ -1,8 +1,10 @@
 import Dropdown from "react-bootstrap/Dropdown"
 
+import Task from "./Task"
+
 import "./Column.css"
 
-const Column = ({ title, description, onDeleteColumn, onAddTask }) => {
+const Column = ({ title, description, tasks, onDeleteColumn, onAddTask }) => {
   const handleDeleteAction = () => {
     onDeleteColumn(title)
   }
@@ -12,7 +14,7 @@ const Column = ({ title, description, onDeleteColumn, onAddTask }) => {
   }
 
   return (
-    <div className="col-md-5 col-lg-3 bg-secondary-subtle rounded shadow p-3 overflow-auto kanban-column">
+    <div className="col-md-5 col-lg-3 bg-secondary-subtle rounded shadow p-4 overflow-auto kanban-column">
       <div className="row">
         <div className="col-9">
           <h3>{title}</h3>
@@ -35,8 +37,13 @@ const Column = ({ title, description, onDeleteColumn, onAddTask }) => {
       </div>
 
       <p className="text-secondary">{description}</p>
+
+      {
+        tasks.map((v, i) => (
+          <Task key={i} title={v.title} description={v.description} />
+        ))
+      }
     </div>
   )
 }
-
 export default Column
