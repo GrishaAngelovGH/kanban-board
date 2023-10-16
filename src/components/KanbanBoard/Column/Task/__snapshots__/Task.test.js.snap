@@ -30,10 +30,14 @@ Object {
           />
         </div>
         <p
-          class="text-secondary m-0"
+          class="text-secondary"
         >
           Task Description
         </p>
+        <button
+          class="bi bi-trash fs-5 btn btn-danger btn-sm"
+          type="button"
+        />
       </div>
     </div>
   </body>,
@@ -63,10 +67,14 @@ Object {
         />
       </div>
       <p
-        class="text-secondary m-0"
+        class="text-secondary"
       >
         Task Description
       </p>
+      <button
+        class="bi bi-trash fs-5 btn btn-danger btn-sm"
+        type="button"
+      />
     </div>
   </div>,
   "debug": [Function],

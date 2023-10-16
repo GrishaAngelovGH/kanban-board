@@ -1,6 +1,7 @@
 import { useDraggable } from "@dnd-kit/core"
+import { Button } from "react-bootstrap"
 
-const Task = ({ title, description, column }) => {
+const Task = ({ title, description, column, onDelete }) => {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id: title,
     data: { description, column }
@@ -10,6 +11,10 @@ const Task = ({ title, description, column }) => {
     transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
   } : undefined
 
+  const handleDelete = () => {
+    onDelete(title, column)
+  }
+
   return (
     <div ref={setNodeRef} style={style} className="row bg-white mt-3 rounded shadow p-1">
       <div className="col-9">
@@ -18,7 +23,9 @@ const Task = ({ title, description, column }) => {
       <div className="col-3">
         <i {...listeners} {...attributes} className="bi bi-grip-horizontal fs-2"></i>
       </div>
-      <p className="text-secondary m-0">{description}</p>
+      <p className="text-secondary">{description}</p>
+
+      <Button size="sm" variant="danger" onClick={handleDelete} className="bi bi-trash fs-5" />
     </div>
   )
 }

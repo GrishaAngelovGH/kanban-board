@@ -6,7 +6,7 @@ import Task from "./Task"
 
 import "./Column.css"
 
-const Column = ({ title, description, tasks, onDeleteColumn, onAddTask, onDeleteAllTasks }) => {
+const Column = ({ title, description, tasks, onDeleteColumn, onAddTask, onDeleteTask, onDeleteAllTasks }) => {
   const { isOver, setNodeRef } = useDroppable({ id: title })
 
   const handleDeleteAction = () => {
@@ -52,7 +52,13 @@ const Column = ({ title, description, tasks, onDeleteColumn, onAddTask, onDelete
 
       {
         tasks.map((v, i) => (
-          <Task key={i} title={v.title} description={v.description} column={title} />
+          <Task
+            key={i}
+            title={v.title}
+            description={v.description}
+            column={title}
+            onDelete={onDeleteTask}
+          />
         ))
       }
     </div>
