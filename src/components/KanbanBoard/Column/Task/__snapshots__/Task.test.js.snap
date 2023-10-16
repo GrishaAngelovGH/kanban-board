@@ -9,19 +9,31 @@ Object {
         class="row bg-white mt-3 rounded shadow p-1"
       >
         <div
-          class="col-md-12"
+          class="col-9"
         >
           <p
             class="fw-bold"
           >
             Task Title
           </p>
-          <p
-            class="text-secondary m-0"
-          >
-            Task Description
-          </p>
         </div>
+        <div
+          class="col-3"
+        >
+          <i
+            aria-describedby=""
+            aria-disabled="false"
+            aria-roledescription="draggable"
+            class="bi bi-grip-horizontal fs-2"
+            role="button"
+            tabindex="0"
+          />
+        </div>
+        <p
+          class="text-secondary m-0"
+        >
+          Task Description
+        </p>
       </div>
     </div>
   </body>,
@@ -30,19 +42,31 @@ Object {
       class="row bg-white mt-3 rounded shadow p-1"
     >
       <div
-        class="col-md-12"
+        class="col-9"
       >
         <p
           class="fw-bold"
         >
           Task Title
         </p>
-        <p
-          class="text-secondary m-0"
-        >
-          Task Description
-        </p>
       </div>
+      <div
+        class="col-3"
+      >
+        <i
+          aria-describedby=""
+          aria-disabled="false"
+          aria-roledescription="draggable"
+          class="bi bi-grip-horizontal fs-2"
+          role="button"
+          tabindex="0"
+        />
+      </div>
+      <p
+        class="text-secondary m-0"
+      >
+        Task Description
+      </p>
     </div>
   </div>,
   "debug": [Function],

@@ -7,6 +7,7 @@ Object {
     <div>
       <div
         class="col-md-5 col-lg-3 bg-secondary-subtle rounded shadow p-4 overflow-auto kanban-column"
+        style="border-style: none;"
       >
         <div
           class="row"
@@ -42,37 +43,61 @@ Object {
           class="row bg-white mt-3 rounded shadow p-1"
         >
           <div
-            class="col-md-12"
+            class="col-9"
           >
             <p
               class="fw-bold"
             >
               Task 1
             </p>
-            <p
-              class="text-secondary m-0"
-            >
-              Description 1
-            </p>
           </div>
+          <div
+            class="col-3"
+          >
+            <i
+              aria-describedby=""
+              aria-disabled="false"
+              aria-roledescription="draggable"
+              class="bi bi-grip-horizontal fs-2"
+              role="button"
+              tabindex="0"
+            />
+          </div>
+          <p
+            class="text-secondary m-0"
+          >
+            Description 1
+          </p>
         </div>
         <div
           class="row bg-white mt-3 rounded shadow p-1"
         >
           <div
-            class="col-md-12"
+            class="col-9"
           >
             <p
               class="fw-bold"
             >
               Task 2
             </p>
-            <p
-              class="text-secondary m-0"
-            >
-              Description 2
-            </p>
           </div>
+          <div
+            class="col-3"
+          >
+            <i
+              aria-describedby=""
+              aria-disabled="false"
+              aria-roledescription="draggable"
+              class="bi bi-grip-horizontal fs-2"
+              role="button"
+              tabindex="0"
+            />
+          </div>
+          <p
+            class="text-secondary m-0"
+          >
+            Description 2
+          </p>
         </div>
       </div>
     </div>
@@ -80,6 +105,7 @@ Object {
   "container": <div>
     <div
       class="col-md-5 col-lg-3 bg-secondary-subtle rounded shadow p-4 overflow-auto kanban-column"
+      style="border-style: none;"
     >
       <div
         class="row"
@@ -115,37 +141,61 @@ Object {
         class="row bg-white mt-3 rounded shadow p-1"
       >
         <div
-          class="col-md-12"
+          class="col-9"
         >
           <p
             class="fw-bold"
           >
             Task 1
           </p>
-          <p
-            class="text-secondary m-0"
-          >
-            Description 1
-          </p>
         </div>
+        <div
+          class="col-3"
+        >
+          <i
+            aria-describedby=""
+            aria-disabled="false"
+            aria-roledescription="draggable"
+            class="bi bi-grip-horizontal fs-2"
+            role="button"
+            tabindex="0"
+          />
+        </div>
+        <p
+          class="text-secondary m-0"
+        >
+          Description 1
+        </p>
       </div>
       <div
         class="row bg-white mt-3 rounded shadow p-1"
       >
         <div
-          class="col-md-12"
+          class="col-9"
         >
           <p
             class="fw-bold"
           >
             Task 2
           </p>
-          <p
-            class="text-secondary m-0"
-          >
-            Description 2
-          </p>
         </div>
+        <div
+          class="col-3"
+        >
+          <i
+            aria-describedby=""
+            aria-disabled="false"
+            aria-roledescription="draggable"
+            class="bi bi-grip-horizontal fs-2"
+            role="button"
+            tabindex="0"
+          />
+        </div>
+        <p
+          class="text-secondary m-0"
+        >
+          Description 2
+        </p>
       </div>
     </div>
   </div>,

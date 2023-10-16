@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { DndContext } from "@dnd-kit/core"
 
 import ButtonPanel from "./ButtonPanel"
 import Column from "./Column"
@@ -55,57 +56,71 @@ const KanbanBoard = () => {
     setColumns(boardRepository.getColumns())
   }
 
+  const handleDragEnd = ({ active: { id, data: { current: { column, description } } }, over }) => {
+    if (over) {
+      const fromColumn = column
+      const toColumn = over.id
+      const taskTitle = id
+      const taskDescription = description
+
+      boardRepository.moveTask(fromColumn, toColumn, taskTitle, taskDescription)
+      setColumns(boardRepository.getColumns())
+    }
+  }
+
   useEffect(() => {
     setColumns(boardRepository.getColumns())
   }, [showColumnModal])
 
   return (
-    <div className="row">
-      <div className="col-md-12">
-        <div className="row p-5">
-          {
-            columns.map((v, i) => {
-              const tasks = boardRepository.getTasksForColumn(v.title)
+    <DndContext onDragEnd={handleDragEnd}>
+      <div className="row">
+        <div className="col-md-12">
+          <div className="row p-5">
+            {
+              columns.map((v, i) => {
+                const tasks = boardRepository.getTasksForColumn(v.title)
 
-              return (
-                <Column
-                  key={i}
-                  title={v.title}
-                  description={v.description}
-                  tasks={tasks}
-                  onDeleteColumn={handleDeleteColumn}
-                  onAddTask={toggleAddTaskModal}
-                  onDeleteAllTasks={handleDeleteAllTasksForColumn}
-                />
-              )
-            })
-          }
+                return (
+                  <Column
+                    key={i}
+                    title={v.title}
+                    description={v.description}
+                    tasks={tasks}
+                    onDeleteColumn={handleDeleteColumn}
+                    onAddTask={toggleAddTaskModal}
+                    onDeleteAllTasks={handleDeleteAllTasksForColumn}
+                  />
+                )
+              })
+            }
+          </div>
+
+          <ColumnModal
+            show={showColumnModal}
+            onClose={toggleColumnModal}
+            onConfirm={handleConfirmCreateColumn}
+          />
+
+          <ClearBoardModal
+            show={showClearBoardModal}
+            onClose={toggleClearBoardModal}
+            onConfirm={handleConfirmClearBoard}
+          />
+
+          <TaskModal
+            show={showAddTaskModal}
+            onClose={toggleAddTaskModal}
+            onConfirm={handleConfirmCreateTask}
+          />
+
+          <ButtonPanel
+            onColumnButtonClick={toggleColumnModal}
+            onClearBoardButtonClick={toggleClearBoardModal}
+          />
         </div>
-
-        <ColumnModal
-          show={showColumnModal}
-          onClose={toggleColumnModal}
-          onConfirm={handleConfirmCreateColumn}
-        />
-
-        <ClearBoardModal
-          show={showClearBoardModal}
-          onClose={toggleClearBoardModal}
-          onConfirm={handleConfirmClearBoard}
-        />
-
-        <TaskModal
-          show={showAddTaskModal}
-          onClose={toggleAddTaskModal}
-          onConfirm={handleConfirmCreateTask}
-        />
-
-        <ButtonPanel
-          onColumnButtonClick={toggleColumnModal}
-          onClearBoardButtonClick={toggleClearBoardModal}
-        />
       </div>
-    </div>
+    </DndContext>
   )
 }
 

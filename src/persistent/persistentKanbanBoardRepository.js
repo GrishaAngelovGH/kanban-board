@@ -41,6 +41,23 @@ const persistentKanbanBoardRepository = {
     currentColumn.items = []
 
     localStorage.setItem("columns", JSON.stringify({ ...columns, [columnTitle]: currentColumn }))
+  },
+  moveTask: (fromColumnTitle, toColumnTitle, taskTitle, taskDescription) => {
+    if (fromColumnTitle !== toColumnTitle) {
+      const columns = JSON.parse(localStorage.getItem("columns"))
+
+      const fromColumn = columns[fromColumnTitle]
+      fromColumn.items = fromColumn.items.filter(v => v.title !== taskTitle)
+
+      const toColumn = columns[toColumnTitle]
+      toColumn.items.push({ title: taskTitle, description: taskDescription })
+
+      localStorage.setItem("columns", JSON.stringify({
+        ...columns,
+        [fromColumnTitle]: fromColumn,
+        [toColumnTitle]: toColumn
+      }))
+    }
   }
 }
 

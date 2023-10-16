@@ -1,3 +1,5 @@
+import { useDroppable } from "@dnd-kit/core"
+
 import Dropdown from "react-bootstrap/Dropdown"
 
 import Task from "./Task"
@@ -5,6 +7,8 @@ import Task from "./Task"
 import "./Column.css"
 
 const Column = ({ title, description, tasks, onDeleteColumn, onAddTask, onDeleteAllTasks }) => {
+  const { isOver, setNodeRef } = useDroppable({ id: title })
+
   const handleDeleteAction = () => {
     onDeleteColumn(title)
   }
@@ -18,7 +22,7 @@ const Column = ({ title, description, tasks, onDeleteColumn, onAddTask, onDelete
   }
 
   return (
-    <div className="col-md-5 col-lg-3 bg-secondary-subtle rounded shadow p-4 overflow-auto kanban-column">
+    <div ref={setNodeRef} className="col-md-5 col-lg-3 bg-secondary-subtle rounded shadow p-4 overflow-auto kanban-column" style={{ borderStyle: isOver ? "dashed" : "none" }}>
       <div className="row">
         <div className="col-9">
           <h3>{title}</h3>
@@ -48,7 +52,7 @@ const Column = ({ title, description, tasks, onDeleteColumn, onAddTask, onDelete
 
       {
         tasks.map((v, i) => (
-          <Task key={i} title={v.title} description={v.description} />
+          <Task key={i} title={v.title} description={v.description} column={title} />
         ))
       }
     </div>
