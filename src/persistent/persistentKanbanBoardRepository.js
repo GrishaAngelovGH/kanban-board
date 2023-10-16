@@ -34,6 +34,13 @@ const persistentKanbanBoardRepository = {
   },
   deleteAllColumns: () => {
     localStorage.removeItem("columns")
+  },
+  deleteAllTasksForColumn: columnTitle => {
+    const columns = JSON.parse(localStorage.getItem("columns"))
+    const currentColumn = columns[columnTitle]
+    currentColumn.items = []
+
+    localStorage.setItem("columns", JSON.stringify({ ...columns, [columnTitle]: currentColumn }))
   }
 }
 

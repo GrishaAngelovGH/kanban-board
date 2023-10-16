@@ -4,13 +4,17 @@ import Task from "./Task"
 
 import "./Column.css"
 
-const Column = ({ title, description, tasks, onDeleteColumn, onAddTask }) => {
+const Column = ({ title, description, tasks, onDeleteColumn, onAddTask, onDeleteAllTasks }) => {
   const handleDeleteAction = () => {
     onDeleteColumn(title)
   }
 
   const hadleAddTask = () => {
     onAddTask(title)
+  }
+
+  const hadleDeleteAllTasks = () => {
+    onDeleteAllTasks(title)
   }
 
   return (
@@ -30,6 +34,10 @@ const Column = ({ title, description, tasks, onDeleteColumn, onAddTask }) => {
               <Dropdown.Item onClick={handleDeleteAction}>
                 <i className="bi bi-x-circle-fill text-danger mx-1"></i>
                 Delete Column
+              </Dropdown.Item>
+              <Dropdown.Item onClick={hadleDeleteAllTasks}>
+                <i className="bi bi-x-circle-fill text-danger mx-1"></i>
+                Delete All Tasks
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>

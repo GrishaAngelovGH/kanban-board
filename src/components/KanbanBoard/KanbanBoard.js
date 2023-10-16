@@ -50,6 +50,11 @@ const KanbanBoard = () => {
     setColumns(boardRepository.getColumns())
   }
 
+  const handleDeleteAllTasksForColumn = title => {
+    boardRepository.deleteAllTasksForColumn(title)
+    setColumns(boardRepository.getColumns())
+  }
+
   useEffect(() => {
     setColumns(boardRepository.getColumns())
   }, [showColumnModal])
@@ -70,6 +75,7 @@ const KanbanBoard = () => {
                   tasks={tasks}
                   onDeleteColumn={handleDeleteColumn}
                   onAddTask={toggleAddTaskModal}
+                  onDeleteAllTasks={handleDeleteAllTasksForColumn}
                 />
               )
             })
