@@ -25,6 +25,10 @@ Object {
                 role="group"
               >
                 <button
+                  class="bi bi-magic btn btn-primary"
+                  type="button"
+                />
+                <button
                   class="btn btn-primary"
                   type="button"
                 >
@@ -80,6 +84,10 @@ Object {
               class="btn-group"
               role="group"
             >
+              <button
+                class="bi bi-magic btn btn-primary"
+                type="button"
+              />
               <button
                 class="btn btn-primary"
                 type="button"

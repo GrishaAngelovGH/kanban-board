@@ -3,10 +3,15 @@ import ButtonGroup from "react-bootstrap/ButtonGroup"
 
 import "./ButtonPanel.css"
 
-const ButtonPanel = ({ onColumnButtonClick, onClearBoardButtonClick }) => (
+const ButtonPanel = ({ onColumnButtonClick, onClearBoardButtonClick, onGenerateBoardButtonClick }) => (
   <div className="row border-top border-secondary-subtle fixed-bottom p-2 justify-content-end text-end button-panel">
     <div className="col col-md-4 col-lg-3">
       <ButtonGroup>
+        <Button
+          variant="primary"
+          className="bi bi-magic"
+          onClick={onGenerateBoardButtonClick}
+        />
         <Button
           variant="primary"
           onClick={onColumnButtonClick}

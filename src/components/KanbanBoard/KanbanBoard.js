@@ -8,6 +8,7 @@ import ClearBoardModal from "./modals/ClearBoardModal"
 import ColumnModal from "./modals/ColumnModal"
 import TaskModal from "./modals/TaskModal"
 
+import boardGenerator from "persistent/persistentKanbanBoardGenerator"
 import boardRepository from "persistent/persistentKanbanBoardRepository"
 
 const KanbanBoard = () => {
@@ -28,6 +29,11 @@ const KanbanBoard = () => {
   const toggleAddTaskModal = columnName => {
     setColumnName(columnName)
     setShowAddTaskModal(!showAddTaskModal)
+  }
+
+  const handleGenerateBoardButtonClick = () => {
+    boardGenerator.generate()
+    setColumns(boardRepository.getColumns())
   }
 
   const handleConfirmCreateColumn = (title, description) => {
@@ -123,6 +129,7 @@ const KanbanBoard = () => {
           <ButtonPanel
             onColumnButtonClick={toggleColumnModal}
             onClearBoardButtonClick={toggleClearBoardModal}
+            onGenerateBoardButtonClick={handleGenerateBoardButtonClick}
           />
         </div>
       </div>
