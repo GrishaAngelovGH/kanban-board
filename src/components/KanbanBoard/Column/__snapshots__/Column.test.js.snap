@@ -13,24 +13,40 @@ Object {
           class="row"
         >
           <div
-            class="col-9"
+            class="col-8"
           >
             <h3>
               Column Title
             </h3>
           </div>
           <div
-            class="col-3"
+            class="col-4"
           >
             <div
-              class="dropdown"
+              class="btn-group btn-group-sm"
+              role="group"
             >
               <button
-                aria-expanded="false"
-                class="bi bi-three-dots-vertical dropdown-toggle btn btn-success"
-                id="react-aria-:r0:"
+                class="btn btn-secondary"
+                disabled=""
                 type="button"
-              />
+              >
+                2
+              </button>
+              <div
+                class="dropdown btn-group"
+                role="group"
+              >
+                <button
+                  aria-expanded="false"
+                  class="dropdown-toggle btn btn-light btn-sm"
+                  type="button"
+                >
+                  <i
+                    class="bi bi-three-dots-vertical"
+                  />
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -38,12 +54,6 @@ Object {
           class="text-secondary"
         >
           Column Description
-        </p>
-        <p
-          class="small text-secondary text-center fw-bold border border-secondary rounded"
-        >
-          Tasks: 
-          2
         </p>
         <div
           class="row bg-white mt-3 rounded shadow p-1"
@@ -125,24 +135,40 @@ Object {
         class="row"
       >
         <div
-          class="col-9"
+          class="col-8"
         >
           <h3>
             Column Title
           </h3>
         </div>
         <div
-          class="col-3"
+          class="col-4"
         >
           <div
-            class="dropdown"
+            class="btn-group btn-group-sm"
+            role="group"
           >
             <button
-              aria-expanded="false"
-              class="bi bi-three-dots-vertical dropdown-toggle btn btn-success"
-              id="react-aria-:r0:"
+              class="btn btn-secondary"
+              disabled=""
               type="button"
-            />
+            >
+              2
+            </button>
+            <div
+              class="dropdown btn-group"
+              role="group"
+            >
+              <button
+                aria-expanded="false"
+                class="dropdown-toggle btn btn-light btn-sm"
+                type="button"
+              >
+                <i
+                  class="bi bi-three-dots-vertical"
+                />
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -150,12 +176,6 @@ Object {
         class="text-secondary"
       >
         Column Description
-      </p>
-      <p
-        class="small text-secondary text-center fw-bold border border-secondary rounded"
-      >
-        Tasks: 
-        2
       </p>
       <div
         class="row bg-white mt-3 rounded shadow p-1"

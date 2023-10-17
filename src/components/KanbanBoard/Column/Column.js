@@ -1,6 +1,9 @@
 import { useDroppable } from "@dnd-kit/core"
 
+import Button from "react-bootstrap/Button"
+import ButtonGroup from "react-bootstrap/ButtonGroup"
 import Dropdown from "react-bootstrap/Dropdown"
+import DropdownButton from "react-bootstrap/DropdownButton"
 
 import Task from "./Task"
 
@@ -28,9 +31,10 @@ const Column = ({ title, description, tasks, onDeleteColumn, onAddTask, onDelete
           <h3>{title}</h3>
         </div>
         <div className="col-3">
-          <Dropdown>
-            <Dropdown.Toggle variant="success" className="bi bi-three-dots-vertical" />
-            <Dropdown.Menu>
+          <ButtonGroup size="sm">
+            <Button variant="secondary" disabled>{tasks.length}</Button>
+
+            <DropdownButton as={ButtonGroup} size="sm" variant="light" title={<i className="bi bi-three-dots-vertical"></i>}>
               <Dropdown.Item onClick={hadleAddTask}>
                 <i className="bi bi-plus-circle-fill text-primary mx-1"></i>
                 Add Task
@@ -43,15 +47,12 @@ const Column = ({ title, description, tasks, onDeleteColumn, onAddTask, onDelete
                 <i className="bi bi-x-circle-fill text-danger mx-1"></i>
                 Delete All Tasks
               </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+            </DropdownButton>
+          </ButtonGroup>
         </div>
       </div>
 
       <p className="text-secondary">{description}</p>
-      <p className="small text-secondary text-center fw-bold border border-secondary rounded">
-        Tasks: {tasks.length}
-      </p>
 
       {
         tasks.map((v, i) => (
