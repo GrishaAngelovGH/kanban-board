@@ -34,9 +34,9 @@ Object {
         >
           Task Description
         </p>
-        <button
-          class="bi bi-trash fs-5 btn btn-danger btn-sm"
-          type="button"
+        <i
+          class="bi bi-trash fs-4 text-danger"
+          role="button"
         />
       </div>
     </div>
@@ -71,9 +71,9 @@ Object {
       >
         Task Description
       </p>
-      <button
-        class="bi bi-trash fs-5 btn btn-danger btn-sm"
-        type="button"
+      <i
+        class="bi bi-trash fs-4 text-danger"
+        role="button"
       />
     </div>
   </div>,

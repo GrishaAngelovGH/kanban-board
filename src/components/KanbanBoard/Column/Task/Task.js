@@ -1,5 +1,4 @@
 import { useDraggable } from "@dnd-kit/core"
-import { Button } from "react-bootstrap"
 
 const Task = ({ title, description, column, onDelete }) => {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
@@ -25,7 +24,7 @@ const Task = ({ title, description, column, onDelete }) => {
       </div>
       <p className="text-secondary">{description}</p>
 
-      <Button size="sm" variant="danger" onClick={handleDelete} className="bi bi-trash fs-5" />
+      <i role="button" onClick={handleDelete} className="bi bi-trash fs-4 text-danger"></i>
     </div>
   )
 }

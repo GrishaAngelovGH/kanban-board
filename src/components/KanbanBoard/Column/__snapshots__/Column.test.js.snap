@@ -13,14 +13,14 @@ Object {
           class="row"
         >
           <div
-            class="col-8"
+            class="col-9"
           >
             <h3>
               Column Title
             </h3>
           </div>
           <div
-            class="col-4"
+            class="col-3"
           >
             <div
               class="btn-group btn-group-sm"
@@ -84,9 +84,9 @@ Object {
           >
             Description 1
           </p>
-          <button
-            class="bi bi-trash fs-5 btn btn-danger btn-sm"
-            type="button"
+          <i
+            class="bi bi-trash fs-4 text-danger"
+            role="button"
           />
         </div>
         <div
@@ -118,9 +118,9 @@ Object {
           >
             Description 2
           </p>
-          <button
-            class="bi bi-trash fs-5 btn btn-danger btn-sm"
-            type="button"
+          <i
+            class="bi bi-trash fs-4 text-danger"
+            role="button"
           />
         </div>
       </div>
@@ -135,14 +135,14 @@ Object {
         class="row"
       >
         <div
-          class="col-8"
+          class="col-9"
         >
           <h3>
             Column Title
           </h3>
         </div>
         <div
-          class="col-4"
+          class="col-3"
         >
           <div
             class="btn-group btn-group-sm"
@@ -206,9 +206,9 @@ Object {
         >
           Description 1
         </p>
-        <button
-          class="bi bi-trash fs-5 btn btn-danger btn-sm"
-          type="button"
+        <i
+          class="bi bi-trash fs-4 text-danger"
+          role="button"
         />
       </div>
       <div
@@ -240,9 +240,9 @@ Object {
         >
           Description 2
         </p>
-        <button
-          class="bi bi-trash fs-5 btn btn-danger btn-sm"
-          type="button"
+        <i
+          class="bi bi-trash fs-4 text-danger"
+          role="button"
         />
       </div>
     </div>
