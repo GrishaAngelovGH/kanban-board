@@ -39,6 +39,12 @@ Object {
         >
           Column Description
         </p>
+        <p
+          class="small text-secondary text-center fw-bold border border-secondary rounded"
+        >
+          Tasks: 
+          2
+        </p>
         <div
           class="row bg-white mt-3 rounded shadow p-1"
         >
@@ -144,6 +150,12 @@ Object {
         class="text-secondary"
       >
         Column Description
+      </p>
+      <p
+        class="small text-secondary text-center fw-bold border border-secondary rounded"
+      >
+        Tasks: 
+        2
       </p>
       <div
         class="row bg-white mt-3 rounded shadow p-1"

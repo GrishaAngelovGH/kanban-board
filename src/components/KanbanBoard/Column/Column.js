@@ -49,6 +49,9 @@ const Column = ({ title, description, tasks, onDeleteColumn, onAddTask, onDelete
       </div>
 
       <p className="text-secondary">{description}</p>
+      <p className="small text-secondary text-center fw-bold border border-secondary rounded">
+        Tasks: {tasks.length}
+      </p>
 
       {
         tasks.map((v, i) => (
