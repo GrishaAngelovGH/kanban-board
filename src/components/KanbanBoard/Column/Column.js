@@ -25,7 +25,11 @@ const Column = ({ title, description, tasks, onDeleteColumn, onAddTask, onDelete
   }
 
   return (
-    <div ref={setNodeRef} className="col-md-5 col-lg-3 bg-secondary-subtle rounded shadow p-4 overflow-auto kanban-column" style={{ borderStyle: isOver ? "dashed" : "none" }}>
+    <div
+      ref={setNodeRef}
+      className="col-md-5 col-lg-3 bg-secondary-subtle rounded shadow p-4 overflow-auto kanban-column"
+      style={{ borderStyle: isOver ? "dashed" : "none", cursor: isOver ? "pointer" : "auto" }}
+    >
       <div className="row">
         <div className="col-9">
           <h3>{title}</h3>
