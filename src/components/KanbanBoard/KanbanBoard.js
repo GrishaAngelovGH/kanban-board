@@ -3,6 +3,7 @@ import { DndContext } from "@dnd-kit/core"
 
 import ButtonPanel from "./ButtonPanel"
 import Column from "./Column"
+import EmptyBoard from "./EmptyBoard"
 
 import ClearBoardModal from "./modals/ClearBoardModal"
 import ColumnModal from "./modals/ColumnModal"
@@ -87,6 +88,10 @@ const KanbanBoard = () => {
     <DndContext onDragEnd={handleDragEnd}>
       <div className="row">
         <div className="col-md-12">
+          {
+            !columns.length && (<EmptyBoard />)
+          }
+
           <div className="row p-5">
             {
               columns.map((v, i) => {

@@ -1,69 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render ButtonPanel component 1`] = `
+exports[`should render EmptyBoard component 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <div
-        class="row border-top border-secondary-subtle fixed-bottom p-2 justify-content-end text-end button-panel"
+        class="row justify-content-center text-secondary p-5"
       >
         <div
-          class="col-md-5 col-lg-3"
+          class="col-12 col-lg-7 text-center"
         >
-          <div
-            class="btn-group"
-            role="group"
-          >
-            <button
-              class="bi bi-magic btn btn-primary"
-              type="button"
+          <i
+            class="bi bi-folder-plus"
+            style="font-size: 150px;"
+          />
+          <h1>
+            Empty Kanban Board
+          </h1>
+          <h3>
+            You could click on the auto-generate board button 
+            <i
+              class="bi bi-magic"
             />
-            <button
-              class="btn btn-primary"
-              type="button"
-            >
-              New Column
-            </button>
-            <button
-              class="btn btn-danger"
-              type="button"
-            >
-              Clear Board
-            </button>
-          </div>
+             or add columns and tasks manually
+          </h3>
         </div>
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="row border-top border-secondary-subtle fixed-bottom p-2 justify-content-end text-end button-panel"
+      class="row justify-content-center text-secondary p-5"
     >
       <div
-        class="col-md-5 col-lg-3"
+        class="col-12 col-lg-7 text-center"
       >
-        <div
-          class="btn-group"
-          role="group"
-        >
-          <button
-            class="bi bi-magic btn btn-primary"
-            type="button"
+        <i
+          class="bi bi-folder-plus"
+          style="font-size: 150px;"
+        />
+        <h1>
+          Empty Kanban Board
+        </h1>
+        <h3>
+          You could click on the auto-generate board button 
+          <i
+            class="bi bi-magic"
           />
-          <button
-            class="btn btn-primary"
-            type="button"
-          >
-            New Column
-          </button>
-          <button
-            class="btn btn-danger"
-            type="button"
-          >
-            Clear Board
-          </button>
-        </div>
+           or add columns and tasks manually
+        </h3>
       </div>
     </div>
   </div>,
