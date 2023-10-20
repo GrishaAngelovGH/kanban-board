@@ -1,9 +1,9 @@
 import { useDraggable } from "@dnd-kit/core"
 
-const Task = ({ title, description, column, onDelete }) => {
+const Task = ({ id, columnId, title, description, onDelete }) => {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
-    id: title,
-    data: { description, column }
+    id,
+    data: { description, columnId }
   })
 
   const style = transform ? {
@@ -11,7 +11,7 @@ const Task = ({ title, description, column, onDelete }) => {
   } : undefined
 
   const handleDelete = () => {
-    onDelete(title, column)
+    onDelete(id, columnId)
   }
 
   return (

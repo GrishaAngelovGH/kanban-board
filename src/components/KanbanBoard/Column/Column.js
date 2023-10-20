@@ -9,19 +9,19 @@ import Task from "./Task"
 
 import "./Column.css"
 
-const Column = ({ title, description, tasks, onDeleteColumn, onAddTask, onDeleteTask, onDeleteAllTasks }) => {
-  const { isOver, setNodeRef } = useDroppable({ id: title })
+const Column = ({ id, title, description, tasks, onDeleteColumn, onAddTask, onDeleteTask, onDeleteAllTasks }) => {
+  const { isOver, setNodeRef } = useDroppable({ id })
 
   const handleDeleteAction = () => {
-    onDeleteColumn(title)
+    onDeleteColumn(id)
   }
 
   const hadleAddTask = () => {
-    onAddTask(title)
+    onAddTask(id)
   }
 
   const hadleDeleteAllTasks = () => {
-    onDeleteAllTasks(title)
+    onDeleteAllTasks(id)
   }
 
   return (
@@ -59,12 +59,13 @@ const Column = ({ title, description, tasks, onDeleteColumn, onAddTask, onDelete
       <p className="text-secondary">{description}</p>
 
       {
-        tasks.map((v, i) => (
+        tasks.map(v => (
           <Task
-            key={i}
+            key={v.id}
+            id={v.id}
+            columnId={id}
             title={v.title}
             description={v.description}
-            column={title}
             onDelete={onDeleteTask}
           />
         ))

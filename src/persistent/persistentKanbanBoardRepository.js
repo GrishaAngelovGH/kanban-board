@@ -2,69 +2,71 @@ const persistentKanbanBoardRepository = {
   createColumn: (title, description) => {
     const columns = JSON.parse(localStorage.getItem("columns"))
 
+    const id = Math.random().toString().slice(2)
+
     const newColumn = JSON.stringify({
       ...columns,
-      [title]: { title, description, items: [] }
+      [id]: { id, title, description, items: [] }
     })
 
     localStorage.setItem("columns", newColumn)
   },
-  createTask: (columnTitle, taskTitle, taskDescription) => {
+  createTask: (columnId, taskTitle, taskDescription) => {
     const columns = JSON.parse(localStorage.getItem("columns"))
 
-    const currentColumn = columns[columnTitle]
-    currentColumn.items.push({ title: taskTitle, description: taskDescription })
+    const id = Math.random().toString().slice(2)
 
-    localStorage.setItem("columns", JSON.stringify({ ...columns, [columnTitle]: currentColumn }))
+    const currentColumn = columns[columnId]
+    currentColumn.items.push({ id, title: taskTitle, description: taskDescription })
+
+    localStorage.setItem("columns", JSON.stringify({ ...columns, [columnId]: currentColumn }))
   },
   getColumns: () => {
     const columns = JSON.parse(localStorage.getItem("columns"))
 
     return (columns && Object.values(columns)) || []
   },
-  getTasksForColumn: columnTitle => {
+  deleteColumn: columnId => {
     const columns = JSON.parse(localStorage.getItem("columns"))
-    return columns[columnTitle].items
-  },
-  deleteColumn: title => {
-    const columns = JSON.parse(localStorage.getItem("columns"))
-    const { [title]: value, ...restColumns } = columns
+    const { [columnId]: value, ...restColumns } = columns
 
     localStorage.setItem("columns", JSON.stringify(restColumns))
   },
   deleteAllColumns: () => {
     localStorage.removeItem("columns")
   },
-  deleteAllTasksForColumn: columnTitle => {
+  deleteAllTasksForColumn: columnId => {
     const columns = JSON.parse(localStorage.getItem("columns"))
-    const currentColumn = columns[columnTitle]
+    const currentColumn = columns[columnId]
     currentColumn.items = []
 
-    localStorage.setItem("columns", JSON.stringify({ ...columns, [columnTitle]: currentColumn }))
+    localStorage.setItem("columns", JSON.stringify({ ...columns, [columnId]: currentColumn }))
   },
-  moveTask: (fromColumnTitle, toColumnTitle, taskTitle, taskDescription) => {
-    if (fromColumnTitle !== toColumnTitle) {
+  moveTask: (fromColumnId, toColumnId, taskId) => {
+    if (fromColumnId !== toColumnId) {
       const columns = JSON.parse(localStorage.getItem("columns"))
 
-      const fromColumn = columns[fromColumnTitle]
-      fromColumn.items = fromColumn.items.filter(v => v.title !== taskTitle)
+      const fromColumn = columns[fromColumnId]
+      const task = fromColumn.items.find(v => v.id === taskId)
 
-      const toColumn = columns[toColumnTitle]
-      toColumn.items.push({ title: taskTitle, description: taskDescription })
+      fromColumn.items = fromColumn.items.filter(v => v.id !== taskId)
+
+      const toColumn = columns[toColumnId]
+      toColumn.items.push(task)
 
       localStorage.setItem("columns", JSON.stringify({
         ...columns,
-        [fromColumnTitle]: fromColumn,
-        [toColumnTitle]: toColumn
+        [fromColumnId]: fromColumn,
+        [toColumnId]: toColumn
       }))
     }
   },
-  deleteTask: (taskTitle, columnTitle) => {
+  deleteTask: (taskId, columnId) => {
     const columns = JSON.parse(localStorage.getItem("columns"))
-    const currentColumn = columns[columnTitle]
-    currentColumn.items = currentColumn.items.filter(v => v.title !== taskTitle)
+    const currentColumn = columns[columnId]
+    currentColumn.items = currentColumn.items.filter(v => v.id !== taskId)
 
-    localStorage.setItem("columns", JSON.stringify({ ...columns, [columnTitle]: currentColumn }))
+    localStorage.setItem("columns", JSON.stringify({ ...columns, [columnId]: currentColumn }))
   }
 }
 
