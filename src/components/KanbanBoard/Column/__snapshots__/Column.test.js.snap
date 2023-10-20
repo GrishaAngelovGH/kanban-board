@@ -84,10 +84,18 @@ Object {
           >
             Description 1
           </p>
-          <i
-            class="bi bi-trash fs-4 text-danger"
-            role="button"
-          />
+          <div
+            class="d-flex"
+          >
+            <i
+              class="bi bi-trash fs-4 text-danger"
+              role="button"
+            />
+            <i
+              class="bi bi-pencil-square fs-4 text-secondary"
+              role="button"
+            />
+          </div>
         </div>
         <div
           class="row bg-white mt-3 rounded shadow p-1"
@@ -118,10 +126,18 @@ Object {
           >
             Description 2
           </p>
-          <i
-            class="bi bi-trash fs-4 text-danger"
-            role="button"
-          />
+          <div
+            class="d-flex"
+          >
+            <i
+              class="bi bi-trash fs-4 text-danger"
+              role="button"
+            />
+            <i
+              class="bi bi-pencil-square fs-4 text-secondary"
+              role="button"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -206,10 +222,18 @@ Object {
         >
           Description 1
         </p>
-        <i
-          class="bi bi-trash fs-4 text-danger"
-          role="button"
-        />
+        <div
+          class="d-flex"
+        >
+          <i
+            class="bi bi-trash fs-4 text-danger"
+            role="button"
+          />
+          <i
+            class="bi bi-pencil-square fs-4 text-secondary"
+            role="button"
+          />
+        </div>
       </div>
       <div
         class="row bg-white mt-3 rounded shadow p-1"
@@ -240,10 +264,18 @@ Object {
         >
           Description 2
         </p>
-        <i
-          class="bi bi-trash fs-4 text-danger"
-          role="button"
-        />
+        <div
+          class="d-flex"
+        >
+          <i
+            class="bi bi-trash fs-4 text-danger"
+            role="button"
+          />
+          <i
+            class="bi bi-pencil-square fs-4 text-secondary"
+            role="button"
+          />
+        </div>
       </div>
     </div>
   </div>,

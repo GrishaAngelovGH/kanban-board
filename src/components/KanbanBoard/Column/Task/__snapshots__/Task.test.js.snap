@@ -36,10 +36,18 @@ Object {
         >
           Task Description
         </p>
-        <i
-          class="bi bi-trash fs-4 text-danger"
-          role="button"
-        />
+        <div
+          class="d-flex"
+        >
+          <i
+            class="bi bi-trash fs-4 text-danger"
+            role="button"
+          />
+          <i
+            class="bi bi-pencil-square fs-4 text-secondary"
+            role="button"
+          />
+        </div>
       </div>
     </div>
   </body>,
@@ -75,10 +83,18 @@ Object {
       >
         Task Description
       </p>
-      <i
-        class="bi bi-trash fs-4 text-danger"
-        role="button"
-      />
+      <div
+        class="d-flex"
+      >
+        <i
+          class="bi bi-trash fs-4 text-danger"
+          role="button"
+        />
+        <i
+          class="bi bi-pencil-square fs-4 text-secondary"
+          role="button"
+        />
+      </div>
     </div>
   </div>,
   "debug": [Function],

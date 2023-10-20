@@ -1,6 +1,6 @@
 import { useDraggable } from "@dnd-kit/core"
 
-const Task = ({ id, columnId, title, description, onDelete }) => {
+const Task = ({ id, columnId, title, description, onEdit, onDelete }) => {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id,
     data: { description, columnId }
@@ -14,6 +14,10 @@ const Task = ({ id, columnId, title, description, onDelete }) => {
     onDelete(id, columnId)
   }
 
+  const handleEdit = () => {
+    onEdit(id, columnId)
+  }
+
   return (
     <div ref={setNodeRef} style={style} className="row bg-white mt-3 rounded shadow p-1">
       <div className="col-9">
@@ -23,8 +27,10 @@ const Task = ({ id, columnId, title, description, onDelete }) => {
         <i {...listeners} {...attributes} className="bi bi-grip-horizontal fs-2"></i>
       </div>
       <p className="text-secondary">{description}</p>
-
-      <i role="button" onClick={handleDelete} className="bi bi-trash fs-4 text-danger"></i>
+      <div className="d-flex">
+        <i role="button" onClick={handleDelete} className="bi bi-trash fs-4 text-danger"></i>
+        <i role="button" onClick={handleEdit} className="bi bi-pencil-square fs-4 text-secondary"></i>
+      </div>
     </div>
   )
 }
