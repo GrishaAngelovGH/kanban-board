@@ -7,7 +7,7 @@ import EmptyBoard from "./EmptyBoard"
 
 import ClearBoardModal from "./modals/ClearBoardModal"
 import ColumnModal from "./modals/ColumnModal"
-import TaskModal from "./modals/TaskModal"
+import NewTaskModal from "./modals/TaskModals/NewTaskModal"
 
 import boardGenerator from "persistent/persistentKanbanBoardGenerator"
 import boardRepository from "persistent/persistentKanbanBoardRepository"
@@ -122,7 +122,7 @@ const KanbanBoard = () => {
             onConfirm={handleConfirmClearBoard}
           />
 
-          <TaskModal
+          <NewTaskModal
             show={showAddTaskModal}
             onClose={toggleAddTaskModal}
             onConfirm={handleConfirmCreateTask}
