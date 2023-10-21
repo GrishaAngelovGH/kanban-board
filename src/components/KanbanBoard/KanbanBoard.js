@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react"
 import { DndContext } from "@dnd-kit/core"
 
+import Toast from "components/Toast"
+import ToastContainer from "react-bootstrap/ToastContainer"
+
 import ButtonPanel from "./ButtonPanel"
 import Column from "./Column"
 import EmptyBoard from "./EmptyBoard"
@@ -19,9 +22,13 @@ const KanbanBoard = () => {
   const [showClearBoardModal, setShowClearBoardModal] = useState(false)
   const [showAddTaskModal, setShowAddTaskModal] = useState(false)
   const [showEditTaskModal, setShowEditTaskModal] = useState(false)
+
   const [columnId, setColumnId] = useState("")
   const [task, setTask] = useState(null)
   const [columns, setColumns] = useState([])
+
+  const [showToast, setShowToast] = useState(false)
+  const [toastMessage, setToastMessage] = useState("")
 
   const toggleColumnModal = () => {
     setShowColumnModal(!showColumnModal)
@@ -45,44 +52,68 @@ const KanbanBoard = () => {
   const handleGenerateBoardButtonClick = () => {
     boardGenerator.generate()
     setColumns(boardRepository.getColumns())
+
+    setToastMessage("Kanban Board is successfully generated")
+    setShowToast(true)
   }
 
   const handleConfirmCreateColumn = (title, description) => {
     boardRepository.createColumn(title, description)
     setShowColumnModal(!showColumnModal)
+
+    setToastMessage("New column is successfully created")
+    setShowToast(true)
   }
 
   const handleConfirmClearBoard = () => {
     boardRepository.deleteAllColumns()
     setColumns([])
     setShowClearBoardModal(!showClearBoardModal)
+
+    setToastMessage("Kanban Board is successfully cleared")
+    setShowToast(true)
   }
 
   const handleConfirmCreateTask = (title, description) => {
     boardRepository.createTask(columnId, title, description)
     setShowAddTaskModal(!showAddTaskModal)
     setColumns(boardRepository.getColumns())
+
+    setToastMessage("New task is successfully created")
+    setShowToast(true)
   }
 
   const handleConfirmEditTask = (task, columnId) => {
     boardRepository.updateTask(task, columnId)
     setShowEditTaskModal(!showEditTaskModal)
     setColumns(boardRepository.getColumns())
+
+    setToastMessage("Task is successfully edited")
+    setShowToast(true)
   }
 
   const handleDeleteColumn = columnId => {
     boardRepository.deleteColumn(columnId)
     setColumns(boardRepository.getColumns())
+
+    setToastMessage("Column is successfully deleted")
+    setShowToast(true)
   }
 
-  const handleDeleteTask = (taskTitle, columnTitle) => {
-    boardRepository.deleteTask(taskTitle, columnTitle)
+  const handleDeleteTask = (taskId, columnId) => {
+    boardRepository.deleteTask(taskId, columnId)
     setColumns(boardRepository.getColumns())
+
+    setToastMessage("Task is successfully deleted")
+    setShowToast(true)
   }
 
   const handleDeleteAllTasksForColumn = columnId => {
     boardRepository.deleteAllTasksForColumn(columnId)
     setColumns(boardRepository.getColumns())
+
+    setToastMessage("All tasks for the given column are successfully deleted")
+    setShowToast(true)
   }
 
   const handleDragEnd = ({ active: { id, data: { current: { columnId } } }, over }) => {
@@ -93,6 +124,9 @@ const KanbanBoard = () => {
 
       boardRepository.moveTask(fromColumnId, toColumnId, taskId)
       setColumns(boardRepository.getColumns())
+
+      setToastMessage("Task is successfully moved")
+      setShowToast(true)
     }
   }
 
@@ -104,6 +138,10 @@ const KanbanBoard = () => {
     <DndContext onDragEnd={handleDragEnd}>
       <div className="row">
         <div className="col-md-12">
+          <ToastContainer position="top-center">
+            <Toast show={showToast} title="Kanban Board" body={toastMessage} onClose={() => setShowToast(false)} />
+          </ToastContainer>
+
           {
             !columns.length && (<EmptyBoard />)
           }
