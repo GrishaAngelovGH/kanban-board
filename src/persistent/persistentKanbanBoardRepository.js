@@ -1,4 +1,4 @@
-const persistentKanbanBoardRepository = {
+const columns = {
   createColumn: (title, description) => {
     const columns = JSON.parse(localStorage.getItem("columns"))
 
@@ -11,35 +11,10 @@ const persistentKanbanBoardRepository = {
 
     localStorage.setItem("columns", newColumn)
   },
-  createTask: (columnId, taskTitle, taskDescription) => {
-    const columns = JSON.parse(localStorage.getItem("columns"))
-
-    const id = Math.random().toString().slice(2)
-
-    const currentColumn = columns[columnId]
-    currentColumn.items.push({ id, title: taskTitle, description: taskDescription })
-
-    localStorage.setItem("columns", JSON.stringify({ ...columns, [columnId]: currentColumn }))
-  },
   getColumns: () => {
     const columns = JSON.parse(localStorage.getItem("columns"))
 
     return (columns && Object.values(columns)) || []
-  },
-  getTask: (taskId, columnId) => {
-    const columns = JSON.parse(localStorage.getItem("columns"))
-
-    return columns[columnId].items.find(v => v.id === taskId)
-  },
-  updateTask: (task, columnId) => {
-    const columns = JSON.parse(localStorage.getItem("columns"))
-    const currentColumn = columns[columnId]
-
-    const foundTask = currentColumn.items.find(v => v.id === task.id)
-    foundTask.title = task.title
-    foundTask.description = task.description
-
-    localStorage.setItem("columns", JSON.stringify({ ...columns, [columnId]: currentColumn }))
   },
   deleteColumn: columnId => {
     const columns = JSON.parse(localStorage.getItem("columns"))
@@ -54,6 +29,34 @@ const persistentKanbanBoardRepository = {
     const columns = JSON.parse(localStorage.getItem("columns"))
     const currentColumn = columns[columnId]
     currentColumn.items = []
+
+    localStorage.setItem("columns", JSON.stringify({ ...columns, [columnId]: currentColumn }))
+  }
+}
+
+const tasks = {
+  createTask: (columnId, taskTitle, taskDescription) => {
+    const columns = JSON.parse(localStorage.getItem("columns"))
+
+    const id = Math.random().toString().slice(2)
+
+    const currentColumn = columns[columnId]
+    currentColumn.items.push({ id, title: taskTitle, description: taskDescription })
+
+    localStorage.setItem("columns", JSON.stringify({ ...columns, [columnId]: currentColumn }))
+  },
+  getTask: (taskId, columnId) => {
+    const columns = JSON.parse(localStorage.getItem("columns"))
+
+    return columns[columnId].items.find(v => v.id === taskId)
+  },
+  updateTask: (task, columnId) => {
+    const columns = JSON.parse(localStorage.getItem("columns"))
+    const currentColumn = columns[columnId]
+
+    const foundTask = currentColumn.items.find(v => v.id === task.id)
+    foundTask.title = task.title
+    foundTask.description = task.description
 
     localStorage.setItem("columns", JSON.stringify({ ...columns, [columnId]: currentColumn }))
   },
@@ -83,6 +86,11 @@ const persistentKanbanBoardRepository = {
 
     localStorage.setItem("columns", JSON.stringify({ ...columns, [columnId]: currentColumn }))
   }
+}
+
+const persistentKanbanBoardRepository = {
+  ...columns,
+  ...tasks
 }
 
 export default persistentKanbanBoardRepository
