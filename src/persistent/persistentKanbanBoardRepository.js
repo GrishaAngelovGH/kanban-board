@@ -45,11 +45,6 @@ const tasks = {
 
     localStorage.setItem("columns", JSON.stringify({ ...columns, [columnId]: currentColumn }))
   },
-  getTask: (taskId, columnId) => {
-    const columns = JSON.parse(localStorage.getItem("columns"))
-
-    return columns[columnId].items.find(v => v.id === taskId)
-  },
   updateTask: (task, columnId) => {
     const columns = JSON.parse(localStorage.getItem("columns"))
     const currentColumn = columns[columnId]

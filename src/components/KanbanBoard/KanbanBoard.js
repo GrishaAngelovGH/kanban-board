@@ -43,9 +43,9 @@ const KanbanBoard = () => {
     setShowAddTaskModal(!showAddTaskModal)
   }
 
-  const toggleEditTaskModal = (taskId, columnId) => {
+  const toggleEditTaskModal = (task, columnId) => {
     setColumnId(columnId)
-    setTask(boardRepository.getTask(taskId, columnId))
+    setTask(task)
     setShowEditTaskModal(!showEditTaskModal)
   }
 
@@ -83,7 +83,7 @@ const KanbanBoard = () => {
     setShowToast(true)
   }
 
-  const handleConfirmEditTask = (task, columnId) => {
+  const handleConfirmEditTask = task => {
     boardRepository.updateTask(task, columnId)
     setShowEditTaskModal(!showEditTaskModal)
     setColumns(boardRepository.getColumns())
@@ -186,7 +186,6 @@ const KanbanBoard = () => {
           <EditTaskModal
             show={showEditTaskModal}
             task={task}
-            columnId={columnId}
             onClose={() => { setShowEditTaskModal(!showEditTaskModal) }}
             onConfirm={handleConfirmEditTask}
           />

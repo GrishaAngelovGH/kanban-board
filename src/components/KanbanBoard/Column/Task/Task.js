@@ -15,7 +15,7 @@ const Task = ({ id, columnId, title, description, onEdit, onDelete }) => {
   }
 
   const handleEdit = () => {
-    onEdit(id, columnId)
+    onEdit({ id, title, description }, columnId)
   }
 
   return (

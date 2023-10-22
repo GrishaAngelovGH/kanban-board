@@ -4,7 +4,7 @@ import Modal from "components/Modal"
 import FloatingLabel from "react-bootstrap/FloatingLabel"
 import Form from "react-bootstrap/Form"
 
-const EditTaskModal = ({ show, task, columnId, onClose, onConfirm }) => {
+const EditTaskModal = ({ show, task, onClose, onConfirm }) => {
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
 
@@ -17,7 +17,7 @@ const EditTaskModal = ({ show, task, columnId, onClose, onConfirm }) => {
   }
 
   const handleConfirm = () => {
-    onConfirm({ ...task, title, description }, columnId)
+    onConfirm({ ...task, title, description })
     setTitle("")
     setDescription("")
   }
