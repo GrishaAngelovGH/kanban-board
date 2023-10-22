@@ -5,6 +5,7 @@
   "include": [
     "src",
     "components",
-    "persistent"
+    "persistent",
+    "assets"
   ]
 }
