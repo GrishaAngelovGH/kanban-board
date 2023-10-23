@@ -1,0 +1,280 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render AssignUserModal component 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body
+    class="modal-open"
+    data-rr-ui-modal-open=""
+    style="padding-right: 1024px;"
+  >
+    <div />
+    <div
+      class="fade modal-backdrop show"
+    />
+    <div
+      aria-modal="true"
+      class="fade modal show"
+      role="dialog"
+      style="display: block; padding-right: 0px;"
+      tabindex="-1"
+    >
+      <div
+        class="modal-dialog"
+      >
+        <div
+          class="modal-content"
+        >
+          <div
+            class="modal-header"
+          >
+            <div
+              class="modal-title h4"
+            >
+              Assign users
+            </div>
+          </div>
+          <div
+            class="modal-body"
+          >
+            <div
+              class="list-group"
+            >
+              <button
+                class="list-group-item list-group-item-action"
+              >
+                <div
+                  class="row align-items-center"
+                >
+                  <div
+                    class="col-2"
+                  >
+                    <img
+                      alt="assigned-user"
+                      class="rounded-circle"
+                      src="alexander-reed.jpg"
+                      width="50"
+                    />
+                  </div>
+                  <div
+                    class="col-10"
+                  >
+                    <p
+                      class="m-0 fw-bold"
+                    >
+                      Alexander Reed
+                    </p>
+                  </div>
+                </div>
+              </button>
+              <button
+                class="list-group-item list-group-item-action"
+              >
+                <div
+                  class="row align-items-center"
+                >
+                  <div
+                    class="col-2"
+                  >
+                    <img
+                      alt="assigned-user"
+                      class="rounded-circle"
+                      src="ava-roberts.jpg"
+                      width="50"
+                    />
+                  </div>
+                  <div
+                    class="col-10"
+                  >
+                    <p
+                      class="m-0 fw-bold"
+                    >
+                      Ava Roberts
+                    </p>
+                  </div>
+                </div>
+              </button>
+              <button
+                class="list-group-item list-group-item-action"
+              >
+                <div
+                  class="row align-items-center"
+                >
+                  <div
+                    class="col-2"
+                  >
+                    <img
+                      alt="assigned-user"
+                      class="rounded-circle"
+                      src="ethan-thompson.jpg"
+                      width="50"
+                    />
+                  </div>
+                  <div
+                    class="col-10"
+                  >
+                    <p
+                      class="m-0 fw-bold"
+                    >
+                      Ethan Thompson
+                    </p>
+                  </div>
+                </div>
+              </button>
+              <button
+                class="list-group-item list-group-item-action"
+              >
+                <div
+                  class="row align-items-center"
+                >
+                  <div
+                    class="col-2"
+                  >
+                    <img
+                      alt="assigned-user"
+                      class="rounded-circle"
+                      src="isabella-foster.jpg"
+                      width="50"
+                    />
+                  </div>
+                  <div
+                    class="col-10"
+                  >
+                    <p
+                      class="m-0 fw-bold"
+                    >
+                      Isabella Foster
+                    </p>
+                  </div>
+                </div>
+              </button>
+              <button
+                class="list-group-item list-group-item-action"
+              >
+                <div
+                  class="row align-items-center"
+                >
+                  <div
+                    class="col-2"
+                  >
+                    <img
+                      alt="assigned-user"
+                      class="rounded-circle"
+                      src="noah-anderson.jpg"
+                      width="50"
+                    />
+                  </div>
+                  <div
+                    class="col-10"
+                  >
+                    <p
+                      class="m-0 fw-bold"
+                    >
+                      Noah Anderson
+                    </p>
+                  </div>
+                </div>
+              </button>
+              <button
+                class="list-group-item list-group-item-action"
+              >
+                <div
+                  class="row align-items-center"
+                >
+                  <div
+                    class="col-2"
+                  >
+                    <img
+                      alt="assigned-user"
+                      class="rounded-circle"
+                      src="sophia-campbell.jpg"
+                      width="50"
+                    />
+                  </div>
+                  <div
+                    class="col-10"
+                  >
+                    <p
+                      class="m-0 fw-bold"
+                    >
+                      Sophia Campbell
+                    </p>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+          <div
+            class="modal-footer"
+          >
+            <button
+              class="btn btn-secondary"
+              type="button"
+            >
+              Close
+            </button>
+            <button
+              class="btn btn-primary"
+              type="button"
+            >
+              Confirm
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div />,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
