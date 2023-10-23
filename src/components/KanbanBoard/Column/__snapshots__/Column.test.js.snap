@@ -92,7 +92,11 @@ Object {
               role="button"
             />
             <i
-              class="bi bi-pencil-square fs-4 text-secondary"
+              class="bi bi-pencil-square fs-4 text-secondary mx-1"
+              role="button"
+            />
+            <i
+              class="bi bi-person-circle fs-4 text-secondary mx-1"
               role="button"
             />
           </div>
@@ -134,7 +138,11 @@ Object {
               role="button"
             />
             <i
-              class="bi bi-pencil-square fs-4 text-secondary"
+              class="bi bi-pencil-square fs-4 text-secondary mx-1"
+              role="button"
+            />
+            <i
+              class="bi bi-person-circle fs-4 text-secondary mx-1"
               role="button"
             />
           </div>
@@ -230,7 +238,11 @@ Object {
             role="button"
           />
           <i
-            class="bi bi-pencil-square fs-4 text-secondary"
+            class="bi bi-pencil-square fs-4 text-secondary mx-1"
+            role="button"
+          />
+          <i
+            class="bi bi-person-circle fs-4 text-secondary mx-1"
             role="button"
           />
         </div>
@@ -272,7 +284,11 @@ Object {
             role="button"
           />
           <i
-            class="bi bi-pencil-square fs-4 text-secondary"
+            class="bi bi-pencil-square fs-4 text-secondary mx-1"
+            role="button"
+          />
+          <i
+            class="bi bi-person-circle fs-4 text-secondary mx-1"
             role="button"
           />
         </div>

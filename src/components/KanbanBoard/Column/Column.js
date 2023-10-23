@@ -9,7 +9,7 @@ import Task from "./Task"
 
 import "./Column.css"
 
-const Column = ({ id, title, description, tasks, onDeleteColumn, onAddTask, onEditTask, onDeleteTask, onDeleteAllTasks }) => {
+const Column = ({ id, title, description, tasks, onDeleteColumn, onAddTask, onEditTask, onDeleteTask, onDeleteAllTasks, onAssignUser }) => {
   const { isOver, setNodeRef } = useDroppable({ id })
 
   const handleDeleteAction = () => {
@@ -68,6 +68,7 @@ const Column = ({ id, title, description, tasks, onDeleteColumn, onAddTask, onEd
             description={v.description}
             onEdit={onEditTask}
             onDelete={onDeleteTask}
+            onAssignUser={onAssignUser}
           />
         ))
       }

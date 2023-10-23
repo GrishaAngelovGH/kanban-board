@@ -11,8 +11,9 @@ import EmptyBoard from "./EmptyBoard"
 import ClearBoardModal from "./modals/ClearBoardModal"
 import ColumnModal from "./modals/ColumnModal"
 
-import NewTaskModal from "./modals/TaskModals/NewTaskModal"
+import AssignUserModal from "./modals/AssignUserModal"
 import EditTaskModal from "./modals/TaskModals/EditTaskModal"
+import NewTaskModal from "./modals/TaskModals/NewTaskModal"
 
 import boardGenerator from "persistent/persistentKanbanBoardGenerator"
 import boardRepository from "persistent/persistentKanbanBoardRepository"
@@ -22,6 +23,7 @@ const KanbanBoard = () => {
   const [showClearBoardModal, setShowClearBoardModal] = useState(false)
   const [showAddTaskModal, setShowAddTaskModal] = useState(false)
   const [showEditTaskModal, setShowEditTaskModal] = useState(false)
+  const [showAssignUserModal, setShowAssignUserModal] = useState(false)
 
   const [columnId, setColumnId] = useState("")
   const [task, setTask] = useState(null)
@@ -47,6 +49,10 @@ const KanbanBoard = () => {
     setColumnId(columnId)
     setTask(task)
     setShowEditTaskModal(!showEditTaskModal)
+  }
+
+  const toggleAssignUserModal = () => {
+    setShowAssignUserModal(!showAssignUserModal)
   }
 
   const handleGenerateBoardButtonClick = () => {
@@ -160,6 +166,7 @@ const KanbanBoard = () => {
                   onEditTask={toggleEditTaskModal}
                   onDeleteTask={handleDeleteTask}
                   onDeleteAllTasks={handleDeleteAllTasksForColumn}
+                  onAssignUser={toggleAssignUserModal}
                 />
               ))
             }
@@ -188,6 +195,11 @@ const KanbanBoard = () => {
             task={task}
             onClose={() => { setShowEditTaskModal(!showEditTaskModal) }}
             onConfirm={handleConfirmEditTask}
+          />
+
+          <AssignUserModal
+            show={showAssignUserModal}
+            onClose={() => { setShowAssignUserModal(!showAssignUserModal) }}
           />
 
           <ButtonPanel
