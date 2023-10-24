@@ -25,7 +25,7 @@ Object {
               />
             </div>
             <div
-              class="col-10"
+              class="col-8"
             >
               <p
                 class="m-0 fw-bold"
@@ -33,6 +33,9 @@ Object {
                 Alexander Reed
               </p>
             </div>
+            <div
+              class="col-2"
+            />
           </div>
         </button>
         <button
@@ -52,7 +55,7 @@ Object {
               />
             </div>
             <div
-              class="col-10"
+              class="col-8"
             >
               <p
                 class="m-0 fw-bold"
@@ -60,6 +63,9 @@ Object {
                 Ava Roberts
               </p>
             </div>
+            <div
+              class="col-2"
+            />
           </div>
         </button>
         <button
@@ -79,7 +85,7 @@ Object {
               />
             </div>
             <div
-              class="col-10"
+              class="col-8"
             >
               <p
                 class="m-0 fw-bold"
@@ -87,6 +93,9 @@ Object {
                 Ethan Thompson
               </p>
             </div>
+            <div
+              class="col-2"
+            />
           </div>
         </button>
         <button
@@ -106,7 +115,7 @@ Object {
               />
             </div>
             <div
-              class="col-10"
+              class="col-8"
             >
               <p
                 class="m-0 fw-bold"
@@ -114,6 +123,9 @@ Object {
                 Isabella Foster
               </p>
             </div>
+            <div
+              class="col-2"
+            />
           </div>
         </button>
         <button
@@ -133,7 +145,7 @@ Object {
               />
             </div>
             <div
-              class="col-10"
+              class="col-8"
             >
               <p
                 class="m-0 fw-bold"
@@ -141,6 +153,9 @@ Object {
                 Noah Anderson
               </p>
             </div>
+            <div
+              class="col-2"
+            />
           </div>
         </button>
         <button
@@ -160,7 +175,7 @@ Object {
               />
             </div>
             <div
-              class="col-10"
+              class="col-8"
             >
               <p
                 class="m-0 fw-bold"
@@ -168,6 +183,9 @@ Object {
                 Sophia Campbell
               </p>
             </div>
+            <div
+              class="col-2"
+            />
           </div>
         </button>
       </div>
@@ -194,7 +212,7 @@ Object {
             />
           </div>
           <div
-            class="col-10"
+            class="col-8"
           >
             <p
               class="m-0 fw-bold"
@@ -202,6 +220,9 @@ Object {
               Alexander Reed
             </p>
           </div>
+          <div
+            class="col-2"
+          />
         </div>
       </button>
       <button
@@ -221,7 +242,7 @@ Object {
             />
           </div>
           <div
-            class="col-10"
+            class="col-8"
           >
             <p
               class="m-0 fw-bold"
@@ -229,6 +250,9 @@ Object {
               Ava Roberts
             </p>
           </div>
+          <div
+            class="col-2"
+          />
         </div>
       </button>
       <button
@@ -248,7 +272,7 @@ Object {
             />
           </div>
           <div
-            class="col-10"
+            class="col-8"
           >
             <p
               class="m-0 fw-bold"
@@ -256,6 +280,9 @@ Object {
               Ethan Thompson
             </p>
           </div>
+          <div
+            class="col-2"
+          />
         </div>
       </button>
       <button
@@ -275,7 +302,7 @@ Object {
             />
           </div>
           <div
-            class="col-10"
+            class="col-8"
           >
             <p
               class="m-0 fw-bold"
@@ -283,6 +310,9 @@ Object {
               Isabella Foster
             </p>
           </div>
+          <div
+            class="col-2"
+          />
         </div>
       </button>
       <button
@@ -302,7 +332,7 @@ Object {
             />
           </div>
           <div
-            class="col-10"
+            class="col-8"
           >
             <p
               class="m-0 fw-bold"
@@ -310,6 +340,9 @@ Object {
               Noah Anderson
             </p>
           </div>
+          <div
+            class="col-2"
+          />
         </div>
       </button>
       <button
@@ -329,7 +362,7 @@ Object {
             />
           </div>
           <div
-            class="col-10"
+            class="col-8"
           >
             <p
               class="m-0 fw-bold"
@@ -337,6 +370,9 @@ Object {
               Sophia Campbell
             </p>
           </div>
+          <div
+            class="col-2"
+          />
         </div>
       </button>
     </div>
