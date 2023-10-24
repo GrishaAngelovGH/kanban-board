@@ -4,11 +4,12 @@ import ListGroup from "react-bootstrap/ListGroup"
 
 import users from "users"
 
-const User = ({ name, image }) => {
+const User = ({ id, name, image, onSelect }) => {
   const [isSelected, setIsSelected] = useState(false)
 
   const handleToggle = () => {
     setIsSelected(!isSelected)
+    onSelect(!isSelected, id)
   }
 
   return (
@@ -26,16 +27,30 @@ const User = ({ name, image }) => {
   )
 }
 
-const UserList = () => (
-  <ListGroup>
-    {
-      users.map(v => (
-        <ListGroup.Item key={v.id} action>
-          <User name={v.name} image={v.image} />
-        </ListGroup.Item>
-      ))
+const UserList = () => {
+  const [ids, setIds] = useState([])
+
+  const handleSelectUser = (shouldAdd, id) => {
+    if (shouldAdd) {
+      setIds([...ids, id])
     }
-  </ListGroup>
-)
+
+    if (!shouldAdd) {
+      setIds(ids.filter(v => v !== id))
+    }
+  }
+
+  return (
+    <ListGroup>
+      {
+        users.map(v => (
+          <ListGroup.Item key={v.id} action>
+            <User id={v.id} name={v.name} image={v.image} onSelect={handleSelectUser} />
+          </ListGroup.Item>
+        ))
+      }
+    </ListGroup>
+  )
+}
 
 export default UserList
