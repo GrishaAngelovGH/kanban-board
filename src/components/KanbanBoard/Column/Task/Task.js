@@ -19,7 +19,7 @@ const Task = ({ id, columnId, title, description, onEdit, onAssignUser, onDelete
   }
 
   const handleAssignUser = () => {
-    onAssignUser({ id, title, description })
+    onAssignUser({ id, title, description }, columnId)
   }
 
   return (

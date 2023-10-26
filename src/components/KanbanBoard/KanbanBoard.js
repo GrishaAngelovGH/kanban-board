@@ -51,8 +51,9 @@ const KanbanBoard = () => {
     setShowEditTaskModal(!showEditTaskModal)
   }
 
-  const toggleAssignUserModal = task => {
+  const toggleAssignUserModal = (task, columnId) => {
     setTask(task)
+    setColumnId(columnId)
     setShowAssignUserModal(!showAssignUserModal)
   }
 
@@ -96,6 +97,15 @@ const KanbanBoard = () => {
     setColumns(boardRepository.getColumns())
 
     setToastMessage("Task is successfully edited")
+    setShowToast(true)
+  }
+
+  const handleConfirmAssignUsers = (taskId, assignedIds) => {
+    boardRepository.assignUsersToTask(taskId, columnId, assignedIds)
+    setShowAssignUserModal(!showAssignUserModal)
+    setColumns(boardRepository.getColumns())
+
+    setToastMessage("Users are successfully assigned")
     setShowToast(true)
   }
 
@@ -202,6 +212,7 @@ const KanbanBoard = () => {
             show={showAssignUserModal}
             task={task}
             onClose={() => { setShowAssignUserModal(!showAssignUserModal) }}
+            onConfirm={handleConfirmAssignUsers}
           />
 
           <ButtonPanel

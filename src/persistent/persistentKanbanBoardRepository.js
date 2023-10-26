@@ -41,7 +41,7 @@ const tasks = {
     const id = Math.random().toString().slice(2)
 
     const currentColumn = columns[columnId]
-    currentColumn.items.push({ id, title: taskTitle, description: taskDescription })
+    currentColumn.items.push({ id, title: taskTitle, description: taskDescription, assignedIds: [] })
 
     localStorage.setItem("columns", JSON.stringify({ ...columns, [columnId]: currentColumn }))
   },
@@ -73,6 +73,14 @@ const tasks = {
         [toColumnId]: toColumn
       }))
     }
+  },
+  assignUsersToTask: (taskId, columnId, assignedIds) => {
+    const columns = JSON.parse(localStorage.getItem("columns"))
+    const currentColumn = columns[columnId]
+    const currentTask = currentColumn.items.find(v => v.id === taskId)
+    currentTask.assignedIds = assignedIds
+
+    localStorage.setItem("columns", JSON.stringify({ ...columns, [columnId]: currentColumn }))
   },
   deleteTask: (taskId, columnId) => {
     const columns = JSON.parse(localStorage.getItem("columns"))
