@@ -31,7 +31,17 @@ Object {
             <div
               class="modal-title h4"
             >
-              Assign users
+              <span>
+                Assign users to the 
+                <span
+                  class="fw-bold"
+                >
+                  "
+                  Title
+                  "
+                </span>
+                 task
+              </span>
             </div>
           </div>
           <div

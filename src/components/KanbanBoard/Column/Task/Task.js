@@ -18,6 +18,10 @@ const Task = ({ id, columnId, title, description, onEdit, onAssignUser, onDelete
     onEdit({ id, title, description }, columnId)
   }
 
+  const handleAssignUser = () => {
+    onAssignUser({ id, title, description })
+  }
+
   return (
     <div ref={setNodeRef} style={style} className="row bg-white mt-3 rounded shadow p-1">
       <div className="col-9">
@@ -30,7 +34,7 @@ const Task = ({ id, columnId, title, description, onEdit, onAssignUser, onDelete
       <div className="d-flex">
         <i role="button" onClick={handleDelete} className="bi bi-trash fs-4 text-danger"></i>
         <i role="button" onClick={handleEdit} className="bi bi-pencil-square fs-4 text-secondary mx-1"></i>
-        <i role="button" onClick={onAssignUser} className="bi bi-person-circle fs-4 text-secondary mx-1"></i>
+        <i role="button" onClick={handleAssignUser} className="bi bi-person-circle fs-4 text-secondary mx-1"></i>
       </div>
     </div>
   )

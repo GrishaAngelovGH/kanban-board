@@ -51,7 +51,8 @@ const KanbanBoard = () => {
     setShowEditTaskModal(!showEditTaskModal)
   }
 
-  const toggleAssignUserModal = () => {
+  const toggleAssignUserModal = task => {
+    setTask(task)
     setShowAssignUserModal(!showAssignUserModal)
   }
 
@@ -199,6 +200,7 @@ const KanbanBoard = () => {
 
           <AssignUserModal
             show={showAssignUserModal}
+            task={task}
             onClose={() => { setShowAssignUserModal(!showAssignUserModal) }}
           />
 
