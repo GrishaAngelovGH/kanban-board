@@ -3,7 +3,8 @@ import { render } from "@testing-library/react"
 import UserList from "./UserList"
 
 test("should render UserList component", () => {
-  const view = render(<UserList />)
+  const onUpdate = jest.fn()
+  const view = render(<UserList onUpdate={onUpdate} />)
 
   expect(view).toMatchSnapshot()
 })

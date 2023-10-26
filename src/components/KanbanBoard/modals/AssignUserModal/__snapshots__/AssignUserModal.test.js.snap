@@ -233,6 +233,7 @@ Object {
             </button>
             <button
               class="btn btn-primary"
+              disabled=""
               type="button"
             >
               Confirm

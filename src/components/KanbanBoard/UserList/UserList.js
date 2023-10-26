@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 import ListGroup from "react-bootstrap/ListGroup"
 
@@ -27,7 +27,7 @@ const User = ({ id, name, image, onSelect }) => {
   )
 }
 
-const UserList = () => {
+const UserList = ({ onUpdate }) => {
   const [ids, setIds] = useState([])
 
   const handleSelectUser = (shouldAdd, id) => {
@@ -39,6 +39,10 @@ const UserList = () => {
       setIds(ids.filter(v => v !== id))
     }
   }
+
+  useEffect(() => {
+    onUpdate(ids)
+  }, [ids, onUpdate])
 
   return (
     <ListGroup>
