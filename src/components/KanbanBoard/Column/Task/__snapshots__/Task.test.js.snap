@@ -37,6 +37,9 @@ Object {
           Task Description
         </p>
         <div
+          class="mb-3"
+        />
+        <div
           class="d-flex"
         >
           <i
@@ -87,6 +90,9 @@ Object {
       >
         Task Description
       </p>
+      <div
+        class="mb-3"
+      />
       <div
         class="d-flex"
       >

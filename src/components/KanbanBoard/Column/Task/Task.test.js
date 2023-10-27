@@ -8,6 +8,7 @@ test("should render Task component", () => {
       title="Task Title"
       description="Task Description"
       column="Column Title"
+      assignedIds={[]}
     />
   )
 

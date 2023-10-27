@@ -85,6 +85,9 @@ Object {
             Description 1
           </p>
           <div
+            class="mb-3"
+          />
+          <div
             class="d-flex"
           >
             <i
@@ -130,6 +133,9 @@ Object {
           >
             Description 2
           </p>
+          <div
+            class="mb-3"
+          />
           <div
             class="d-flex"
           >
@@ -231,6 +237,9 @@ Object {
           Description 1
         </p>
         <div
+          class="mb-3"
+        />
+        <div
           class="d-flex"
         >
           <i
@@ -276,6 +285,9 @@ Object {
         >
           Description 2
         </p>
+        <div
+          class="mb-3"
+        />
         <div
           class="d-flex"
         >

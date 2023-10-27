@@ -64,6 +64,7 @@ const Column = ({ id, title, description, tasks, onDeleteColumn, onAddTask, onEd
             key={v.id}
             id={v.id}
             columnId={id}
+            assignedIds={v.assignedIds}
             title={v.title}
             description={v.description}
             onEdit={onEditTask}

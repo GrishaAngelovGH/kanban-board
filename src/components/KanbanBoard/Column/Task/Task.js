@@ -1,6 +1,8 @@
 import { useDraggable } from "@dnd-kit/core"
 
-const Task = ({ id, columnId, title, description, onEdit, onAssignUser, onDelete }) => {
+import users from "users"
+
+const Task = ({ id, columnId, assignedIds, title, description, onEdit, onAssignUser, onDelete }) => {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id,
     data: { description, columnId }
@@ -31,6 +33,15 @@ const Task = ({ id, columnId, title, description, onEdit, onAssignUser, onDelete
         <i {...listeners} {...attributes} className="bi bi-grip-horizontal fs-2"></i>
       </div>
       <p className="text-secondary">{description}</p>
+
+      <div className="mb-3">
+        {
+          assignedIds.map(v => (
+            <img key={v} src={users.find(u => u.id === v).image} width={35} className="rounded-circle me-1" alt="assigned-user" />
+          ))
+        }
+      </div>
+
       <div className="d-flex">
         <i role="button" onClick={handleDelete} className="bi bi-trash fs-4 text-danger"></i>
         <i role="button" onClick={handleEdit} className="bi bi-pencil-square fs-4 text-secondary mx-1"></i>
