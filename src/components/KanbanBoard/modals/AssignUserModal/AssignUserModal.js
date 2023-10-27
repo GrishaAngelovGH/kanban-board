@@ -16,9 +16,8 @@ const AssignUserModal = ({ show, task, onClose, onConfirm }) => {
       onClose={onClose}
       onConfirm={handleConfirm}
       title={<span>Assign users to the <span className="fw-bold">"{task?.title}"</span> task</span>}
-      disabledConfirm={!ids.length}
       body={
-        <UserList onUpdate={setIds} />
+        <UserList task={task} onUpdate={setIds} />
       }
     />
   )
