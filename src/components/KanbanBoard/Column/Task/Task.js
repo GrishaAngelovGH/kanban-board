@@ -1,5 +1,8 @@
 import { useDraggable } from "@dnd-kit/core"
 
+import OverlayTrigger from "react-bootstrap/OverlayTrigger"
+import Tooltip from "react-bootstrap/Tooltip"
+
 import users from "users"
 
 const Task = ({ id, columnId, assignedIds, title, description, onEdit, onAssignUser, onDelete }) => {
@@ -36,9 +39,27 @@ const Task = ({ id, columnId, assignedIds, title, description, onEdit, onAssignU
 
       <div className="mb-3">
         {
-          assignedIds.map(v => (
-            <img key={v} src={users.find(u => u.id === v).image} width={35} className="rounded-circle me-1" alt="assigned-user" />
-          ))
+          assignedIds.map(v => {
+            const user = users.find(u => u.id === v)
+
+            const renderTooltip = (props) => (
+              <Tooltip {...props}>
+                {user.name}
+              </Tooltip>
+            )
+
+            return (
+              <OverlayTrigger
+                key={v}
+                placement="top"
+                delay={{ show: 250, hide: 400 }}
+                overlay={renderTooltip}
+              >
+                <img src={user.image} width={35} className="rounded-circle me-1" alt="assigned-user" />
+
+              </OverlayTrigger>
+            )
+          })
         }
       </div>
 
