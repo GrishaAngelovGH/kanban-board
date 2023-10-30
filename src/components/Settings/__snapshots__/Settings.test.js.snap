@@ -36,7 +36,44 @@ Object {
           </div>
           <div
             class="modal-body"
-          />
+          >
+            <div
+              class="list-group"
+            >
+              <div
+                class="fw-bold bg-secondary-subtle list-group-item"
+              >
+                Background
+              </div>
+              <button
+                class="d-flex justify-content-between align-items-center list-group-item list-group-item-action"
+                style="height: 50px;"
+              >
+                <span>
+                  Nature Background
+                </span>
+              </button>
+              <button
+                class="d-flex justify-content-between align-items-center list-group-item list-group-item-action"
+                style="height: 50px;"
+              >
+                <span>
+                  Geometric Background
+                </span>
+                <i
+                  class="bi bi-check-circle-fill text-primary fs-5"
+                />
+              </button>
+              <button
+                class="d-flex justify-content-between align-items-center list-group-item list-group-item-action"
+                style="height: 50px;"
+              >
+                <span>
+                  No Background
+                </span>
+              </button>
+            </div>
+          </div>
           <div
             class="modal-footer"
           >

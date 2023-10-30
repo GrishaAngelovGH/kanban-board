@@ -5,11 +5,18 @@ import Header from "components/Header"
 import KanbanBoard from "components/KanbanBoard"
 import Settings from "components/Settings"
 
+import settingsRepository from "persistent/persistentSettingsRepository"
+
 function App() {
   const [showSettings, setShowSettings] = useState(false)
 
   const toggleSettings = () => {
     setShowSettings(!showSettings)
+  }
+
+  const handleConfirm = settings => {
+    settingsRepository.saveSettings(settings)
+    setShowSettings(false)
   }
 
   return (
@@ -19,7 +26,11 @@ function App() {
         body={<KanbanBoard />}
       />
 
-      <Settings show={showSettings} onClose={toggleSettings} />
+      <Settings
+        show={showSettings}
+        onClose={toggleSettings}
+        onConfirm={handleConfirm}
+      />
     </div>
   );
 }
