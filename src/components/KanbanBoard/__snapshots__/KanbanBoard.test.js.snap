@@ -6,7 +6,8 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="row"
+        class="row kanban-board"
+        style="background-image: url(geometric-triangle-shapes-background.jpg);"
       >
         <div
           class="col-md-12"
@@ -15,7 +16,7 @@ Object {
             class="toast-container top-0 start-50 translate-middle-x"
           />
           <div
-            class="row justify-content-center text-secondary p-5"
+            class="row justify-content-center p-5 text-secondary"
           >
             <div
               class="col-12 col-lg-7 text-center"
@@ -91,7 +92,8 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="row"
+      class="row kanban-board"
+      style="background-image: url(geometric-triangle-shapes-background.jpg);"
     >
       <div
         class="col-md-12"
@@ -100,7 +102,7 @@ Object {
           class="toast-container top-0 start-50 translate-middle-x"
         />
         <div
-          class="row justify-content-center text-secondary p-5"
+          class="row justify-content-center p-5 text-secondary"
         >
           <div
             class="col-12 col-lg-7 text-center"

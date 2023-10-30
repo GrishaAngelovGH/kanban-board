@@ -17,6 +17,17 @@ import NewTaskModal from "./modals/TaskModals/NewTaskModal"
 
 import boardGenerator from "persistent/persistentKanbanBoardGenerator"
 import boardRepository from "persistent/persistentKanbanBoardRepository"
+import settingsRepository from "persistent/persistentSettingsRepository"
+
+import "./KanbanBoard.css"
+
+import natureBackgroundImage from "assets/images/backgrounds/nature-background.jpg"
+import geometricBackgroundImage from "assets/images/backgrounds/geometric-triangle-shapes-background.jpg"
+
+const backgrounds = {
+  "Nature Background": natureBackgroundImage,
+  "Geometric Background": geometricBackgroundImage
+}
 
 const KanbanBoard = () => {
   const [showColumnModal, setShowColumnModal] = useState(false)
@@ -151,9 +162,12 @@ const KanbanBoard = () => {
     setColumns(boardRepository.getColumns())
   }, [showColumnModal])
 
+  const background = settingsRepository.getBackground()
+  const backgroundImage = backgrounds[background]
+
   return (
     <DndContext onDragEnd={handleDragEnd}>
-      <div className="row">
+      <div className="row kanban-board" style={{ backgroundImage: backgroundImage ? `url(${backgroundImage})` : "none" }}>
         <div className="col-md-12">
           <ToastContainer position="top-center">
             <Toast show={showToast} title="Kanban Board" body={toastMessage} onClose={() => setShowToast(false)} />
