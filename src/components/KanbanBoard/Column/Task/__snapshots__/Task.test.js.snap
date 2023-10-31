@@ -10,7 +10,7 @@ Object {
         style="transform: translate3d(0px, 0px, 0);"
       >
         <div
-          class="col-9"
+          class="col-11"
         >
           <p
             class="fw-bold"
@@ -19,7 +19,7 @@ Object {
           </p>
         </div>
         <div
-          class="col-3"
+          class="col-1"
         >
           <i
             aria-describedby=""
@@ -64,7 +64,7 @@ Object {
       style="transform: translate3d(0px, 0px, 0);"
     >
       <div
-        class="col-9"
+        class="col-11"
       >
         <p
           class="fw-bold"
@@ -73,7 +73,7 @@ Object {
         </p>
       </div>
       <div
-        class="col-3"
+        class="col-1"
       >
         <i
           aria-describedby=""

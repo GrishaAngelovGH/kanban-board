@@ -6,6 +6,11 @@ const persistentSettingsRepository = {
     const settings = JSON.parse(localStorage.getItem("settings"))
 
     return settings?.background ? settings.background : "Geometric Background"
+  },
+  getLayout: () => {
+    const settings = JSON.parse(localStorage.getItem("settings"))
+
+    return settings?.layout ? settings.layout : "Grid View"
   }
 }
 

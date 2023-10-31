@@ -7,6 +7,8 @@ import DropdownButton from "react-bootstrap/DropdownButton"
 
 import Task from "./Task"
 
+import settingsRepository from "persistent/persistentSettingsRepository"
+
 import "./Column.css"
 
 const Column = ({ id, title, description, tasks, onDeleteColumn, onAddTask, onEditTask, onDeleteTask, onDeleteAllTasks, onAssignUser }) => {
@@ -24,17 +26,22 @@ const Column = ({ id, title, description, tasks, onDeleteColumn, onAddTask, onEd
     onDeleteAllTasks(id)
   }
 
+  const gridViewClasses = "col-md-5 col-lg-3"
+  const singleColumnViewClasses = "col-md-12 col-lg-7"
+  const isGridView = settingsRepository.getLayout() === "Grid View"
+  const layoutClasses = isGridView ? gridViewClasses : singleColumnViewClasses
+
   return (
     <div
       ref={setNodeRef}
-      className="col-md-5 col-lg-3 bg-secondary-subtle rounded shadow p-4 overflow-auto kanban-column"
+      className={`${layoutClasses} bg-secondary-subtle rounded shadow p-4 overflow-auto kanban-column`}
       style={{ borderStyle: isOver ? "dashed" : "none", cursor: isOver ? "pointer" : "auto" }}
     >
       <div className="row">
-        <div className="col-9">
+        <div className={`${isGridView ? "col-9" : "col-10"}`}>
           <h3>{title}</h3>
         </div>
-        <div className="col-3">
+        <div className={`${isGridView ? "col-3" : "col-2"}`}>
           <ButtonGroup size="sm">
             <Button variant="secondary" disabled>{tasks.length}</Button>
 
@@ -67,6 +74,7 @@ const Column = ({ id, title, description, tasks, onDeleteColumn, onAddTask, onEd
             assignedIds={v.assignedIds}
             title={v.title}
             description={v.description}
+            isGridView={isGridView}
             onEdit={onEditTask}
             onDelete={onDeleteTask}
             onAssignUser={onAssignUser}
