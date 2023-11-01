@@ -18,8 +18,12 @@ Object {
           </h3>
         </div>
         <div
-          class="col-1 text-end"
+          class="col-3 text-end"
         >
+          <i
+            class="bi bi-calendar2-week text-secondary fs-4 me-2"
+            role="button"
+          />
           <i
             class="bi bi-gear text-secondary fs-4"
             role="button"
@@ -42,8 +46,12 @@ Object {
         </h3>
       </div>
       <div
-        class="col-1 text-end"
+        class="col-3 text-end"
       >
+        <i
+          class="bi bi-calendar2-week text-secondary fs-4 me-2"
+          role="button"
+        />
         <i
           class="bi bi-gear text-secondary fs-4"
           role="button"

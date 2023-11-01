@@ -19,6 +19,9 @@ import boardGenerator from "persistent/persistentKanbanBoardGenerator"
 import boardRepository from "persistent/persistentKanbanBoardRepository"
 import settingsRepository from "persistent/persistentSettingsRepository"
 
+import Calendar from "react-calendar"
+import "react-calendar/dist/Calendar.css"
+
 import "./KanbanBoard.css"
 
 import natureBackgroundImage from "assets/images/backgrounds/nature-background.jpg"
@@ -29,7 +32,7 @@ const backgrounds = {
   "Geometric Background": geometricBackgroundImage
 }
 
-const KanbanBoard = () => {
+const KanbanBoard = ({ showCalendar }) => {
   const [showColumnModal, setShowColumnModal] = useState(false)
   const [showClearBoardModal, setShowClearBoardModal] = useState(false)
   const [showAddTaskModal, setShowAddTaskModal] = useState(false)
@@ -172,6 +175,8 @@ const KanbanBoard = () => {
           <ToastContainer position="top-center">
             <Toast show={showToast} title="Kanban Board" body={toastMessage} onClose={() => setShowToast(false)} />
           </ToastContainer>
+
+          {showCalendar && <Calendar />}
 
           {
             !columns.length && (<EmptyBoard />)

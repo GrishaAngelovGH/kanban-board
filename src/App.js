@@ -9,9 +9,14 @@ import settingsRepository from "persistent/persistentSettingsRepository"
 
 function App() {
   const [showSettings, setShowSettings] = useState(false)
+  const [showCalendar, setShowCalendar] = useState(false)
 
   const toggleSettings = () => {
     setShowSettings(!showSettings)
+  }
+
+  const toggleCalendar = () => {
+    setShowCalendar(!showCalendar)
   }
 
   const handleConfirm = settings => {
@@ -22,8 +27,8 @@ function App() {
   return (
     <div className="container-fluid">
       <Layout
-        header={<Header onSettingsClick={toggleSettings} />}
-        body={<KanbanBoard />}
+        header={<Header onSettingsClick={toggleSettings} onCalendarClick={toggleCalendar} />}
+        body={<KanbanBoard showCalendar={showCalendar} />}
       />
 
       <Settings
