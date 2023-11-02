@@ -1,0 +1,11 @@
+.json-export-btn > .btn {
+  font-size: 24px;
+  color: rgb(108, 117, 125);
+  padding: 5px;
+  border: none;
+  font-family: initial;
+}
+
+.json-export-btn > .btn:hover {
+  color: rgb(108, 117, 125);
+}

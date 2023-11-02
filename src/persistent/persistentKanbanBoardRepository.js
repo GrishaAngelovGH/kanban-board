@@ -16,6 +16,9 @@ const columns = {
 
     return (columns && Object.values(columns)) || []
   },
+  getStringifiedColumns: () => {
+    return localStorage.getItem("columns")
+  },
   deleteColumn: columnId => {
     const columns = JSON.parse(localStorage.getItem("columns"))
     const { [columnId]: value, ...restColumns } = columns

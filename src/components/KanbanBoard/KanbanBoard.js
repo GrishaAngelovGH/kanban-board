@@ -32,7 +32,7 @@ const backgrounds = {
   "Geometric Background": geometricBackgroundImage
 }
 
-const KanbanBoard = ({ showCalendar }) => {
+const KanbanBoard = ({ showCalendar, onUpdate }) => {
   const [showColumnModal, setShowColumnModal] = useState(false)
   const [showClearBoardModal, setShowClearBoardModal] = useState(false)
   const [showAddTaskModal, setShowAddTaskModal] = useState(false)
@@ -74,6 +74,7 @@ const KanbanBoard = ({ showCalendar }) => {
   const handleGenerateBoardButtonClick = () => {
     boardGenerator.generate()
     setColumns(boardRepository.getColumns())
+    onUpdate()
 
     setToastMessage("Kanban Board is successfully generated")
     setShowToast(true)
@@ -82,6 +83,7 @@ const KanbanBoard = ({ showCalendar }) => {
   const handleConfirmCreateColumn = (title, description) => {
     boardRepository.createColumn(title, description)
     setShowColumnModal(!showColumnModal)
+    onUpdate()
 
     setToastMessage("New column is successfully created")
     setShowToast(true)
@@ -91,6 +93,7 @@ const KanbanBoard = ({ showCalendar }) => {
     boardRepository.deleteAllColumns()
     setColumns([])
     setShowClearBoardModal(!showClearBoardModal)
+    onUpdate()
 
     setToastMessage("Kanban Board is successfully cleared")
     setShowToast(true)
@@ -100,6 +103,7 @@ const KanbanBoard = ({ showCalendar }) => {
     boardRepository.createTask(columnId, title, description)
     setShowAddTaskModal(!showAddTaskModal)
     setColumns(boardRepository.getColumns())
+    onUpdate()
 
     setToastMessage("New task is successfully created")
     setShowToast(true)
@@ -109,6 +113,7 @@ const KanbanBoard = ({ showCalendar }) => {
     boardRepository.updateTask(task, columnId)
     setShowEditTaskModal(!showEditTaskModal)
     setColumns(boardRepository.getColumns())
+    onUpdate()
 
     setToastMessage("Task is successfully edited")
     setShowToast(true)
@@ -118,6 +123,7 @@ const KanbanBoard = ({ showCalendar }) => {
     boardRepository.assignUsersToTask(taskId, columnId, assignedIds)
     setShowAssignUserModal(!showAssignUserModal)
     setColumns(boardRepository.getColumns())
+    onUpdate()
 
     setToastMessage("Users are successfully assigned")
     setShowToast(true)
@@ -126,6 +132,7 @@ const KanbanBoard = ({ showCalendar }) => {
   const handleDeleteColumn = columnId => {
     boardRepository.deleteColumn(columnId)
     setColumns(boardRepository.getColumns())
+    onUpdate()
 
     setToastMessage("Column is successfully deleted")
     setShowToast(true)
@@ -134,6 +141,7 @@ const KanbanBoard = ({ showCalendar }) => {
   const handleDeleteTask = (taskId, columnId) => {
     boardRepository.deleteTask(taskId, columnId)
     setColumns(boardRepository.getColumns())
+    onUpdate()
 
     setToastMessage("Task is successfully deleted")
     setShowToast(true)
@@ -142,6 +150,7 @@ const KanbanBoard = ({ showCalendar }) => {
   const handleDeleteAllTasksForColumn = columnId => {
     boardRepository.deleteAllTasksForColumn(columnId)
     setColumns(boardRepository.getColumns())
+    onUpdate()
 
     setToastMessage("All tasks for the given column are successfully deleted")
     setShowToast(true)
@@ -155,6 +164,7 @@ const KanbanBoard = ({ showCalendar }) => {
 
       boardRepository.moveTask(fromColumnId, toColumnId, taskId)
       setColumns(boardRepository.getColumns())
+      onUpdate()
 
       setToastMessage("Task is successfully moved")
       setShowToast(true)
@@ -163,6 +173,7 @@ const KanbanBoard = ({ showCalendar }) => {
 
   useEffect(() => {
     setColumns(boardRepository.getColumns())
+    onUpdate()
   }, [showColumnModal])
 
   const background = settingsRepository.getBackground()
