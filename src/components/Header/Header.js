@@ -4,7 +4,7 @@ import DropdownButton from "react-bootstrap/DropdownButton"
 
 import "./Header.css"
 
-const Header = ({ downloadJsonHref, disabledExport, onSettingsClick, onCalendarClick }) => {
+const Header = ({ downloadJsonHref, disabledExport, onSettingsClick, onCalendarClick, onImportKanbanBoardClick }) => {
   const filename = `kanban-board-${new Date().toString().toLowerCase().split(" ").slice(0, 5).join("-")}.json`
 
   return (
@@ -28,6 +28,10 @@ const Header = ({ downloadJsonHref, disabledExport, onSettingsClick, onCalendarC
           >
             <i className="bi bi-box-arrow-up text-secondary fs-5 mx-1"></i>
             Export to JSON
+          </Dropdown.Item>
+          <Dropdown.Item onClick={onImportKanbanBoardClick}>
+            <i className="bi bi-box-arrow-down text-secondary fs-5 mx-1"></i>
+            Import from JSON
           </Dropdown.Item>
         </DropdownButton>
 

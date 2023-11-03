@@ -12,6 +12,7 @@ function App() {
   const [showSettings, setShowSettings] = useState(false)
   const [showCalendar, setShowCalendar] = useState(false)
   const [downloadJsonHref, setDownloadJsonHref] = useState("")
+  const [showUploadBoardModal, setShowUploadBoardModal] = useState(false)
 
   const toggleSettings = () => {
     setShowSettings(!showSettings)
@@ -23,11 +24,15 @@ function App() {
 
   const handleKanbanBoardUpdate = () => {
     const jsonString = boardRepository.getStringifiedColumns()
-    const blob = new Blob([jsonString], { type: 'application/json' })
+    const blob = new Blob([jsonString], { type: "application/json" })
     setDownloadJsonHref(URL.createObjectURL(blob))
   }
 
-  const handleConfirm = settings => {
+  const toggleUploadKanbanBoardModal = () => {
+    setShowUploadBoardModal(!showUploadBoardModal)
+  }
+
+  const handleConfirmSettings = settings => {
     settingsRepository.saveSettings(settings)
     setShowSettings(false)
   }
@@ -37,14 +42,29 @@ function App() {
   return (
     <div className="container-fluid">
       <Layout
-        header={<Header downloadJsonHref={downloadJsonHref} disabledExport={disabledExport} onSettingsClick={toggleSettings} onCalendarClick={toggleCalendar} />}
-        body={<KanbanBoard showCalendar={showCalendar} onUpdate={handleKanbanBoardUpdate} />}
+        header={
+          <Header
+            downloadJsonHref={downloadJsonHref}
+            disabledExport={disabledExport}
+            onCalendarClick={toggleCalendar}
+            onImportKanbanBoardClick={toggleUploadKanbanBoardModal}
+            onSettingsClick={toggleSettings}
+          />
+        }
+        body={
+          <KanbanBoard
+            showCalendar={showCalendar}
+            showUploadBoardModal={showUploadBoardModal}
+            onUpdate={handleKanbanBoardUpdate}
+            onToggleUploadKanbanBoardModal={toggleUploadKanbanBoardModal}
+          />
+        }
       />
 
       <Settings
         show={showSettings}
         onClose={toggleSettings}
-        onConfirm={handleConfirm}
+        onConfirm={handleConfirmSettings}
       />
     </div>
   );

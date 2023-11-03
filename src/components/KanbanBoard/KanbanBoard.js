@@ -14,6 +14,7 @@ import ColumnModal from "./modals/ColumnModal"
 import AssignUserModal from "./modals/AssignUserModal"
 import EditTaskModal from "./modals/TaskModals/EditTaskModal"
 import NewTaskModal from "./modals/TaskModals/NewTaskModal"
+import UploadBoardModal from "./modals/UploadBoardModal"
 
 import boardGenerator from "persistent/persistentKanbanBoardGenerator"
 import boardRepository from "persistent/persistentKanbanBoardRepository"
@@ -32,7 +33,7 @@ const backgrounds = {
   "Geometric Background": geometricBackgroundImage
 }
 
-const KanbanBoard = ({ showCalendar, onUpdate }) => {
+const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUploadKanbanBoardModal }) => {
   const [showColumnModal, setShowColumnModal] = useState(false)
   const [showClearBoardModal, setShowClearBoardModal] = useState(false)
   const [showAddTaskModal, setShowAddTaskModal] = useState(false)
@@ -126,6 +127,16 @@ const KanbanBoard = ({ showCalendar, onUpdate }) => {
     onUpdate()
 
     setToastMessage("Users are successfully assigned")
+    setShowToast(true)
+  }
+
+  const handleConfirmKanbanBoardImport = kanbanBoardJson => {
+    boardRepository.setColumnsJSON(kanbanBoardJson)
+    onToggleUploadKanbanBoardModal()
+    setColumns(boardRepository.getColumns())
+    onUpdate()
+
+    setToastMessage("Kanban Board is successfully imported")
     setShowToast(true)
   }
 
@@ -242,6 +253,12 @@ const KanbanBoard = ({ showCalendar, onUpdate }) => {
             task={task}
             onClose={() => { setShowAssignUserModal(!showAssignUserModal) }}
             onConfirm={handleConfirmAssignUsers}
+          />
+
+          <UploadBoardModal
+            show={showUploadBoardModal}
+            onClose={onToggleUploadKanbanBoardModal}
+            onConfirm={handleConfirmKanbanBoardImport}
           />
 
           <ButtonPanel
