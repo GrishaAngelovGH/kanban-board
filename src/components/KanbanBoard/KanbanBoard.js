@@ -173,7 +173,6 @@ const KanbanBoard = ({ showCalendar, onUpdate }) => {
 
   useEffect(() => {
     setColumns(boardRepository.getColumns())
-    onUpdate()
   }, [showColumnModal])
 
   const background = settingsRepository.getBackground()

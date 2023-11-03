@@ -32,10 +32,12 @@ function App() {
     setShowSettings(false)
   }
 
+  const disabledExport = !boardRepository.getColumns().length
+
   return (
     <div className="container-fluid">
       <Layout
-        header={<Header downloadJsonHref={downloadJsonHref} onSettingsClick={toggleSettings} onCalendarClick={toggleCalendar} />}
+        header={<Header downloadJsonHref={downloadJsonHref} disabledExport={disabledExport} onSettingsClick={toggleSettings} onCalendarClick={toggleCalendar} />}
         body={<KanbanBoard showCalendar={showCalendar} onUpdate={handleKanbanBoardUpdate} />}
       />
 
