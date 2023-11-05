@@ -11,18 +11,26 @@ import settingsRepository from "persistent/persistentSettingsRepository"
 
 import "./Column.css"
 
-const Column = ({ id, title, description, tasks, onDeleteColumn, onAddTask, onEditTask, onDeleteTask, onDeleteAllTasks, onAssignUser }) => {
+const Column = ({
+  id, title, description, tasks, markedAsDone,
+  onDeleteColumn, onAddTask, onEditTask, onDeleteTask,
+  onDeleteAllTasks, onAssignUser, onMarkColumnAsDone
+}) => {
   const { isOver, setNodeRef } = useDroppable({ id })
 
   const handleDeleteAction = () => {
     onDeleteColumn(id)
   }
 
-  const hadleAddTask = () => {
+  const handleAddTask = () => {
     onAddTask(id)
   }
 
-  const hadleDeleteAllTasks = () => {
+  const handleMarkAsDone = () => {
+    onMarkColumnAsDone(id)
+  }
+
+  const handleDeleteAllTasks = () => {
     onDeleteAllTasks(id)
   }
 
@@ -38,23 +46,29 @@ const Column = ({ id, title, description, tasks, onDeleteColumn, onAddTask, onEd
       style={{ borderStyle: isOver ? "dashed" : "none", cursor: isOver ? "pointer" : "auto" }}
     >
       <div className="row">
-        <div className={`${isGridView ? "col-9" : "col-10"}`}>
+        <div className={`${isGridView ? "col-7 col-lg-8" : "col-10"}`}>
           <h3>{title}</h3>
         </div>
-        <div className={`${isGridView ? "col-3" : "col-2"}`}>
+        <div className={`${isGridView ? "col-5 col-lg-4" : "col-2"}`}>
           <ButtonGroup size="sm">
+            {markedAsDone && <Button variant="secondary-subtle" className="bi bi-check-circle-fill text-success" disabled />}
+
             <Button variant="secondary" disabled>{tasks.length}</Button>
 
             <DropdownButton as={ButtonGroup} size="sm" variant="light" title={<i className="bi bi-three-dots-vertical"></i>}>
-              <Dropdown.Item onClick={hadleAddTask}>
+              <Dropdown.Item onClick={handleAddTask}>
                 <i className="bi bi-plus-circle-fill text-primary mx-1"></i>
                 Add Task
+              </Dropdown.Item>
+              <Dropdown.Item onClick={handleMarkAsDone}>
+                <i className="bi bi-check-square-fill text-success mx-1"></i>
+                {markedAsDone ? "Unmark as Done" : "Mark as Done"}
               </Dropdown.Item>
               <Dropdown.Item onClick={handleDeleteAction}>
                 <i className="bi bi-x-circle-fill text-danger mx-1"></i>
                 Delete Column
               </Dropdown.Item>
-              <Dropdown.Item onClick={hadleDeleteAllTasks}>
+              <Dropdown.Item onClick={handleDeleteAllTasks}>
                 <i className="bi bi-x-circle-fill text-danger mx-1"></i>
                 Delete All Tasks
               </Dropdown.Item>
@@ -75,6 +89,7 @@ const Column = ({ id, title, description, tasks, onDeleteColumn, onAddTask, onEd
             title={v.title}
             description={v.description}
             isGridView={isGridView}
+            markedAsDone={markedAsDone}
             onEdit={onEditTask}
             onDelete={onDeleteTask}
             onAssignUser={onAssignUser}

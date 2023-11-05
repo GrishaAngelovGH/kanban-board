@@ -22,6 +22,7 @@ const persistentKanbanBoardGenerator = {
         id: "13372358665210715",
         title: "Done",
         description: "Provide the work items that are considered completed or finished in the process of development.",
+        markedAsDone: true,
         items: [
           { id: "3489073798557012", title: "Show notification after successfull order confirmation", description: "The system should be able to show relevant notification after the user successfully confirm current order.", assignedIds: [] }
         ]

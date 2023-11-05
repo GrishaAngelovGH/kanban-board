@@ -5,7 +5,10 @@ import Tooltip from "react-bootstrap/Tooltip"
 
 import users from "users"
 
-const Task = ({ id, columnId, assignedIds, title, description, isGridView, onEdit, onAssignUser, onDelete }) => {
+const Task = ({
+  id, columnId, assignedIds, title, description,
+  isGridView, markedAsDone, onEdit, onAssignUser, onDelete
+}) => {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id,
     data: { description, columnId }
@@ -28,7 +31,7 @@ const Task = ({ id, columnId, assignedIds, title, description, isGridView, onEdi
   }
 
   return (
-    <div ref={setNodeRef} style={style} className="row bg-white mt-3 rounded shadow p-1">
+    <div ref={setNodeRef} style={style} className={`row ${markedAsDone ? "bg-success-subtle" : "bg-white"} mt-3 rounded shadow p-1`}>
       <div className={`${isGridView ? "col-9" : "col-11"}`}>
         <p className="fw-bold">{title}</p>
       </div>

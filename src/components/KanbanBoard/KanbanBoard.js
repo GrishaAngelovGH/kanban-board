@@ -140,6 +140,15 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
     setShowToast(true)
   }
 
+  const handleMarkColumnAsDone = columnId => {
+    boardRepository.toggleMarkAsDoneColumn(columnId)
+    setColumns(boardRepository.getColumns())
+    onUpdate()
+
+    setToastMessage("Column status is successfully changed")
+    setShowToast(true)
+  }
+
   const handleDeleteColumn = columnId => {
     boardRepository.deleteColumn(columnId)
     setColumns(boardRepository.getColumns())
@@ -212,12 +221,14 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
                   title={v.title}
                   description={v.description}
                   tasks={v.items}
+                  markedAsDone={v.markedAsDone}
                   onDeleteColumn={handleDeleteColumn}
                   onAddTask={toggleAddTaskModal}
                   onEditTask={toggleEditTaskModal}
                   onDeleteTask={handleDeleteTask}
                   onDeleteAllTasks={handleDeleteAllTasksForColumn}
                   onAssignUser={toggleAssignUserModal}
+                  onMarkColumnAsDone={handleMarkColumnAsDone}
                 />
               ))
             }

@@ -13,14 +13,14 @@ Object {
           class="row"
         >
           <div
-            class="col-9"
+            class="col-7 col-lg-8"
           >
             <h3>
               Column Title
             </h3>
           </div>
           <div
-            class="col-3"
+            class="col-5 col-lg-4"
           >
             <div
               class="btn-group btn-group-sm"
@@ -165,14 +165,14 @@ Object {
         class="row"
       >
         <div
-          class="col-9"
+          class="col-7 col-lg-8"
         >
           <h3>
             Column Title
           </h3>
         </div>
         <div
-          class="col-3"
+          class="col-5 col-lg-4"
         >
           <div
             class="btn-group btn-group-sm"

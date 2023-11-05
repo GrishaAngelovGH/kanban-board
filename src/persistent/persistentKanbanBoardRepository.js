@@ -22,6 +22,13 @@ const columns = {
   setColumnsJSON: columnsJSON => {
     localStorage.setItem("columns", JSON.stringify(columnsJSON))
   },
+  toggleMarkAsDoneColumn: columnId => {
+    const columns = JSON.parse(localStorage.getItem("columns"))
+    const currentColumn = columns[columnId]
+    currentColumn.markedAsDone = !currentColumn.markedAsDone
+
+    localStorage.setItem("columns", JSON.stringify({ ...columns, [columnId]: currentColumn }))
+  },
   deleteColumn: columnId => {
     const columns = JSON.parse(localStorage.getItem("columns"))
     const { [columnId]: value, ...restColumns } = columns
