@@ -100,8 +100,8 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
     setShowToast(true)
   }
 
-  const handleConfirmCreateTask = (title, description) => {
-    boardRepository.createTask(columnId, title, description)
+  const handleConfirmCreateTask = (title, description, priority) => {
+    boardRepository.createTask(columnId, title, description, priority)
     setShowAddTaskModal(!showAddTaskModal)
     setColumns(boardRepository.getColumns())
     onUpdate()

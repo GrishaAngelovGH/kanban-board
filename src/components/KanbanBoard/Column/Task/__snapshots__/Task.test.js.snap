@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="row bg-white mt-3 rounded shadow p-1"
+        class="row bg-white border border-3 border-success mt-3 rounded shadow p-1"
         style="transform: translate3d(0px, 0px, 0);"
       >
         <div
@@ -40,19 +40,24 @@ Object {
           class="mb-3"
         />
         <div
-          class="d-flex"
+          class="d-flex justify-content-between"
         >
+          <div>
+            <i
+              class="bi bi-trash fs-4 text-danger"
+              role="button"
+            />
+            <i
+              class="bi bi-pencil-square fs-4 text-secondary mx-1"
+              role="button"
+            />
+            <i
+              class="bi bi-person-circle fs-4 text-secondary mx-1"
+              role="button"
+            />
+          </div>
           <i
-            class="bi bi-trash fs-4 text-danger"
-            role="button"
-          />
-          <i
-            class="bi bi-pencil-square fs-4 text-secondary mx-1"
-            role="button"
-          />
-          <i
-            class="bi bi-person-circle fs-4 text-secondary mx-1"
-            role="button"
+            class="bi bi-bookmark-fill fs-4 text-success"
           />
         </div>
       </div>
@@ -60,7 +65,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="row bg-white mt-3 rounded shadow p-1"
+      class="row bg-white border border-3 border-success mt-3 rounded shadow p-1"
       style="transform: translate3d(0px, 0px, 0);"
     >
       <div
@@ -94,19 +99,24 @@ Object {
         class="mb-3"
       />
       <div
-        class="d-flex"
+        class="d-flex justify-content-between"
       >
+        <div>
+          <i
+            class="bi bi-trash fs-4 text-danger"
+            role="button"
+          />
+          <i
+            class="bi bi-pencil-square fs-4 text-secondary mx-1"
+            role="button"
+          />
+          <i
+            class="bi bi-person-circle fs-4 text-secondary mx-1"
+            role="button"
+          />
+        </div>
         <i
-          class="bi bi-trash fs-4 text-danger"
-          role="button"
-        />
-        <i
-          class="bi bi-pencil-square fs-4 text-secondary mx-1"
-          role="button"
-        />
-        <i
-          class="bi bi-person-circle fs-4 text-secondary mx-1"
-          role="button"
+          class="bi bi-bookmark-fill fs-4 text-success"
         />
       </div>
     </div>

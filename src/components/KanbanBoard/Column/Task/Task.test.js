@@ -9,6 +9,7 @@ test("should render Task component", () => {
       description="Task Description"
       column="Column Title"
       assignedIds={[]}
+      priority="medium"
     />
   )
 

@@ -88,6 +88,7 @@ const Column = ({
             assignedIds={v.assignedIds}
             title={v.title}
             description={v.description}
+            priority={v.priority}
             isGridView={isGridView}
             markedAsDone={markedAsDone}
             onEdit={onEditTask}

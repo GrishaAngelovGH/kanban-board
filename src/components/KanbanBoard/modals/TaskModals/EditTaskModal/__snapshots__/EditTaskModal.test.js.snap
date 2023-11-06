@@ -49,7 +49,7 @@ Object {
                   value="Task Title"
                 />
                 <div
-                  class="form-floating"
+                  class="mb-3 form-floating"
                 >
                   <textarea
                     class="form-control"
@@ -60,6 +60,34 @@ Object {
                     Description
                   </label>
                 </div>
+                <select
+                  class="form-select"
+                >
+                  <option
+                    class="text-secondary fw-bold"
+                    value=""
+                  >
+                    No Priority
+                  </option>
+                  <option
+                    class="text-warning fw-bold"
+                    value="low"
+                  >
+                    Low Priority
+                  </option>
+                  <option
+                    class="text-success fw-bold"
+                    value="medium"
+                  >
+                    Medium Priority
+                  </option>
+                  <option
+                    class="text-danger fw-bold"
+                    value="high"
+                  >
+                    High Priority
+                  </option>
+                </select>
               </div>
             </div>
           </div>
