@@ -23,7 +23,7 @@ const Task = ({
 }) => {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id,
-    data: { description, columnId }
+    data: { columnId }
   })
 
   const style = transform ? {
