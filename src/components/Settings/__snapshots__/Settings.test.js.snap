@@ -38,7 +38,8 @@ Object {
             class="modal-body"
           >
             <div
-              class="list-group"
+              class="overflow-auto list-group"
+              style="height: 320px;"
             >
               <div
                 class="fw-bold bg-secondary-subtle list-group-item"
@@ -101,6 +102,30 @@ Object {
                   />
                   Single Column
                 </span>
+              </button>
+              <div
+                class="fw-bold bg-secondary-subtle list-group-item"
+              >
+                Column Style
+              </div>
+              <button
+                class="d-flex justify-content-between align-items-center list-group-item list-group-item-action"
+                style="height: 50px;"
+              >
+                <span>
+                  Solid
+                </span>
+              </button>
+              <button
+                class="d-flex justify-content-between align-items-center list-group-item list-group-item-action"
+                style="height: 50px;"
+              >
+                <span>
+                  Blurred
+                </span>
+                <i
+                  class="bi bi-check-circle-fill text-primary fs-5"
+                />
               </button>
             </div>
           </div>

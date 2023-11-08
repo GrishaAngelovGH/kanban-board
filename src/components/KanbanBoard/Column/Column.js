@@ -36,24 +36,36 @@ const Column = ({
 
   const gridViewClasses = "col-md-5 col-lg-3"
   const singleColumnViewClasses = "col-md-12 col-lg-7"
-  const isGridView = settingsRepository.getLayout() === "Grid View"
+  const isGridView = settingsRepository.isGridView()
+  const hasNoBackground = settingsRepository.hasNoBackground()
+  const hasSolidColumnStyle = settingsRepository.hasSolidColumnStyle()
   const layoutClasses = isGridView ? gridViewClasses : singleColumnViewClasses
+  const columnStyle = hasSolidColumnStyle ? "solid-column" : "blurred-column"
+
+  // Generally, when "solid" column is chosen, the text should be dark.
+  // When the column is set to "blurred" and the background is set to "No Background", the text should be dark.
+  // When the column is set to "blurred" and the background is different than "No Background", the text should be light.
+
+  const titleClass = hasSolidColumnStyle || hasNoBackground ? "text-dark" : "text-white"
+  const descriptionClass = hasSolidColumnStyle || hasNoBackground ? "text-secondary" : "text-white"
+  const checkButtonClass = hasSolidColumnStyle ? "secondary-subtle" : "light"
+  const taskLengthButtonClass = hasSolidColumnStyle ? "secondary" : "light"
 
   return (
     <div
       ref={setNodeRef}
-      className={`${layoutClasses} bg-secondary-subtle rounded shadow p-4 overflow-auto kanban-column`}
+      className={`${layoutClasses} ${columnStyle} rounded p-4 overflow-auto kanban-column`}
       style={{ borderStyle: isOver ? "dashed" : "none", cursor: isOver ? "pointer" : "auto" }}
     >
       <div className="row">
         <div className={`${isGridView ? "col-7 col-lg-8" : "col-10"}`}>
-          <h3>{title}</h3>
+          <h3 className={`${titleClass} text-break`}>{title}</h3>
         </div>
         <div className={`${isGridView ? "col-5 col-lg-4" : "col-2"}`}>
           <ButtonGroup size="sm">
-            {markedAsDone && <Button variant="secondary-subtle" className="bi bi-check-circle-fill text-success" disabled />}
+            {markedAsDone && <Button variant={checkButtonClass} className="bi bi-check-circle-fill text-success" disabled />}
 
-            <Button variant="secondary" disabled>{tasks.length}</Button>
+            <Button variant={taskLengthButtonClass} disabled>{tasks.length}</Button>
 
             <DropdownButton as={ButtonGroup} size="sm" variant="light" title={<i className="bi bi-three-dots-vertical"></i>}>
               <Dropdown.Item onClick={handleAddTask}>
@@ -77,7 +89,7 @@ const Column = ({
         </div>
       </div>
 
-      <p className="text-secondary">{description}</p>
+      <p className={descriptionClass}>{description}</p>
 
       {
         tasks.map(v => (

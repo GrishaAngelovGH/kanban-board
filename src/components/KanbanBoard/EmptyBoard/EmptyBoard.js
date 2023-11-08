@@ -1,7 +1,7 @@
 import settingsRepository from "persistent/persistentSettingsRepository"
 
 const EmptyBoard = () => {
-  const textColor = settingsRepository.getBackground() === "Nature Background" ? "text-white" : "text-secondary"
+  const textColor = settingsRepository.hasNatureBackground() ? "text-white" : "text-secondary"
 
   return (
     <div className={`row justify-content-center p-5 ${textColor}`}>
