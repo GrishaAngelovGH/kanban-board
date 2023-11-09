@@ -25,3 +25,9 @@ code {
   background-color: darkgray;
   border-radius: 10px;
 }
+
+*,
+button[type="button"]:not(:disabled),
+i[role="button"] {
+  cursor: url(./assets/cursors/cursor.png), default;
+}
