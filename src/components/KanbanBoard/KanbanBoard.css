@@ -3,6 +3,10 @@
   background-size: cover;
 }
 
+.kanban-board .toast-container {
+  position: fixed;
+}
+
 .react-calendar {
   position: fixed;
   right: 4%;
