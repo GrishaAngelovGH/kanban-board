@@ -15,3 +15,9 @@
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
+
+.modal-open > .modal-backdrop {
+  --bs-backdrop-bg: transparent;
+  --bs-backdrop-opacity: 1;
+  backdrop-filter: blur(100px);
+}
