@@ -55,7 +55,7 @@ const Column = ({
     <div
       ref={setNodeRef}
       className={`${layoutClasses} ${columnStyle} rounded p-4 overflow-auto kanban-column`}
-      style={{ borderStyle: isOver ? "dashed" : "none", cursor: isOver ? "pointer" : "auto" }}
+      style={{ borderStyle: isOver ? "dashed" : "none" }}
     >
       <div className="row">
         <div className={`${isGridView ? "col-7 col-lg-8" : "col-10"}`}>
