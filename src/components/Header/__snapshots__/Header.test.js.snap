@@ -1,167 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render CalendarButton component 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <i
-        class="bi bi-calendar2-week text-secondary fs-4"
-        role="button"
-      />
-    </div>
-  </body>,
-  "container": <div>
-    <i
-      class="bi bi-calendar2-week text-secondary fs-4"
-      role="button"
-    />
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
-`;
-
-exports[`should render ExchangeButton component 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <div
-        class="json-export-btn dropdown btn-group"
-        role="group"
-      >
-        <button
-          aria-expanded="false"
-          class="dropdown-toggle btn btn-bg-secondary"
-          type="button"
-        >
-          <i
-            class="bi bi-filetype-json"
-          />
-        </button>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="json-export-btn dropdown btn-group"
-      role="group"
-    >
-      <button
-        aria-expanded="false"
-        class="dropdown-toggle btn btn-bg-secondary"
-        type="button"
-      >
-        <i
-          class="bi bi-filetype-json"
-        />
-      </button>
-    </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
-`;
-
 exports[`should render Header component 1`] = `
 Object {
   "asFragment": [Function],
@@ -182,28 +20,33 @@ Object {
         <div
           class="col-4 text-end"
         >
-          <i
-            class="bi bi-calendar2-week text-secondary fs-4"
-            role="button"
-          />
           <div
-            class="json-export-btn dropdown btn-group"
+            class="btn-group"
             role="group"
           >
             <button
-              aria-expanded="false"
-              class="dropdown-toggle btn btn-bg-secondary"
+              class="bi bi-calendar2-week btn btn-outline-secondary"
               type="button"
+            />
+            <div
+              class="dropdown btn-group"
+              role="group"
             >
-              <i
-                class="bi bi-filetype-json"
-              />
-            </button>
+              <button
+                aria-expanded="false"
+                class="dropdown-toggle btn btn-outline-secondary"
+                type="button"
+              >
+                <i
+                  class="bi bi-filetype-json"
+                />
+              </button>
+            </div>
+            <button
+              class="bi bi-gear btn btn-outline-secondary"
+              type="button"
+            />
           </div>
-          <i
-            class="bi bi-gear text-secondary fs-4"
-            role="button"
-          />
         </div>
       </div>
     </div>
@@ -224,101 +67,35 @@ Object {
       <div
         class="col-4 text-end"
       >
-        <i
-          class="bi bi-calendar2-week text-secondary fs-4"
-          role="button"
-        />
         <div
-          class="json-export-btn dropdown btn-group"
+          class="btn-group"
           role="group"
         >
           <button
-            aria-expanded="false"
-            class="dropdown-toggle btn btn-bg-secondary"
+            class="bi bi-calendar2-week btn btn-outline-secondary"
             type="button"
+          />
+          <div
+            class="dropdown btn-group"
+            role="group"
           >
-            <i
-              class="bi bi-filetype-json"
-            />
-          </button>
+            <button
+              aria-expanded="false"
+              class="dropdown-toggle btn btn-outline-secondary"
+              type="button"
+            >
+              <i
+                class="bi bi-filetype-json"
+              />
+            </button>
+          </div>
+          <button
+            class="bi bi-gear btn btn-outline-secondary"
+            type="button"
+          />
         </div>
-        <i
-          class="bi bi-gear text-secondary fs-4"
-          role="button"
-        />
       </div>
     </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
-`;
-
-exports[`should render SettingsButton component 1`] = `
-Object {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <i
-        class="bi bi-gear text-secondary fs-4"
-        role="button"
-      />
-    </div>
-  </body>,
-  "container": <div>
-    <i
-      class="bi bi-gear text-secondary fs-4"
-      role="button"
-    />
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

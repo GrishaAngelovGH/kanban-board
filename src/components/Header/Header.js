@@ -1,22 +1,16 @@
+import Button from "react-bootstrap/Button"
 import ButtonGroup from "react-bootstrap/ButtonGroup"
 import Dropdown from "react-bootstrap/Dropdown"
 import DropdownButton from "react-bootstrap/DropdownButton"
 
-import "./Header.css"
-
-export const CalendarButton = ({ onClick }) => (
-  <i role="button" className="bi bi-calendar2-week text-secondary fs-4" onClick={onClick}></i>
-)
-
-export const ExchangeButton = ({ downloadJsonHref, disabledExport, onImportKanbanBoardClick }) => {
+const ExchangeButton = ({ downloadJsonHref, disabledExport, onImportKanbanBoardClick }) => {
   const filename = `kanban-board-${new Date().toString().toLowerCase().split(" ").slice(0, 5).join("-")}.json`
 
   return (
     <DropdownButton
       as={ButtonGroup}
-      variant="bg-secondary"
+      variant="outline-secondary"
       title={<i className="bi bi-filetype-json"></i>}
-      className="json-export-btn"
     >
       <Dropdown.Item
         href={downloadJsonHref}
@@ -34,10 +28,6 @@ export const ExchangeButton = ({ downloadJsonHref, disabledExport, onImportKanba
   )
 }
 
-export const SettingsButton = ({ onClick }) => (
-  <i role="button" className="bi bi-gear text-secondary fs-4" onClick={onClick}></i>
-)
-
 const Header = ({
   downloadJsonHref, disabledExport,
   onSettingsClick, onCalendarClick, onImportKanbanBoardClick
@@ -47,15 +37,25 @@ const Header = ({
       <h3 className="m-0">Kanban Board</h3>
     </div>
     <div className="col-4 text-end">
-      <CalendarButton onClick={onCalendarClick} />
+      <ButtonGroup>
+        <Button
+          variant="outline-secondary"
+          className="bi bi-calendar2-week"
+          onClick={onCalendarClick}
+        />
 
-      <ExchangeButton
-        downloadJsonHref={downloadJsonHref}
-        disabledExport={disabledExport}
-        onImportKanbanBoardClick={onImportKanbanBoardClick}
-      />
+        <ExchangeButton
+          downloadJsonHref={downloadJsonHref}
+          disabledExport={disabledExport}
+          onImportKanbanBoardClick={onImportKanbanBoardClick}
+        />
 
-      <SettingsButton onClick={onSettingsClick} />
+        <Button
+          variant="outline-secondary"
+          className="bi bi-gear"
+          onClick={onSettingsClick}
+        />
+      </ButtonGroup>
     </div>
   </div>
 )
