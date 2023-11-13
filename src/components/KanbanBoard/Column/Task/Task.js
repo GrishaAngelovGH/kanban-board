@@ -46,7 +46,7 @@ const Task = ({
   const borderClass = priorityStyles[priority]
 
   return (
-    <div ref={setNodeRef} style={style} className={`row ${bgClass} ${borderClass} mt-3 rounded shadow p-1`}>
+    <div ref={setNodeRef} style={style} className={`row m-0 ${bgClass} ${borderClass} mt-3 rounded shadow p-1`}>
       <div className={`${isGridView ? "col-9" : "col-11"}`}>
         <p className="fw-bold">{title}</p>
       </div>

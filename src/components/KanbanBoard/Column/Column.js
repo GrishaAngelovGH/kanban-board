@@ -91,24 +91,26 @@ const Column = ({
 
       <p className={descriptionClass}>{description}</p>
 
-      {
-        tasks.map(v => (
-          <Task
-            key={v.id}
-            id={v.id}
-            columnId={id}
-            assignedIds={v.assignedIds}
-            title={v.title}
-            description={v.description}
-            priority={v.priority}
-            isGridView={isGridView}
-            markedAsDone={markedAsDone}
-            onEdit={onEditTask}
-            onDelete={onDeleteTask}
-            onAssignUser={onAssignUser}
-          />
-        ))
-      }
+      <div className="overflow-hidden">
+        {
+          tasks.map(v => (
+            <Task
+              key={v.id}
+              id={v.id}
+              columnId={id}
+              assignedIds={v.assignedIds}
+              title={v.title}
+              description={v.description}
+              priority={v.priority}
+              isGridView={isGridView}
+              markedAsDone={markedAsDone}
+              onEdit={onEditTask}
+              onDelete={onDeleteTask}
+              onAssignUser={onAssignUser}
+            />
+          ))
+        }
+      </div>
     </div>
   )
 }
