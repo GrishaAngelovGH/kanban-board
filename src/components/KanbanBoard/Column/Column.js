@@ -59,7 +59,7 @@ const Column = ({
     >
       <div className="row">
         <div className={`${isGridView ? "col-7 col-lg-8" : "col-10"}`}>
-          <h3 className={`${titleClass} text-break`}>{title}</h3>
+          <h3 className={`${titleClass} text-break text-capitalize`}>{title}</h3>
         </div>
         <div className={`${isGridView ? "col-5 col-lg-4" : "col-2"}`}>
           <ButtonGroup size="sm">

@@ -13,7 +13,7 @@ Object {
           class="col-11"
         >
           <p
-            class="fw-bold"
+            class="fw-bold text-capitalize"
           >
             Task Title
           </p>
@@ -72,7 +72,7 @@ Object {
         class="col-11"
       >
         <p
-          class="fw-bold"
+          class="fw-bold text-capitalize"
         >
           Task Title
         </p>
