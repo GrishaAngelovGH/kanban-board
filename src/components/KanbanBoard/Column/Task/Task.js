@@ -73,8 +73,7 @@ const Task = ({
                 delay={{ show: 250, hide: 400 }}
                 overlay={renderTooltip}
               >
-                <img src={user.image} width={35} className="rounded-circle me-1" alt="assigned-user" />
-
+                <img src={user.image} width={35} className="rounded-circle m-1" alt="assigned-user" />
               </OverlayTrigger>
             )
           })
