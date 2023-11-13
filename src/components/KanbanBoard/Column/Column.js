@@ -89,7 +89,7 @@ const Column = ({
         </div>
       </div>
 
-      <p className={descriptionClass}>{description}</p>
+      <p className={`${descriptionClass} column-description`}>{description}</p>
 
       <div className="overflow-hidden">
         {

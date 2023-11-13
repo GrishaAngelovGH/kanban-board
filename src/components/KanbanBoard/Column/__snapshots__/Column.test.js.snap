@@ -53,7 +53,7 @@ Object {
           </div>
         </div>
         <p
-          class="text-white"
+          class="text-white column-description"
         >
           Column Description
         </p>
@@ -221,7 +221,7 @@ Object {
         </div>
       </div>
       <p
-        class="text-white"
+        class="text-white column-description"
       >
         Column Description
       </p>
