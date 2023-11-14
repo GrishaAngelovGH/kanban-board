@@ -1,10 +1,8 @@
 import { useState } from "react"
 
-import Modal from "components/Modal"
-import FloatingLabel from "react-bootstrap/FloatingLabel"
-import Form from "react-bootstrap/Form"
+import TaskModal from "../TaskModal"
 
-const TaskModal = ({ show, onClose, onConfirm }) => {
+const NewTaskModal = ({ show, onClose, onConfirm }) => {
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
   const [priority, setPriority] = useState("")
@@ -29,40 +27,19 @@ const TaskModal = ({ show, onClose, onConfirm }) => {
   }
 
   return (
-    <Modal
+    <TaskModal
       show={show}
+      modalTitle="Create New Task"
+      title={title}
+      description={description}
+      priority={priority}
+      onTitleChange={handleTitleChange}
+      onDescriptionChange={handleDescriptionChange}
+      onPriorityChange={handlePriorityChange}
       onClose={onClose}
       onConfirm={handleConfirm}
-      title="Create New Task"
-      disabledConfirm={!title.length || !description.length}
-      body={
-        <div className="row">
-          <div className="col-md-12">
-            <Form.Control
-              value={title}
-              placeholder="Title"
-              className="mb-3"
-              onChange={handleTitleChange}
-            />
-
-            <FloatingLabel
-              label="Description"
-              className="mb-3"
-            >
-              <Form.Control as="textarea" value={description} onChange={handleDescriptionChange} />
-            </FloatingLabel>
-
-            <Form.Select value={priority} onChange={handlePriorityChange}>
-              <option value="" className="text-secondary fw-bold">No Priority</option>
-              <option value="low" className="text-warning fw-bold">Low Priority</option>
-              <option value="medium" className="text-success fw-bold">Medium Priority</option>
-              <option value="high" className="text-danger fw-bold">High Priority</option>
-            </Form.Select>
-          </div>
-        </div>
-      }
     />
   )
 }
 
-export default TaskModal
+export default NewTaskModal
