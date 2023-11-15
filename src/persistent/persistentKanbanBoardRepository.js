@@ -6,7 +6,7 @@ const columns = {
 
     const newColumn = JSON.stringify({
       ...columns,
-      [id]: { id, title, description, items: [] }
+      [id]: { id, title, description, limit: 0, items: [] }
     })
 
     localStorage.setItem("columns", newColumn)
@@ -21,6 +21,13 @@ const columns = {
   },
   setColumnsJSON: columnsJSON => {
     localStorage.setItem("columns", JSON.stringify(columnsJSON))
+  },
+  setColumnLimit: (columnId, limit) => {
+    const columns = JSON.parse(localStorage.getItem("columns"))
+    const currentColumn = columns[columnId]
+    currentColumn.limit = limit
+
+    localStorage.setItem("columns", JSON.stringify({ ...columns, [columnId]: currentColumn }))
   },
   toggleMarkAsDoneColumn: columnId => {
     const columns = JSON.parse(localStorage.getItem("columns"))

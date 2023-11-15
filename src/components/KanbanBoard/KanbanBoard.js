@@ -176,6 +176,12 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
     setShowToast(true)
   }
 
+  const handleSetColumnLimit = (columnId, limit) => {
+    boardRepository.setColumnLimit(columnId, limit)
+    setColumns(boardRepository.getColumns())
+    onUpdate()
+  }
+
   const handleDragEnd = ({ active: { id, data: { current: { columnId } } }, over }) => {
     if (over) {
       const fromColumnId = columnId
@@ -187,6 +193,9 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
       onUpdate()
 
       setToastMessage("Task is successfully moved")
+      setShowToast(true)
+    } else {
+      setToastMessage("The task could not be moved because the column has reached its limit")
       setShowToast(true)
     }
   }
@@ -221,6 +230,7 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
                   title={v.title}
                   description={v.description}
                   tasks={v.items}
+                  limit={v.limit}
                   markedAsDone={v.markedAsDone}
                   onDeleteColumn={handleDeleteColumn}
                   onAddTask={toggleAddTaskModal}
@@ -229,6 +239,7 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
                   onDeleteAllTasks={handleDeleteAllTasksForColumn}
                   onAssignUser={toggleAssignUserModal}
                   onMarkColumnAsDone={handleMarkColumnAsDone}
+                  onSetColumnLimit={handleSetColumnLimit}
                 />
               ))
             }

@@ -1,9 +1,13 @@
+import { useState } from "react"
+
 import { useDroppable } from "@dnd-kit/core"
 
 import Button from "react-bootstrap/Button"
 import ButtonGroup from "react-bootstrap/ButtonGroup"
 import Dropdown from "react-bootstrap/Dropdown"
 import DropdownButton from "react-bootstrap/DropdownButton"
+import Form from 'react-bootstrap/Form'
+import InputGroup from 'react-bootstrap/InputGroup'
 
 import Task from "./Task"
 
@@ -12,15 +16,17 @@ import settingsRepository from "persistent/persistentSettingsRepository"
 import "./Column.css"
 
 const Column = ({
-  id, title, description, tasks, markedAsDone,
+  id, title, description, tasks, limit, markedAsDone,
   onDeleteColumn, onAddTask, onEditTask, onDeleteTask,
-  onDeleteAllTasks, onAssignUser, onMarkColumnAsDone
+  onDeleteAllTasks, onAssignUser, onMarkColumnAsDone, onSetColumnLimit
 }) => {
-  const { isOver, setNodeRef } = useDroppable({ id })
+  const [currentLimit, setCurrentLimit] = useState(limit)
+  const [showLimit, setShowLimit] = useState(false)
 
-  const handleDeleteAction = () => {
-    onDeleteColumn(id)
-  }
+  const { isOver, setNodeRef } = useDroppable({
+    id,
+    disabled: limit > 0 && limit === tasks.length
+  })
 
   const handleAddTask = () => {
     onAddTask(id)
@@ -30,8 +36,30 @@ const Column = ({
     onMarkColumnAsDone(id)
   }
 
+  const handleDeleteAction = () => {
+    onDeleteColumn(id)
+  }
+
   const handleDeleteAllTasks = () => {
     onDeleteAllTasks(id)
+  }
+
+  const handleShowLimit = () => {
+    setShowLimit(true)
+  }
+
+  const handleCancelLimit = () => {
+    setCurrentLimit(limit)
+    setShowLimit(false)
+  }
+
+  const handleLimitChange = ({ target: { valueAsNumber } }) => {
+    setCurrentLimit(valueAsNumber)
+  }
+
+  const handleLimitConfirm = () => {
+    setShowLimit(false)
+    onSetColumnLimit(id, currentLimit)
   }
 
   const gridViewClasses = "col-md-5 col-lg-3"
@@ -59,7 +87,7 @@ const Column = ({
     >
       <div className="row">
         <div className={`${isGridView ? "col-7 col-lg-8" : "col-10"}`}>
-          <h3 className={`${titleClass} text-break text-capitalize`}>{title}</h3>
+          <h3 className={`${titleClass} text-break text-capitalize`}>{title} {limit > 0 && `(${tasks.length} / ${limit})`}</h3>
         </div>
         <div className={`${isGridView ? "col-5 col-lg-4" : "col-2"}`}>
           <ButtonGroup size="sm">
@@ -84,12 +112,41 @@ const Column = ({
                 <i className="bi bi-x-circle-fill text-danger mx-1"></i>
                 Delete All Tasks
               </Dropdown.Item>
+              <Dropdown.Item onClick={handleShowLimit}>
+                <i className="bi bi-exclamation-circle-fill text-warning mx-1"></i>
+                Set Task Limit
+              </Dropdown.Item>
             </DropdownButton>
           </ButtonGroup>
         </div>
       </div>
 
       <p className={`${descriptionClass} column-description`}>{description}</p>
+
+      {
+        showLimit && (
+          <InputGroup>
+            <Form.Control
+              type="number"
+              min={0}
+              value={currentLimit}
+              onChange={handleLimitChange}
+            />
+            <Button
+              variant="secondary"
+              onClick={handleCancelLimit}
+            >
+              Cancel
+            </Button>
+            <Button
+              variant="success"
+              disabled={currentLimit < tasks.length && currentLimit > 0}
+              onClick={handleLimitConfirm}>
+              OK
+            </Button>
+          </InputGroup>
+        )
+      }
 
       <div className="overflow-hidden">
         {

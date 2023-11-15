@@ -33,7 +33,7 @@ Object {
                     </h3>
                   </div>
                   <div
-                    class="col-4 text-end"
+                    class="col-5 text-end"
                   >
                     <div
                       class="btn-group"
@@ -191,7 +191,7 @@ Object {
                   </h3>
                 </div>
                 <div
-                  class="col-4 text-end"
+                  class="col-5 text-end"
                 >
                   <div
                     class="btn-group"

@@ -19,6 +19,7 @@ Object {
               class="text-white text-break text-capitalize"
             >
               Column Title
+               
             </h3>
           </div>
           <div
@@ -187,6 +188,7 @@ Object {
             class="text-white text-break text-capitalize"
           >
             Column Title
+             
           </h3>
         </div>
         <div

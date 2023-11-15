@@ -36,7 +36,7 @@ const Header = ({
     <div className="col col-md-3 col-lg-2">
       <h3 className="m-0">Kanban Board</h3>
     </div>
-    <div className="col-4 text-end">
+    <div className="col-5 text-end">
       <ButtonGroup>
         <Button
           variant="outline-secondary"
