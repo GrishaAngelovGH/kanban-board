@@ -1,6 +1,6 @@
 import Modal from "components/Modal"
-import FloatingLabel from "react-bootstrap/FloatingLabel"
 import Form from "react-bootstrap/Form"
+import Editor from "react-simple-wysiwyg"
 
 const TaskModal = ({
   show, modalTitle, title, description, priority,
@@ -22,14 +22,9 @@ const TaskModal = ({
             onChange={onTitleChange}
           />
 
-          <FloatingLabel
-            label="Description"
-            className="mb-3"
-          >
-            <Form.Control as="textarea" value={description} onChange={onDescriptionChange} />
-          </FloatingLabel>
+          <Editor value={description} onChange={onDescriptionChange} />
 
-          <Form.Select value={priority} onChange={onPriorityChange}>
+          <Form.Select value={priority} onChange={onPriorityChange} className="mt-3">
             <option value="" className="text-secondary fw-bold">No Priority</option>
             <option value="low" className="text-warning fw-bold">Low Priority</option>
             <option value="medium" className="text-success fw-bold">Medium Priority</option>
