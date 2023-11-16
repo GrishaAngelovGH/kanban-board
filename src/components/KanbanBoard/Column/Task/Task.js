@@ -4,6 +4,7 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger"
 import Tooltip from "react-bootstrap/Tooltip"
 
 import users from "users"
+import parse from "html-react-parser"
 
 const priorityStyles = {
   "low": "border border-3 border-warning",
@@ -50,10 +51,12 @@ const Task = ({
       <div className={`${isGridView ? "col-9" : "col-11"}`}>
         <p className="fw-bold text-capitalize">{title}</p>
       </div>
+
       <div className={`${isGridView ? "col-3" : "col-1"}`}>
         <i {...listeners} {...attributes} className="bi bi-grip-horizontal fs-2"></i>
       </div>
-      <p className="text-secondary">{description}</p>
+
+      <div className="text-secondary">{parse(description)}</div>
 
       <div className="mb-3">
         {

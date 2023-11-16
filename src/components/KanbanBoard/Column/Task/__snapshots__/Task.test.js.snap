@@ -31,11 +31,11 @@ Object {
             tabindex="0"
           />
         </div>
-        <p
+        <div
           class="text-secondary"
         >
           Task Description
-        </p>
+        </div>
         <div
           class="mb-3"
         />
@@ -90,11 +90,11 @@ Object {
           tabindex="0"
         />
       </div>
-      <p
+      <div
         class="text-secondary"
       >
         Task Description
-      </p>
+      </div>
       <div
         class="mb-3"
       />

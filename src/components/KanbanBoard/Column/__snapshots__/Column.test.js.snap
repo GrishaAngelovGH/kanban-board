@@ -85,11 +85,11 @@ Object {
                 tabindex="0"
               />
             </div>
-            <p
+            <div
               class="text-secondary"
             >
               Description 1
-            </p>
+            </div>
             <div
               class="mb-3"
             />
@@ -139,11 +139,11 @@ Object {
                 tabindex="0"
               />
             </div>
-            <p
+            <div
               class="text-secondary"
             >
               Description 2
-            </p>
+            </div>
             <div
               class="mb-3"
             />
@@ -254,11 +254,11 @@ Object {
               tabindex="0"
             />
           </div>
-          <p
+          <div
             class="text-secondary"
           >
             Description 1
-          </p>
+          </div>
           <div
             class="mb-3"
           />
@@ -308,11 +308,11 @@ Object {
               tabindex="0"
             />
           </div>
-          <p
+          <div
             class="text-secondary"
           >
             Description 2
-          </p>
+          </div>
           <div
             class="mb-3"
           />
