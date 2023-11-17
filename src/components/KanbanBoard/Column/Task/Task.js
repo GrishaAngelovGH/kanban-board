@@ -6,6 +6,8 @@ import Tooltip from "react-bootstrap/Tooltip"
 import users from "users"
 import parse from "html-react-parser"
 
+import "./Task.css"
+
 const priorityStyles = {
   "low": "border border-3 border-warning",
   "medium": "border border-3 border-success",
@@ -56,7 +58,9 @@ const Task = ({
         <i {...listeners} {...attributes} className="bi bi-grip-horizontal fs-2"></i>
       </div>
 
-      <div className="text-secondary">{parse(description)}</div>
+      <div className="text-secondary overflow-auto task-description">
+        {parse(description)}
+      </div>
 
       <div className="mb-3">
         {

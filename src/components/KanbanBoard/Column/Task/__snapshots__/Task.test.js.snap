@@ -32,7 +32,7 @@ Object {
           />
         </div>
         <div
-          class="text-secondary"
+          class="text-secondary overflow-auto task-description"
         >
           Task Description
         </div>
@@ -91,7 +91,7 @@ Object {
         />
       </div>
       <div
-        class="text-secondary"
+        class="text-secondary overflow-auto task-description"
       >
         Task Description
       </div>

@@ -86,7 +86,7 @@ Object {
               />
             </div>
             <div
-              class="text-secondary"
+              class="text-secondary overflow-auto task-description"
             >
               Description 1
             </div>
@@ -140,7 +140,7 @@ Object {
               />
             </div>
             <div
-              class="text-secondary"
+              class="text-secondary overflow-auto task-description"
             >
               Description 2
             </div>
@@ -255,7 +255,7 @@ Object {
             />
           </div>
           <div
-            class="text-secondary"
+            class="text-secondary overflow-auto task-description"
           >
             Description 1
           </div>
@@ -309,7 +309,7 @@ Object {
             />
           </div>
           <div
-            class="text-secondary"
+            class="text-secondary overflow-auto task-description"
           >
             Description 2
           </div>
