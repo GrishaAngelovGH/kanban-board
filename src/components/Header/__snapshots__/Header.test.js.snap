@@ -18,12 +18,16 @@ Object {
           </h3>
         </div>
         <div
-          class="col-5 text-end"
+          class="col-6 col-md-3 col-lg-2 text-end"
         >
           <div
             class="btn-group"
             role="group"
           >
+            <button
+              class="bi bi-arrows-fullscreen btn btn-outline-secondary"
+              type="button"
+            />
             <button
               class="bi bi-calendar2-week btn btn-outline-secondary"
               type="button"
@@ -65,12 +69,16 @@ Object {
         </h3>
       </div>
       <div
-        class="col-5 text-end"
+        class="col-6 col-md-3 col-lg-2 text-end"
       >
         <div
           class="btn-group"
           role="group"
         >
+          <button
+            class="bi bi-arrows-fullscreen btn btn-outline-secondary"
+            type="button"
+          />
           <button
             class="bi bi-calendar2-week btn btn-outline-secondary"
             type="button"
