@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { DndContext } from "@dnd-kit/core"
 
 import Toast from "components/Toast"
@@ -7,6 +7,7 @@ import ToastContainer from "react-bootstrap/ToastContainer"
 import ButtonPanel from "./ButtonPanel"
 import Column from "./Column"
 import EmptyBoard from "./EmptyBoard"
+import NavigationButtons from "./NavigationButtons"
 
 import ClearBoardModal from "./modals/ClearBoardModal"
 import ColumnModal from "./modals/ColumnModal"
@@ -46,6 +47,8 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
 
   const [showToast, setShowToast] = useState(false)
   const [toastMessage, setToastMessage] = useState("")
+
+  const scrollRef = useRef()
 
   const toggleColumnModal = () => {
     setShowColumnModal(!showColumnModal)
@@ -206,6 +209,7 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
 
   const background = settingsRepository.getBackground()
   const backgroundImage = backgrounds[background]
+  const isSingleRowView = settingsRepository.isSingleRowView()
 
   return (
     <DndContext onDragEnd={handleDragEnd}>
@@ -221,7 +225,11 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
             !columns.length && (<EmptyBoard />)
           }
 
-          <div className="row p-5">
+          {
+            isSingleRowView && (<NavigationButtons ref={scrollRef} />)
+          }
+
+          <div ref={scrollRef} className={`row ${isSingleRowView ? "flex-nowrap overflow-x-hidden pt-3 p-5" : "p-5"}`}>
             {
               columns.map(v => (
                 <Column

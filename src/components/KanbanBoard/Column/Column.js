@@ -65,9 +65,10 @@ const Column = ({
   const gridViewClasses = "col-md-5 col-lg-3"
   const singleColumnViewClasses = "col-md-12 col-lg-7"
   const isGridView = settingsRepository.isGridView()
+  const isSingleRowView = settingsRepository.isSingleRowView()
   const hasNoBackground = settingsRepository.hasNoBackground()
   const hasSolidColumnStyle = settingsRepository.hasSolidColumnStyle()
-  const layoutClasses = isGridView ? gridViewClasses : singleColumnViewClasses
+  const layoutClasses = isGridView || isSingleRowView ? gridViewClasses : singleColumnViewClasses
   const columnStyle = hasSolidColumnStyle ? "solid-column" : "blurred-column"
 
   // Generally, when "solid" column is chosen, the text should be dark.
@@ -86,10 +87,10 @@ const Column = ({
       style={{ borderStyle: isOver ? "dashed" : "none" }}
     >
       <div className="row">
-        <div className={`${isGridView ? "col-7 col-lg-8" : "col-10"}`}>
+        <div className={`${isGridView || isSingleRowView ? "col-7 col-lg-8" : "col-10"}`}>
           <h3 className={`${titleClass} text-break text-capitalize`}>{title} {limit > 0 && `(${tasks.length} / ${limit})`}</h3>
         </div>
-        <div className={`${isGridView ? "col-5 col-lg-4" : "col-2"}`}>
+        <div className={`${isGridView || isSingleRowView ? "col-5 col-lg-4" : "col-2"}`}>
           <ButtonGroup size="sm">
             {markedAsDone && <Button variant={checkButtonClass} className="bi bi-check-circle-fill text-success" disabled />}
 
@@ -160,6 +161,7 @@ const Column = ({
               description={v.description}
               priority={v.priority}
               isGridView={isGridView}
+              isSingleRowView={isSingleRowView}
               markedAsDone={markedAsDone}
               onEdit={onEditTask}
               onDelete={onDeleteTask}

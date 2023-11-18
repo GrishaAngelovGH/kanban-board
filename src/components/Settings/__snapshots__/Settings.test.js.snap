@@ -103,6 +103,17 @@ Object {
                   Single Column
                 </span>
               </button>
+              <button
+                class="d-flex justify-content-between align-items-center list-group-item list-group-item-action"
+                style="height: 50px;"
+              >
+                <span>
+                  <i
+                    class="bi bi-layout-three-columns me-2"
+                  />
+                  Single Row
+                </span>
+              </button>
               <div
                 class="fw-bold bg-secondary-subtle list-group-item"
               >

@@ -32,7 +32,7 @@ const Settings = ({ show, onClose, onConfirm }) => {
   }
 
   const backgrounds = ["Nature Background", "Geometric Background", "No Background"]
-  const layoutOptions = [{ label: "Grid View", icon: "grid-3x3" }, { label: "Single Column", icon: "view-stacked" }]
+  const layoutOptions = [{ label: "Grid View", icon: "grid-3x3" }, { label: "Single Column", icon: "view-stacked" }, , { label: "Single Row", icon: "layout-three-columns" }]
   const columnStyleOptions = ["Solid", "Blurred"]
 
   return (

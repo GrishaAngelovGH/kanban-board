@@ -22,6 +22,11 @@ const persistentSettingsRepository = {
 
     return settings?.layout ? settings.layout === "Grid View" : true
   },
+  isSingleRowView: () => {
+    const settings = JSON.parse(localStorage.getItem("settings"))
+
+    return settings?.layout ? settings.layout === "Single Row" : false
+  },
   hasNoBackground: () => {
     const settings = JSON.parse(localStorage.getItem("settings"))
 

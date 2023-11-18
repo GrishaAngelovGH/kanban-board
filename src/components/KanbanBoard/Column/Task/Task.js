@@ -22,7 +22,7 @@ const bookmarkStyles = {
 
 const Task = ({
   id, columnId, assignedIds, title, description, priority,
-  isGridView, markedAsDone, onEdit, onAssignUser, onDelete
+  isGridView, isSingleRowView, markedAsDone, onEdit, onAssignUser, onDelete
 }) => {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id,
@@ -50,11 +50,11 @@ const Task = ({
 
   return (
     <div ref={setNodeRef} style={style} className={`row m-0 ${bgClass} ${borderClass} mt-3 rounded shadow p-1`}>
-      <div className={`${isGridView ? "col-9" : "col-11"}`}>
+      <div className={`${isGridView || isSingleRowView ? "col-9" : "col-11"}`}>
         <p className="fw-bold text-capitalize">{title}</p>
       </div>
 
-      <div className={`${isGridView ? "col-3" : "col-1"}`}>
+      <div className={`${isGridView || isSingleRowView ? "col-3" : "col-1"}`}>
         <i {...listeners} {...attributes} className="bi bi-grip-horizontal fs-2"></i>
       </div>
 
