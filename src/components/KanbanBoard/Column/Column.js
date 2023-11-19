@@ -79,6 +79,14 @@ const Column = ({
   const checkButtonClass = hasSolidColumnStyle ? "secondary-subtle" : "light"
   const taskLengthButtonClass = hasSolidColumnStyle ? "secondary" : "light"
 
+  const menuItems = [
+    { label: "Add Task", icon: "bi bi-plus-circle-fill text-primary mx-1", onClick: handleAddTask },
+    { label: markedAsDone ? "Unmark as Done" : "Mark as Done", icon: "bi bi-check-square-fill text-success mx-1", onClick: handleMarkAsDone },
+    { label: "Delete Column", icon: "bi bi-x-circle-fill text-danger mx-1", onClick: handleDeleteAction },
+    { label: "Delete All Tasks", icon: "bi bi-x-circle-fill text-danger mx-1", onClick: handleDeleteAllTasks },
+    { label: "Set Task Limit", icon: "bi bi-exclamation-circle-fill text-warning mx-1", onClick: handleShowLimit }
+  ]
+
   return (
     <div
       ref={setNodeRef}
@@ -96,26 +104,14 @@ const Column = ({
             <Button variant={taskLengthButtonClass} disabled>{tasks.length}</Button>
 
             <DropdownButton as={ButtonGroup} size="sm" variant="light" title={<i className="bi bi-three-dots-vertical"></i>}>
-              <Dropdown.Item onClick={handleAddTask}>
-                <i className="bi bi-plus-circle-fill text-primary mx-1"></i>
-                Add Task
-              </Dropdown.Item>
-              <Dropdown.Item onClick={handleMarkAsDone}>
-                <i className="bi bi-check-square-fill text-success mx-1"></i>
-                {markedAsDone ? "Unmark as Done" : "Mark as Done"}
-              </Dropdown.Item>
-              <Dropdown.Item onClick={handleDeleteAction}>
-                <i className="bi bi-x-circle-fill text-danger mx-1"></i>
-                Delete Column
-              </Dropdown.Item>
-              <Dropdown.Item onClick={handleDeleteAllTasks}>
-                <i className="bi bi-x-circle-fill text-danger mx-1"></i>
-                Delete All Tasks
-              </Dropdown.Item>
-              <Dropdown.Item onClick={handleShowLimit}>
-                <i className="bi bi-exclamation-circle-fill text-warning mx-1"></i>
-                Set Task Limit
-              </Dropdown.Item>
+              {
+                menuItems.map((v, i) => (
+                  <Dropdown.Item key={i} onClick={v.onClick}>
+                    <i className={v.icon}></i>
+                    {v.label}
+                  </Dropdown.Item>
+                ))
+              }
             </DropdownButton>
           </ButtonGroup>
         </div>
