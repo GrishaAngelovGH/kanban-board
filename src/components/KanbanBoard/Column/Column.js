@@ -6,10 +6,9 @@ import Button from "react-bootstrap/Button"
 import ButtonGroup from "react-bootstrap/ButtonGroup"
 import Dropdown from "react-bootstrap/Dropdown"
 import DropdownButton from "react-bootstrap/DropdownButton"
-import Form from 'react-bootstrap/Form'
-import InputGroup from 'react-bootstrap/InputGroup'
 
 import Task from "./Task"
+import TaskLimitInput from "./TaskLimitInput"
 
 import settingsRepository from "persistent/persistentSettingsRepository"
 
@@ -53,11 +52,11 @@ const Column = ({
     setShowLimit(false)
   }
 
-  const handleLimitChange = ({ target: { valueAsNumber } }) => {
+  const handleChangeLimit = ({ target: { valueAsNumber } }) => {
     setCurrentLimit(valueAsNumber)
   }
 
-  const handleLimitConfirm = () => {
+  const handleConfirmLimit = () => {
     setShowLimit(false)
     onSetColumnLimit(id, currentLimit)
   }
@@ -126,26 +125,13 @@ const Column = ({
 
       {
         showLimit && (
-          <InputGroup>
-            <Form.Control
-              type="number"
-              min={0}
-              value={currentLimit}
-              onChange={handleLimitChange}
-            />
-            <Button
-              variant="secondary"
-              onClick={handleCancelLimit}
-            >
-              Cancel
-            </Button>
-            <Button
-              variant="success"
-              disabled={currentLimit < tasks.length && currentLimit > 0}
-              onClick={handleLimitConfirm}>
-              OK
-            </Button>
-          </InputGroup>
+          <TaskLimitInput
+            currentLimit={currentLimit}
+            disabledConfirm={currentLimit < tasks.length && currentLimit > 0}
+            onChange={handleChangeLimit}
+            onCancel={handleCancelLimit}
+            onConfirm={handleConfirmLimit}
+          />
         )
       }
 

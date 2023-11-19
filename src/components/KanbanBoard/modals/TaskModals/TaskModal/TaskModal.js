@@ -2,7 +2,7 @@ import Modal from "components/Modal"
 import Form from "react-bootstrap/Form"
 import Editor from "react-simple-wysiwyg"
 
-import './TaskModal.css'
+import "./TaskModal.css"
 
 const TaskModal = ({
   show, modalTitle, title, description, priority,
