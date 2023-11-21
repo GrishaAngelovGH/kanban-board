@@ -226,7 +226,7 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
           }
 
           {
-            isSingleRowView && (<NavigationButtons ref={scrollRef} />)
+            columns.length > 0 && isSingleRowView && (<NavigationButtons ref={scrollRef} />)
           }
 
           <div ref={scrollRef} className={`row ${isSingleRowView ? "flex-nowrap overflow-x-hidden pt-3 p-5" : "p-5"}`}>
