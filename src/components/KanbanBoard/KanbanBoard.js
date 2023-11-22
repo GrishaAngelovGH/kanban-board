@@ -152,6 +152,12 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
     setShowToast(true)
   }
 
+  const handleUpdateColumnTitle = (id, title) => {
+    boardRepository.updateColumnTitle(id, title)
+    setColumns(boardRepository.getColumns())
+    onUpdate()
+  }
+
   const handleDeleteColumn = columnId => {
     boardRepository.deleteColumn(columnId)
     setColumns(boardRepository.getColumns())
@@ -248,6 +254,7 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
                   onAssignUser={toggleAssignUserModal}
                   onMarkColumnAsDone={handleMarkColumnAsDone}
                   onSetColumnLimit={handleSetColumnLimit}
+                  onColumnUpdate={handleUpdateColumnTitle}
                 />
               ))
             }

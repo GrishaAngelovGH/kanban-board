@@ -36,6 +36,13 @@ const columns = {
 
     localStorage.setItem("columns", JSON.stringify({ ...columns, [columnId]: currentColumn }))
   },
+  updateColumnTitle: (columnId, title) => {
+    const columns = JSON.parse(localStorage.getItem("columns"))
+    const currentColumn = columns[columnId]
+    currentColumn.title = title
+
+    localStorage.setItem("columns", JSON.stringify({ ...columns, [columnId]: currentColumn }))
+  },
   deleteColumn: columnId => {
     const columns = JSON.parse(localStorage.getItem("columns"))
     const { [columnId]: value, ...restColumns } = columns

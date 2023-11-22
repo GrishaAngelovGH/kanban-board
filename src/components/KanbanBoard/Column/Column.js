@@ -10,6 +10,8 @@ import DropdownButton from "react-bootstrap/DropdownButton"
 import Task from "./Task"
 import TaskLimitInput from "./TaskLimitInput"
 
+import EditableText from "components/EditableText"
+
 import settingsRepository from "persistent/persistentSettingsRepository"
 
 import "./Column.css"
@@ -17,7 +19,7 @@ import "./Column.css"
 const Column = ({
   id, title, description, tasks, limit, markedAsDone,
   onDeleteColumn, onAddTask, onEditTask, onDeleteTask,
-  onDeleteAllTasks, onAssignUser, onMarkColumnAsDone, onSetColumnLimit
+  onDeleteAllTasks, onAssignUser, onMarkColumnAsDone, onSetColumnLimit, onColumnUpdate
 }) => {
   const [currentLimit, setCurrentLimit] = useState(limit)
   const [showLimit, setShowLimit] = useState(false)
@@ -61,6 +63,10 @@ const Column = ({
     onSetColumnLimit(id, currentLimit)
   }
 
+  const handleTitleUpdate = newTitle => {
+    onColumnUpdate(id, newTitle)
+  }
+
   const gridViewClasses = "col-md-5 col-lg-3"
   const singleColumnViewClasses = "col-md-12 col-lg-7"
   const isGridView = settingsRepository.isGridView()
@@ -95,7 +101,10 @@ const Column = ({
     >
       <div className="row">
         <div className={`${isGridView || isSingleRowView ? "col-7 col-lg-8" : "col-10"}`}>
-          <h3 className={`${titleClass} text-break text-capitalize`}>{title} {limit > 0 && `(${tasks.length} / ${limit})`}</h3>
+          <EditableText onBlur={handleTitleUpdate}>
+            <h3 className={`${titleClass} text-break text-capitalize`}>{title}</h3>
+          </EditableText>
+          <h3 className={titleClass}>{limit > 0 && `(${tasks.length} / ${limit})`}</h3>
         </div>
         <div className={`${isGridView || isSingleRowView ? "col-5 col-lg-4" : "col-2"}`}>
           <ButtonGroup size="sm">
