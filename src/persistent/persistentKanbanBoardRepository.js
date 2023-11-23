@@ -27,21 +27,21 @@ const columns = {
     const currentColumn = columns[columnId]
     currentColumn.limit = limit
 
-    localStorage.setItem("columns", JSON.stringify({ ...columns, [columnId]: currentColumn }))
+    updateColumn(currentColumn)
   },
   toggleMarkAsDoneColumn: columnId => {
     const columns = JSON.parse(localStorage.getItem("columns"))
     const currentColumn = columns[columnId]
     currentColumn.markedAsDone = !currentColumn.markedAsDone
 
-    localStorage.setItem("columns", JSON.stringify({ ...columns, [columnId]: currentColumn }))
+    updateColumn(currentColumn)
   },
   updateColumnTitle: (columnId, title) => {
     const columns = JSON.parse(localStorage.getItem("columns"))
     const currentColumn = columns[columnId]
     currentColumn.title = title
 
-    localStorage.setItem("columns", JSON.stringify({ ...columns, [columnId]: currentColumn }))
+    updateColumn(currentColumn)
   },
   deleteColumn: columnId => {
     const columns = JSON.parse(localStorage.getItem("columns"))
@@ -57,7 +57,7 @@ const columns = {
     const currentColumn = columns[columnId]
     currentColumn.items = []
 
-    localStorage.setItem("columns", JSON.stringify({ ...columns, [columnId]: currentColumn }))
+    updateColumn(currentColumn)
   }
 }
 
@@ -70,7 +70,7 @@ const tasks = {
     const currentColumn = columns[columnId]
     currentColumn.items.push({ id, title: taskTitle, description: taskDescription, assignedIds: [], priority })
 
-    localStorage.setItem("columns", JSON.stringify({ ...columns, [columnId]: currentColumn }))
+    updateColumn(currentColumn)
   },
   updateTask: (task, columnId) => {
     const columns = JSON.parse(localStorage.getItem("columns"))
@@ -81,7 +81,7 @@ const tasks = {
     foundTask.description = task.description
     foundTask.priority = task.priority
 
-    localStorage.setItem("columns", JSON.stringify({ ...columns, [columnId]: currentColumn }))
+    updateColumn(currentColumn)
   },
   moveTask: (fromColumnId, toColumnId, taskId) => {
     if (fromColumnId !== toColumnId) {
@@ -108,15 +108,20 @@ const tasks = {
     const currentTask = currentColumn.items.find(v => v.id === taskId)
     currentTask.assignedIds = assignedIds
 
-    localStorage.setItem("columns", JSON.stringify({ ...columns, [columnId]: currentColumn }))
+    updateColumn(currentColumn)
   },
   deleteTask: (taskId, columnId) => {
     const columns = JSON.parse(localStorage.getItem("columns"))
     const currentColumn = columns[columnId]
     currentColumn.items = currentColumn.items.filter(v => v.id !== taskId)
 
-    localStorage.setItem("columns", JSON.stringify({ ...columns, [columnId]: currentColumn }))
+    updateColumn(currentColumn)
   }
+}
+
+const updateColumn = column => {
+  const columns = JSON.parse(localStorage.getItem("columns"))
+  localStorage.setItem("columns", JSON.stringify({ ...columns, [column.id]: column }))
 }
 
 const persistentKanbanBoardRepository = {
