@@ -59,11 +59,15 @@ Object {
             </div>
           </div>
         </div>
-        <p
-          class="text-white column-description"
+        <div
+          class="editable-text"
         >
-          Column Description
-        </p>
+          <p
+            class="text-white column-description"
+          >
+            Column Description
+          </p>
+        </div>
         <div
           class="overflow-hidden"
         >
@@ -234,11 +238,15 @@ Object {
           </div>
         </div>
       </div>
-      <p
-        class="text-white column-description"
+      <div
+        class="editable-text"
       >
-        Column Description
-      </p>
+        <p
+          class="text-white column-description"
+        >
+          Column Description
+        </p>
+      </div>
       <div
         class="overflow-hidden"
       >

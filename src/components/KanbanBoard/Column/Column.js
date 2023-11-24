@@ -63,8 +63,8 @@ const Column = ({
     onSetColumnLimit(id, currentLimit)
   }
 
-  const handleTitleUpdate = newTitle => {
-    onColumnUpdate(id, newTitle)
+  const handleUpdate = (value, isTextArea) => {
+    onColumnUpdate(id, value, isTextArea)
   }
 
   const gridViewClasses = "col-md-5 col-lg-3"
@@ -101,7 +101,7 @@ const Column = ({
     >
       <div className="row">
         <div className={`${isGridView || isSingleRowView ? "col-7 col-lg-8" : "col-10"}`}>
-          <EditableText onBlur={handleTitleUpdate}>
+          <EditableText onBlur={handleUpdate}>
             <h3 className={`${titleClass} text-break text-capitalize`}>{title}</h3>
           </EditableText>
           <h3 className={titleClass}>{limit > 0 && `(${tasks.length} / ${limit})`}</h3>
@@ -126,7 +126,9 @@ const Column = ({
         </div>
       </div>
 
-      <p className={`${descriptionClass} column-description`}>{description}</p>
+      <EditableText isTextArea onBlur={handleUpdate}>
+        <p className={`${descriptionClass} column-description`}>{description}</p>
+      </EditableText>
 
       {
         showLimit && (
