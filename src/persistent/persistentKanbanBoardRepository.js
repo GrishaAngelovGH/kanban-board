@@ -56,9 +56,6 @@ const columns = {
 
     localStorage.setItem("columns", JSON.stringify(restColumns))
   },
-  deleteAllColumns: () => {
-    localStorage.removeItem("columns")
-  },
   deleteAllTasksForColumn: columnId => {
     const columns = JSON.parse(localStorage.getItem("columns"))
     const currentColumn = columns[columnId]
@@ -126,12 +123,26 @@ const tasks = {
   }
 }
 
+const board = {
+  getBoardTitle: () => {
+    return localStorage.getItem("boardTitle") ? localStorage.getItem("boardTitle") : "Project Management Kanban Board"
+  },
+  updateBoardTitle: title => {
+    localStorage.setItem("boardTitle", title)
+  },
+  clearBoard: () => {
+    localStorage.removeItem("columns")
+    localStorage.removeItem("boardTitle")
+  }
+}
+
 const updateColumn = column => {
   const columns = JSON.parse(localStorage.getItem("columns"))
   localStorage.setItem("columns", JSON.stringify({ ...columns, [column.id]: column }))
 }
 
 const persistentKanbanBoardRepository = {
+  ...board,
   ...columns,
   ...tasks
 }

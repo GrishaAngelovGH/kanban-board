@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from "react"
 import { DndContext } from "@dnd-kit/core"
 
+import EditableText from "components/EditableText"
 import Toast from "components/Toast"
+
 import ToastContainer from "react-bootstrap/ToastContainer"
 
 import ButtonPanel from "./ButtonPanel"
@@ -26,8 +28,8 @@ import "react-calendar/dist/Calendar.css"
 
 import "./KanbanBoard.css"
 
-import natureBackgroundImage from "assets/images/backgrounds/nature-background.jpg"
 import geometricBackgroundImage from "assets/images/backgrounds/geometric-triangle-shapes-background.jpg"
+import natureBackgroundImage from "assets/images/backgrounds/nature-background.jpg"
 
 const backgrounds = {
   "Nature Background": natureBackgroundImage,
@@ -84,6 +86,15 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
     setShowToast(true)
   }
 
+  const handleUpdateBoardTitle = title => {
+    boardRepository.updateBoardTitle(title)
+    setColumns(boardRepository.getColumns())
+    onUpdate()
+
+    setToastMessage("Board title is successfully changed")
+    setShowToast(true)
+  }
+
   const handleConfirmCreateColumn = (title, description) => {
     boardRepository.createColumn(title, description)
     setShowColumnModal(!showColumnModal)
@@ -94,7 +105,7 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
   }
 
   const handleConfirmClearBoard = () => {
-    boardRepository.deleteAllColumns()
+    boardRepository.clearBoard()
     setColumns([])
     setShowClearBoardModal(!showClearBoardModal)
     onUpdate()
@@ -218,7 +229,11 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
 
   const background = settingsRepository.getBackground()
   const backgroundImage = backgrounds[background]
+
   const isSingleRowView = settingsRepository.isSingleRowView()
+
+  const boardTitle = boardRepository.getBoardTitle()
+  const boardTitleClassName = settingsRepository.hasNatureBackground() ? "text-white" : "text-secondary"
 
   return (
     <DndContext onDragEnd={handleDragEnd}>
@@ -235,7 +250,22 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
           }
 
           {
-            columns.length > 0 && isSingleRowView && (<NavigationButtons ref={scrollRef} />)
+            columns.length > 0 && (
+              <div className="row align-items-center p-1">
+                {
+                  isSingleRowView && (
+                    <div className="col-2">
+                      <NavigationButtons ref={scrollRef} />
+                    </div>
+                  )
+                }
+                <div className={isSingleRowView ? "col-10" : "col-12"}>
+                  <EditableText onBlur={handleUpdateBoardTitle}>
+                    <h1 className={`m-0 text-center ${boardTitleClassName}`}>{boardTitle}</h1>
+                  </EditableText>
+                </div>
+              </div>
+            )
           }
 
           <div ref={scrollRef} className={`row ${isSingleRowView ? "flex-nowrap overflow-x-hidden pt-3 p-5" : "p-5"}`}>
