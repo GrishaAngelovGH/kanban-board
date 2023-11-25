@@ -52,6 +52,11 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
 
   const scrollRef = useRef()
 
+  const showToastWithMessage = message => {
+    setToastMessage(message)
+    setShowToast(true)
+  }
+
   const toggleColumnModal = () => {
     setShowColumnModal(!showColumnModal)
   }
@@ -82,8 +87,7 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
     setColumns(boardRepository.getColumns())
     onUpdate()
 
-    setToastMessage("Kanban Board is successfully generated")
-    setShowToast(true)
+    showToastWithMessage("Kanban Board is successfully generated")
   }
 
   const handleUpdateBoardTitle = title => {
@@ -91,8 +95,7 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
     setColumns(boardRepository.getColumns())
     onUpdate()
 
-    setToastMessage("Board title is successfully changed")
-    setShowToast(true)
+    showToastWithMessage("Board title is successfully changed")
   }
 
   const handleConfirmCreateColumn = (title, description) => {
@@ -100,8 +103,7 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
     setShowColumnModal(!showColumnModal)
     onUpdate()
 
-    setToastMessage("New column is successfully created")
-    setShowToast(true)
+    showToastWithMessage("New column is successfully created")
   }
 
   const handleConfirmClearBoard = () => {
@@ -110,8 +112,7 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
     setShowClearBoardModal(!showClearBoardModal)
     onUpdate()
 
-    setToastMessage("Kanban Board is successfully cleared")
-    setShowToast(true)
+    showToastWithMessage("Kanban Board is successfully cleared")
   }
 
   const handleConfirmCreateTask = (title, description, priority) => {
@@ -120,8 +121,7 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
     setColumns(boardRepository.getColumns())
     onUpdate()
 
-    setToastMessage("New task is successfully created")
-    setShowToast(true)
+    showToastWithMessage("New task is successfully created")
   }
 
   const handleConfirmEditTask = task => {
@@ -130,8 +130,7 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
     setColumns(boardRepository.getColumns())
     onUpdate()
 
-    setToastMessage("Task is successfully edited")
-    setShowToast(true)
+    showToastWithMessage("Task is successfully edited")
   }
 
   const handleConfirmAssignUsers = (taskId, assignedIds) => {
@@ -140,8 +139,7 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
     setColumns(boardRepository.getColumns())
     onUpdate()
 
-    setToastMessage("Users are successfully assigned")
-    setShowToast(true)
+    showToastWithMessage("Users are successfully assigned")
   }
 
   const handleConfirmKanbanBoardImport = kanbanBoardJson => {
@@ -150,8 +148,7 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
     setColumns(boardRepository.getColumns())
     onUpdate()
 
-    setToastMessage("Kanban Board is successfully imported")
-    setShowToast(true)
+    showToastWithMessage("Kanban Board is successfully imported")
   }
 
   const handleMarkColumnAsDone = columnId => {
@@ -159,8 +156,7 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
     setColumns(boardRepository.getColumns())
     onUpdate()
 
-    setToastMessage("Column status is successfully changed")
-    setShowToast(true)
+    showToastWithMessage("Column status is successfully changed")
   }
 
   const handleUpdateColumn = (id, value, isTextArea) => {
@@ -170,6 +166,8 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
 
     setColumns(boardRepository.getColumns())
     onUpdate()
+
+    showToastWithMessage("Column is successfully updated")
   }
 
   const handleDeleteColumn = columnId => {
@@ -177,8 +175,7 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
     setColumns(boardRepository.getColumns())
     onUpdate()
 
-    setToastMessage("Column is successfully deleted")
-    setShowToast(true)
+    showToastWithMessage("Column is successfully deleted")
   }
 
   const handleDeleteTask = (taskId, columnId) => {
@@ -186,8 +183,7 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
     setColumns(boardRepository.getColumns())
     onUpdate()
 
-    setToastMessage("Task is successfully deleted")
-    setShowToast(true)
+    showToastWithMessage("Task is successfully deleted")
   }
 
   const handleDeleteAllTasksForColumn = columnId => {
@@ -195,14 +191,15 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
     setColumns(boardRepository.getColumns())
     onUpdate()
 
-    setToastMessage("All tasks for the given column are successfully deleted")
-    setShowToast(true)
+    showToastWithMessage("All tasks for the given column are successfully deleted")
   }
 
   const handleSetColumnLimit = (columnId, limit) => {
     boardRepository.setColumnLimit(columnId, limit)
     setColumns(boardRepository.getColumns())
     onUpdate()
+
+    showToastWithMessage("Column limit is successfully updated")
   }
 
   const handleDragEnd = ({ active: { id, data: { current: { columnId } } }, over }) => {
@@ -215,11 +212,9 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
       setColumns(boardRepository.getColumns())
       onUpdate()
 
-      setToastMessage("Task is successfully moved")
-      setShowToast(true)
+      showToastWithMessage("Task is successfully moved")
     } else {
-      setToastMessage("The task could not be moved because the column has reached its limit")
-      setShowToast(true)
+      showToastWithMessage("The task could not be moved because the column has reached its limit")
     }
   }
 
