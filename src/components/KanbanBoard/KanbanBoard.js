@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react"
+import { useState, useRef } from "react"
 import { DndContext } from "@dnd-kit/core"
 
 import EditableText from "components/EditableText"
@@ -45,7 +45,7 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
 
   const [columnId, setColumnId] = useState("")
   const [task, setTask] = useState(null)
-  const [columns, setColumns] = useState([])
+  const [columns, setColumns] = useState(boardRepository.getColumns())
 
   const [showToast, setShowToast] = useState(false)
   const [toastMessage, setToastMessage] = useState("")
@@ -101,6 +101,7 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
   const handleConfirmCreateColumn = (title, description) => {
     boardRepository.createColumn(title, description)
     setShowColumnModal(!showColumnModal)
+    setColumns(boardRepository.getColumns())
     onUpdate()
 
     showToastWithMessage("New column is successfully created")
@@ -217,10 +218,6 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
       showToastWithMessage("The task could not be moved because the column has reached its limit")
     }
   }
-
-  useEffect(() => {
-    setColumns(boardRepository.getColumns())
-  }, [showColumnModal])
 
   const background = settingsRepository.getBackground()
   const backgroundImage = backgrounds[background]
