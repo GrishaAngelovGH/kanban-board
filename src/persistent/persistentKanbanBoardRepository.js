@@ -23,32 +23,28 @@ const columns = {
     localStorage.setItem("columns", JSON.stringify(columnsJSON))
   },
   setColumnLimit: (columnId, limit) => {
-    const columns = JSON.parse(localStorage.getItem("columns"))
-    const currentColumn = columns[columnId]
-    currentColumn.limit = limit
+    const column = getColumnById(columnId)
+    column.limit = limit
 
-    updateColumn(currentColumn)
+    updateColumn(column)
   },
   toggleMarkAsDoneColumn: columnId => {
-    const columns = JSON.parse(localStorage.getItem("columns"))
-    const currentColumn = columns[columnId]
-    currentColumn.markedAsDone = !currentColumn.markedAsDone
+    const column = getColumnById(columnId)
+    column.markedAsDone = !column.markedAsDone
 
-    updateColumn(currentColumn)
+    updateColumn(column)
   },
   updateColumnTitle: (columnId, title) => {
-    const columns = JSON.parse(localStorage.getItem("columns"))
-    const currentColumn = columns[columnId]
-    currentColumn.title = title
+    const column = getColumnById(columnId)
+    column.title = title
 
-    updateColumn(currentColumn)
+    updateColumn(column)
   },
   updateColumnDescription: (columnId, description) => {
-    const columns = JSON.parse(localStorage.getItem("columns"))
-    const currentColumn = columns[columnId]
-    currentColumn.description = description
+    const column = getColumnById(columnId)
+    column.description = description
 
-    updateColumn(currentColumn)
+    updateColumn(column)
   },
   deleteColumn: columnId => {
     const columns = JSON.parse(localStorage.getItem("columns"))
@@ -57,35 +53,31 @@ const columns = {
     localStorage.setItem("columns", JSON.stringify(restColumns))
   },
   deleteAllTasksForColumn: columnId => {
-    const columns = JSON.parse(localStorage.getItem("columns"))
-    const currentColumn = columns[columnId]
-    currentColumn.items = []
+    const column = getColumnById(columnId)
+    column.items = []
 
-    updateColumn(currentColumn)
+    updateColumn(column)
   }
 }
 
 const tasks = {
   createTask: (columnId, taskTitle, taskDescription, priority) => {
-    const columns = JSON.parse(localStorage.getItem("columns"))
-
     const id = Math.random().toString().slice(2)
 
-    const currentColumn = columns[columnId]
-    currentColumn.items.push({ id, title: taskTitle, description: taskDescription, assignedIds: [], priority })
+    const column = getColumnById(columnId)
+    column.items.push({ id, title: taskTitle, description: taskDescription, assignedIds: [], priority })
 
-    updateColumn(currentColumn)
+    updateColumn(column)
   },
   updateTask: (task, columnId) => {
-    const columns = JSON.parse(localStorage.getItem("columns"))
-    const currentColumn = columns[columnId]
+    const column = getColumnById(columnId)
 
-    const foundTask = currentColumn.items.find(v => v.id === task.id)
+    const foundTask = column.items.find(v => v.id === task.id)
     foundTask.title = task.title
     foundTask.description = task.description
     foundTask.priority = task.priority
 
-    updateColumn(currentColumn)
+    updateColumn(column)
   },
   moveTask: (fromColumnId, toColumnId, taskId) => {
     if (fromColumnId !== toColumnId) {
@@ -107,19 +99,17 @@ const tasks = {
     }
   },
   assignUsersToTask: (taskId, columnId, assignedIds) => {
-    const columns = JSON.parse(localStorage.getItem("columns"))
-    const currentColumn = columns[columnId]
-    const currentTask = currentColumn.items.find(v => v.id === taskId)
-    currentTask.assignedIds = assignedIds
+    const column = getColumnById(columnId)
+    const task = column.items.find(v => v.id === taskId)
+    task.assignedIds = assignedIds
 
-    updateColumn(currentColumn)
+    updateColumn(column)
   },
   deleteTask: (taskId, columnId) => {
-    const columns = JSON.parse(localStorage.getItem("columns"))
-    const currentColumn = columns[columnId]
-    currentColumn.items = currentColumn.items.filter(v => v.id !== taskId)
+    const column = getColumnById(columnId)
+    column.items = column.items.filter(v => v.id !== taskId)
 
-    updateColumn(currentColumn)
+    updateColumn(column)
   }
 }
 
@@ -134,6 +124,11 @@ const board = {
     localStorage.removeItem("columns")
     localStorage.removeItem("boardTitle")
   }
+}
+
+const getColumnById = id => {
+  const columns = JSON.parse(localStorage.getItem("columns"))
+  return columns[id]
 }
 
 const updateColumn = column => {
