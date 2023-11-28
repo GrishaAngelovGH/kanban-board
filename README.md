@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# Kanban Board
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Kanban board visually depict work at various stages of a process using cards to represent work items and columns to represent each stage of the process. Cards are moved between the columns to show progress and to help coordinate teams performing the work.
 
-## Available Scripts
+Implemented features: 
 
-In the project directory, you can run:
+* Auto-generate sample board
+* Create new column with title and optional description
+* Clear board
+* Provide board title
+* Edit column's title and description based on editable text feature
+* Create new task for given column
+  - provide title
+  - provide rich text description i.e. bold, italic, underlined text, numbered/bullet lists, etc
+  - provide priority i.e. low, medium or high
+* Visualize number of tasks for given column
+* Mark/unmark column as "done" i.e. all tasks in the column will be visualized as completed
+* Delete column
+* Delete all tasks for given column
+* Provide optional limit of tasks for given column
+* Delete task
+* Assign users to given task
+* Edit task
+* Move tasks between columns with drag & drop
+* Toggle fullscreen view
+* Visualize calendar
+* Export/import board as json
+* Customize settings
+  - Choose background - nature, geometric or no background
+  - Choose layout - grid view, single column view or single row view
+  - Choose column style - solid or blurred
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## The front-end project is using the following technologies:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<img src="https://img.shields.io/badge/create--react--app-%23563D7C.svg?style=flat&logo=create-react-app&color=white" height="30"> <img src="https://img.shields.io/badge/React.JS-%23563D7C.svg?style=flat&logo=react&color=white" height="30"> <img src="https://img.shields.io/badge/react--bootstrap-blue.svg?style=flat&logo=react&color=white&logoColor=blue" height="30"> <img src="https://img.shields.io/badge/Bootstrap-%23563D7C.svg?style=flat&logo=bootstrap&color=white&logoColor=purple" height="30"> <img src="https://img.shields.io/badge/bootstrap--icons-%23563D7C.svg?style=flat&logo=bootstrap&color=white&logoColor=purple" height="30"> <img src="https://img.shields.io/badge/dnd--kit/core-%23563D7C.svg?style=flat&color=white" height="30"> <img src="https://img.shields.io/badge/html--react--parser-%23563D7C.svg?style=flat&color=white" height="30"> <img src="https://img.shields.io/badge/react--calendar-%23563D7C.svg?style=flat&color=white" height="30"> <img src="https://img.shields.io/badge/react--simple--wysiwyg-%23563D7C.svg?style=flat&color=white" height="30">
