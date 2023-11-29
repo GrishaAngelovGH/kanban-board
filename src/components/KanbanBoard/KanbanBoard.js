@@ -151,8 +151,9 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
     showToastWithMessage("Task's lock status is successfully changed")
   }
 
-  const handleConfirmKanbanBoardImport = kanbanBoardJson => {
-    boardRepository.setColumnsJSON(kanbanBoardJson)
+  const handleConfirmKanbanBoardImport = ({ title, columns }) => {
+    boardRepository.updateBoardTitle(title)
+    boardRepository.setColumnsJSON(columns)
     onToggleUploadKanbanBoardModal()
     setColumns(boardRepository.getColumns())
     onUpdate()

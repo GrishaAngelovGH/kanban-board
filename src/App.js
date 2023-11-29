@@ -23,7 +23,9 @@ function App() {
   }
 
   const prepareJsonFileDownload = () => {
-    const jsonString = boardRepository.getStringifiedColumns()
+    const columns = boardRepository.getStringifiedColumns()
+    const title = boardRepository.getBoardTitle()
+    const jsonString = `{"title": "${title}", "columns": ${columns}}`
     const blob = new Blob([jsonString], { type: "application/json" })
     setDownloadJsonHref(URL.createObjectURL(blob))
   }

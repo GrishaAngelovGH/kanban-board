@@ -129,7 +129,9 @@ const tasks = {
 
 const board = {
   getBoardTitle: () => {
-    return localStorage.getItem("boardTitle") ? localStorage.getItem("boardTitle") : "Project Management Kanban Board"
+    return localStorage.getItem("boardTitle") ?
+      localStorage.getItem("boardTitle") :
+      "Project Management Kanban Board"
   },
   updateBoardTitle: title => {
     localStorage.setItem("boardTitle", title)
