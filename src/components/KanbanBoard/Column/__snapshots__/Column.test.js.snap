@@ -119,6 +119,10 @@ Object {
                   class="bi bi-person-circle fs-4 text-secondary mx-1"
                   role="button"
                 />
+                <i
+                  class="bi bi-unlock-fill fs-4 text-secondary mx-1"
+                  role="button"
+                />
               </div>
               <i
                 class="bi bi-bookmark-fill fs-4 text-success"
@@ -171,6 +175,10 @@ Object {
                 />
                 <i
                   class="bi bi-person-circle fs-4 text-secondary mx-1"
+                  role="button"
+                />
+                <i
+                  class="bi bi-unlock-fill fs-4 text-secondary mx-1"
                   role="button"
                 />
               </div>
@@ -298,6 +306,10 @@ Object {
                 class="bi bi-person-circle fs-4 text-secondary mx-1"
                 role="button"
               />
+              <i
+                class="bi bi-unlock-fill fs-4 text-secondary mx-1"
+                role="button"
+              />
             </div>
             <i
               class="bi bi-bookmark-fill fs-4 text-success"
@@ -350,6 +362,10 @@ Object {
               />
               <i
                 class="bi bi-person-circle fs-4 text-secondary mx-1"
+                role="button"
+              />
+              <i
+                class="bi bi-unlock-fill fs-4 text-secondary mx-1"
                 role="button"
               />
             </div>

@@ -65,7 +65,14 @@ const tasks = {
     const id = Math.random().toString().slice(2)
 
     const column = getColumnById(columnId)
-    column.items.push({ id, title: taskTitle, description: taskDescription, assignedIds: [], priority })
+    column.items.push({
+      id,
+      title: taskTitle,
+      description: taskDescription,
+      assignedIds: [],
+      priority,
+      isLocked: false
+    })
 
     updateColumn(column)
   },
@@ -76,6 +83,13 @@ const tasks = {
     foundTask.title = task.title
     foundTask.description = task.description
     foundTask.priority = task.priority
+
+    updateColumn(column)
+  },
+  updateTaskLockStatus: (taskId, columnId, isLocked) => {
+    const column = getColumnById(columnId)
+    const task = column.items.find(v => v.id === taskId)
+    task.isLocked = isLocked
 
     updateColumn(column)
   },

@@ -10,6 +10,7 @@ test("should render Task component", () => {
       column="Column Title"
       assignedIds={[]}
       priority="medium"
+      isLocked={false}
     />
   )
 

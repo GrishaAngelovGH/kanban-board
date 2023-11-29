@@ -22,7 +22,8 @@ const bookmarkStyles = {
 
 const Task = ({
   id, columnId, assignedIds, title, description, priority,
-  isGridView, isSingleRowView, markedAsDone, onEdit, onAssignUser, onDelete
+  isGridView, isSingleRowView, markedAsDone, isLocked,
+  onEdit, onAssignUser, onToggleLock, onDelete
 }) => {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id,
@@ -45,6 +46,10 @@ const Task = ({
     onAssignUser({ id, title, description, priority, assignedIds }, columnId)
   }
 
+  const handleToggleLock = () => {
+    onToggleLock(id, columnId, !isLocked)
+  }
+
   const bgClass = markedAsDone ? "bg-success-subtle" : "bg-white"
   const borderClass = priorityStyles[priority]
 
@@ -54,9 +59,13 @@ const Task = ({
         <p className="fw-bold text-capitalize">{title}</p>
       </div>
 
-      <div className={`${isGridView || isSingleRowView ? "col-3" : "col-1"}`}>
-        <i {...listeners} {...attributes} className="bi bi-grip-horizontal fs-2"></i>
-      </div>
+      {
+        !isLocked && (
+          <div className={`${isGridView || isSingleRowView ? "col-3" : "col-1"}`}>
+            <i {...listeners} {...attributes} className="bi bi-grip-horizontal fs-2"></i>
+          </div>
+        )
+      }
 
       <div className="text-secondary overflow-auto task-description">
         {parse(description)}
@@ -89,9 +98,10 @@ const Task = ({
 
       <div className="d-flex justify-content-between">
         <div>
-          <i role="button" onClick={handleDelete} className="bi bi-trash fs-4 text-danger"></i>
+          {!isLocked && <i role="button" onClick={handleDelete} className="bi bi-trash fs-4 text-danger"></i>}
           <i role="button" onClick={handleEdit} className="bi bi-pencil-square fs-4 text-secondary mx-1"></i>
           <i role="button" onClick={handleAssignUser} className="bi bi-person-circle fs-4 text-secondary mx-1"></i>
+          <i role="button" onClick={handleToggleLock} className={`bi bi-${isLocked ? "lock-fill" : "unlock-fill"} fs-4 text-secondary mx-1`}></i>
         </div>
         {
           priority.length > 0 && (

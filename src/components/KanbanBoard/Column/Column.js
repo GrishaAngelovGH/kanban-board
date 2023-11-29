@@ -19,7 +19,8 @@ import "./Column.css"
 const Column = ({
   id, title, description, tasks, limit, markedAsDone,
   onDeleteColumn, onAddTask, onEditTask, onDeleteTask,
-  onDeleteAllTasks, onAssignUser, onMarkColumnAsDone, onSetColumnLimit, onColumnUpdate
+  onDeleteAllTasks, onAssignUser, onToggleTaskLock,
+  onMarkColumnAsDone, onSetColumnLimit, onColumnUpdate
 }) => {
   const [currentLimit, setCurrentLimit] = useState(limit)
   const [showLimit, setShowLimit] = useState(false)
@@ -156,9 +157,11 @@ const Column = ({
               isGridView={isGridView}
               isSingleRowView={isSingleRowView}
               markedAsDone={markedAsDone}
+              isLocked={v.isLocked}
               onEdit={onEditTask}
               onDelete={onDeleteTask}
               onAssignUser={onAssignUser}
+              onToggleLock={onToggleTaskLock}
             />
           ))
         }
@@ -166,4 +169,5 @@ const Column = ({
     </div>
   )
 }
+
 export default Column

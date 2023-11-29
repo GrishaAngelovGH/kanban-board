@@ -143,6 +143,14 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
     showToastWithMessage("Users are successfully assigned")
   }
 
+  const handleToggleTaskLock = (taskId, columnId, isLocked) => {
+    boardRepository.updateTaskLockStatus(taskId, columnId, isLocked)
+    setColumns(boardRepository.getColumns())
+    onUpdate()
+
+    showToastWithMessage("Task's lock status is successfully changed")
+  }
+
   const handleConfirmKanbanBoardImport = kanbanBoardJson => {
     boardRepository.setColumnsJSON(kanbanBoardJson)
     onToggleUploadKanbanBoardModal()
@@ -277,6 +285,7 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
                   onDeleteTask={handleDeleteTask}
                   onDeleteAllTasks={handleDeleteAllTasksForColumn}
                   onAssignUser={toggleAssignUserModal}
+                  onToggleTaskLock={handleToggleTaskLock}
                   onMarkColumnAsDone={handleMarkColumnAsDone}
                   onSetColumnLimit={handleSetColumnLimit}
                   onColumnUpdate={handleUpdateColumn}
