@@ -79,7 +79,7 @@ const tasks = {
   updateTask: (task, columnId) => {
     const column = getColumnById(columnId)
 
-    const foundTask = column.items.find(v => v.id === task.id)
+    const foundTask = getTaskById(column, task.id)
     foundTask.title = task.title
     foundTask.description = task.description
     foundTask.priority = task.priority
@@ -88,7 +88,7 @@ const tasks = {
   },
   updateTaskLockStatus: (taskId, columnId, isLocked) => {
     const column = getColumnById(columnId)
-    const task = column.items.find(v => v.id === taskId)
+    const task = getTaskById(column, taskId)
     task.isLocked = isLocked
 
     updateColumn(column)
@@ -98,7 +98,7 @@ const tasks = {
       const columns = JSON.parse(localStorage.getItem("columns"))
 
       const fromColumn = columns[fromColumnId]
-      const task = fromColumn.items.find(v => v.id === taskId)
+      const task = getTaskById(fromColumn, taskId)
 
       fromColumn.items = fromColumn.items.filter(v => v.id !== taskId)
 
@@ -114,7 +114,7 @@ const tasks = {
   },
   assignUsersToTask: (taskId, columnId, assignedIds) => {
     const column = getColumnById(columnId)
-    const task = column.items.find(v => v.id === taskId)
+    const task = getTaskById(column, taskId)
     task.assignedIds = assignedIds
 
     updateColumn(column)
@@ -144,6 +144,8 @@ const getColumnById = id => {
   const columns = JSON.parse(localStorage.getItem("columns"))
   return columns[id]
 }
+
+const getTaskById = (column, taskId) => column.items.find(v => v.id === taskId)
 
 const updateColumn = column => {
   const columns = JSON.parse(localStorage.getItem("columns"))
