@@ -65,23 +65,6 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
     setShowClearBoardModal(!showClearBoardModal)
   }
 
-  const toggleAddTaskModal = columnId => {
-    setColumnId(columnId)
-    setShowAddTaskModal(!showAddTaskModal)
-  }
-
-  const toggleEditTaskModal = (task, columnId) => {
-    setColumnId(columnId)
-    setTask(task)
-    setShowEditTaskModal(!showEditTaskModal)
-  }
-
-  const toggleAssignUserModal = (task, columnId) => {
-    setTask(task)
-    setColumnId(columnId)
-    setShowAssignUserModal(!showAssignUserModal)
-  }
-
   const handleGenerateBoardButtonClick = () => {
     boardGenerator.generate()
     setColumns(boardRepository.getColumns())
@@ -143,14 +126,6 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
     showToastWithMessage("Users are successfully assigned")
   }
 
-  const handleToggleTaskLock = (taskId, columnId, isLocked) => {
-    boardRepository.updateTaskLockStatus(taskId, columnId, isLocked)
-    setColumns(boardRepository.getColumns())
-    onUpdate()
-
-    showToastWithMessage("Task's lock status is successfully changed")
-  }
-
   const handleConfirmKanbanBoardImport = ({ title, columns }) => {
     boardRepository.updateBoardTitle(title)
     boardRepository.setColumnsJSON(columns)
@@ -159,57 +134,6 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
     onUpdate()
 
     showToastWithMessage("Kanban Board is successfully imported")
-  }
-
-  const handleMarkColumnAsDone = columnId => {
-    boardRepository.toggleMarkAsDoneColumn(columnId)
-    setColumns(boardRepository.getColumns())
-    onUpdate()
-
-    showToastWithMessage("Column status is successfully changed")
-  }
-
-  const handleUpdateColumn = (id, value, isTextArea) => {
-    isTextArea ?
-      boardRepository.updateColumnDescription(id, value) :
-      boardRepository.updateColumnTitle(id, value)
-
-    setColumns(boardRepository.getColumns())
-    onUpdate()
-
-    showToastWithMessage("Column is successfully updated")
-  }
-
-  const handleDeleteColumn = columnId => {
-    boardRepository.deleteColumn(columnId)
-    setColumns(boardRepository.getColumns())
-    onUpdate()
-
-    showToastWithMessage("Column is successfully deleted")
-  }
-
-  const handleDeleteTask = (taskId, columnId) => {
-    boardRepository.deleteTask(taskId, columnId)
-    setColumns(boardRepository.getColumns())
-    onUpdate()
-
-    showToastWithMessage("Task is successfully deleted")
-  }
-
-  const handleDeleteAllTasksForColumn = columnId => {
-    boardRepository.deleteAllTasksForColumn(columnId)
-    setColumns(boardRepository.getColumns())
-    onUpdate()
-
-    showToastWithMessage("All tasks for the given column are successfully deleted")
-  }
-
-  const handleSetColumnLimit = (columnId, limit) => {
-    boardRepository.setColumnLimit(columnId, limit)
-    setColumns(boardRepository.getColumns())
-    onUpdate()
-
-    showToastWithMessage("Column limit is successfully updated")
   }
 
   const handleDragEnd = ({ active: { id, data: { current: { columnId } } }, over }) => {
@@ -235,6 +159,75 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
 
   const boardTitle = boardRepository.getBoardTitle()
   const boardTitleClassName = settingsRepository.hasNatureBackground() ? "text-white" : "text-secondary"
+
+  const columnHandlers = {
+    onDeleteColumn: columnId => {
+      boardRepository.deleteColumn(columnId)
+      setColumns(boardRepository.getColumns())
+      onUpdate()
+
+      showToastWithMessage("Column is successfully deleted")
+    },
+    onAddTask: columnId => {
+      setColumnId(columnId)
+      setShowAddTaskModal(!showAddTaskModal)
+    },
+    onEditTask: (task, columnId) => {
+      setColumnId(columnId)
+      setTask(task)
+      setShowEditTaskModal(!showEditTaskModal)
+    },
+    onDeleteTask: (taskId, columnId) => {
+      boardRepository.deleteTask(taskId, columnId)
+      setColumns(boardRepository.getColumns())
+      onUpdate()
+
+      showToastWithMessage("Task is successfully deleted")
+    },
+    onDeleteAllTasks: columnId => {
+      boardRepository.deleteAllTasksForColumn(columnId)
+      setColumns(boardRepository.getColumns())
+      onUpdate()
+
+      showToastWithMessage("All tasks for the given column are successfully deleted")
+    },
+    onAssignUser: (task, columnId) => {
+      setTask(task)
+      setColumnId(columnId)
+      setShowAssignUserModal(!showAssignUserModal)
+    },
+    onToggleTaskLock: (taskId, columnId, isLocked) => {
+      boardRepository.updateTaskLockStatus(taskId, columnId, isLocked)
+      setColumns(boardRepository.getColumns())
+      onUpdate()
+
+      showToastWithMessage("Task's lock status is successfully changed")
+    },
+    onMarkColumnAsDone: columnId => {
+      boardRepository.toggleMarkAsDoneColumn(columnId)
+      setColumns(boardRepository.getColumns())
+      onUpdate()
+
+      showToastWithMessage("Column status is successfully changed")
+    },
+    onSetColumnLimit: (columnId, limit) => {
+      boardRepository.setColumnLimit(columnId, limit)
+      setColumns(boardRepository.getColumns())
+      onUpdate()
+
+      showToastWithMessage("Column limit is successfully updated")
+    },
+    onColumnUpdate: (id, value, isTextArea) => {
+      isTextArea ?
+        boardRepository.updateColumnDescription(id, value) :
+        boardRepository.updateColumnTitle(id, value)
+
+      setColumns(boardRepository.getColumns())
+      onUpdate()
+
+      showToastWithMessage("Column is successfully updated")
+    }
+  }
 
   return (
     <DndContext onDragEnd={handleDragEnd}>
@@ -280,16 +273,7 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
                   tasks={v.items}
                   limit={v.limit}
                   markedAsDone={v.markedAsDone}
-                  onDeleteColumn={handleDeleteColumn}
-                  onAddTask={toggleAddTaskModal}
-                  onEditTask={toggleEditTaskModal}
-                  onDeleteTask={handleDeleteTask}
-                  onDeleteAllTasks={handleDeleteAllTasksForColumn}
-                  onAssignUser={toggleAssignUserModal}
-                  onToggleTaskLock={handleToggleTaskLock}
-                  onMarkColumnAsDone={handleMarkColumnAsDone}
-                  onSetColumnLimit={handleSetColumnLimit}
-                  onColumnUpdate={handleUpdateColumn}
+                  {...columnHandlers}
                 />
               ))
             }
