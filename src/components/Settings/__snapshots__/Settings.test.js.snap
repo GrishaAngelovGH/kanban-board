@@ -138,6 +138,31 @@ Object {
                   class="bi bi-check-circle-fill text-primary fs-5"
                 />
               </button>
+              <div
+                class="fw-bold bg-secondary-subtle list-group-item"
+              >
+                Keyboard Shortcuts
+              </div>
+              <div
+                class="list-group-item"
+              >
+                Press 
+                <span>
+                  <kbd
+                    class="bg-primary"
+                  >
+                    Ctrl
+                  </kbd>
+                   + 
+                  <kbd
+                    class="bg-primary"
+                  >
+                    G
+                  </kbd>
+                </span>
+                 to 
+                auto-generate board
+              </div>
             </div>
           </div>
           <div

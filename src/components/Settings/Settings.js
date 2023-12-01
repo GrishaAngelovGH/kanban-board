@@ -34,6 +34,9 @@ const Settings = ({ show, onClose, onConfirm }) => {
   const backgrounds = ["Nature Background", "Geometric Background", "No Background"]
   const layoutOptions = [{ label: "Grid View", icon: "grid-3x3" }, { label: "Single Column", icon: "view-stacked" }, { label: "Single Row", icon: "layout-three-columns" }]
   const columnStyleOptions = ["Solid", "Blurred"]
+  const keyboardShortcuts = [
+    { shortcut: <span><kbd className="bg-primary">Ctrl</kbd> + <kbd className="bg-primary">G</kbd></span>, action: "auto-generate board" }
+  ]
 
   return (
     <Modal
@@ -91,6 +94,16 @@ const Settings = ({ show, onClose, onConfirm }) => {
               >
                 <span>{v}</span>
                 {v === columnStyle && <i className="bi bi-check-circle-fill text-primary fs-5"></i>}
+              </ListGroup.Item>
+            ))
+          }
+          <ListGroup.Item className="fw-bold bg-secondary-subtle">
+            Keyboard Shortcuts
+          </ListGroup.Item>
+          {
+            keyboardShortcuts.map((v, i) => (
+              <ListGroup.Item key={i}>
+                Press {v.shortcut} to {v.action}
               </ListGroup.Item>
             ))
           }
