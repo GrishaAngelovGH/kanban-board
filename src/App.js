@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 
 import Layout from "components/Layout"
 import Header from "components/Header"
@@ -22,13 +22,13 @@ function App() {
     setShowCalendar(!showCalendar)
   }
 
-  const prepareJsonFileDownload = () => {
+  const prepareJsonFileDownload = useCallback(() => {
     const columns = boardRepository.getStringifiedColumns()
     const title = boardRepository.getBoardTitle()
     const jsonString = `{"title": "${title}", "columns": ${columns}}`
     const blob = new Blob([jsonString], { type: "application/json" })
     setDownloadJsonHref(URL.createObjectURL(blob))
-  }
+  }, [])
 
   const toggleUploadKanbanBoardModal = () => {
     setShowUploadBoardModal(!showUploadBoardModal)
@@ -39,7 +39,7 @@ function App() {
     setShowSettings(false)
   }
 
-  useEffect(prepareJsonFileDownload, [])
+  useEffect(prepareJsonFileDownload, [prepareJsonFileDownload])
 
   const disabledExport = !boardRepository.getColumns().length
 

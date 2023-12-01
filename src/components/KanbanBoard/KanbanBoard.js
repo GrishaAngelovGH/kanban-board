@@ -1,4 +1,4 @@
-import { useState, useRef } from "react"
+import { useState, useEffect, useRef, useCallback } from "react"
 import { DndContext } from "@dnd-kit/core"
 
 import EditableText from "components/EditableText"
@@ -27,6 +27,8 @@ import Calendar from "react-calendar"
 import "react-calendar/dist/Calendar.css"
 
 import "./KanbanBoard.css"
+
+import configureHotkeys from "./hotkeys"
 
 import geometricBackgroundImage from "assets/images/backgrounds/geometric-triangle-shapes-background.jpg"
 import natureBackgroundImage from "assets/images/backgrounds/nature-background.jpg"
@@ -65,13 +67,13 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
     setShowClearBoardModal(!showClearBoardModal)
   }
 
-  const handleGenerateBoardButtonClick = () => {
+  const handleGenerateBoardButtonClick = useCallback(() => {
     boardGenerator.generate()
     setColumns(boardRepository.getColumns())
     onUpdate()
 
     showToastWithMessage("Kanban Board is successfully generated")
-  }
+  }, [onUpdate])
 
   const handleUpdateBoardTitle = title => {
     boardRepository.updateBoardTitle(title)
@@ -228,6 +230,12 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
       showToastWithMessage("Column is successfully updated")
     }
   }
+
+  useEffect(() => {
+    configureHotkeys({
+      ctrlPlusG: handleGenerateBoardButtonClick
+    })
+  }, [handleGenerateBoardButtonClick])
 
   return (
     <DndContext onDragEnd={handleDragEnd}>
