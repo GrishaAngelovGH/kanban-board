@@ -29,6 +29,10 @@ Implemented features:
   - Choose background - nature, geometric or no background
   - Choose layout - grid view, single column view or single row view
   - Choose column style - solid or blurred
+* Keyboard shortcuts
+  - Press ```Ctrl```+```G``` to auto-generate board
+  - Press ```Ctrl```+```I``` to create new column
+  - Press ```Ctrl```+```L``` to clear board
 
 
 ## The front-end project is using the following technologies:
