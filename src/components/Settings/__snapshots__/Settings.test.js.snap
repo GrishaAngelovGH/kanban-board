@@ -183,6 +183,26 @@ Object {
                  to 
                 create new column
               </div>
+              <div
+                class="list-group-item"
+              >
+                Press 
+                <span>
+                  <kbd
+                    class="bg-primary"
+                  >
+                    Ctrl
+                  </kbd>
+                   + 
+                  <kbd
+                    class="bg-primary"
+                  >
+                    L
+                  </kbd>
+                </span>
+                 to 
+                clear board
+              </div>
             </div>
           </div>
           <div

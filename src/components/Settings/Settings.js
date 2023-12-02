@@ -37,6 +37,7 @@ const Settings = ({ show, onClose, onConfirm }) => {
   const keyboardShortcuts = [
     { shortcut: <span><kbd className="bg-primary">Ctrl</kbd> + <kbd className="bg-primary">G</kbd></span>, action: "auto-generate board" },
     { shortcut: <span><kbd className="bg-primary">Ctrl</kbd> + <kbd className="bg-primary">I</kbd></span>, action: "create new column" },
+    { shortcut: <span><kbd className="bg-primary">Ctrl</kbd> + <kbd className="bg-primary">L</kbd></span>, action: "clear board" }
   ]
 
   return (
