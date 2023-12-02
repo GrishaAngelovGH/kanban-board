@@ -59,9 +59,9 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
     setShowToast(true)
   }
 
-  const toggleColumnModal = () => {
+  const toggleColumnModal = useCallback(() => {
     setShowColumnModal(!showColumnModal)
-  }
+  }, [showColumnModal])
 
   const toggleClearBoardModal = () => {
     setShowClearBoardModal(!showClearBoardModal)
@@ -233,9 +233,10 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
 
   useEffect(() => {
     configureHotkeys({
-      ctrlPlusG: handleGenerateBoardButtonClick
+      ctrlPlusG: handleGenerateBoardButtonClick,
+      ctrlPlusI: toggleColumnModal
     })
-  }, [handleGenerateBoardButtonClick])
+  }, [handleGenerateBoardButtonClick, toggleColumnModal])
 
   return (
     <DndContext onDragEnd={handleDragEnd}>
