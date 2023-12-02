@@ -163,6 +163,26 @@ Object {
                  to 
                 auto-generate board
               </div>
+              <div
+                class="list-group-item"
+              >
+                Press 
+                <span>
+                  <kbd
+                    class="bg-primary"
+                  >
+                    Ctrl
+                  </kbd>
+                   + 
+                  <kbd
+                    class="bg-primary"
+                  >
+                    I
+                  </kbd>
+                </span>
+                 to 
+                create new column
+              </div>
             </div>
           </div>
           <div

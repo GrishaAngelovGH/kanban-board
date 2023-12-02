@@ -35,7 +35,8 @@ const Settings = ({ show, onClose, onConfirm }) => {
   const layoutOptions = [{ label: "Grid View", icon: "grid-3x3" }, { label: "Single Column", icon: "view-stacked" }, { label: "Single Row", icon: "layout-three-columns" }]
   const columnStyleOptions = ["Solid", "Blurred"]
   const keyboardShortcuts = [
-    { shortcut: <span><kbd className="bg-primary">Ctrl</kbd> + <kbd className="bg-primary">G</kbd></span>, action: "auto-generate board" }
+    { shortcut: <span><kbd className="bg-primary">Ctrl</kbd> + <kbd className="bg-primary">G</kbd></span>, action: "auto-generate board" },
+    { shortcut: <span><kbd className="bg-primary">Ctrl</kbd> + <kbd className="bg-primary">I</kbd></span>, action: "create new column" },
   ]
 
   return (
