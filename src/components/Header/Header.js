@@ -30,13 +30,13 @@ const ExchangeButton = ({ downloadJsonHref, disabledExport, onImportKanbanBoardC
 
 const Header = ({
   downloadJsonHref, disabledExport,
-  onSettingsClick, onCalendarClick, onImportKanbanBoardClick
+  onUsersClick, onSettingsClick, onCalendarClick, onImportKanbanBoardClick
 }) => (
-  <div className="row bg-secondary-subtle p-2 justify-content-between">
+  <div className="row bg-secondary-subtle p-2 justify-content-between align-items-center">
     <div className="col col-md-3 col-lg-2">
       <h3 className="m-0">Kanban Board</h3>
     </div>
-    <div className="col-6 col-md-3 col-lg-2 text-end">
+    <div className="col-8 col-md-4 col-lg-2 text-end">
       <ButtonGroup>
         <Button
           variant="outline-secondary"
@@ -60,6 +60,12 @@ const Header = ({
           downloadJsonHref={downloadJsonHref}
           disabledExport={disabledExport}
           onImportKanbanBoardClick={onImportKanbanBoardClick}
+        />
+
+        <Button
+          variant="outline-secondary"
+          className="bi bi-people"
+          onClick={onUsersClick}
         />
 
         <Button

@@ -3,6 +3,7 @@ import { useState, useEffect, useCallback } from "react"
 import Layout from "components/Layout"
 import Header from "components/Header"
 import KanbanBoard from "components/KanbanBoard"
+import Users from "components/Users"
 import Settings from "components/Settings"
 
 import boardRepository from "persistent/persistentKanbanBoardRepository"
@@ -11,6 +12,7 @@ import settingsRepository from "persistent/persistentSettingsRepository"
 function App() {
   const [showSettings, setShowSettings] = useState(false)
   const [showCalendar, setShowCalendar] = useState(false)
+  const [showUsers, setShowUsers] = useState(false)
   const [downloadJsonHref, setDownloadJsonHref] = useState("")
   const [showUploadBoardModal, setShowUploadBoardModal] = useState(false)
 
@@ -20,6 +22,10 @@ function App() {
 
   const toggleCalendar = () => {
     setShowCalendar(!showCalendar)
+  }
+
+  const toggleUsers = () => {
+    setShowUsers(!showUsers)
   }
 
   const prepareJsonFileDownload = useCallback(() => {
@@ -53,6 +59,7 @@ function App() {
             onCalendarClick={toggleCalendar}
             onImportKanbanBoardClick={toggleUploadKanbanBoardModal}
             onSettingsClick={toggleSettings}
+            onUsersClick={toggleUsers}
           />
         }
         body={
@@ -63,6 +70,11 @@ function App() {
             onToggleUploadKanbanBoardModal={toggleUploadKanbanBoardModal}
           />
         }
+      />
+
+      <Users
+        show={showUsers}
+        onClose={toggleUsers}
       />
 
       <Settings

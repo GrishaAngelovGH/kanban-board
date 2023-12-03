@@ -2,6 +2,12 @@
   height: 50px;
 }
 
+@media screen and (max-width: 576px) {
+  .layout-header {
+    height: 65px;
+  }
+}
+
 .layout-body {
   height: calc(100vh - 50px);
 }
