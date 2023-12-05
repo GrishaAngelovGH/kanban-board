@@ -2,6 +2,8 @@ import { render } from "@testing-library/react"
 
 import Column from "./Column"
 
+jest.mock('persistent/persistentUserRepository')
+
 test("should render Column component", () => {
   const view = render(
     <Column

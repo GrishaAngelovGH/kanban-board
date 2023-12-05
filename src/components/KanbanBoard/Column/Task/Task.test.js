@@ -2,6 +2,8 @@ import { render } from "@testing-library/react"
 
 import Task from "./Task"
 
+jest.mock('persistent/persistentUserRepository')
+
 test("should render Task component", () => {
   const view = render(
     <Task
