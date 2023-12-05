@@ -20,7 +20,7 @@ Object {
               <img
                 alt="assigned-user"
                 class="rounded-circle"
-                src="alexander-reed.jpg"
+                src="image_1"
                 width="50"
               />
             </div>
@@ -30,7 +30,7 @@ Object {
               <p
                 class="m-0 fw-bold"
               >
-                Alexander Reed
+                John Smith
               </p>
             </div>
             <div
@@ -50,7 +50,7 @@ Object {
               <img
                 alt="assigned-user"
                 class="rounded-circle"
-                src="ava-roberts.jpg"
+                src="image_2"
                 width="50"
               />
             </div>
@@ -60,127 +60,7 @@ Object {
               <p
                 class="m-0 fw-bold"
               >
-                Ava Roberts
-              </p>
-            </div>
-            <div
-              class="col-2"
-            />
-          </div>
-        </button>
-        <button
-          class="list-group-item list-group-item-action"
-        >
-          <div
-            class="row align-items-center"
-          >
-            <div
-              class="col-2"
-            >
-              <img
-                alt="assigned-user"
-                class="rounded-circle"
-                src="ethan-thompson.jpg"
-                width="50"
-              />
-            </div>
-            <div
-              class="col-8"
-            >
-              <p
-                class="m-0 fw-bold"
-              >
-                Ethan Thompson
-              </p>
-            </div>
-            <div
-              class="col-2"
-            />
-          </div>
-        </button>
-        <button
-          class="list-group-item list-group-item-action"
-        >
-          <div
-            class="row align-items-center"
-          >
-            <div
-              class="col-2"
-            >
-              <img
-                alt="assigned-user"
-                class="rounded-circle"
-                src="isabella-foster.jpg"
-                width="50"
-              />
-            </div>
-            <div
-              class="col-8"
-            >
-              <p
-                class="m-0 fw-bold"
-              >
-                Isabella Foster
-              </p>
-            </div>
-            <div
-              class="col-2"
-            />
-          </div>
-        </button>
-        <button
-          class="list-group-item list-group-item-action"
-        >
-          <div
-            class="row align-items-center"
-          >
-            <div
-              class="col-2"
-            >
-              <img
-                alt="assigned-user"
-                class="rounded-circle"
-                src="noah-anderson.jpg"
-                width="50"
-              />
-            </div>
-            <div
-              class="col-8"
-            >
-              <p
-                class="m-0 fw-bold"
-              >
-                Noah Anderson
-              </p>
-            </div>
-            <div
-              class="col-2"
-            />
-          </div>
-        </button>
-        <button
-          class="list-group-item list-group-item-action"
-        >
-          <div
-            class="row align-items-center"
-          >
-            <div
-              class="col-2"
-            >
-              <img
-                alt="assigned-user"
-                class="rounded-circle"
-                src="sophia-campbell.jpg"
-                width="50"
-              />
-            </div>
-            <div
-              class="col-8"
-            >
-              <p
-                class="m-0 fw-bold"
-              >
-                Sophia Campbell
+                Jane Smith
               </p>
             </div>
             <div
@@ -207,7 +87,7 @@ Object {
             <img
               alt="assigned-user"
               class="rounded-circle"
-              src="alexander-reed.jpg"
+              src="image_1"
               width="50"
             />
           </div>
@@ -217,7 +97,7 @@ Object {
             <p
               class="m-0 fw-bold"
             >
-              Alexander Reed
+              John Smith
             </p>
           </div>
           <div
@@ -237,7 +117,7 @@ Object {
             <img
               alt="assigned-user"
               class="rounded-circle"
-              src="ava-roberts.jpg"
+              src="image_2"
               width="50"
             />
           </div>
@@ -247,127 +127,7 @@ Object {
             <p
               class="m-0 fw-bold"
             >
-              Ava Roberts
-            </p>
-          </div>
-          <div
-            class="col-2"
-          />
-        </div>
-      </button>
-      <button
-        class="list-group-item list-group-item-action"
-      >
-        <div
-          class="row align-items-center"
-        >
-          <div
-            class="col-2"
-          >
-            <img
-              alt="assigned-user"
-              class="rounded-circle"
-              src="ethan-thompson.jpg"
-              width="50"
-            />
-          </div>
-          <div
-            class="col-8"
-          >
-            <p
-              class="m-0 fw-bold"
-            >
-              Ethan Thompson
-            </p>
-          </div>
-          <div
-            class="col-2"
-          />
-        </div>
-      </button>
-      <button
-        class="list-group-item list-group-item-action"
-      >
-        <div
-          class="row align-items-center"
-        >
-          <div
-            class="col-2"
-          >
-            <img
-              alt="assigned-user"
-              class="rounded-circle"
-              src="isabella-foster.jpg"
-              width="50"
-            />
-          </div>
-          <div
-            class="col-8"
-          >
-            <p
-              class="m-0 fw-bold"
-            >
-              Isabella Foster
-            </p>
-          </div>
-          <div
-            class="col-2"
-          />
-        </div>
-      </button>
-      <button
-        class="list-group-item list-group-item-action"
-      >
-        <div
-          class="row align-items-center"
-        >
-          <div
-            class="col-2"
-          >
-            <img
-              alt="assigned-user"
-              class="rounded-circle"
-              src="noah-anderson.jpg"
-              width="50"
-            />
-          </div>
-          <div
-            class="col-8"
-          >
-            <p
-              class="m-0 fw-bold"
-            >
-              Noah Anderson
-            </p>
-          </div>
-          <div
-            class="col-2"
-          />
-        </div>
-      </button>
-      <button
-        class="list-group-item list-group-item-action"
-      >
-        <div
-          class="row align-items-center"
-        >
-          <div
-            class="col-2"
-          >
-            <img
-              alt="assigned-user"
-              class="rounded-circle"
-              src="sophia-campbell.jpg"
-              width="50"
-            />
-          </div>
-          <div
-            class="col-8"
-          >
-            <p
-              class="m-0 fw-bold"
-            >
-              Sophia Campbell
+              Jane Smith
             </p>
           </div>
           <div

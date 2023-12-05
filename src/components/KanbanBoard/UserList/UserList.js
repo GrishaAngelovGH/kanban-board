@@ -4,7 +4,7 @@ import ListGroup from "react-bootstrap/ListGroup"
 
 import User from "components/Users/User"
 
-import users from "users"
+import usersRepository from "persistent/persistentUserRepository"
 
 const UserList = ({ task, onUpdate }) => {
   const [ids, setIds] = useState(task.assignedIds)
@@ -22,6 +22,8 @@ const UserList = ({ task, onUpdate }) => {
   useEffect(() => {
     onUpdate(ids)
   }, [ids, onUpdate])
+
+  const users = usersRepository.getUsers()
 
   return (
     <ListGroup>

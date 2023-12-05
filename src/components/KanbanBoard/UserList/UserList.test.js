@@ -2,6 +2,8 @@ import { render } from "@testing-library/react"
 
 import UserList from "./UserList"
 
+jest.mock('persistent/persistentUserRepository')
+
 test("should render UserList component", () => {
   const task = { id: 1, title: "Title", description: "Description", assignedIds: [] }
   const onUpdate = jest.fn()

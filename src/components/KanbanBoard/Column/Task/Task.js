@@ -3,8 +3,9 @@ import { useDraggable } from "@dnd-kit/core"
 import OverlayTrigger from "react-bootstrap/OverlayTrigger"
 import Tooltip from "react-bootstrap/Tooltip"
 
-import users from "users"
 import parse from "html-react-parser"
+
+import usersRepository from "persistent/persistentUserRepository"
 
 import "./Task.css"
 
@@ -49,6 +50,8 @@ const Task = ({
   const handleToggleLock = () => {
     onToggleLock(id, columnId, !isLocked)
   }
+
+  const users = usersRepository.getUsers()
 
   const bgClass = markedAsDone ? "bg-success-subtle" : "bg-white"
   const borderClass = priorityStyles[priority]
