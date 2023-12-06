@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 
 import ListGroup from "react-bootstrap/ListGroup"
 
-import User from "components/Users/User"
+import User from "./User"
 
 import usersRepository from "persistent/persistentUserRepository"
 
