@@ -13,3 +13,16 @@ test("should render Modal component", () => {
 
   expect(view).toMatchSnapshot()
 })
+
+test("should render Modal component with hidden confirm button", () => {
+  const view = render(
+    <Modal
+      show
+      title="Modal Title"
+      body="Modal Body"
+      hideConfirm
+    />
+  )
+
+  expect(view).toMatchSnapshot()
+})
