@@ -75,6 +75,7 @@ function App() {
       <Users
         show={showUsers}
         onClose={toggleUsers}
+        onUpdate={prepareJsonFileDownload}
       />
 
       <Settings

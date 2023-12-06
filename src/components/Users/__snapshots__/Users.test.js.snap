@@ -36,11 +36,7 @@ Object {
           </div>
           <div
             class="modal-body"
-          >
-            <div>
-              Users
-            </div>
-          </div>
+          />
           <div
             class="modal-footer"
           >
@@ -49,12 +45,6 @@ Object {
               type="button"
             >
               Close
-            </button>
-            <button
-              class="btn btn-primary"
-              type="button"
-            >
-              Confirm
             </button>
           </div>
         </div>
