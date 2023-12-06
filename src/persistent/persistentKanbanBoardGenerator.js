@@ -39,14 +39,14 @@ const persistentKanbanBoardGenerator = {
       }
     }
 
-    const users = [
-      { id: "9010122801186593", name: "Alexander Reed", image: alexanderReed },
-      { id: "927257799921221", name: "Ava Roberts", image: avaRoberts },
-      { id: "9245063188089464", name: "Ethan Thompson", image: ethanThompson },
-      { id: "8944354170460678", name: "Isabella Foster", image: isabellaFoster },
-      { id: "23179223528758852", name: "Noah Anderson", image: noahAngerson },
-      { id: "7071360811547569", name: "Sophia Campbell", image: sophiaCampbell }
-    ]
+    const users = {
+      "9010122801186593": { id: "9010122801186593", name: "Alexander Reed", image: alexanderReed },
+      "927257799921221": { id: "927257799921221", name: "Ava Roberts", image: avaRoberts },
+      "9245063188089464": { id: "9245063188089464", name: "Ethan Thompson", image: ethanThompson },
+      "8944354170460678": { id: "8944354170460678", name: "Isabella Foster", image: isabellaFoster },
+      "23179223528758852": { id: "23179223528758852", name: "Noah Anderson", image: noahAngerson },
+      "7071360811547569": { id: "7071360811547569", name: "Sophia Campbell", image: sophiaCampbell }
+    }
 
     localStorage.setItem("columns", JSON.stringify(columns))
     localStorage.setItem("users", JSON.stringify(users))
