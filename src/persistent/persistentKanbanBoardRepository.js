@@ -119,6 +119,17 @@ const tasks = {
 
     updateColumn(column)
   },
+  removeAssignedUserFromTasks: assignedId => {
+    const columns = JSON.parse(localStorage.getItem("columns"))
+
+    Object.values(columns).forEach(column => {
+      column.items.forEach(item => {
+        item.assignedIds = item.assignedIds.filter(v => v !== assignedId)
+      })
+    })
+
+    localStorage.setItem("columns", JSON.stringify(columns))
+  },
   deleteTask: (taskId, columnId) => {
     const column = getColumnById(columnId)
     column.items = column.items.filter(v => v.id !== taskId)
