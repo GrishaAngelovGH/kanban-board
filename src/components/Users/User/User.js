@@ -1,15 +1,16 @@
-import { useState } from "react"
 
-const User = ({ id, name, image, selected, onSelect }) => {
-  const [isSelected, setIsSelected] = useState(selected)
+import boardRepository from "persistent/persistentKanbanBoardRepository"
+import userRepository from "persistent/persistentUserRepository"
 
-  const handleToggle = () => {
-    setIsSelected(!isSelected)
-    onSelect(!isSelected, id)
+const User = ({ id, name, image, onUpdate }) => {
+  const handleRemove = () => {
+    userRepository.deleteUser(id)
+    boardRepository.removeAssignedUserFromTasks(id)
+    onUpdate()
   }
 
   return (
-    <div className="row align-items-center" onClick={handleToggle}>
+    <div className="row align-items-center mt-2">
       <div className="col-2">
         <img src={image} width={50} className="rounded-circle" alt="assigned-user" />
       </div>
@@ -17,7 +18,7 @@ const User = ({ id, name, image, selected, onSelect }) => {
         <p className="m-0 fw-bold">{name}</p>
       </div>
       <div className="col-2">
-        {isSelected && (<i className="bi bi-check-circle-fill text-success fs-4"></i>)}
+        <button className="btn btn-danger bi bi-trash" onClick={handleRemove} />
       </div>
     </div>
   )
