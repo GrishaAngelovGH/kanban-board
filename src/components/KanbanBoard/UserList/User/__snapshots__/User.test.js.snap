@@ -12,8 +12,8 @@ Object {
           class="col-2"
         >
           <img
-            alt="assigned-user"
-            class="rounded-circle"
+            alt="user"
+            class="rounded-circle m-1"
             src="img"
             width="50"
           />
@@ -41,8 +41,8 @@ Object {
         class="col-2"
       >
         <img
-          alt="assigned-user"
-          class="rounded-circle"
+          alt="user"
+          class="rounded-circle m-1"
           src="img"
           width="50"
         />

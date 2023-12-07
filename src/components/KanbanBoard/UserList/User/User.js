@@ -1,5 +1,7 @@
 import { useState } from "react"
 
+import Avatar from "components/Avatar"
+
 const User = ({ id, name, image, selected, onSelect }) => {
   const [isSelected, setIsSelected] = useState(selected)
 
@@ -11,7 +13,7 @@ const User = ({ id, name, image, selected, onSelect }) => {
   return (
     <div className="row align-items-center" onClick={handleToggle}>
       <div className="col-2">
-        <img src={image} width={50} className="rounded-circle" alt="assigned-user" />
+        <Avatar user={{ image, name }} />
       </div>
       <div className="col-8">
         <p className="m-0 fw-bold">{name}</p>
