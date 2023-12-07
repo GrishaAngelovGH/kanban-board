@@ -3,6 +3,8 @@ import { useDraggable } from "@dnd-kit/core"
 import OverlayTrigger from "react-bootstrap/OverlayTrigger"
 import Tooltip from "react-bootstrap/Tooltip"
 
+import Avatar from "components/Avatar"
+
 import parse from "html-react-parser"
 
 import usersRepository from "persistent/persistentUserRepository"
@@ -74,7 +76,7 @@ const Task = ({
         {parse(description)}
       </div>
 
-      <div className="mb-3">
+      <div className="mb-3 d-flex align-items-center flex-wrap">
         {
           assignedIds.map(v => {
             const user = users.find(u => u.id === v)
@@ -92,7 +94,9 @@ const Task = ({
                 delay={{ show: 250, hide: 400 }}
                 overlay={renderTooltip}
               >
-                <img src={user.image} width={35} className="rounded-circle m-1" alt="assigned-user" />
+                <div>
+                  <Avatar user={user} size={35} />
+                </div>
               </OverlayTrigger>
             )
           })

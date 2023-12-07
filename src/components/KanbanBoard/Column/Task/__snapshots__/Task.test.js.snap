@@ -37,7 +37,7 @@ Object {
           Task Description
         </div>
         <div
-          class="mb-3"
+          class="mb-3 d-flex align-items-center flex-wrap"
         />
         <div
           class="d-flex justify-content-between"
@@ -100,7 +100,7 @@ Object {
         Task Description
       </div>
       <div
-        class="mb-3"
+        class="mb-3 d-flex align-items-center flex-wrap"
       />
       <div
         class="d-flex justify-content-between"
