@@ -6,6 +6,8 @@ import User from "./User"
 
 import usersRepository from "persistent/persistentUserRepository"
 
+import "./UserList.css"
+
 const UserList = ({ task, onUpdate }) => {
   const [ids, setIds] = useState(task.assignedIds)
 
@@ -26,7 +28,7 @@ const UserList = ({ task, onUpdate }) => {
   const users = usersRepository.getUsers()
 
   return (
-    <ListGroup>
+    <ListGroup className="overflow-auto user-list">
       {
         users.map(v => {
           const selected = ids.includes(v.id)
