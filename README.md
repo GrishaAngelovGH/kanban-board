@@ -25,6 +25,7 @@ Implemented features:
 * Toggle fullscreen view
 * Visualize calendar
 * Export/import board as json
+* Manage users
 * Customize settings
   - Choose background - nature, geometric or no background
   - Choose layout - grid view, single column view or single row view
