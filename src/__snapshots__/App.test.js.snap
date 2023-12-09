@@ -24,7 +24,7 @@ Object {
                   class="row bg-secondary-subtle p-2 justify-content-between align-items-center"
                 >
                   <div
-                    class="col col-md-3 col-lg-2"
+                    class="col-4 col-md-4 col-lg-3"
                   >
                     <h3
                       class="m-0"
@@ -33,7 +33,7 @@ Object {
                     </h3>
                   </div>
                   <div
-                    class="col-8 col-md-4 col-lg-2 text-end"
+                    class="col-8 col-md-4 col-lg-3 text-end"
                   >
                     <div
                       class="btn-group"
@@ -190,7 +190,7 @@ Object {
                 class="row bg-secondary-subtle p-2 justify-content-between align-items-center"
               >
                 <div
-                  class="col col-md-3 col-lg-2"
+                  class="col-4 col-md-4 col-lg-3"
                 >
                   <h3
                     class="m-0"
@@ -199,7 +199,7 @@ Object {
                   </h3>
                 </div>
                 <div
-                  class="col-8 col-md-4 col-lg-2 text-end"
+                  class="col-8 col-md-4 col-lg-3 text-end"
                 >
                   <div
                     class="btn-group"

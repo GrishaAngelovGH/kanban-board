@@ -33,10 +33,10 @@ const Header = ({
   onUsersClick, onSettingsClick, onCalendarClick, onImportKanbanBoardClick
 }) => (
   <div className="row bg-secondary-subtle p-2 justify-content-between align-items-center">
-    <div className="col col-md-3 col-lg-2">
+    <div className="col-4 col-md-4 col-lg-3">
       <h3 className="m-0">Kanban Board</h3>
     </div>
-    <div className="col-8 col-md-4 col-lg-2 text-end">
+    <div className="col-8 col-md-4 col-lg-3 text-end">
       <ButtonGroup>
         <Button
           variant="outline-secondary"
