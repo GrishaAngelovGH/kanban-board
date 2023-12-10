@@ -61,7 +61,7 @@ const columns = {
 }
 
 const tasks = {
-  createTask: (columnId, taskTitle, taskDescription, priority) => {
+  createTask: (columnId, taskTitle, taskDescription, priority, isTemplate) => {
     const id = Math.random().toString().slice(2)
 
     const column = getColumnById(columnId)
@@ -71,7 +71,8 @@ const tasks = {
       description: taskDescription,
       assignedIds: [],
       priority,
-      isLocked: false
+      isLocked: false,
+      isTemplate: isTemplate
     })
 
     updateColumn(column)
@@ -83,6 +84,7 @@ const tasks = {
     foundTask.title = task.title
     foundTask.description = task.description
     foundTask.priority = task.priority
+    foundTask.isTemplate = task.isTemplate
 
     updateColumn(column)
   },
