@@ -43,6 +43,20 @@ Object {
               <div
                 class="col-md-12"
               >
+                <div
+                  class="mb-3 form-check"
+                >
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                  />
+                  <label
+                    class="form-check-label"
+                    title=""
+                  >
+                    Use as a template
+                  </label>
+                </div>
                 <input
                   class="mb-3 form-control"
                   placeholder="Title"
@@ -248,6 +262,314 @@ Object {
                     High Priority
                   </option>
                 </select>
+              </div>
+            </div>
+          </div>
+          <div
+            class="modal-footer"
+          >
+            <button
+              class="btn btn-secondary"
+              type="button"
+            >
+              Close
+            </button>
+            <button
+              class="btn btn-primary"
+              type="button"
+            >
+              Confirm
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div />,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`should render TaskModal component as a template 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body
+    class="modal-open"
+    data-rr-ui-modal-open=""
+    style="padding-right: 2048px;"
+  >
+    <div />
+    <div
+      class="fade modal-backdrop show"
+    />
+    <div
+      aria-modal="true"
+      class="fade modal show"
+      role="dialog"
+      style="display: block; padding-right: 0px;"
+      tabindex="-1"
+    >
+      <div
+        class="modal-dialog"
+      >
+        <div
+          class="modal-content"
+        >
+          <div
+            class="modal-header"
+          >
+            <div
+              class="modal-title h4"
+            >
+              Create New Task
+            </div>
+          </div>
+          <div
+            class="modal-body"
+          >
+            <div
+              class="row"
+            >
+              <div
+                class="col-md-12"
+              >
+                <div
+                  class="mb-3 form-check"
+                >
+                  <input
+                    checked=""
+                    class="form-check-input"
+                    type="checkbox"
+                  />
+                  <label
+                    class="form-check-label"
+                    title=""
+                  >
+                    Use as a template
+                  </label>
+                </div>
+                <div
+                  class="rsw-editor"
+                >
+                  <div
+                    class="rsw-toolbar"
+                  >
+                    <button
+                      class="rsw-btn"
+                      data-active="false"
+                      title="Undo"
+                      type="button"
+                    >
+                      ↶
+                    </button>
+                    <button
+                      class="rsw-btn"
+                      data-active="false"
+                      title="Redo"
+                      type="button"
+                    >
+                      ↷
+                    </button>
+                    <div
+                      class="rsw-separator"
+                    />
+                    <button
+                      class="rsw-btn"
+                      data-active="false"
+                      title="Bold"
+                      type="button"
+                    >
+                      𝐁
+                    </button>
+                    <button
+                      class="rsw-btn"
+                      data-active="false"
+                      title="Italic"
+                      type="button"
+                    >
+                      𝑰
+                    </button>
+                    <button
+                      class="rsw-btn"
+                      data-active="false"
+                      title="Underline"
+                      type="button"
+                    >
+                      <span
+                        style="text-decoration: underline;"
+                      >
+                        𝐔
+                      </span>
+                    </button>
+                    <button
+                      class="rsw-btn"
+                      data-active="false"
+                      title="Strike through"
+                      type="button"
+                    >
+                      <s>
+                        ab
+                      </s>
+                    </button>
+                    <div
+                      class="rsw-separator"
+                    />
+                    <button
+                      class="rsw-btn"
+                      data-active="false"
+                      title="Numbered list"
+                      type="button"
+                    >
+                      <svg
+                        height="20"
+                        style="vertical-align: text-top;"
+                        viewBox="0 0 24 24"
+                        width="20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.99938 12.998v-2H20.9994v2H6.99938zm0 6.0001v-2H20.9994v2H6.99938zm0-12.00001v-2H20.9994v2H6.99938zm-4 1v-3h-1v-1h2v4h-1zm-1 9.00001v-1h3v4h-3v-1h2v-.5h-1v-1h1v-.5h-2zM4.25 10c.41421 0 .75.3358.75.75 0 .2024-.08017.3861-.2105.521L3.11983 13H5v1H2v-.9218L4 11H2v-1h2.25z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      class="rsw-btn"
+                      data-active="false"
+                      title="Bullet list"
+                      type="button"
+                    >
+                      <svg
+                        height="20"
+                        style="vertical-align: text-top;"
+                        viewBox="0 0 24 24"
+                        width="20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M7 5h14v2H7V5zm0 8v-2h14v2H7zM4 4.50001c.83 0 1.5.66992 1.5 1.5 0 .83007-.67 1.5-1.5 1.5s-1.5-.66993-1.5-1.5c0-.83008.67-1.5 1.5-1.5zM4 10.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zM7 19v-2h14v2H7zm-3-2.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </button>
+                    <div
+                      class="rsw-separator"
+                    />
+                    <button
+                      class="rsw-btn"
+                      data-active="false"
+                      title="Link"
+                      type="button"
+                    >
+                      🔗
+                    </button>
+                    <button
+                      class="rsw-btn"
+                      data-active="false"
+                      title="Clear formatting"
+                      type="button"
+                    >
+                      T̲ₓ
+                    </button>
+                    <button
+                      class="rsw-btn"
+                      data-active="false"
+                      title="HTML mode"
+                      type="button"
+                    >
+                      &lt;/&gt;
+                    </button>
+                    <div
+                      class="rsw-separator"
+                    />
+                    <select
+                      class="rsw-dd"
+                      title="Styles"
+                    >
+                      <option
+                        hidden=""
+                      >
+                        Styles
+                      </option>
+                      <option
+                        value="0"
+                      >
+                        Normal
+                      </option>
+                      <option
+                        value="1"
+                      >
+                        𝗛𝗲𝗮𝗱𝗲𝗿 𝟭
+                      </option>
+                      <option
+                        value="2"
+                      >
+                        Header 2
+                      </option>
+                      <option
+                        value="3"
+                      >
+                        𝙲𝚘𝚍𝚎
+                      </option>
+                    </select>
+                  </div>
+                  <div
+                    class="rsw-ce"
+                    contenteditable="true"
+                  >
+                    Title Description
+                  </div>
+                </div>
               </div>
             </div>
           </div>
