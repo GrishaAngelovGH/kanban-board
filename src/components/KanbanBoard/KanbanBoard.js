@@ -96,8 +96,8 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
     showToastWithMessage("Kanban Board is successfully cleared")
   }
 
-  const handleConfirmCreateTask = (title, description, priority) => {
-    boardRepository.createTask(columnId, title, description, priority)
+  const handleConfirmCreateTask = (title, description, priority, isTemplate) => {
+    boardRepository.createTask(columnId, title, description, priority, isTemplate)
     setShowAddTaskModal(!showAddTaskModal)
     onUpdate()
 
