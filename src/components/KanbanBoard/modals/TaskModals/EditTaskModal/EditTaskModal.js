@@ -6,6 +6,7 @@ const EditTaskModal = ({ show, task, onClose, onConfirm }) => {
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
   const [priority, setPriority] = useState("")
+  const [isTemplate, setIsTemplate] = useState(false)
 
   const handleTitleChange = ({ target: { value } }) => {
     setTitle(value)
@@ -19,11 +20,16 @@ const EditTaskModal = ({ show, task, onClose, onConfirm }) => {
     setPriority(value)
   }
 
+  const handleTemplateChange = ({ target: { checked } }) => {
+    setIsTemplate(checked)
+  }
+
   const handleConfirm = () => {
-    onConfirm({ ...task, title, description, priority })
+    onConfirm({ ...task, title, description, priority, isTemplate })
     setTitle("")
     setDescription("")
     setPriority("")
+    setIsTemplate(false)
   }
 
   useEffect(() => {
@@ -31,6 +37,7 @@ const EditTaskModal = ({ show, task, onClose, onConfirm }) => {
       setTitle(task.title)
       setDescription(task.description)
       setPriority(task.priority)
+      setIsTemplate(task.isTemplate)
     }
   }, [task])
 
@@ -41,9 +48,11 @@ const EditTaskModal = ({ show, task, onClose, onConfirm }) => {
       title={title}
       description={description}
       priority={priority}
+      isTemplate={isTemplate}
       onTitleChange={handleTitleChange}
       onDescriptionChange={handleDescriptionChange}
       onPriorityChange={handlePriorityChange}
+      onTemplateChange={handleTemplateChange}
       onClose={onClose}
       onConfirm={handleConfirm}
     />
