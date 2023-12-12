@@ -154,6 +154,7 @@ const Column = ({
               title={v.title}
               description={v.description}
               priority={v.priority}
+              isTemplate={v.isTemplate}
               isGridView={isGridView}
               isSingleRowView={isSingleRowView}
               markedAsDone={markedAsDone}

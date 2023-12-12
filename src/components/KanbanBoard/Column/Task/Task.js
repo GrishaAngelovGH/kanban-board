@@ -24,7 +24,7 @@ const bookmarkStyles = {
 }
 
 const Task = ({
-  id, columnId, assignedIds, title, description, priority,
+  id, columnId, assignedIds, title, description, priority, isTemplate,
   isGridView, isSingleRowView, markedAsDone, isLocked,
   onEdit, onAssignUser, onToggleLock, onDelete
 }) => {
@@ -42,11 +42,11 @@ const Task = ({
   }
 
   const handleEdit = () => {
-    onEdit({ id, title, description, priority }, columnId)
+    onEdit({ id, title, description, priority, isTemplate }, columnId)
   }
 
   const handleAssignUser = () => {
-    onAssignUser({ id, title, description, priority, assignedIds }, columnId)
+    onAssignUser({ id, title, description, priority, isTemplate, assignedIds }, columnId)
   }
 
   const handleToggleLock = () => {
@@ -107,7 +107,7 @@ const Task = ({
         <div>
           {!isLocked && <i role="button" onClick={handleDelete} className="bi bi-trash fs-4 text-danger"></i>}
           <i role="button" onClick={handleEdit} className="bi bi-pencil-square fs-4 text-secondary mx-1"></i>
-          {users.length > 0 && <i role="button" onClick={handleAssignUser} className="bi bi-person-circle fs-4 text-secondary mx-1"></i>}
+          {!isTemplate && users.length > 0 && <i role="button" onClick={handleAssignUser} className="bi bi-person-circle fs-4 text-secondary mx-1"></i>}
           <i role="button" onClick={handleToggleLock} className={`bi bi-${isLocked ? "lock-fill" : "unlock-fill"} fs-4 text-secondary mx-1`}></i>
         </div>
         {
