@@ -44,6 +44,7 @@ const EditTaskModal = ({ show, task, onClose, onConfirm }) => {
   return (
     <TaskModal
       show={show}
+      isEdit={true}
       modalTitle="Edit Task"
       title={title}
       description={description}

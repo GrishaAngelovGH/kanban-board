@@ -6,7 +6,7 @@ import Editor from "react-simple-wysiwyg"
 import "./TaskModal.css"
 
 const TaskModal = ({
-  show, modalTitle, title, description, priority, isTemplate,
+  show, isEdit, modalTitle, title, description, priority, isTemplate,
   onTitleChange, onDescriptionChange, onPriorityChange,
   onTemplateChange, onClose, onConfirm
 }) => (
@@ -19,12 +19,16 @@ const TaskModal = ({
     body={
       <div className="row">
         <div className="col-md-12">
-          <FormCheck
-            checked={isTemplate}
-            label="Use as a template"
-            className="mb-3"
-            onChange={onTemplateChange}
-          />
+          {
+            !isEdit && (
+              <FormCheck
+                checked={isTemplate}
+                label="Use as a template"
+                className="mb-3"
+                onChange={onTemplateChange}
+              />
+            )
+          }
 
           {
             !isTemplate && (

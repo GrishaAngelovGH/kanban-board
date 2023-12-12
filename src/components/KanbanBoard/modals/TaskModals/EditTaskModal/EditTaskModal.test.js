@@ -19,3 +19,21 @@ test("should render EditTaskModal component", () => {
 
   expect(view).toMatchSnapshot()
 })
+
+test("should render EditTaskModal component with template task", () => {
+  const task = {
+    title: "",
+    description: "Template Description",
+    isTemplate: true
+  }
+
+  const view = render(
+    <EditTaskModal
+      show
+      task={task}
+      columnId="columnId"
+    />
+  )
+
+  expect(view).toMatchSnapshot()
+})
