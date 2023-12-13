@@ -22,6 +22,8 @@ const NewTaskModal = ({ show, onClose, onConfirm }) => {
 
   const handleTemplateChange = ({ target: { checked } }) => {
     setIsTemplate(checked)
+    setTitle("")
+    setPriority("")
   }
 
   const handleConfirm = () => {
