@@ -2,6 +2,7 @@ import { useDraggable } from "@dnd-kit/core"
 
 import OverlayTrigger from "react-bootstrap/OverlayTrigger"
 import Tooltip from "react-bootstrap/Tooltip"
+import Badge from "react-bootstrap/Badge"
 
 import Avatar from "components/Avatar"
 
@@ -62,6 +63,7 @@ const Task = ({
     <div ref={setNodeRef} style={style} className={`row m-0 ${bgClass} ${borderClass} mt-3 rounded shadow p-1`}>
       <div className={`${isGridView || isSingleRowView ? "col-9" : "col-11"}`}>
         <p className="fw-bold text-capitalize">{title}</p>
+        {isTemplate && (<Badge bg="primary">This task is a template</Badge>)}
       </div>
 
       {
