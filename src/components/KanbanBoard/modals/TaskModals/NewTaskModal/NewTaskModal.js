@@ -26,6 +26,15 @@ const NewTaskModal = ({ show, onClose, onConfirm }) => {
     setPriority("")
   }
 
+  const handleClose = () => {
+    setTitle("")
+    setDescription("")
+    setPriority("")
+    setIsTemplate(false)
+
+    onClose()
+  }
+
   const handleConfirm = () => {
     onConfirm(title, description, priority, isTemplate)
     setTitle("")
@@ -46,7 +55,7 @@ const NewTaskModal = ({ show, onClose, onConfirm }) => {
       onDescriptionChange={handleDescriptionChange}
       onPriorityChange={handlePriorityChange}
       onTemplateChange={handleTemplateChange}
-      onClose={onClose}
+      onClose={handleClose}
       onConfirm={handleConfirm}
     />
   )
