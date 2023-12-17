@@ -2,11 +2,14 @@ import { useState } from "react"
 
 import TaskModal from "../TaskModal"
 
+import boardRepository from "persistent/persistentKanbanBoardRepository"
+
 const NewTaskModal = ({ show, onClose, onConfirm }) => {
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
   const [priority, setPriority] = useState("")
   const [isTemplate, setIsTemplate] = useState(false)
+  const [showTemplates, setShowTemplates] = useState(false)
 
   const handleTitleChange = ({ target: { value } }) => {
     setTitle(value)
@@ -26,11 +29,16 @@ const NewTaskModal = ({ show, onClose, onConfirm }) => {
     setPriority("")
   }
 
+  const handleShowTemplatesChange = () => {
+    setShowTemplates(!showTemplates)
+  }
+
   const handleClose = () => {
     setTitle("")
     setDescription("")
     setPriority("")
     setIsTemplate(false)
+    setShowTemplates(false)
 
     onClose()
   }
@@ -41,7 +49,10 @@ const NewTaskModal = ({ show, onClose, onConfirm }) => {
     setDescription("")
     setPriority("")
     setIsTemplate(false)
+    setShowTemplates(false)
   }
+
+  const templates = boardRepository.getAllTemplates()
 
   return (
     <TaskModal
@@ -51,6 +62,9 @@ const NewTaskModal = ({ show, onClose, onConfirm }) => {
       description={description}
       priority={priority}
       isTemplate={isTemplate}
+      templates={templates}
+      showTemplates={showTemplates}
+      onShowTemplatesChange={handleShowTemplatesChange}
       onTitleChange={handleTitleChange}
       onDescriptionChange={handleDescriptionChange}
       onPriorityChange={handlePriorityChange}

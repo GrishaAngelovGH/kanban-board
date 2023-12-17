@@ -38,7 +38,7 @@ Object {
             class="modal-body"
           >
             <div
-              class="row"
+              class="row overflow-auto task-modal"
             >
               <div
                 class="col-md-12"
@@ -55,6 +55,20 @@ Object {
                     title=""
                   >
                     Use as a template
+                  </label>
+                </div>
+                <div
+                  class="mb-3 form-check"
+                >
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                  />
+                  <label
+                    class="form-check-label"
+                    title=""
+                  >
+                    Create from a template
                   </label>
                 </div>
                 <input
@@ -378,7 +392,7 @@ Object {
             class="modal-body"
           >
             <div
-              class="row"
+              class="row overflow-auto task-modal"
             >
               <div
                 class="col-md-12"
@@ -396,6 +410,20 @@ Object {
                     title=""
                   >
                     Use as a template
+                  </label>
+                </div>
+                <div
+                  class="mb-3 form-check"
+                >
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                  />
+                  <label
+                    class="form-check-label"
+                    title=""
+                  >
+                    Create from a template
                   </label>
                 </div>
                 <div
@@ -686,11 +714,25 @@ Object {
             class="modal-body"
           >
             <div
-              class="row"
+              class="row overflow-auto task-modal"
             >
               <div
                 class="col-md-12"
               >
+                <div
+                  class="mb-3 form-check"
+                >
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                  />
+                  <label
+                    class="form-check-label"
+                    title=""
+                  >
+                    Create from a template
+                  </label>
+                </div>
                 <div
                   class="rsw-editor"
                 >

@@ -80,10 +80,10 @@ const tasks = {
   getAllTemplates: () => {
     const columns = JSON.parse(localStorage.getItem("columns"))
 
-    return Object.values(columns).reduce(((filtered, column) => {
+    return columns && Object.values(columns).reduce(((filtered, column) => {
       const templates = column.items.filter(v => v.isTemplate)
       return [...filtered, ...templates]
-    }), [])
+    }), []) || []
   },
   updateTask: (task, columnId) => {
     const column = getColumnById(columnId)
