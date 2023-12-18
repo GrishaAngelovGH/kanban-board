@@ -43,20 +43,6 @@ Object {
               <div
                 class="col-md-12"
               >
-                <div
-                  class="mb-3 form-check"
-                >
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                  />
-                  <label
-                    class="form-check-label"
-                    title=""
-                  >
-                    Create from a template
-                  </label>
-                </div>
                 <input
                   class="mb-3 form-control"
                   placeholder="Title"
@@ -384,20 +370,6 @@ Object {
               <div
                 class="col-md-12"
               >
-                <div
-                  class="mb-3 form-check"
-                >
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                  />
-                  <label
-                    class="form-check-label"
-                    title=""
-                  >
-                    Create from a template
-                  </label>
-                </div>
                 <div
                   class="rsw-editor"
                 >

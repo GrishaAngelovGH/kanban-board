@@ -32,12 +32,15 @@ const TaskModal = ({
             )
           }
 
-          <FormCheck
-            checked={showTemplates}
-            label="Create from a template"
-            className="mb-3"
-            onChange={onShowTemplatesChange}
-          />
+          {
+            !isEdit && (<FormCheck
+              checked={showTemplates}
+              label="Create from a template"
+              className="mb-3"
+              onChange={onShowTemplatesChange}
+            />
+            )
+          }
 
           {
             !isTemplate && !showTemplates && (

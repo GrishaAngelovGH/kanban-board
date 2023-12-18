@@ -4,5 +4,5 @@
 }
 
 .task-modal {
-  height: 230px;
+  max-height: 230px;
 }
