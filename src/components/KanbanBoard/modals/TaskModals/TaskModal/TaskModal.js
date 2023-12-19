@@ -22,24 +22,23 @@ const TaskModal = ({
       <div className="row overflow-auto task-modal">
         <div className="col-md-12">
           {
-            !isEdit && !showTemplates && (
-              <FormCheck
-                checked={isTemplate}
-                label="Use as a template"
-                className="mb-3"
-                onChange={onTemplateChange}
-              />
-            )
-          }
-
-          {
             !isEdit && (
-              <FormCheck
-                checked={showTemplates}
-                label="Create from a template"
-                className="mb-3"
-                onChange={onShowTemplatesChange}
-              />
+              <div className="mb-3 d-flex justify-content-around">
+                {
+                  !showTemplates && (
+                    <FormCheck
+                      checked={isTemplate}
+                      label="Use as a template"
+                      onChange={onTemplateChange}
+                    />
+                  )
+                }
+                <FormCheck
+                  checked={showTemplates}
+                  label="Create from a template"
+                  onChange={onShowTemplatesChange}
+                />
+              </div>
             )
           }
 

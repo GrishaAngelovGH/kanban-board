@@ -44,32 +44,36 @@ Object {
                 class="col-md-12"
               >
                 <div
-                  class="mb-3 form-check"
+                  class="mb-3 d-flex justify-content-around"
                 >
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                  />
-                  <label
-                    class="form-check-label"
-                    title=""
+                  <div
+                    class="form-check"
                   >
-                    Use as a template
-                  </label>
-                </div>
-                <div
-                  class="mb-3 form-check"
-                >
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                  />
-                  <label
-                    class="form-check-label"
-                    title=""
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                    />
+                    <label
+                      class="form-check-label"
+                      title=""
+                    >
+                      Use as a template
+                    </label>
+                  </div>
+                  <div
+                    class="form-check"
                   >
-                    Create from a template
-                  </label>
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                    />
+                    <label
+                      class="form-check-label"
+                      title=""
+                    >
+                      Create from a template
+                    </label>
+                  </div>
                 </div>
                 <input
                   class="mb-3 form-control"
@@ -398,33 +402,37 @@ Object {
                 class="col-md-12"
               >
                 <div
-                  class="mb-3 form-check"
+                  class="mb-3 d-flex justify-content-around"
                 >
-                  <input
-                    checked=""
-                    class="form-check-input"
-                    type="checkbox"
-                  />
-                  <label
-                    class="form-check-label"
-                    title=""
+                  <div
+                    class="form-check"
                   >
-                    Use as a template
-                  </label>
-                </div>
-                <div
-                  class="mb-3 form-check"
-                >
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                  />
-                  <label
-                    class="form-check-label"
-                    title=""
+                    <input
+                      checked=""
+                      class="form-check-input"
+                      type="checkbox"
+                    />
+                    <label
+                      class="form-check-label"
+                      title=""
+                    >
+                      Use as a template
+                    </label>
+                  </div>
+                  <div
+                    class="form-check"
                   >
-                    Create from a template
-                  </label>
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                    />
+                    <label
+                      class="form-check-label"
+                      title=""
+                    >
+                      Create from a template
+                    </label>
+                  </div>
                 </div>
                 <div
                   class="rsw-editor"
@@ -1013,19 +1021,23 @@ Object {
                 class="col-md-12"
               >
                 <div
-                  class="mb-3 form-check"
+                  class="mb-3 d-flex justify-content-around"
                 >
-                  <input
-                    checked=""
-                    class="form-check-input"
-                    type="checkbox"
-                  />
-                  <label
-                    class="form-check-label"
-                    title=""
+                  <div
+                    class="form-check"
                   >
-                    Create from a template
-                  </label>
+                    <input
+                      checked=""
+                      class="form-check-input"
+                      type="checkbox"
+                    />
+                    <label
+                      class="form-check-label"
+                      title=""
+                    >
+                      Create from a template
+                    </label>
+                  </div>
                 </div>
                 <div
                   class="border border-3 rounded m-3 p-3 shadow"
