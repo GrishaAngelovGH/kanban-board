@@ -65,3 +65,35 @@ test("should render TaskModal component in edit mode", () => {
 
   expect(view).toMatchSnapshot()
 })
+
+test("should render TaskModal component with visualized templates", () => {
+  const onTemplateChange = jest.fn()
+
+  const templates = [
+    {
+      id: 1,
+      title: "",
+      description: "Template Description 1",
+      isTemplate: true
+    },
+    {
+      id: 2,
+      title: "",
+      description: "Template Description 2",
+      isTemplate: true
+    }
+  ]
+
+  const view = render(
+    <TaskModal
+      show={true}
+      modalTitle="Create New Task"
+      title=""
+      templates={templates}
+      showTemplates={true}
+      onShowTemplatesChange={onTemplateChange}
+    />
+  )
+
+  expect(view).toMatchSnapshot()
+})

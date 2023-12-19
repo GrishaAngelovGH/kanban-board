@@ -33,12 +33,13 @@ const TaskModal = ({
           }
 
           {
-            !isEdit && (<FormCheck
-              checked={showTemplates}
-              label="Create from a template"
-              className="mb-3"
-              onChange={onShowTemplatesChange}
-            />
+            !isEdit && (
+              <FormCheck
+                checked={showTemplates}
+                label="Create from a template"
+                className="mb-3"
+                onChange={onShowTemplatesChange}
+              />
             )
           }
 
@@ -72,11 +73,20 @@ const TaskModal = ({
             showTemplates && templates.map(v => (
               <div key={v.id} className="border border-3 rounded m-3 p-3 shadow">
                 <p className="text-secondary">{v.description}</p>
+                <button
+                  className="btn btn-primary w-100"
+                  onClick={() => {
+                    onDescriptionChange({ target: { value: v.description } })
+                    onShowTemplatesChange()
+                  }}
+                >
+                  Use
+                </button>
               </div>
             ))
           }
         </div>
-      </div>
+      </div >
     }
   />
 )
