@@ -41,6 +41,15 @@ const EditTaskModal = ({ show, task, onClose, onConfirm }) => {
     }
   }, [task])
 
+  const handlers = {
+    onTitleChange: handleTitleChange,
+    onDescriptionChange: handleDescriptionChange,
+    onPriorityChange: handlePriorityChange,
+    onTemplateChange: handleTemplateChange,
+    onClose,
+    onConfirm: handleConfirm
+  }
+
   return (
     <TaskModal
       show={show}
@@ -50,12 +59,7 @@ const EditTaskModal = ({ show, task, onClose, onConfirm }) => {
       description={description}
       priority={priority}
       isTemplate={isTemplate}
-      onTitleChange={handleTitleChange}
-      onDescriptionChange={handleDescriptionChange}
-      onPriorityChange={handlePriorityChange}
-      onTemplateChange={handleTemplateChange}
-      onClose={onClose}
-      onConfirm={handleConfirm}
+      handlers={handlers}
     />
   )
 }

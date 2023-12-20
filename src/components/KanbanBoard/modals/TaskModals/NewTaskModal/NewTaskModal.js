@@ -54,6 +54,16 @@ const NewTaskModal = ({ show, onClose, onConfirm }) => {
 
   const templates = boardRepository.getAllTemplates()
 
+  const handlers = {
+    onShowTemplatesChange: handleShowTemplatesChange,
+    onTitleChange: handleTitleChange,
+    onDescriptionChange: handleDescriptionChange,
+    onPriorityChange: handlePriorityChange,
+    onTemplateChange: handleTemplateChange,
+    onClose: handleClose,
+    onConfirm: handleConfirm
+  }
+
   return (
     <TaskModal
       show={show}
@@ -64,13 +74,7 @@ const NewTaskModal = ({ show, onClose, onConfirm }) => {
       isTemplate={isTemplate}
       templates={templates}
       showTemplates={showTemplates}
-      onShowTemplatesChange={handleShowTemplatesChange}
-      onTitleChange={handleTitleChange}
-      onDescriptionChange={handleDescriptionChange}
-      onPriorityChange={handlePriorityChange}
-      onTemplateChange={handleTemplateChange}
-      onClose={handleClose}
-      onConfirm={handleConfirm}
+      handlers={handlers}
     />
   )
 }

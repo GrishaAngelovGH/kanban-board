@@ -2,8 +2,18 @@ import { render } from "@testing-library/react"
 
 import TaskModal from "./TaskModal"
 
+const onUpdate = jest.fn()
+
+const handlers = {
+  onTitleChange: onUpdate,
+  onDescriptionChange: onUpdate,
+  onPriorityChange: onUpdate,
+  onShowTemplatesChange: onUpdate,
+  onTemplateChange: onUpdate,
+  onUpdate
+}
+
 test("should render TaskModal component", () => {
-  const onUpdate = jest.fn()
 
   const view = render(
     <TaskModal
@@ -12,9 +22,7 @@ test("should render TaskModal component", () => {
       title="Title Task"
       description="Title Description"
       priority="medium"
-      onTitleChange={onUpdate}
-      onDescriptionChange={onUpdate}
-      onPriorityChange={onUpdate}
+      handlers={handlers}
     />
   )
 
@@ -22,9 +30,6 @@ test("should render TaskModal component", () => {
 })
 
 test("should render TaskModal component as a template", () => {
-  const onUpdate = jest.fn()
-  const onTemplateChange = jest.fn()
-
   const view = render(
     <TaskModal
       show={true}
@@ -33,10 +38,7 @@ test("should render TaskModal component as a template", () => {
       description="Title Description"
       priority="medium"
       isTemplate={true}
-      onTitleChange={onUpdate}
-      onDescriptionChange={onUpdate}
-      onPriorityChange={onUpdate}
-      onTemplateChange={onTemplateChange}
+      handlers={handlers}
     />
   )
 
@@ -44,9 +46,6 @@ test("should render TaskModal component as a template", () => {
 })
 
 test("should render TaskModal component in edit mode", () => {
-  const onUpdate = jest.fn()
-  const onTemplateChange = jest.fn()
-
   const view = render(
     <TaskModal
       show={true}
@@ -56,10 +55,7 @@ test("should render TaskModal component in edit mode", () => {
       description="Title Description"
       priority="medium"
       isTemplate={true}
-      onTitleChange={onUpdate}
-      onDescriptionChange={onUpdate}
-      onPriorityChange={onUpdate}
-      onTemplateChange={onTemplateChange}
+      handlers={handlers}
     />
   )
 
@@ -67,8 +63,6 @@ test("should render TaskModal component in edit mode", () => {
 })
 
 test("should render TaskModal component with visualized templates", () => {
-  const onTemplateChange = jest.fn()
-
   const templates = [
     {
       id: 1,
@@ -91,7 +85,7 @@ test("should render TaskModal component with visualized templates", () => {
       title=""
       templates={templates}
       showTemplates={true}
-      onShowTemplatesChange={onTemplateChange}
+      handlers={handlers}
     />
   )
 
