@@ -11,6 +11,36 @@ const columns = {
 
     localStorage.setItem("columns", newColumn)
   },
+  relocateTemplatesInColumn: () => {
+    const columns = JSON.parse(localStorage.getItem("columns"))
+
+    const id = "template-column"
+
+    const column = columns[id] ?
+      columns[id] :
+      {
+        id,
+        title: "Templates",
+        description: "This column provides all available templates",
+        limit: 0,
+        items: []
+      }
+
+    column.items = tasks.getAllTemplates()
+
+    Object.values(columns).forEach(col => {
+      if (col.id !== id) {
+        col.items = col.items.filter(v => !v.isTemplate)
+      }
+    })
+
+    const newColumn = JSON.stringify({
+      ...columns,
+      [id]: column
+    })
+
+    localStorage.setItem("columns", newColumn)
+  },
   getColumns: () => {
     const columns = JSON.parse(localStorage.getItem("columns"))
 

@@ -21,18 +21,151 @@ Object {
           class="col-8 col-md-4 col-lg-3 text-end"
         >
           <div
-            class="dropdown btn-group"
+            class="show dropdown btn-group"
             role="group"
           >
             <button
-              aria-expanded="false"
-              class="dropdown-toggle btn btn-light btn-sm"
+              aria-expanded="true"
+              class="dropdown-toggle show btn btn-light btn-sm"
               type="button"
             >
               <i
                 class="bi bi-grid-fill text-primary"
               />
             </button>
+            <div
+              aria-labelledby=""
+              class="dropdown-menu show"
+              x-placement="bottom-start"
+            >
+              <a
+                class="dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="#"
+                icon="bi bi-arrows-fullscreen"
+                label="Toggle Fullscreen"
+                role="button"
+                tabindex="0"
+              >
+                <i
+                  class="bi bi-arrows-fullscreen"
+                />
+                <span
+                  class="mx-2"
+                >
+                  Toggle Fullscreen
+                </span>
+              </a>
+              <a
+                class="dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="#"
+                icon="bi bi-calendar2-week"
+                label="Toggle Calendar"
+                role="button"
+                tabindex="0"
+              >
+                <i
+                  class="bi bi-calendar2-week"
+                />
+                <span
+                  class="mx-2"
+                >
+                  Toggle Calendar
+                </span>
+              </a>
+              <a
+                class="dropdown-item"
+                data-rr-ui-dropdown-item=""
+                download="kanban-board-fri-dec-22-2023-00:00:00.json"
+                href="#"
+                icon="bi bi-box-arrow-up"
+                label="Export to JSON"
+                role="button"
+                tabindex="0"
+              >
+                <i
+                  class="bi bi-box-arrow-up"
+                />
+                <span
+                  class="mx-2"
+                >
+                  Export to JSON
+                </span>
+              </a>
+              <a
+                class="dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="#"
+                icon="bi bi-box-arrow-down"
+                label="Import from JSON"
+                role="button"
+                tabindex="0"
+              >
+                <i
+                  class="bi bi-box-arrow-down"
+                />
+                <span
+                  class="mx-2"
+                >
+                  Import from JSON
+                </span>
+              </a>
+              <a
+                class="dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="#"
+                icon="bi bi-people"
+                label="Manage Users"
+                role="button"
+                tabindex="0"
+              >
+                <i
+                  class="bi bi-people"
+                />
+                <span
+                  class="mx-2"
+                >
+                  Manage Users
+                </span>
+              </a>
+              <a
+                class="dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="#"
+                icon="bi bi-collection"
+                label="Group Templates"
+                role="button"
+                tabindex="0"
+              >
+                <i
+                  class="bi bi-collection"
+                />
+                <span
+                  class="mx-2"
+                >
+                  Group Templates
+                </span>
+              </a>
+              <a
+                class="dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="#"
+                icon="bi bi-gear"
+                label="Settings"
+                role="button"
+                tabindex="0"
+              >
+                <i
+                  class="bi bi-gear"
+                />
+                <span
+                  class="mx-2"
+                >
+                  Settings
+                </span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -55,18 +188,151 @@ Object {
         class="col-8 col-md-4 col-lg-3 text-end"
       >
         <div
-          class="dropdown btn-group"
+          class="show dropdown btn-group"
           role="group"
         >
           <button
-            aria-expanded="false"
-            class="dropdown-toggle btn btn-light btn-sm"
+            aria-expanded="true"
+            class="dropdown-toggle show btn btn-light btn-sm"
             type="button"
           >
             <i
               class="bi bi-grid-fill text-primary"
             />
           </button>
+          <div
+            aria-labelledby=""
+            class="dropdown-menu show"
+            x-placement="bottom-start"
+          >
+            <a
+              class="dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="#"
+              icon="bi bi-arrows-fullscreen"
+              label="Toggle Fullscreen"
+              role="button"
+              tabindex="0"
+            >
+              <i
+                class="bi bi-arrows-fullscreen"
+              />
+              <span
+                class="mx-2"
+              >
+                Toggle Fullscreen
+              </span>
+            </a>
+            <a
+              class="dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="#"
+              icon="bi bi-calendar2-week"
+              label="Toggle Calendar"
+              role="button"
+              tabindex="0"
+            >
+              <i
+                class="bi bi-calendar2-week"
+              />
+              <span
+                class="mx-2"
+              >
+                Toggle Calendar
+              </span>
+            </a>
+            <a
+              class="dropdown-item"
+              data-rr-ui-dropdown-item=""
+              download="kanban-board-fri-dec-22-2023-00:00:00.json"
+              href="#"
+              icon="bi bi-box-arrow-up"
+              label="Export to JSON"
+              role="button"
+              tabindex="0"
+            >
+              <i
+                class="bi bi-box-arrow-up"
+              />
+              <span
+                class="mx-2"
+              >
+                Export to JSON
+              </span>
+            </a>
+            <a
+              class="dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="#"
+              icon="bi bi-box-arrow-down"
+              label="Import from JSON"
+              role="button"
+              tabindex="0"
+            >
+              <i
+                class="bi bi-box-arrow-down"
+              />
+              <span
+                class="mx-2"
+              >
+                Import from JSON
+              </span>
+            </a>
+            <a
+              class="dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="#"
+              icon="bi bi-people"
+              label="Manage Users"
+              role="button"
+              tabindex="0"
+            >
+              <i
+                class="bi bi-people"
+              />
+              <span
+                class="mx-2"
+              >
+                Manage Users
+              </span>
+            </a>
+            <a
+              class="dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="#"
+              icon="bi bi-collection"
+              label="Group Templates"
+              role="button"
+              tabindex="0"
+            >
+              <i
+                class="bi bi-collection"
+              />
+              <span
+                class="mx-2"
+              >
+                Group Templates
+              </span>
+            </a>
+            <a
+              class="dropdown-item"
+              data-rr-ui-dropdown-item=""
+              href="#"
+              icon="bi bi-gear"
+              label="Settings"
+              role="button"
+              tabindex="0"
+            >
+              <i
+                class="bi bi-gear"
+              />
+              <span
+                class="mx-2"
+              >
+                Settings
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </div>

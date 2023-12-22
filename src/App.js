@@ -60,6 +60,7 @@ function App() {
             onImportKanbanBoardClick={toggleUploadKanbanBoardModal}
             onSettingsClick={toggleSettings}
             onUsersClick={toggleUsers}
+            onUpdate={prepareJsonFileDownload}
           />
         }
         body={

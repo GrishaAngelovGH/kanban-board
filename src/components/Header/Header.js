@@ -2,9 +2,11 @@ import ButtonGroup from "react-bootstrap/ButtonGroup"
 import Dropdown from "react-bootstrap/Dropdown"
 import DropdownButton from "react-bootstrap/DropdownButton"
 
+import boardRepository from "persistent/persistentKanbanBoardRepository"
+
 const Header = ({
   downloadJsonHref, disabledExport,
-  onUsersClick, onSettingsClick, onCalendarClick, onImportKanbanBoardClick
+  onUsersClick, onSettingsClick, onCalendarClick, onImportKanbanBoardClick, onUpdate
 }) => {
   const filename = `kanban-board-${new Date().toString().toLowerCase().split(" ").slice(0, 5).join("-")}.json`
 
@@ -24,6 +26,12 @@ const Header = ({
     { label: "Export to JSON", icon: "bi bi-box-arrow-up", href: downloadJsonHref, download: filename, disabled: disabledExport },
     { label: "Import from JSON", icon: "bi bi-box-arrow-down", onClick: onImportKanbanBoardClick },
     { label: "Manage Users", icon: "bi bi-people", onClick: onUsersClick },
+    {
+      label: "Group Templates", icon: "bi bi-collection", onClick: () => {
+        boardRepository.relocateTemplatesInColumn()
+        onUpdate()
+      }
+    },
     { label: "Settings", icon: "bi bi-gear", onClick: onSettingsClick }
   ]
 
