@@ -14,6 +14,7 @@ Implemented features:
   - provide rich text description i.e. bold, italic, underlined text, numbered/bullet lists, etc
   - provide priority i.e. low, medium or high
 * Create predefined templates that could be used as descriptions for given tasks
+* Group all templates in a dedicated column
 * Visualize number of tasks for given column
 * Mark/unmark column as "done" i.e. all tasks in the column will be visualized as completed
 * Delete column

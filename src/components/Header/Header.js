@@ -4,10 +4,9 @@ import DropdownButton from "react-bootstrap/DropdownButton"
 
 import boardRepository from "persistent/persistentKanbanBoardRepository"
 
-const Header = ({
-  downloadJsonHref, disabledExport,
-  onUsersClick, onSettingsClick, onCalendarClick, onImportKanbanBoardClick, onUpdate
-}) => {
+const Header = ({ downloadJsonHref, disabledExport, handlers }) => {
+  const { onUsersClick, onSettingsClick, onCalendarClick, onImportKanbanBoardClick, onUpdate } = handlers
+
   const filename = `kanban-board-${new Date().toString().toLowerCase().split(" ").slice(0, 5).join("-")}.json`
 
   const menuItems = [

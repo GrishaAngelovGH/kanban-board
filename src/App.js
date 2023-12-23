@@ -49,6 +49,14 @@ function App() {
 
   const disabledExport = !boardRepository.getColumns().length
 
+  const headerHandlers = {
+    onCalendarClick: toggleCalendar,
+    onImportKanbanBoardClick: toggleUploadKanbanBoardModal,
+    onSettingsClick: toggleSettings,
+    onUsersClick: toggleUsers,
+    onUpdate: prepareJsonFileDownload
+  }
+
   return (
     <div className="container-fluid">
       <Layout
@@ -56,11 +64,7 @@ function App() {
           <Header
             downloadJsonHref={downloadJsonHref}
             disabledExport={disabledExport}
-            onCalendarClick={toggleCalendar}
-            onImportKanbanBoardClick={toggleUploadKanbanBoardModal}
-            onSettingsClick={toggleSettings}
-            onUsersClick={toggleUsers}
-            onUpdate={prepareJsonFileDownload}
+            handlers={headerHandlers}
           />
         }
         body={

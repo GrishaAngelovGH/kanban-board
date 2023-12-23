@@ -13,7 +13,17 @@ afterEach(() => {
 })
 
 test("should render Header component", async () => {
-  const view = render(<Header />)
+  const onUpdate = jest.fn()
+
+  const handlers = {
+    onCalendarClick: onUpdate,
+    onImportKanbanBoardClick: onUpdate,
+    onSettingsClick: onUpdate,
+    onUsersClick: onUpdate,
+    onUpdate: onUpdate
+  }
+
+  const view = render(<Header handlers={handlers} />)
 
   const menu = view.container.querySelector('[role="group"]')
 
