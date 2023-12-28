@@ -26,7 +26,9 @@ const Header = ({ downloadJsonHref, disabledExport, handlers }) => {
     { label: "Import from JSON", icon: "bi bi-box-arrow-down", onClick: onImportKanbanBoardClick },
     { label: "Manage Users", icon: "bi bi-people", onClick: onUsersClick },
     {
-      label: "Group Templates", icon: "bi bi-collection", onClick: () => {
+      label: "Group Templates", icon: "bi bi-collection",
+      disabled: !boardRepository.getColumns().length,
+      onClick: () => {
         boardRepository.relocateTemplatesInColumn()
         onUpdate()
       }

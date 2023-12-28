@@ -130,7 +130,7 @@ Object {
                 </span>
               </a>
               <a
-                class="dropdown-item"
+                class="dropdown-item disabled"
                 data-rr-ui-dropdown-item=""
                 href="#"
                 icon="bi bi-collection"
@@ -297,7 +297,7 @@ Object {
               </span>
             </a>
             <a
-              class="dropdown-item"
+              class="dropdown-item disabled"
               data-rr-ui-dropdown-item=""
               href="#"
               icon="bi bi-collection"
