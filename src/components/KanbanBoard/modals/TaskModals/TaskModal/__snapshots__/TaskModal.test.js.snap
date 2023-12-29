@@ -44,36 +44,37 @@ Object {
                 class="col-md-12"
               >
                 <div
-                  class="mb-3 d-flex justify-content-around"
+                  class="mb-3 btn-group"
+                  role="group"
                 >
-                  <div
-                    class="form-check"
+                  <input
+                    autocomplete="off"
+                    class="btn-check"
+                    id="tbg-check-1"
+                    type="checkbox"
+                    value="1"
+                  />
+                  <label
+                    class="btn btn-outline-primary"
+                    for="tbg-check-1"
+                    tabindex="0"
                   >
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                    />
-                    <label
-                      class="form-check-label"
-                      title=""
-                    >
-                      Use as a template
-                    </label>
-                  </div>
-                  <div
-                    class="form-check"
+                    Use as a template
+                  </label>
+                  <input
+                    autocomplete="off"
+                    class="btn-check"
+                    id="tbg-check-2"
+                    type="checkbox"
+                    value="2"
+                  />
+                  <label
+                    class="btn btn-outline-primary"
+                    for="tbg-check-2"
+                    tabindex="0"
                   >
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                    />
-                    <label
-                      class="form-check-label"
-                      title=""
-                    >
-                      Create from a template
-                    </label>
-                  </div>
+                    Create from a template
+                  </label>
                 </div>
                 <input
                   class="mb-3 form-control"
@@ -402,37 +403,37 @@ Object {
                 class="col-md-12"
               >
                 <div
-                  class="mb-3 d-flex justify-content-around"
+                  class="mb-3 btn-group"
+                  role="group"
                 >
-                  <div
-                    class="form-check"
+                  <input
+                    autocomplete="off"
+                    class="btn-check"
+                    id="tbg-check-1"
+                    type="checkbox"
+                    value="1"
+                  />
+                  <label
+                    class="btn btn-outline-primary"
+                    for="tbg-check-1"
+                    tabindex="0"
                   >
-                    <input
-                      checked=""
-                      class="form-check-input"
-                      type="checkbox"
-                    />
-                    <label
-                      class="form-check-label"
-                      title=""
-                    >
-                      Use as a template
-                    </label>
-                  </div>
-                  <div
-                    class="form-check"
+                    Use as a template
+                  </label>
+                  <input
+                    autocomplete="off"
+                    class="btn-check"
+                    id="tbg-check-2"
+                    type="checkbox"
+                    value="2"
+                  />
+                  <label
+                    class="btn btn-outline-primary"
+                    for="tbg-check-2"
+                    tabindex="0"
                   >
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                    />
-                    <label
-                      class="form-check-label"
-                      title=""
-                    >
-                      Create from a template
-                    </label>
-                  </div>
+                    Create from a template
+                  </label>
                 </div>
                 <div
                   class="rsw-editor"
@@ -1021,23 +1022,23 @@ Object {
                 class="col-md-12"
               >
                 <div
-                  class="mb-3 d-flex justify-content-around"
+                  class="mb-3 btn-group"
+                  role="group"
                 >
-                  <div
-                    class="form-check"
+                  <input
+                    autocomplete="off"
+                    class="btn-check"
+                    id="tbg-check-2"
+                    type="checkbox"
+                    value="2"
+                  />
+                  <label
+                    class="btn btn-outline-primary"
+                    for="tbg-check-2"
+                    tabindex="0"
                   >
-                    <input
-                      checked=""
-                      class="form-check-input"
-                      type="checkbox"
-                    />
-                    <label
-                      class="form-check-label"
-                      title=""
-                    >
-                      Create from a template
-                    </label>
-                  </div>
+                    Create from a template
+                  </label>
                 </div>
                 <div
                   class="border border-3 rounded m-3 p-3 shadow"

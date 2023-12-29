@@ -1,7 +1,10 @@
+import { useState } from "react"
+
 import Modal from "components/Modal"
 
 import Form from "react-bootstrap/Form"
-import FormCheck from "react-bootstrap/FormCheck"
+import ToggleButton from "react-bootstrap/ToggleButton"
+import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup"
 
 import Editor from "react-simple-wysiwyg"
 
@@ -11,6 +14,7 @@ const TaskModal = ({
   show, isEdit, modalTitle, title, description,
   priority, isTemplate, templates, showTemplates, handlers
 }) => {
+  const [value, setValue] = useState([])
 
   const {
     onShowTemplatesChange,
@@ -34,22 +38,17 @@ const TaskModal = ({
           <div className="col-md-12">
             {
               !isEdit && (
-                <div className="mb-3 d-flex justify-content-around">
+                <ToggleButtonGroup type="checkbox" className="mb-3" value={value} onChange={setValue}>
                   {
                     !showTemplates && (
-                      <FormCheck
-                        checked={isTemplate}
-                        label="Use as a template"
-                        onChange={onTemplateChange}
-                      />
-                    )
+                      <ToggleButton id="tbg-check-1" value={1} variant="outline-primary" onChange={onTemplateChange} >
+                        Use as a template
+                      </ToggleButton>)
                   }
-                  <FormCheck
-                    checked={showTemplates}
-                    label="Create from a template"
-                    onChange={onShowTemplatesChange}
-                  />
-                </div>
+                  <ToggleButton id="tbg-check-2" value={2} variant="outline-primary" onChange={onShowTemplatesChange}>
+                    Create from a template
+                  </ToggleButton>
+                </ToggleButtonGroup>
               )
             }
 
@@ -88,6 +87,7 @@ const TaskModal = ({
                     onClick={() => {
                       onDescriptionChange({ target: { value: v.description } })
                       onShowTemplatesChange()
+                      setValue([])
                     }}
                   >
                     Use
