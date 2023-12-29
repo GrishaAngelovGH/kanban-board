@@ -26,11 +26,21 @@ const TaskModal = ({
     onConfirm
   } = handlers
 
+  const handleClose = () => {
+    setValue([])
+    onClose()
+  }
+
+  const handleConfirm = () => {
+    setValue([])
+    onConfirm()
+  }
+
   return (
     <Modal
       show={show}
-      onClose={onClose}
-      onConfirm={onConfirm}
+      onClose={handleClose}
+      onConfirm={handleConfirm}
       title={modalTitle}
       disabledConfirm={(!title.length && !isTemplate) || !description.length}
       body={
