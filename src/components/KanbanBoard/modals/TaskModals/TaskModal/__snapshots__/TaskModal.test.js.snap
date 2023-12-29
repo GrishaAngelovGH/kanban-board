@@ -1043,11 +1043,11 @@ Object {
                 <div
                   class="border border-3 rounded m-3 p-3 shadow"
                 >
-                  <p
-                    class="text-secondary"
+                  <div
+                    class="text-secondary mb-3"
                   >
                     Template Description 1
-                  </p>
+                  </div>
                   <button
                     class="btn btn-primary w-100"
                   >
@@ -1057,11 +1057,11 @@ Object {
                 <div
                   class="border border-3 rounded m-3 p-3 shadow"
                 >
-                  <p
-                    class="text-secondary"
+                  <div
+                    class="text-secondary mb-3"
                   >
                     Template Description 2
-                  </p>
+                  </div>
                   <button
                     class="btn btn-primary w-100"
                   >

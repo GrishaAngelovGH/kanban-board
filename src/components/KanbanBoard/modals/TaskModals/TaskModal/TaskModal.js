@@ -92,7 +92,7 @@ const TaskModal = ({
             {
               showTemplates && templates.map(v => (
                 <div key={v.id} className="border border-3 rounded m-3 p-3 shadow">
-                  <p className="text-secondary">{parse(v.description)}</p>
+                  <div className="text-secondary mb-3">{parse(v.description)}</div>
                   <button
                     className="btn btn-primary w-100"
                     onClick={() => {
