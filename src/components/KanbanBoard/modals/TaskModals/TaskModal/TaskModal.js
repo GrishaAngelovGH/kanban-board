@@ -6,6 +6,7 @@ import Form from "react-bootstrap/Form"
 import ToggleButton from "react-bootstrap/ToggleButton"
 import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup"
 
+import parse from "html-react-parser"
 import Editor from "react-simple-wysiwyg"
 
 import "./TaskModal.css"
@@ -91,7 +92,7 @@ const TaskModal = ({
             {
               showTemplates && templates.map(v => (
                 <div key={v.id} className="border border-3 rounded m-3 p-3 shadow">
-                  <p className="text-secondary">{v.description}</p>
+                  <p className="text-secondary">{parse(v.description)}</p>
                   <button
                     className="btn btn-primary w-100"
                     onClick={() => {
@@ -106,7 +107,7 @@ const TaskModal = ({
               ))
             }
           </div>
-        </div >
+        </div>
       }
     />
   )
