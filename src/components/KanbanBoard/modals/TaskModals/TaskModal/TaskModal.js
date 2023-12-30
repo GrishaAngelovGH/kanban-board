@@ -52,11 +52,22 @@ const TaskModal = ({
                 <ToggleButtonGroup type="checkbox" className="mb-3" value={value} onChange={setValue}>
                   {
                     !showTemplates && (
-                      <ToggleButton id="tbg-check-1" value={1} variant="outline-primary" onChange={onTemplateChange} >
+                      <ToggleButton
+                        id="tbg-check-1"
+                        value={1}
+                        variant="outline-primary"
+                        onChange={onTemplateChange}
+                      >
                         Use as a template
                       </ToggleButton>)
                   }
-                  <ToggleButton id="tbg-check-2" value={2} variant="outline-primary" onChange={onShowTemplatesChange}>
+                  <ToggleButton
+                    id="tbg-check-2"
+                    value={2}
+                    variant="outline-primary"
+                    disabled={!templates.length}
+                    onChange={onShowTemplatesChange}
+                  >
                     Create from a template
                   </ToggleButton>
                 </ToggleButtonGroup>

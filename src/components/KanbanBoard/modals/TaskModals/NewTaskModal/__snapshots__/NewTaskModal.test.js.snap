@@ -64,12 +64,13 @@ Object {
                   <input
                     autocomplete="off"
                     class="btn-check"
+                    disabled=""
                     id="tbg-check-2"
                     type="checkbox"
                     value="2"
                   />
                   <label
-                    class="btn btn-outline-primary"
+                    class="disabled btn btn-outline-primary"
                     for="tbg-check-2"
                     tabindex="0"
                   >

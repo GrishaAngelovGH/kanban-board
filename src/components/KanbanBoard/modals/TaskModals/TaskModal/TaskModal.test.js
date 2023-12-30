@@ -22,6 +22,7 @@ test("should render TaskModal component", () => {
       title="Title Task"
       description="Title Description"
       priority="medium"
+      templates={[]}
       handlers={handlers}
     />
   )
@@ -38,6 +39,7 @@ test("should render TaskModal component as a template", () => {
       description="Title Description"
       priority="medium"
       isTemplate={true}
+      templates={[]}
       handlers={handlers}
     />
   )
@@ -55,6 +57,7 @@ test("should render TaskModal component in edit mode", () => {
       description="Title Description"
       priority="medium"
       isTemplate={true}
+      templates={[]}
       handlers={handlers}
     />
   )
