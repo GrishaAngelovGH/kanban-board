@@ -1,3 +1,5 @@
+import { Fragment } from "react"
+
 import ButtonGroup from "react-bootstrap/ButtonGroup"
 import Dropdown from "react-bootstrap/Dropdown"
 import DropdownButton from "react-bootstrap/DropdownButton"
@@ -8,6 +10,17 @@ const Header = ({ downloadJsonHref, disabledExport, handlers }) => {
   const { onUsersClick, onSettingsClick, onCalendarClick, onImportKanbanBoardClick, onUpdate } = handlers
 
   const filename = `kanban-board-${new Date().toString().toLowerCase().split(" ").slice(0, 5).join("-")}.json`
+
+  const filters = [
+    {
+      category: "Filter by priority",
+      items: ["All", "Low", "Medium", "High"],
+      onClick: ({ target: { innerText } }) => {
+        boardRepository.applyPriorityFilter(innerText)
+        onUpdate()
+      }
+    }
+  ]
 
   const menuItems = [
     {
@@ -41,17 +54,37 @@ const Header = ({ downloadJsonHref, disabledExport, handlers }) => {
       <div className="col-4 col-md-4 col-lg-3">
         <h3 className="m-0">Kanban Board</h3>
       </div>
-      <div className="col-8 col-md-4 col-lg-3 text-end">
-        <DropdownButton as={ButtonGroup} size="sm" variant="light" title={<i className="bi bi-grid-fill text-primary"></i>}>
-          {
-            menuItems.map((v, i) => (
-              <Dropdown.Item key={i} {...v}>
-                <i className={v.icon}></i>
-                <span className="mx-2">{v.label}</span>
-              </Dropdown.Item>
-            ))
-          }
-        </DropdownButton>
+
+      <div className="col-4 col-md-2 col-lg-1">
+        <div className="d-flex justify-content-evenly">
+          <DropdownButton as={ButtonGroup} size="sm" variant="light" title={<i className="bi bi-filter"></i>}>
+            {
+              filters.map((v, i) => (
+                <Fragment key={i}>
+                  <Dropdown.ItemText className="bg-secondary-subtle text-secondary border text-center">{v.category}</Dropdown.ItemText>
+                  {
+                    v.items.map((item, j) => (
+                      <Dropdown.Item key={j} onClick={v.onClick} >
+                        {item}
+                      </Dropdown.Item>
+                    ))
+                  }
+                </Fragment>
+              ))
+            }
+          </DropdownButton>
+
+          <DropdownButton as={ButtonGroup} size="sm" variant="light" title={<i className="bi bi-grid-fill text-primary"></i>}>
+            {
+              menuItems.map((v, i) => (
+                <Dropdown.Item key={i} {...v}>
+                  <i className={v.icon}></i>
+                  <span className="mx-2">{v.label}</span>
+                </Dropdown.Item>
+              ))
+            }
+          </DropdownButton>
+        </div>
       </div>
     </div>
   )

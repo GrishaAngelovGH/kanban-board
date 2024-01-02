@@ -33,21 +33,39 @@ Object {
                     </h3>
                   </div>
                   <div
-                    class="col-8 col-md-4 col-lg-3 text-end"
+                    class="col-4 col-md-2 col-lg-1"
                   >
                     <div
-                      class="dropdown btn-group"
-                      role="group"
+                      class="d-flex justify-content-evenly"
                     >
-                      <button
-                        aria-expanded="false"
-                        class="dropdown-toggle btn btn-light btn-sm"
-                        type="button"
+                      <div
+                        class="dropdown btn-group"
+                        role="group"
                       >
-                        <i
-                          class="bi bi-grid-fill text-primary"
-                        />
-                      </button>
+                        <button
+                          aria-expanded="false"
+                          class="dropdown-toggle btn btn-light btn-sm"
+                          type="button"
+                        >
+                          <i
+                            class="bi bi-filter"
+                          />
+                        </button>
+                      </div>
+                      <div
+                        class="dropdown btn-group"
+                        role="group"
+                      >
+                        <button
+                          aria-expanded="false"
+                          class="dropdown-toggle btn btn-light btn-sm"
+                          type="button"
+                        >
+                          <i
+                            class="bi bi-grid-fill text-primary"
+                          />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -178,21 +196,39 @@ Object {
                   </h3>
                 </div>
                 <div
-                  class="col-8 col-md-4 col-lg-3 text-end"
+                  class="col-4 col-md-2 col-lg-1"
                 >
                   <div
-                    class="dropdown btn-group"
-                    role="group"
+                    class="d-flex justify-content-evenly"
                   >
-                    <button
-                      aria-expanded="false"
-                      class="dropdown-toggle btn btn-light btn-sm"
-                      type="button"
+                    <div
+                      class="dropdown btn-group"
+                      role="group"
                     >
-                      <i
-                        class="bi bi-grid-fill text-primary"
-                      />
-                    </button>
+                      <button
+                        aria-expanded="false"
+                        class="dropdown-toggle btn btn-light btn-sm"
+                        type="button"
+                      >
+                        <i
+                          class="bi bi-filter"
+                        />
+                      </button>
+                    </div>
+                    <div
+                      class="dropdown btn-group"
+                      role="group"
+                    >
+                      <button
+                        aria-expanded="false"
+                        class="dropdown-toggle btn btn-light btn-sm"
+                        type="button"
+                      >
+                        <i
+                          class="bi bi-grid-fill text-primary"
+                        />
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

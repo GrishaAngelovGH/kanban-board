@@ -18,153 +18,85 @@ Object {
           </h3>
         </div>
         <div
-          class="col-8 col-md-4 col-lg-3 text-end"
+          class="col-4 col-md-2 col-lg-1"
         >
           <div
-            class="show dropdown btn-group"
-            role="group"
+            class="d-flex justify-content-evenly"
           >
-            <button
-              aria-expanded="true"
-              class="dropdown-toggle show btn btn-light btn-sm"
-              type="button"
-            >
-              <i
-                class="bi bi-grid-fill text-primary"
-              />
-            </button>
             <div
-              aria-labelledby=""
-              class="dropdown-menu show"
-              x-placement="bottom-start"
+              class="show dropdown btn-group"
+              role="group"
             >
-              <a
-                class="dropdown-item"
-                data-rr-ui-dropdown-item=""
-                href="#"
-                icon="bi bi-arrows-fullscreen"
-                label="Toggle Fullscreen"
-                role="button"
-                tabindex="0"
+              <button
+                aria-expanded="true"
+                class="dropdown-toggle show btn btn-light btn-sm"
+                type="button"
               >
                 <i
-                  class="bi bi-arrows-fullscreen"
+                  class="bi bi-filter"
                 />
+              </button>
+              <div
+                aria-labelledby=""
+                class="dropdown-menu show"
+                x-placement="bottom-start"
+              >
                 <span
-                  class="mx-2"
+                  class="bg-secondary-subtle text-secondary border text-center dropdown-item-text"
                 >
-                  Toggle Fullscreen
+                  Filter by priority
                 </span>
-              </a>
-              <a
-                class="dropdown-item"
-                data-rr-ui-dropdown-item=""
-                href="#"
-                icon="bi bi-calendar2-week"
-                label="Toggle Calendar"
-                role="button"
-                tabindex="0"
+                <a
+                  class="dropdown-item"
+                  data-rr-ui-dropdown-item=""
+                  href="#"
+                  role="button"
+                  tabindex="0"
+                >
+                  All
+                </a>
+                <a
+                  class="dropdown-item"
+                  data-rr-ui-dropdown-item=""
+                  href="#"
+                  role="button"
+                  tabindex="0"
+                >
+                  Low
+                </a>
+                <a
+                  class="dropdown-item"
+                  data-rr-ui-dropdown-item=""
+                  href="#"
+                  role="button"
+                  tabindex="0"
+                >
+                  Medium
+                </a>
+                <a
+                  class="dropdown-item"
+                  data-rr-ui-dropdown-item=""
+                  href="#"
+                  role="button"
+                  tabindex="0"
+                >
+                  High
+                </a>
+              </div>
+            </div>
+            <div
+              class="dropdown btn-group"
+              role="group"
+            >
+              <button
+                aria-expanded="false"
+                class="dropdown-toggle btn btn-light btn-sm"
+                type="button"
               >
                 <i
-                  class="bi bi-calendar2-week"
+                  class="bi bi-grid-fill text-primary"
                 />
-                <span
-                  class="mx-2"
-                >
-                  Toggle Calendar
-                </span>
-              </a>
-              <a
-                class="dropdown-item"
-                data-rr-ui-dropdown-item=""
-                download="kanban-board-fri-dec-22-2023-00:00:00.json"
-                href="#"
-                icon="bi bi-box-arrow-up"
-                label="Export to JSON"
-                role="button"
-                tabindex="0"
-              >
-                <i
-                  class="bi bi-box-arrow-up"
-                />
-                <span
-                  class="mx-2"
-                >
-                  Export to JSON
-                </span>
-              </a>
-              <a
-                class="dropdown-item"
-                data-rr-ui-dropdown-item=""
-                href="#"
-                icon="bi bi-box-arrow-down"
-                label="Import from JSON"
-                role="button"
-                tabindex="0"
-              >
-                <i
-                  class="bi bi-box-arrow-down"
-                />
-                <span
-                  class="mx-2"
-                >
-                  Import from JSON
-                </span>
-              </a>
-              <a
-                class="dropdown-item"
-                data-rr-ui-dropdown-item=""
-                href="#"
-                icon="bi bi-people"
-                label="Manage Users"
-                role="button"
-                tabindex="0"
-              >
-                <i
-                  class="bi bi-people"
-                />
-                <span
-                  class="mx-2"
-                >
-                  Manage Users
-                </span>
-              </a>
-              <a
-                class="dropdown-item disabled"
-                data-rr-ui-dropdown-item=""
-                href="#"
-                icon="bi bi-collection"
-                label="Group Templates"
-                role="button"
-                tabindex="0"
-              >
-                <i
-                  class="bi bi-collection"
-                />
-                <span
-                  class="mx-2"
-                >
-                  Group Templates
-                </span>
-              </a>
-              <a
-                class="dropdown-item"
-                data-rr-ui-dropdown-item=""
-                href="#"
-                icon="bi bi-gear"
-                label="Settings"
-                role="button"
-                tabindex="0"
-              >
-                <i
-                  class="bi bi-gear"
-                />
-                <span
-                  class="mx-2"
-                >
-                  Settings
-                </span>
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -185,153 +117,85 @@ Object {
         </h3>
       </div>
       <div
-        class="col-8 col-md-4 col-lg-3 text-end"
+        class="col-4 col-md-2 col-lg-1"
       >
         <div
-          class="show dropdown btn-group"
-          role="group"
+          class="d-flex justify-content-evenly"
         >
-          <button
-            aria-expanded="true"
-            class="dropdown-toggle show btn btn-light btn-sm"
-            type="button"
-          >
-            <i
-              class="bi bi-grid-fill text-primary"
-            />
-          </button>
           <div
-            aria-labelledby=""
-            class="dropdown-menu show"
-            x-placement="bottom-start"
+            class="show dropdown btn-group"
+            role="group"
           >
-            <a
-              class="dropdown-item"
-              data-rr-ui-dropdown-item=""
-              href="#"
-              icon="bi bi-arrows-fullscreen"
-              label="Toggle Fullscreen"
-              role="button"
-              tabindex="0"
+            <button
+              aria-expanded="true"
+              class="dropdown-toggle show btn btn-light btn-sm"
+              type="button"
             >
               <i
-                class="bi bi-arrows-fullscreen"
+                class="bi bi-filter"
               />
+            </button>
+            <div
+              aria-labelledby=""
+              class="dropdown-menu show"
+              x-placement="bottom-start"
+            >
               <span
-                class="mx-2"
+                class="bg-secondary-subtle text-secondary border text-center dropdown-item-text"
               >
-                Toggle Fullscreen
+                Filter by priority
               </span>
-            </a>
-            <a
-              class="dropdown-item"
-              data-rr-ui-dropdown-item=""
-              href="#"
-              icon="bi bi-calendar2-week"
-              label="Toggle Calendar"
-              role="button"
-              tabindex="0"
+              <a
+                class="dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="#"
+                role="button"
+                tabindex="0"
+              >
+                All
+              </a>
+              <a
+                class="dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="#"
+                role="button"
+                tabindex="0"
+              >
+                Low
+              </a>
+              <a
+                class="dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="#"
+                role="button"
+                tabindex="0"
+              >
+                Medium
+              </a>
+              <a
+                class="dropdown-item"
+                data-rr-ui-dropdown-item=""
+                href="#"
+                role="button"
+                tabindex="0"
+              >
+                High
+              </a>
+            </div>
+          </div>
+          <div
+            class="dropdown btn-group"
+            role="group"
+          >
+            <button
+              aria-expanded="false"
+              class="dropdown-toggle btn btn-light btn-sm"
+              type="button"
             >
               <i
-                class="bi bi-calendar2-week"
+                class="bi bi-grid-fill text-primary"
               />
-              <span
-                class="mx-2"
-              >
-                Toggle Calendar
-              </span>
-            </a>
-            <a
-              class="dropdown-item"
-              data-rr-ui-dropdown-item=""
-              download="kanban-board-fri-dec-22-2023-00:00:00.json"
-              href="#"
-              icon="bi bi-box-arrow-up"
-              label="Export to JSON"
-              role="button"
-              tabindex="0"
-            >
-              <i
-                class="bi bi-box-arrow-up"
-              />
-              <span
-                class="mx-2"
-              >
-                Export to JSON
-              </span>
-            </a>
-            <a
-              class="dropdown-item"
-              data-rr-ui-dropdown-item=""
-              href="#"
-              icon="bi bi-box-arrow-down"
-              label="Import from JSON"
-              role="button"
-              tabindex="0"
-            >
-              <i
-                class="bi bi-box-arrow-down"
-              />
-              <span
-                class="mx-2"
-              >
-                Import from JSON
-              </span>
-            </a>
-            <a
-              class="dropdown-item"
-              data-rr-ui-dropdown-item=""
-              href="#"
-              icon="bi bi-people"
-              label="Manage Users"
-              role="button"
-              tabindex="0"
-            >
-              <i
-                class="bi bi-people"
-              />
-              <span
-                class="mx-2"
-              >
-                Manage Users
-              </span>
-            </a>
-            <a
-              class="dropdown-item disabled"
-              data-rr-ui-dropdown-item=""
-              href="#"
-              icon="bi bi-collection"
-              label="Group Templates"
-              role="button"
-              tabindex="0"
-            >
-              <i
-                class="bi bi-collection"
-              />
-              <span
-                class="mx-2"
-              >
-                Group Templates
-              </span>
-            </a>
-            <a
-              class="dropdown-item"
-              data-rr-ui-dropdown-item=""
-              href="#"
-              icon="bi bi-gear"
-              label="Settings"
-              role="button"
-              tabindex="0"
-            >
-              <i
-                class="bi bi-gear"
-              />
-              <span
-                class="mx-2"
-              >
-                Settings
-              </span>
-            </a>
+            </button>
           </div>
         </div>
       </div>
