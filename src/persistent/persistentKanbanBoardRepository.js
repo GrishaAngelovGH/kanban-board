@@ -43,6 +43,13 @@ const columns = {
   },
   getColumns: () => {
     const columns = JSON.parse(localStorage.getItem("columns"))
+    const priority = localStorage.getItem("priority")
+
+    if (priority) {
+      Object.values(columns).forEach(column => {
+        column.items = column.items.filter(v => v.priority === priority.toLowerCase())
+      })
+    }
 
     return (columns && Object.values(columns)) || []
   },
@@ -110,10 +117,10 @@ const tasks = {
   getAllTemplates: () => {
     const columns = JSON.parse(localStorage.getItem("columns"))
 
-    return columns && Object.values(columns).reduce(((filtered, column) => {
+    return (columns && Object.values(columns).reduce(((filtered, column) => {
       const templates = column.items.filter(v => v.isTemplate)
       return [...filtered, ...templates]
-    }), []) || []
+    }), [])) || []
   },
   updateTask: (task, columnId) => {
     const column = getColumnById(columnId)
@@ -150,6 +157,8 @@ const tasks = {
         [fromColumnId]: fromColumn,
         [toColumnId]: toColumn
       }))
+
+      localStorage.removeItem("priority")
     }
   },
   assignUsersToTask: (taskId, columnId, assignedIds) => {
@@ -187,8 +196,14 @@ const board = {
   updateBoardTitle: title => {
     localStorage.setItem("boardTitle", title)
   },
+  applyPriorityFilter: priority => {
+    priority === "All" ?
+      localStorage.removeItem("priority") :
+      localStorage.setItem("priority", priority)
+  },
   clearBoard: () => {
     localStorage.removeItem("columns")
+    localStorage.removeItem("priority")
     localStorage.removeItem("boardTitle")
   }
 }
