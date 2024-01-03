@@ -1,26 +1,8 @@
-import { Fragment } from "react"
-
-import ButtonGroup from "react-bootstrap/ButtonGroup"
-import Dropdown from "react-bootstrap/Dropdown"
-import DropdownButton from "react-bootstrap/DropdownButton"
-
+import FilterMenu from "./DropdownMenus/FilterMenu"
 import BoardMenu from "./DropdownMenus/BoardMenu"
-
-import boardRepository from "persistent/persistentKanbanBoardRepository"
 
 const Header = ({ downloadJsonHref, disabledExport, handlers }) => {
   const { onUsersClick, onSettingsClick, onCalendarClick, onImportKanbanBoardClick, onUpdate } = handlers
-
-  const filters = [
-    {
-      category: "Filter by priority",
-      items: ["All", "Low", "Medium", "High"],
-      onClick: ({ target: { innerText } }) => {
-        boardRepository.applyPriorityFilter(innerText)
-        onUpdate()
-      }
-    }
-  ]
 
   return (
     <div className="row bg-secondary-subtle p-2 justify-content-between align-items-center">
@@ -30,22 +12,7 @@ const Header = ({ downloadJsonHref, disabledExport, handlers }) => {
 
       <div className="col-4 col-md-2 col-lg-1">
         <div className="d-flex justify-content-evenly">
-          <DropdownButton as={ButtonGroup} size="sm" variant="light" title={<i className="bi bi-filter"></i>}>
-            {
-              filters.map((v, i) => (
-                <Fragment key={i}>
-                  <Dropdown.ItemText className="bg-secondary-subtle text-secondary border text-center">{v.category}</Dropdown.ItemText>
-                  {
-                    v.items.map((item, j) => (
-                      <Dropdown.Item key={j} onClick={v.onClick} >
-                        {item}
-                      </Dropdown.Item>
-                    ))
-                  }
-                </Fragment>
-              ))
-            }
-          </DropdownButton>
+          <FilterMenu onUpdate={onUpdate} />
 
           <BoardMenu
             downloadJsonHref={downloadJsonHref}

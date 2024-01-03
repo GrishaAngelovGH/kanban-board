@@ -13,6 +13,7 @@ Implemented features:
   - provide title
   - provide rich text description i.e. bold, italic, underlined text, numbered/bullet lists, etc
   - provide priority i.e. low, medium or high
+* Filter tasks by priority
 * Create predefined templates that could be used as descriptions for given tasks
 * Group all templates in a dedicated column
 * Visualize number of tasks for given column

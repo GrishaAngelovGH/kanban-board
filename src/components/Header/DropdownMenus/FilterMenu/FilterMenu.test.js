@@ -1,17 +1,9 @@
 import { render, fireEvent, act, waitFor } from "@testing-library/react"
 
-import BoardMenu from "./BoardMenu"
+import FilterMenu from "./FilterMenu"
 
-beforeEach(() => {
-  jest.spyOn(Date.prototype, "toString").mockReturnValue("Wed Jan 03 2024 09:31:43")
-})
-
-afterEach(() => {
-  jest.restoreAllMocks()
-})
-
-test("should render BoardMenu component", async () => {
-  const view = render(<BoardMenu />)
+test("should render FilterMenu component", async () => {
+  const view = render(<FilterMenu />)
 
   act(() => {
     const parentElement = view.container.firstChild
