@@ -18,8 +18,11 @@ const FilterMenu = ({ onUpdate }) => {
     }
   ]
 
+  const priority = boardRepository.getPriorityFilter()
+  const variant = priority ? "success" : "light"
+
   return (
-    <DropdownButton as={ButtonGroup} size="sm" variant="light" title={<i className="bi bi-filter"></i>}>
+    <DropdownButton as={ButtonGroup} size="sm" variant={variant} title={<i className="bi bi-filter"></i>}>
       {
         filters.map((v, i) => (
           <Fragment key={i}>

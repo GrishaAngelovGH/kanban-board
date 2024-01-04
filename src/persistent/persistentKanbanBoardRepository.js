@@ -201,6 +201,7 @@ const board = {
       localStorage.removeItem("priority") :
       localStorage.setItem("priority", priority)
   },
+  getPriorityFilter: () => localStorage.getItem("priority"),
   clearBoard: () => {
     localStorage.removeItem("columns")
     localStorage.removeItem("priority")

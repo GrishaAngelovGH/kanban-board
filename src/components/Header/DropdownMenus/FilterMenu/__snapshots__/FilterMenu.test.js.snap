@@ -184,3 +184,188 @@ Object {
   "unmount": [Function],
 }
 `;
+
+exports[`should render FilterMenu component with priority 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="show dropdown btn-group"
+        role="group"
+      >
+        <button
+          aria-expanded="true"
+          class="dropdown-toggle show btn btn-success btn-sm"
+          type="button"
+        >
+          <i
+            class="bi bi-filter"
+          />
+        </button>
+        <div
+          aria-labelledby=""
+          class="dropdown-menu show"
+          x-placement="bottom-start"
+        >
+          <span
+            class="bg-secondary-subtle text-secondary border text-center dropdown-item-text"
+          >
+            Filter by priority
+          </span>
+          <a
+            class="dropdown-item"
+            data-rr-ui-dropdown-item=""
+            href="#"
+            role="button"
+            tabindex="0"
+          >
+            All
+          </a>
+          <a
+            class="dropdown-item"
+            data-rr-ui-dropdown-item=""
+            href="#"
+            role="button"
+            tabindex="0"
+          >
+            Low
+          </a>
+          <a
+            class="dropdown-item"
+            data-rr-ui-dropdown-item=""
+            href="#"
+            role="button"
+            tabindex="0"
+          >
+            Medium
+          </a>
+          <a
+            class="dropdown-item"
+            data-rr-ui-dropdown-item=""
+            href="#"
+            role="button"
+            tabindex="0"
+          >
+            High
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="show dropdown btn-group"
+      role="group"
+    >
+      <button
+        aria-expanded="true"
+        class="dropdown-toggle show btn btn-success btn-sm"
+        type="button"
+      >
+        <i
+          class="bi bi-filter"
+        />
+      </button>
+      <div
+        aria-labelledby=""
+        class="dropdown-menu show"
+        x-placement="bottom-start"
+      >
+        <span
+          class="bg-secondary-subtle text-secondary border text-center dropdown-item-text"
+        >
+          Filter by priority
+        </span>
+        <a
+          class="dropdown-item"
+          data-rr-ui-dropdown-item=""
+          href="#"
+          role="button"
+          tabindex="0"
+        >
+          All
+        </a>
+        <a
+          class="dropdown-item"
+          data-rr-ui-dropdown-item=""
+          href="#"
+          role="button"
+          tabindex="0"
+        >
+          Low
+        </a>
+        <a
+          class="dropdown-item"
+          data-rr-ui-dropdown-item=""
+          href="#"
+          role="button"
+          tabindex="0"
+        >
+          Medium
+        </a>
+        <a
+          class="dropdown-item"
+          data-rr-ui-dropdown-item=""
+          href="#"
+          role="button"
+          tabindex="0"
+        >
+          High
+        </a>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
