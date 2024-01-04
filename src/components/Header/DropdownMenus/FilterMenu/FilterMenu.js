@@ -30,7 +30,7 @@ const FilterMenu = ({ onUpdate }) => {
             {
               v.items.map((item, j) => (
                 <Dropdown.Item key={j} onClick={v.onClick} >
-                  {item}
+                  {item} {item === priority && <i className="bi bi-check-circle-fill text-primary fs-5 ms-2"></i>}
                 </Dropdown.Item>
               ))
             }

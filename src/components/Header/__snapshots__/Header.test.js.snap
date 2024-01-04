@@ -54,6 +54,7 @@ Object {
                   tabindex="0"
                 >
                   All
+                   
                 </a>
                 <a
                   class="dropdown-item"
@@ -63,6 +64,7 @@ Object {
                   tabindex="0"
                 >
                   Low
+                   
                 </a>
                 <a
                   class="dropdown-item"
@@ -72,6 +74,7 @@ Object {
                   tabindex="0"
                 >
                   Medium
+                   
                 </a>
                 <a
                   class="dropdown-item"
@@ -81,6 +84,7 @@ Object {
                   tabindex="0"
                 >
                   High
+                   
                 </a>
               </div>
             </div>
@@ -153,6 +157,7 @@ Object {
                 tabindex="0"
               >
                 All
+                 
               </a>
               <a
                 class="dropdown-item"
@@ -162,6 +167,7 @@ Object {
                 tabindex="0"
               >
                 Low
+                 
               </a>
               <a
                 class="dropdown-item"
@@ -171,6 +177,7 @@ Object {
                 tabindex="0"
               >
                 Medium
+                 
               </a>
               <a
                 class="dropdown-item"
@@ -180,6 +187,7 @@ Object {
                 tabindex="0"
               >
                 High
+                 
               </a>
             </div>
           </div>
