@@ -68,6 +68,20 @@ Object {
             High
              
           </a>
+          <span
+            class="bg-secondary-subtle text-secondary border text-center dropdown-item-text"
+          >
+            Filter by criteria
+          </span>
+          <span
+            class="dropdown-item-text"
+          >
+            <input
+              class="mt-2 form-control"
+              placeholder="Search"
+              value=""
+            />
+          </span>
         </div>
       </div>
     </div>
@@ -136,6 +150,20 @@ Object {
           High
            
         </a>
+        <span
+          class="bg-secondary-subtle text-secondary border text-center dropdown-item-text"
+        >
+          Filter by criteria
+        </span>
+        <span
+          class="dropdown-item-text"
+        >
+          <input
+            class="mt-2 form-control"
+            placeholder="Search"
+            value=""
+          />
+        </span>
       </div>
     </div>
   </div>,
@@ -264,6 +292,20 @@ Object {
             High
              
           </a>
+          <span
+            class="bg-secondary-subtle text-secondary border text-center dropdown-item-text"
+          >
+            Filter by criteria
+          </span>
+          <span
+            class="dropdown-item-text"
+          >
+            <input
+              class="mt-2 form-control"
+              placeholder="Search"
+              value=""
+            />
+          </span>
         </div>
       </div>
     </div>
@@ -335,6 +377,20 @@ Object {
           High
            
         </a>
+        <span
+          class="bg-secondary-subtle text-secondary border text-center dropdown-item-text"
+        >
+          Filter by criteria
+        </span>
+        <span
+          class="dropdown-item-text"
+        >
+          <input
+            class="mt-2 form-control"
+            placeholder="Search"
+            value=""
+          />
+        </span>
       </div>
     </div>
   </div>,

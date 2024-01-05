@@ -1,12 +1,21 @@
-import { Fragment } from "react"
+import { useState, Fragment } from "react"
 
 import ButtonGroup from "react-bootstrap/ButtonGroup"
 import Dropdown from "react-bootstrap/Dropdown"
 import DropdownButton from "react-bootstrap/DropdownButton"
+import FormControl from "react-bootstrap/FormControl"
 
 import boardRepository from "persistent/persistentKanbanBoardRepository"
 
 const FilterMenu = ({ onUpdate }) => {
+  const [value, setValue] = useState(boardRepository.getSearchFilter() || "")
+
+  const handleSearch = ({ target }) => {
+    setValue(target.value)
+    boardRepository.applySearchFilter(target.value)
+    onUpdate()
+  }
+
   const filters = [
     {
       category: "Filter by priority",
@@ -19,7 +28,8 @@ const FilterMenu = ({ onUpdate }) => {
   ]
 
   const priority = boardRepository.getPriorityFilter()
-  const variant = priority ? "success" : "light"
+  const searchCriteria = boardRepository.getSearchFilter()
+  const variant = priority || searchCriteria ? "success" : "light"
 
   return (
     <DropdownButton as={ButtonGroup} size="sm" variant={variant} title={<i className="bi bi-filter"></i>}>
@@ -34,6 +44,16 @@ const FilterMenu = ({ onUpdate }) => {
                 </Dropdown.Item>
               ))
             }
+            <Dropdown.ItemText className="bg-secondary-subtle text-secondary border text-center">Filter by criteria</Dropdown.ItemText>
+
+            <Dropdown.ItemText>
+              <FormControl
+                value={value}
+                placeholder="Search"
+                className="mt-2"
+                onChange={handleSearch}
+              />
+            </Dropdown.ItemText>
           </Fragment>
         ))
       }

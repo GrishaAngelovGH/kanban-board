@@ -43,15 +43,20 @@ const columns = {
   },
   getColumns: () => {
     const columns = JSON.parse(localStorage.getItem("columns"))
-    const priority = localStorage.getItem("priority")
+    const priority = localStorage.getItem("priority") || ""
+    const searchCriteria = localStorage.getItem("searchCriteria") || ""
 
-    if (priority) {
-      Object.values(columns).forEach(column => {
-        column.items = column.items.filter(v => v.priority === priority.toLowerCase())
-      })
-    }
+    if (!columns) return []
 
-    return (columns && Object.values(columns)) || []
+    return Object.values(columns).map(column => {
+      column.items = column.items
+        .filter(v => {
+          const { title, description } = v
+          return JSON.stringify({ title, description }).toLowerCase().includes(searchCriteria.toLowerCase())
+        })
+        .filter(v => priority.length ? v.priority === priority.toLowerCase() : v)
+      return column
+    })
   },
   getStringifiedColumns: () => {
     return localStorage.getItem("columns")
@@ -201,7 +206,15 @@ const board = {
       localStorage.removeItem("priority") :
       localStorage.setItem("priority", priority)
   },
+  applySearchFilter: searchCriteria => {
+    if (!searchCriteria.length) {
+      localStorage.removeItem("searchCriteria")
+    }
+
+    localStorage.setItem("searchCriteria", searchCriteria)
+  },
   getPriorityFilter: () => localStorage.getItem("priority"),
+  getSearchFilter: () => localStorage.getItem("searchCriteria"),
   clearBoard: () => {
     localStorage.removeItem("columns")
     localStorage.removeItem("priority")
