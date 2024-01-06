@@ -23,6 +23,7 @@ test("should render Task component as a template", () => {
   const view = render(
     <Task
       isTemplate={true}
+      title=""
       description="Template Description"
       column="Column Title"
       assignedIds={[]}

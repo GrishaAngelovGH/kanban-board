@@ -6,9 +6,12 @@ import Badge from "react-bootstrap/Badge"
 
 import Avatar from "components/Avatar"
 
+import Highlighter from "react-highlight-words"
+
 import parse from "html-react-parser"
 
 import usersRepository from "persistent/persistentUserRepository"
+import boardRepository from "persistent/persistentKanbanBoardRepository"
 
 import "./Task.css"
 
@@ -23,6 +26,15 @@ const bookmarkStyles = {
   "medium": "text-success",
   "high": "text-danger"
 }
+
+const WordHighlighter = ({ text }) => (
+  <Highlighter
+    highlightClassName="bg-warning"
+    searchWords={[boardRepository.getSearchFilter()]}
+    autoEscape={true}
+    textToHighlight={text}
+  />
+)
 
 const Task = ({
   id, columnId, assignedIds, title, description, priority, isTemplate,
@@ -62,7 +74,9 @@ const Task = ({
   return (
     <div ref={setNodeRef} style={style} className={`row m-0 ${bgClass} ${borderClass} mt-3 rounded shadow p-1`}>
       <div className={`${isGridView || isSingleRowView ? "col-9" : "col-11"}`}>
-        <p className="fw-bold text-capitalize">{title}</p>
+        <p className="fw-bold text-capitalize">
+          <WordHighlighter text={title} />
+        </p>
         {isTemplate && (<Badge bg="primary">This task is a template</Badge>)}
       </div>
 
@@ -75,7 +89,7 @@ const Task = ({
       }
 
       <div className="text-secondary overflow-auto task-description">
-        {parse(description)}
+        <WordHighlighter text={parse(description)} />
       </div>
 
       <div className="mb-3 d-flex align-items-center flex-wrap">

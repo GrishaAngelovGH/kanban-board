@@ -15,7 +15,13 @@ Object {
           <p
             class="fw-bold text-capitalize"
           >
-            Task Title
+            <span>
+              <span
+                class=""
+              >
+                Task Title
+              </span>
+            </span>
           </p>
         </div>
         <div
@@ -34,7 +40,13 @@ Object {
         <div
           class="text-secondary overflow-auto task-description"
         >
-          Task Description
+          <span>
+            <span
+              class=""
+            >
+              Task Description
+            </span>
+          </span>
         </div>
         <div
           class="mb-3 d-flex align-items-center flex-wrap"
@@ -78,7 +90,13 @@ Object {
         <p
           class="fw-bold text-capitalize"
         >
-          Task Title
+          <span>
+            <span
+              class=""
+            >
+              Task Title
+            </span>
+          </span>
         </p>
       </div>
       <div
@@ -97,7 +115,13 @@ Object {
       <div
         class="text-secondary overflow-auto task-description"
       >
-        Task Description
+        <span>
+          <span
+            class=""
+          >
+            Task Description
+          </span>
+        </span>
       </div>
       <div
         class="mb-3 d-flex align-items-center flex-wrap"
@@ -197,7 +221,9 @@ Object {
         >
           <p
             class="fw-bold text-capitalize"
-          />
+          >
+            <span />
+          </p>
           <span
             class="badge bg-primary"
           >
@@ -220,7 +246,13 @@ Object {
         <div
           class="text-secondary overflow-auto task-description"
         >
-          Template Description
+          <span>
+            <span
+              class=""
+            >
+              Template Description
+            </span>
+          </span>
         </div>
         <div
           class="mb-3 d-flex align-items-center flex-wrap"
@@ -256,7 +288,9 @@ Object {
       >
         <p
           class="fw-bold text-capitalize"
-        />
+        >
+          <span />
+        </p>
         <span
           class="badge bg-primary"
         >
@@ -279,7 +313,13 @@ Object {
       <div
         class="text-secondary overflow-auto task-description"
       >
-        Template Description
+        <span>
+          <span
+            class=""
+          >
+            Template Description
+          </span>
+        </span>
       </div>
       <div
         class="mb-3 d-flex align-items-center flex-wrap"
