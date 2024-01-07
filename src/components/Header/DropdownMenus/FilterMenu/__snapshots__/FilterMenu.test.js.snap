@@ -77,11 +77,28 @@ Object {
             class="dropdown-item-text"
           >
             <input
-              class="mt-2 form-control"
+              class="mt-2 mb-2 form-control"
               placeholder="Search"
               value=""
             />
           </span>
+          <span
+            class="bg-secondary-subtle text-secondary border text-center dropdown-item-text"
+          >
+            Clear All Filters
+          </span>
+          <a
+            class="dropdown-item"
+            data-rr-ui-dropdown-item=""
+            href="#"
+            role="button"
+            tabindex="0"
+          >
+            <button
+              class="bi bi-x-circle w-100 mt-1 btn btn-danger btn-sm"
+              type="button"
+            />
+          </a>
         </div>
       </div>
     </div>
@@ -159,11 +176,28 @@ Object {
           class="dropdown-item-text"
         >
           <input
-            class="mt-2 form-control"
+            class="mt-2 mb-2 form-control"
             placeholder="Search"
             value=""
           />
         </span>
+        <span
+          class="bg-secondary-subtle text-secondary border text-center dropdown-item-text"
+        >
+          Clear All Filters
+        </span>
+        <a
+          class="dropdown-item"
+          data-rr-ui-dropdown-item=""
+          href="#"
+          role="button"
+          tabindex="0"
+        >
+          <button
+            class="bi bi-x-circle w-100 mt-1 btn btn-danger btn-sm"
+            type="button"
+          />
+        </a>
       </div>
     </div>
   </div>,
@@ -301,11 +335,28 @@ Object {
             class="dropdown-item-text"
           >
             <input
-              class="mt-2 form-control"
+              class="mt-2 mb-2 form-control"
               placeholder="Search"
               value=""
             />
           </span>
+          <span
+            class="bg-secondary-subtle text-secondary border text-center dropdown-item-text"
+          >
+            Clear All Filters
+          </span>
+          <a
+            class="dropdown-item"
+            data-rr-ui-dropdown-item=""
+            href="#"
+            role="button"
+            tabindex="0"
+          >
+            <button
+              class="bi bi-x-circle w-100 mt-1 btn btn-danger btn-sm"
+              type="button"
+            />
+          </a>
         </div>
       </div>
     </div>
@@ -386,11 +437,28 @@ Object {
           class="dropdown-item-text"
         >
           <input
-            class="mt-2 form-control"
+            class="mt-2 mb-2 form-control"
             placeholder="Search"
             value=""
           />
         </span>
+        <span
+          class="bg-secondary-subtle text-secondary border text-center dropdown-item-text"
+        >
+          Clear All Filters
+        </span>
+        <a
+          class="dropdown-item"
+          data-rr-ui-dropdown-item=""
+          href="#"
+          role="button"
+          tabindex="0"
+        >
+          <button
+            class="bi bi-x-circle w-100 mt-1 btn btn-danger btn-sm"
+            type="button"
+          />
+        </a>
       </div>
     </div>
   </div>,

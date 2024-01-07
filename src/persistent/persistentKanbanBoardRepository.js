@@ -215,9 +215,14 @@ const board = {
   },
   getPriorityFilter: () => localStorage.getItem("priority"),
   getSearchFilter: () => localStorage.getItem("searchCriteria"),
+  clearFilters: () => {
+    localStorage.removeItem("priority")
+    localStorage.removeItem("searchCriteria")
+  },
   clearBoard: () => {
     localStorage.removeItem("columns")
     localStorage.removeItem("priority")
+    localStorage.removeItem("searchCriteria")
     localStorage.removeItem("boardTitle")
   }
 }

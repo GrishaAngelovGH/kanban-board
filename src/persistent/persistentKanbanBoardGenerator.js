@@ -51,6 +51,7 @@ const persistentKanbanBoardGenerator = {
     localStorage.setItem("columns", JSON.stringify(columns))
     localStorage.setItem("users", JSON.stringify(users))
     localStorage.removeItem("priority")
+    localStorage.removeItem("searchCriteria")
   }
 }
 
