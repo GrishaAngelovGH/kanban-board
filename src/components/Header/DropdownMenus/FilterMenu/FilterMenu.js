@@ -1,5 +1,3 @@
-import { useState } from "react"
-
 import Button from "react-bootstrap/Button"
 import ButtonGroup from "react-bootstrap/ButtonGroup"
 import Dropdown from "react-bootstrap/Dropdown"
@@ -9,27 +7,24 @@ import FormControl from "react-bootstrap/FormControl"
 import boardRepository from "persistent/persistentKanbanBoardRepository"
 
 const FilterMenu = ({ onUpdate }) => {
-  const [value, setValue] = useState(boardRepository.getSearchFilter() || "")
-
-  const handleClearFilters = () => {
-    setValue("")
-    boardRepository.clearFilters()
-    onUpdate()
-  }
-
-  const handleSearch = ({ target }) => {
-    setValue(target.value)
-    boardRepository.applySearchFilter(target.value)
-    onUpdate()
-  }
-
   const handleFilterByPriority = ({ target: { innerText } }) => {
     boardRepository.applyPriorityFilter(innerText)
     onUpdate()
   }
 
+  const handleSearch = ({ target }) => {
+    boardRepository.applySearchFilter(target.value)
+    onUpdate()
+  }
+
+  const handleClearFilters = () => {
+    boardRepository.clearFilters()
+    onUpdate()
+  }
+
+
   const priority = boardRepository.getPriorityFilter()
-  const searchCriteria = boardRepository.getSearchFilter()
+  const searchCriteria = boardRepository.getSearchFilter() || ""
   const variant = priority || searchCriteria ? "success" : "light"
 
   return (
@@ -46,7 +41,7 @@ const FilterMenu = ({ onUpdate }) => {
       <Dropdown.ItemText className="bg-secondary-subtle text-secondary border text-center">Filter by criteria</Dropdown.ItemText>
       <Dropdown.ItemText>
         <FormControl
-          value={value}
+          value={searchCriteria}
           placeholder="Search"
           className="mt-2 mb-2"
           onChange={handleSearch}
