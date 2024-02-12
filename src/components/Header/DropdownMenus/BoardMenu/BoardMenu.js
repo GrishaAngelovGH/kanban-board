@@ -4,6 +4,8 @@ import DropdownButton from "react-bootstrap/DropdownButton"
 
 import boardRepository from "persistent/persistentKanbanBoardRepository"
 
+import "../DropdownMenu.css"
+
 const BoardMenu = ({
   downloadJsonHref, disabledExport,
   onUsersClick, onSettingsClick, onCalendarClick, onImportKanbanBoardClick, onUpdate
@@ -38,7 +40,7 @@ const BoardMenu = ({
   ]
 
   return (
-    <DropdownButton as={ButtonGroup} size="sm" variant="light" title={<i className="bi bi-grid-fill text-primary"></i>}>
+    <DropdownButton className="dropdown-menu-header" as={ButtonGroup} size="sm" variant="light" title={<i className="bi bi-grid-fill text-primary"></i>}>
       {
         menuItems.map((v, i) => (
           <Dropdown.Item key={i} {...v}>

@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="show dropdown btn-group"
+        class="dropdown-menu-header show dropdown btn-group"
         role="group"
       >
         <button
@@ -105,7 +105,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="show dropdown btn-group"
+      class="dropdown-menu-header show dropdown btn-group"
       role="group"
     >
       <button
@@ -261,7 +261,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="show dropdown btn-group"
+        class="dropdown-menu-header show dropdown btn-group"
         role="group"
       >
         <button
@@ -363,7 +363,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="show dropdown btn-group"
+      class="dropdown-menu-header show dropdown btn-group"
       role="group"
     >
       <button

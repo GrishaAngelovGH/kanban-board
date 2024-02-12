@@ -39,7 +39,7 @@ Object {
                       class="d-flex justify-content-evenly"
                     >
                       <div
-                        class="dropdown btn-group"
+                        class="dropdown-menu-header dropdown btn-group"
                         role="group"
                       >
                         <button
@@ -53,7 +53,7 @@ Object {
                         </button>
                       </div>
                       <div
-                        class="dropdown btn-group"
+                        class="dropdown-menu-header dropdown btn-group"
                         role="group"
                       >
                         <button
@@ -202,7 +202,7 @@ Object {
                     class="d-flex justify-content-evenly"
                   >
                     <div
-                      class="dropdown btn-group"
+                      class="dropdown-menu-header dropdown btn-group"
                       role="group"
                     >
                       <button
@@ -216,7 +216,7 @@ Object {
                       </button>
                     </div>
                     <div
-                      class="dropdown btn-group"
+                      class="dropdown-menu-header dropdown btn-group"
                       role="group"
                     >
                       <button

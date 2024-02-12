@@ -1,0 +1,7 @@
+.dropdown-menu-header  > .dropdown-menu {
+  --bs-dropdown-link-hover-bg: #a9a9a9;
+}
+
+.dropdown-menu-header  > .dropdown-menu >.dropdown-item:has(.btn):hover {
+  background: #fff;
+}

@@ -6,6 +6,8 @@ import FormControl from "react-bootstrap/FormControl"
 
 import boardRepository from "persistent/persistentKanbanBoardRepository"
 
+import "../DropdownMenu.css"
+
 const FilterMenu = ({ onUpdate }) => {
   const handleFilterByPriority = ({ target: { innerText } }) => {
     boardRepository.applyPriorityFilter(innerText)
@@ -28,7 +30,7 @@ const FilterMenu = ({ onUpdate }) => {
   const variant = priority || searchCriteria ? "success" : "light"
 
   return (
-    <DropdownButton as={ButtonGroup} size="sm" variant={variant} title={<i className="bi bi-filter"></i>}>
+    <DropdownButton className="dropdown-menu-header" as={ButtonGroup} size="sm" variant={variant} title={<i className="bi bi-filter" ></i >}>
       <Dropdown.ItemText className="bg-secondary-subtle text-secondary border text-center">Filter by priority</Dropdown.ItemText>
       {
         ["All", "Low", "Medium", "High"].map((item, i) => (
@@ -52,7 +54,7 @@ const FilterMenu = ({ onUpdate }) => {
       <Dropdown.Item>
         <Button variant="danger" size="sm" className="bi bi-x-circle w-100 mt-1" onClick={handleClearFilters}></Button>
       </Dropdown.Item>
-    </DropdownButton>
+    </DropdownButton >
   )
 }
 
