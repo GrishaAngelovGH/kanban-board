@@ -1,10 +1,9 @@
 import { useDraggable } from "@dnd-kit/core"
 
-import OverlayTrigger from "react-bootstrap/OverlayTrigger"
-import Tooltip from "react-bootstrap/Tooltip"
 import Badge from "react-bootstrap/Badge"
 
 import Avatar from "components/Avatar"
+import Tooltip from "components/Tooltip"
 
 import Highlighter from "react-highlight-words"
 
@@ -97,23 +96,12 @@ const Task = ({
           assignedIds.map(v => {
             const user = users.find(u => u.id === v)
 
-            const renderTooltip = (props) => (
-              <Tooltip {...props}>
-                {user.name}
-              </Tooltip>
-            )
-
             return (
-              <OverlayTrigger
-                key={v}
-                placement="top"
-                delay={{ show: 250, hide: 400 }}
-                overlay={renderTooltip}
-              >
+              <Tooltip key={v} label={user.name}>
                 <div>
                   <Avatar user={user} size={35} />
                 </div>
-              </OverlayTrigger>
+              </Tooltip>
             )
           })
         }
@@ -128,17 +116,9 @@ const Task = ({
         </div>
         {
           priority.length > 0 && (
-            <OverlayTrigger
-              placement="top"
-              delay={{ show: 250, hide: 400 }}
-              overlay={(props) => (
-                <Tooltip {...props} className="text-capitalize">
-                  {priority} Priority
-                </Tooltip>
-              )}
-            >
+            <Tooltip label={`${priority} Priority`} className="text-capitalize">
               <i className={`bi bi-bookmark-fill fs-4 ${bookmarkStyles[priority]}`}></i>
-            </OverlayTrigger>
+            </Tooltip>
           )
         }
       </div>
