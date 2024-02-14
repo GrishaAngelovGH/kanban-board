@@ -1,5 +1,7 @@
 import { useDraggable } from "@dnd-kit/core"
 
+import { Link } from "react-router-dom"
+
 import Badge from "react-bootstrap/Badge"
 
 import Avatar from "components/Avatar"
@@ -98,12 +100,19 @@ const Task = ({
 
             return (
               <Tooltip key={v} label={user.name}>
-                <div>
+                <Link to={`/tasks/${user.id}`}>
                   <Avatar user={user} size={35} />
-                </div>
+                </Link>
               </Tooltip>
             )
           })
+        }
+        {
+          assignedIds.length > 0 && (
+            <Tooltip label="Click on a user to see their assigned tasks">
+              <i className="m-1 bi bi-info fs-3 text-primary border border-3 border-primary rounded-circle d-flex bg-light"></i>
+            </Tooltip>
+          )
         }
       </div>
 

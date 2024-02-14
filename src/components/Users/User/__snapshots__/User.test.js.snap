@@ -19,7 +19,7 @@ Object {
           />
         </div>
         <div
-          class="col-8"
+          class="col-6"
         >
           <p
             class="m-0 fw-bold"
@@ -28,10 +28,15 @@ Object {
           </p>
         </div>
         <div
-          class="col-2"
+          class="col-4"
         >
+          <a
+            class="btn btn-success bi bi-clipboard-check me-2"
+            href="/tasks/undefined"
+          />
           <button
-            class="btn btn-danger bi bi-trash"
+            class="bi bi-trash btn btn-danger"
+            type="button"
           />
         </div>
       </div>
@@ -52,7 +57,7 @@ Object {
         />
       </div>
       <div
-        class="col-8"
+        class="col-6"
       >
         <p
           class="m-0 fw-bold"
@@ -61,10 +66,15 @@ Object {
         </p>
       </div>
       <div
-        class="col-2"
+        class="col-4"
       >
+        <a
+          class="btn btn-success bi bi-clipboard-check me-2"
+          href="/tasks/undefined"
+        />
         <button
-          class="btn btn-danger bi bi-trash"
+          class="bi bi-trash btn btn-danger"
+          type="button"
         />
       </div>
     </div>
