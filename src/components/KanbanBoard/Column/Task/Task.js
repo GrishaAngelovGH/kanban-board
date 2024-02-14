@@ -11,7 +11,7 @@ import Highlighter from "react-highlight-words"
 
 import parse from "html-react-parser"
 
-import usersRepository from "persistent/persistentUserRepository"
+import userRepository from "persistent/persistentUserRepository"
 import boardRepository from "persistent/persistentKanbanBoardRepository"
 
 import "./Task.css"
@@ -67,7 +67,7 @@ const Task = ({
     onToggleLock(id, columnId, !isLocked)
   }
 
-  const users = usersRepository.getUsers()
+  const users = userRepository.getUsers()
 
   const bgClass = markedAsDone ? "bg-success-subtle" : "bg-white"
   const borderClass = priorityStyles[priority]

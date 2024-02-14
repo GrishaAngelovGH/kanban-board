@@ -4,7 +4,7 @@ import ListGroup from "react-bootstrap/ListGroup"
 
 import User from "./User"
 
-import usersRepository from "persistent/persistentUserRepository"
+import userRepository from "persistent/persistentUserRepository"
 
 import "./UserList.css"
 
@@ -25,7 +25,7 @@ const UserList = ({ task, onUpdate }) => {
     onUpdate(ids)
   }, [ids, onUpdate])
 
-  const users = usersRepository.getUsers()
+  const users = userRepository.getUsers()
 
   return (
     <ListGroup className="overflow-auto user-list">

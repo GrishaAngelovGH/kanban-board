@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button"
 import Form from "react-bootstrap/Form"
 import FormControl from "react-bootstrap/FormControl"
 
-import usersRepository from "persistent/persistentUserRepository"
+import userRepository from "persistent/persistentUserRepository"
 
 const fileReader = new FileReader()
 
@@ -27,7 +27,7 @@ const UserForm = ({ onUpdate }) => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    usersRepository.createUser(image, username)
+    userRepository.createUser(image, username)
 
     imageInputRef.current.value = ""
     setImage("")

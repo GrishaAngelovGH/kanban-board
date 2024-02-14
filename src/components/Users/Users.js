@@ -5,14 +5,14 @@ import Modal from "components/Modal"
 import User from "./User"
 import UserForm from "./UserForm"
 
-import usersRepository from "persistent/persistentUserRepository"
+import userRepository from "persistent/persistentUserRepository"
 
 import "./Users.css"
 
 const Users = ({ show, onClose, onUpdate }) => {
   const scrollRef = useRef()
 
-  const users = usersRepository.getUsers()
+  const users = userRepository.getUsers()
 
   useEffect(() => {
     scrollRef.current && scrollRef.current.scrollIntoView({ behavior: "smooth" })
