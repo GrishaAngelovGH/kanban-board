@@ -12,8 +12,28 @@ Object {
         <div
           class="col-12"
         >
-          UserID: 
-          9010122801186593
+          <div
+            class="row g-0 bg-light p-2 shadow"
+          >
+            <div
+              class="col-1"
+            >
+              <a
+                class="btn btn-light bi bi-arrow-left border"
+                href="/"
+              />
+            </div>
+            <div
+              class="col-11"
+            >
+              <h3
+                class="m-0 text-center"
+              >
+                Tasks assigned to 
+                John Smith
+              </h3>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -26,8 +46,28 @@ Object {
       <div
         class="col-12"
       >
-        UserID: 
-        9010122801186593
+        <div
+          class="row g-0 bg-light p-2 shadow"
+        >
+          <div
+            class="col-1"
+          >
+            <a
+              class="btn btn-light bi bi-arrow-left border"
+              href="/"
+            />
+          </div>
+          <div
+            class="col-11"
+          >
+            <h3
+              class="m-0 text-center"
+            >
+              Tasks assigned to 
+              John Smith
+            </h3>
+          </div>
+        </div>
       </div>
     </div>
   </div>,

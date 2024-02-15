@@ -15,6 +15,11 @@ const persistentUserRepository = {
 
     return (users && Object.values(users)) || []
   },
+  findUserById: id => {
+    const users = JSON.parse(localStorage.getItem("users"))
+
+    return (users && users[id]) || null
+  },
   deleteUser: id => {
     const users = JSON.parse(localStorage.getItem("users"))
 
