@@ -23,20 +23,14 @@ import boardGenerator from "persistent/persistentKanbanBoardGenerator"
 import boardRepository from "persistent/persistentKanbanBoardRepository"
 import settingsRepository from "persistent/persistentSettingsRepository"
 
+import useBackgroundImage from "hooks/useBackgroundImage"
+
 import Calendar from "react-calendar"
 import "react-calendar/dist/Calendar.css"
 
 import "./KanbanBoard.css"
 
 import configureHotkeys from "./hotkeys"
-
-import geometricBackgroundImage from "assets/images/backgrounds/geometric-triangle-shapes-background.jpg"
-import natureBackgroundImage from "assets/images/backgrounds/nature-background.jpg"
-
-const backgrounds = {
-  "Nature Background": natureBackgroundImage,
-  "Geometric Background": geometricBackgroundImage
-}
 
 const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUploadKanbanBoardModal }) => {
   const [showColumnModal, setShowColumnModal] = useState(false)
@@ -144,8 +138,7 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
     }
   }
 
-  const background = settingsRepository.getBackground()
-  const backgroundImage = backgrounds[background]
+  const backgroundImage = useBackgroundImage()
 
   const isSingleRowView = settingsRepository.isSingleRowView()
 
