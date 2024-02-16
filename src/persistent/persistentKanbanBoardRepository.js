@@ -58,6 +58,17 @@ const columns = {
       return column
     })
   },
+  getColumnsWithAssignedTasksForUser: userId => {
+    const columns = JSON.parse(localStorage.getItem("columns"))
+    if (!columns) return []
+
+    return Object.values(columns)
+      .filter(v => v.items.find(item => item.assignedIds.includes(userId)))
+      .map(v => ({
+        ...v,
+        items: v.items.filter(item => item.assignedIds.includes(userId))
+      }))
+  },
   getStringifiedColumns: () => {
     return localStorage.getItem("columns")
   },
