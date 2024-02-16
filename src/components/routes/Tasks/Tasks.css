@@ -1,0 +1,8 @@
+.accordion {
+  height: 80vh;
+  overflow: auto;
+}
+
+.accordion-header > button {
+  display: block;
+}

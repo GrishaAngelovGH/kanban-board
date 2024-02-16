@@ -9,6 +9,7 @@ import {
 import Tasks from "./Tasks"
 
 jest.mock('persistent/persistentUserRepository')
+jest.mock('persistent/persistentKanbanBoardRepository')
 
 test("should render Tasks route component", () => {
   const view = render(
