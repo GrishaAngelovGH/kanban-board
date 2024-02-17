@@ -6,6 +6,7 @@ import boardRepository from "persistent/persistentKanbanBoardRepository"
 import useBackgroundImage from "hooks/useBackgroundImage"
 
 import Accordion from "react-bootstrap/Accordion"
+import Badge from "react-bootstrap/Badge"
 
 import "./Tasks.css"
 
@@ -34,7 +35,12 @@ const Tasks = ({ userId }) => {
                 columns.map((column, i) => (
                   <Accordion.Item key={column.id} eventKey={`${i}`}>
                     <Accordion.Header>
-                      <h3>{column.title} ({column.items.length})</h3>
+                      <h3>
+                        {column.title}
+                        <Badge bg="primary ms-2">
+                          {column.items.length}
+                        </Badge>
+                      </h3>
                       <p>{column.description}</p>
                     </Accordion.Header>
                     <Accordion.Body>

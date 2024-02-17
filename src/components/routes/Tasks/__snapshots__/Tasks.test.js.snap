@@ -56,9 +56,11 @@ Object {
                     >
                       <h3>
                         Backlog
-                         (
-                        2
-                        )
+                        <span
+                          class="badge bg-primary ms-2"
+                        >
+                          2
+                        </span>
                       </h3>
                       <p>
                         Prioritized list of features that should be implemented as part of a project.
@@ -153,9 +155,11 @@ Object {
                   >
                     <h3>
                       Backlog
-                       (
-                      2
-                      )
+                      <span
+                        class="badge bg-primary ms-2"
+                      >
+                        2
+                      </span>
                     </h3>
                     <p>
                       Prioritized list of features that should be implemented as part of a project.
