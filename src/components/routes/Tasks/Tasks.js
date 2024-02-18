@@ -1,20 +1,29 @@
+import { useState } from "react"
 import { Link } from "react-router-dom"
 
-import userRepository from "persistent/persistentUserRepository"
 import boardRepository from "persistent/persistentKanbanBoardRepository"
+import userRepository from "persistent/persistentUserRepository"
 
 import useBackgroundImage from "hooks/useBackgroundImage"
 
+import Toast from "components/Toast"
+import MoveToColumnDropdownButton from "./MoveToColumnDropdownButton"
+
 import Accordion from "react-bootstrap/Accordion"
 import Badge from "react-bootstrap/Badge"
+import ToastContainer from "react-bootstrap/ToastContainer"
 
 import "./Tasks.css"
 
 const Tasks = ({ userId }) => {
+  const [showToast, setShowToast] = useState(false)
+  const [toastMessage, setToastMessage] = useState("")
+
   const backgroundImage = useBackgroundImage()
   const user = userRepository.findUserById(userId)
 
-  const columns = boardRepository.getColumnsWithAssignedTasksForUser(user.id)
+  const relevantColumns = boardRepository.getColumnsWithAssignedTasksForUser(user.id)
+  const allColumns = boardRepository.getColumns()
 
   return (
     <div className="row g-0 vh-100" style={{ backgroundImage: backgroundImage ? `url(${backgroundImage})` : "none", backgroundSize: "cover" }}>
@@ -25,6 +34,7 @@ const Tasks = ({ userId }) => {
           </div>
           <div className="col-11">
             <h3 className="m-0 text-center">Tasks assigned to {user.name}</h3>
+            <p className="text-secondary text-center">Click on any item to expand/collapse its content</p>
           </div>
         </div>
 
@@ -32,7 +42,7 @@ const Tasks = ({ userId }) => {
           <div className="col-10">
             <Accordion>
               {
-                columns.map((column, i) => (
+                relevantColumns.map((column, i) => (
                   <Accordion.Item key={column.id} eventKey={`${i}`}>
                     <Accordion.Header>
                       <h3>
@@ -49,9 +59,18 @@ const Tasks = ({ userId }) => {
                           <div key={v.id} className="mt-3 border border-3 shadow rounded p-3">
                             <h3>{v.title}</h3>
                             <p>{v.description}</p>
-                            {v.priority.length > 0 && (
-                              <p className="m-0 text-capitalize">Priority: {v.priority}</p>
-                            )}
+                            {
+                              v.priority.length > 0 && (
+                                <p className="m-0 text-capitalize">Priority: {v.priority}</p>
+                              )
+                            }
+                            <MoveToColumnDropdownButton
+                              columns={allColumns}
+                              column={column}
+                              taskId={v.id}
+                              setShowToast={setShowToast}
+                              setToastMessage={setToastMessage}
+                            />
                           </div>
                         ))
                       }
@@ -60,6 +79,10 @@ const Tasks = ({ userId }) => {
                 ))
               }
             </Accordion>
+
+            <ToastContainer position="top-center">
+              <Toast show={showToast} title="Kanban Board" body={toastMessage} onClose={() => setShowToast(false)} />
+            </ToastContainer>
           </div>
         </div>
       </div>
