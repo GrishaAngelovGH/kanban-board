@@ -87,6 +87,12 @@ Object {
                         <p>
                           A ConfirmButton component should be implemented to allow confirming selected product features in ProductModal.
                         </p>
+                        <p
+                          class="text-capitalize"
+                        >
+                          Priority: 
+                          medium
+                        </p>
                         <div
                           class="dropdown-menu-header dropdown btn-group"
                           role="group"
@@ -217,6 +223,12 @@ Object {
                       </h3>
                       <p>
                         A ConfirmButton component should be implemented to allow confirming selected product features in ProductModal.
+                      </p>
+                      <p
+                        class="text-capitalize"
+                      >
+                        Priority: 
+                        medium
                       </p>
                       <div
                         class="dropdown-menu-header dropdown btn-group"

@@ -18,6 +18,7 @@ import "./Tasks.css"
 const Tasks = ({ userId }) => {
   const [showToast, setShowToast] = useState(false)
   const [toastMessage, setToastMessage] = useState("")
+  const [activeKey, setActiveKey] = useState("")
 
   const backgroundImage = useBackgroundImage()
   const user = userRepository.findUserById(userId)
@@ -40,7 +41,7 @@ const Tasks = ({ userId }) => {
 
         <div className="row g-0 mt-3 justify-content-center">
           <div className="col-10">
-            <Accordion>
+            <Accordion activeKey={activeKey} onSelect={setActiveKey}>
               {
                 relevantColumns.map((column, i) => (
                   <Accordion.Item key={column.id} eventKey={`${i}`}>
@@ -61,7 +62,7 @@ const Tasks = ({ userId }) => {
                             <p>{v.description}</p>
                             {
                               v.priority.length > 0 && (
-                                <p className="m-0 text-capitalize">Priority: {v.priority}</p>
+                                <p className="text-capitalize">Priority: {v.priority}</p>
                               )
                             }
                             <MoveToColumnDropdownButton
@@ -70,6 +71,7 @@ const Tasks = ({ userId }) => {
                               taskId={v.id}
                               setShowToast={setShowToast}
                               setToastMessage={setToastMessage}
+                              setActiveKey={setActiveKey}
                             />
                           </div>
                         ))
