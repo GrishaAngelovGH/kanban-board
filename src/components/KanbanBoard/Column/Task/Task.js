@@ -100,7 +100,7 @@ const Task = ({
 
             return (
               <Tooltip key={v} label={user.name}>
-                <Link to={`/tasks/${user.id}`}>
+                <Link to={`/tasks/${user.id}`} className="text-decoration-none">
                   <Avatar user={user} size={35} />
                 </Link>
               </Tooltip>
