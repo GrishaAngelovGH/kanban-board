@@ -16,7 +16,7 @@ Object {
             class="row g-0 bg-light p-2 shadow align-items-center"
           >
             <div
-              class="col-1"
+              class="col-2 col-md-1"
             >
               <a
                 class="btn btn-light bi bi-arrow-left border"
@@ -24,7 +24,7 @@ Object {
               />
             </div>
             <div
-              class="col-10"
+              class="col-10 col-md-9 col-lg-10"
             >
               <h3
                 class="m-0 text-center"
@@ -39,7 +39,7 @@ Object {
               </p>
             </div>
             <div
-              class="col-1"
+              class="col-1 col-md-2 col-lg-1 d-none d-md-block text-center"
             >
               <img
                 alt="user"
@@ -163,7 +163,7 @@ Object {
           class="row g-0 bg-light p-2 shadow align-items-center"
         >
           <div
-            class="col-1"
+            class="col-2 col-md-1"
           >
             <a
               class="btn btn-light bi bi-arrow-left border"
@@ -171,7 +171,7 @@ Object {
             />
           </div>
           <div
-            class="col-10"
+            class="col-10 col-md-9 col-lg-10"
           >
             <h3
               class="m-0 text-center"
@@ -186,7 +186,7 @@ Object {
             </p>
           </div>
           <div
-            class="col-1"
+            class="col-1 col-md-2 col-lg-1 d-none d-md-block text-center"
           >
             <img
               alt="user"

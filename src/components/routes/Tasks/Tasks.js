@@ -6,13 +6,13 @@ import userRepository from "persistent/persistentUserRepository"
 
 import useBackgroundImage from "hooks/useBackgroundImage"
 
+import Avatar from "components/Avatar"
 import Toast from "components/Toast"
 import MoveToColumnDropdownButton from "./MoveToColumnDropdownButton"
 
 import Accordion from "react-bootstrap/Accordion"
 import Badge from "react-bootstrap/Badge"
 import ToastContainer from "react-bootstrap/ToastContainer"
-import Avatar from "components/Avatar"
 
 import "./Tasks.css"
 
@@ -31,14 +31,14 @@ const Tasks = ({ userId }) => {
     <div className="row g-0 vh-100" style={{ backgroundImage: backgroundImage ? `url(${backgroundImage})` : "none", backgroundSize: "cover" }}>
       <div className="col-12">
         <div className="row g-0 bg-light p-2 shadow align-items-center">
-          <div className="col-1">
+          <div className="col-2 col-md-1">
             <Link to="/" className="btn btn-light bi bi-arrow-left border"></Link>
           </div>
-          <div className="col-10">
+          <div className="col-10 col-md-9 col-lg-10">
             <h3 className="m-0 text-center">Tasks assigned to {user.name}</h3>
             <p className="text-secondary text-center">Click on any item to expand/collapse its content</p>
           </div>
-          <div className="col-1">
+          <div className="col-1 col-md-2 col-lg-1 d-none d-md-block text-center">
             <Avatar user={user} size={80}></Avatar>
           </div>
         </div>
