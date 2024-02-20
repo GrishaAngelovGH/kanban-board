@@ -12,6 +12,7 @@ import MoveToColumnDropdownButton from "./MoveToColumnDropdownButton"
 import Accordion from "react-bootstrap/Accordion"
 import Badge from "react-bootstrap/Badge"
 import ToastContainer from "react-bootstrap/ToastContainer"
+import Avatar from "components/Avatar"
 
 import "./Tasks.css"
 
@@ -29,13 +30,16 @@ const Tasks = ({ userId }) => {
   return (
     <div className="row g-0 vh-100" style={{ backgroundImage: backgroundImage ? `url(${backgroundImage})` : "none", backgroundSize: "cover" }}>
       <div className="col-12">
-        <div className="row g-0 bg-light p-2 shadow">
+        <div className="row g-0 bg-light p-2 shadow align-items-center">
           <div className="col-1">
             <Link to="/" className="btn btn-light bi bi-arrow-left border"></Link>
           </div>
-          <div className="col-11">
+          <div className="col-10">
             <h3 className="m-0 text-center">Tasks assigned to {user.name}</h3>
             <p className="text-secondary text-center">Click on any item to expand/collapse its content</p>
+          </div>
+          <div className="col-1">
+            <Avatar user={user} size={80}></Avatar>
           </div>
         </div>
 
@@ -57,7 +61,7 @@ const Tasks = ({ userId }) => {
                     <Accordion.Body>
                       {
                         column.items.map(v => (
-                          <div key={v.id} className="mt-3 border border-3 shadow rounded p-3">
+                          <div key={v.id} className="mt-3 border border-3 shadow rounded p-3 bg-light">
                             <h3>{v.title}</h3>
                             <p>{v.description}</p>
                             {

@@ -13,7 +13,7 @@ Object {
           class="col-12"
         >
           <div
-            class="row g-0 bg-light p-2 shadow"
+            class="row g-0 bg-light p-2 shadow align-items-center"
           >
             <div
               class="col-1"
@@ -24,7 +24,7 @@ Object {
               />
             </div>
             <div
-              class="col-11"
+              class="col-10"
             >
               <h3
                 class="m-0 text-center"
@@ -37,6 +37,16 @@ Object {
               >
                 Click on any item to expand/collapse its content
               </p>
+            </div>
+            <div
+              class="col-1"
+            >
+              <img
+                alt="user"
+                class="rounded-circle m-1"
+                src="image_1"
+                width="80"
+              />
             </div>
           </div>
           <div
@@ -79,7 +89,7 @@ Object {
                       class="accordion-body"
                     >
                       <div
-                        class="mt-3 border border-3 shadow rounded p-3"
+                        class="mt-3 border border-3 shadow rounded p-3 bg-light"
                       >
                         <h3>
                           Implement ConfirmButton component for ProductModal
@@ -107,7 +117,7 @@ Object {
                         </div>
                       </div>
                       <div
-                        class="mt-3 border border-3 shadow rounded p-3"
+                        class="mt-3 border border-3 shadow rounded p-3 bg-light"
                       >
                         <h3>
                           Redesign ProductPage to allow more space for visualization of products
@@ -150,7 +160,7 @@ Object {
         class="col-12"
       >
         <div
-          class="row g-0 bg-light p-2 shadow"
+          class="row g-0 bg-light p-2 shadow align-items-center"
         >
           <div
             class="col-1"
@@ -161,7 +171,7 @@ Object {
             />
           </div>
           <div
-            class="col-11"
+            class="col-10"
           >
             <h3
               class="m-0 text-center"
@@ -174,6 +184,16 @@ Object {
             >
               Click on any item to expand/collapse its content
             </p>
+          </div>
+          <div
+            class="col-1"
+          >
+            <img
+              alt="user"
+              class="rounded-circle m-1"
+              src="image_1"
+              width="80"
+            />
           </div>
         </div>
         <div
@@ -216,7 +236,7 @@ Object {
                     class="accordion-body"
                   >
                     <div
-                      class="mt-3 border border-3 shadow rounded p-3"
+                      class="mt-3 border border-3 shadow rounded p-3 bg-light"
                     >
                       <h3>
                         Implement ConfirmButton component for ProductModal
@@ -244,7 +264,7 @@ Object {
                       </div>
                     </div>
                     <div
-                      class="mt-3 border border-3 shadow rounded p-3"
+                      class="mt-3 border border-3 shadow rounded p-3 bg-light"
                     >
                       <h3>
                         Redesign ProductPage to allow more space for visualization of products
