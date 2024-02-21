@@ -12,6 +12,7 @@ import MoveToColumnDropdownButton from "./MoveToColumnDropdownButton"
 
 import Accordion from "react-bootstrap/Accordion"
 import Badge from "react-bootstrap/Badge"
+import Button from "react-bootstrap/Button"
 import ToastContainer from "react-bootstrap/ToastContainer"
 
 import "./Tasks.css"
@@ -77,6 +78,20 @@ const Tasks = ({ userId }) => {
                               setToastMessage={setToastMessage}
                               setActiveKey={setActiveKey}
                             />
+
+                            <Button
+                              variant="danger"
+                              size="sm"
+                              className="ms-2"
+                              onClick={() => {
+                                boardRepository.removeAssignedUserFromTask(v.id, column.id, userId)
+                                setActiveKey("")
+                                setToastMessage(`The user is successfully unassigned from "${v.title}" task`)
+                                setShowToast(true)
+                              }}
+                            >
+                              Unassign Me
+                            </Button>
                           </div>
                         ))
                       }

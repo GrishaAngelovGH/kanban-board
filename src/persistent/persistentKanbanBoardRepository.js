@@ -195,6 +195,15 @@ const tasks = {
 
     localStorage.setItem("columns", JSON.stringify(columns))
   },
+  removeAssignedUserFromTask: (taskId, columnId, userId) => {
+    const columns = JSON.parse(localStorage.getItem("columns"))
+
+    const task = columns[columnId].items.find(v => v.id === taskId)
+
+    task.assignedIds = task.assignedIds.filter(v => v !== userId)
+
+    localStorage.setItem("columns", JSON.stringify(columns))
+  },
   deleteTask: (taskId, columnId) => {
     const column = getColumnById(columnId)
     column.items = column.items.filter(v => v.id !== taskId)
