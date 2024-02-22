@@ -1,3 +1,5 @@
+import ReactDOMServer from 'react-dom/server';
+
 import { useDraggable } from "@dnd-kit/core"
 
 import { Link } from "react-router-dom"
@@ -36,6 +38,17 @@ const WordHighlighter = ({ text }) => (
     textToHighlight={text}
   />
 )
+
+const RichTextDescription = ({ description }) => {
+  const unescapedMarkup = ReactDOMServer.renderToString(<WordHighlighter text={description} />)
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, "\"")
+    .replace(/&#39;/g, "'")
+    .replace(/&amp;nbsp;/g, " ")
+
+  return parse(unescapedMarkup)
+}
 
 const Task = ({
   id, columnId, assignedIds, title, description, priority, isTemplate,
@@ -90,7 +103,7 @@ const Task = ({
       }
 
       <div className="text-secondary overflow-auto task-description">
-        <WordHighlighter text={parse(description)} />
+        <RichTextDescription description={description} />
       </div>
 
       <div className="mb-3 d-flex align-items-center flex-wrap">
