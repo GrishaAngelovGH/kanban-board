@@ -1,5 +1,3 @@
-import ReactDOMServer from 'react-dom/server';
-
 import { useDraggable } from "@dnd-kit/core"
 
 import { Link } from "react-router-dom"
@@ -7,14 +5,11 @@ import { Link } from "react-router-dom"
 import Badge from "react-bootstrap/Badge"
 
 import Avatar from "components/Avatar"
+import RichTextDescription from "components/RichTextDescription"
 import Tooltip from "components/Tooltip"
-
-import Highlighter from "react-highlight-words"
-
-import parse from "html-react-parser"
+import WordHighlighter from "components/WordHighlighter"
 
 import userRepository from "persistent/persistentUserRepository"
-import boardRepository from "persistent/persistentKanbanBoardRepository"
 
 import "./Task.css"
 
@@ -28,26 +23,6 @@ const bookmarkStyles = {
   "low": "text-warning",
   "medium": "text-success",
   "high": "text-danger"
-}
-
-const WordHighlighter = ({ text }) => (
-  <Highlighter
-    highlightClassName="bg-warning"
-    searchWords={[boardRepository.getSearchFilter()]}
-    autoEscape={true}
-    textToHighlight={text}
-  />
-)
-
-const RichTextDescription = ({ description }) => {
-  const unescapedMarkup = ReactDOMServer.renderToString(<WordHighlighter text={description} />)
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&quot;/g, "\"")
-    .replace(/&#39;/g, "'")
-    .replace(/&amp;nbsp;/g, " ")
-
-  return parse(unescapedMarkup)
 }
 
 const Task = ({

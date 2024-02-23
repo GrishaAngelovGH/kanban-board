@@ -8,6 +8,7 @@ import useBackgroundImage from "hooks/useBackgroundImage"
 
 import Avatar from "components/Avatar"
 import Toast from "components/Toast"
+import RichTextDescription from "components/RichTextDescription"
 import MoveToColumnDropdownButton from "./MoveToColumnDropdownButton"
 
 import Accordion from "react-bootstrap/Accordion"
@@ -64,7 +65,7 @@ const Tasks = ({ userId }) => {
                         column.items.map(v => (
                           <div key={v.id} className="mt-3 border border-3 shadow rounded p-3 bg-light">
                             <h3>{v.title}</h3>
-                            <p>{v.description}</p>
+                            <RichTextDescription description={v.description} />
                             {
                               v.priority.length > 0 && (
                                 <p className="text-capitalize">Priority: {v.priority}</p>

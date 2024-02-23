@@ -94,9 +94,13 @@ Object {
                         <h3>
                           Implement ConfirmButton component for ProductModal
                         </h3>
-                        <p>
-                          A ConfirmButton component should be implemented to allow confirming selected product features in ProductModal.
-                        </p>
+                        <span>
+                          <span
+                            class=""
+                          >
+                            A ConfirmButton component should be implemented to allow confirming selected product features in ProductModal.
+                          </span>
+                        </span>
                         <p
                           class="text-capitalize"
                         >
@@ -128,9 +132,13 @@ Object {
                         <h3>
                           Redesign ProductPage to allow more space for visualization of products
                         </h3>
-                        <p>
-                          The ProductPage needs a redesign to allow more space for visualization of products.
-                        </p>
+                        <span>
+                          <span
+                            class=""
+                          >
+                            The ProductPage needs a redesign to allow more space for visualization of products.
+                          </span>
+                        </span>
                         <div
                           class="dropdown-menu-header dropdown btn-group"
                           role="group"
@@ -253,9 +261,13 @@ Object {
                       <h3>
                         Implement ConfirmButton component for ProductModal
                       </h3>
-                      <p>
-                        A ConfirmButton component should be implemented to allow confirming selected product features in ProductModal.
-                      </p>
+                      <span>
+                        <span
+                          class=""
+                        >
+                          A ConfirmButton component should be implemented to allow confirming selected product features in ProductModal.
+                        </span>
+                      </span>
                       <p
                         class="text-capitalize"
                       >
@@ -287,9 +299,13 @@ Object {
                       <h3>
                         Redesign ProductPage to allow more space for visualization of products
                       </h3>
-                      <p>
-                        The ProductPage needs a redesign to allow more space for visualization of products.
-                      </p>
+                      <span>
+                        <span
+                          class=""
+                        >
+                          The ProductPage needs a redesign to allow more space for visualization of products.
+                        </span>
+                      </span>
                       <div
                         class="dropdown-menu-header dropdown btn-group"
                         role="group"

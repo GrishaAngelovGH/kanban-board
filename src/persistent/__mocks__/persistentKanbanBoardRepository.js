@@ -33,7 +33,8 @@ const persistentKanbanBoardRepository = {
         ]
       }
     ]
-  }
+  },
+  getSearchFilter: () => ""
 }
 
 export default persistentKanbanBoardRepository
