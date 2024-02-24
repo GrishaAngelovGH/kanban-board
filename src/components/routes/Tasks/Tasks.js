@@ -7,8 +7,9 @@ import userRepository from "persistent/persistentUserRepository"
 import useBackgroundImage from "hooks/useBackgroundImage"
 
 import Avatar from "components/Avatar"
-import Toast from "components/Toast"
 import RichTextDescription from "components/RichTextDescription"
+import Toast from "components/Toast"
+import Collaborators from "./Collaborators"
 import MoveToColumnDropdownButton from "./MoveToColumnDropdownButton"
 
 import Accordion from "react-bootstrap/Accordion"
@@ -65,12 +66,17 @@ const Tasks = ({ userId }) => {
                         column.items.map(v => (
                           <div key={v.id} className="mt-3 border border-3 shadow rounded p-3 bg-light">
                             <h3>{v.title}</h3>
-                            <RichTextDescription description={v.description} />
+
+                            <RichTextDescription description={v.description} className="mb-3" />
+
                             {
                               v.priority.length > 0 && (
                                 <p className="text-capitalize">Priority: {v.priority}</p>
                               )
                             }
+
+                            <Collaborators ids={v.assignedIds} userId={userId} />
+
                             <MoveToColumnDropdownButton
                               columns={allColumns}
                               column={column}

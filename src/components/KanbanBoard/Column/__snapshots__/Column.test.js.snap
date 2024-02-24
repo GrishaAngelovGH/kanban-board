@@ -104,13 +104,15 @@ Object {
             <div
               class="text-secondary overflow-auto task-description"
             >
-              <span>
-                <span
-                  class=""
-                >
-                  Description 1
+              <div>
+                <span>
+                  <span
+                    class=""
+                  >
+                    Description 1
+                  </span>
                 </span>
-              </span>
+              </div>
             </div>
             <div
               class="mb-3 d-flex align-items-center flex-wrap"
@@ -174,13 +176,15 @@ Object {
             <div
               class="text-secondary overflow-auto task-description"
             >
-              <span>
-                <span
-                  class=""
-                >
-                  Description 2
+              <div>
+                <span>
+                  <span
+                    class=""
+                  >
+                    Description 2
+                  </span>
                 </span>
-              </span>
+              </div>
             </div>
             <div
               class="mb-3 d-flex align-items-center flex-wrap"
@@ -315,13 +319,15 @@ Object {
           <div
             class="text-secondary overflow-auto task-description"
           >
-            <span>
-              <span
-                class=""
-              >
-                Description 1
+            <div>
+              <span>
+                <span
+                  class=""
+                >
+                  Description 1
+                </span>
               </span>
-            </span>
+            </div>
           </div>
           <div
             class="mb-3 d-flex align-items-center flex-wrap"
@@ -385,13 +391,15 @@ Object {
           <div
             class="text-secondary overflow-auto task-description"
           >
-            <span>
-              <span
-                class=""
-              >
-                Description 2
+            <div>
+              <span>
+                <span
+                  class=""
+                >
+                  Description 2
+                </span>
               </span>
-            </span>
+            </div>
           </div>
           <div
             class="mb-3 d-flex align-items-center flex-wrap"

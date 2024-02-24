@@ -1,38 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render RichTextDescription component 1`] = `
+exports[`should render Collaborators component 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <div>
-        <span>
+        <div
+          class="mb-3 d-flex align-items-center flex-wrap border-top"
+        >
           <span
-            class=""
+            class="me-2"
           >
-            this is a 
-            <b>
-              rich text
-            </b>
-             description
+            Collaborators
           </span>
-        </span>
+          <div>
+            <img
+              alt="user"
+              class="rounded-circle m-1"
+              src="image_2"
+              width="35"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </body>,
   "container": <div>
     <div>
-      <span>
+      <div
+        class="mb-3 d-flex align-items-center flex-wrap border-top"
+      >
         <span
-          class=""
+          class="me-2"
         >
-          this is a 
-          <b>
-            rich text
-          </b>
-           description
+          Collaborators
         </span>
-      </span>
+        <div>
+          <img
+            alt="user"
+            class="rounded-circle m-1"
+            src="image_2"
+            width="35"
+          />
+        </div>
+      </div>
     </div>
   </div>,
   "debug": [Function],

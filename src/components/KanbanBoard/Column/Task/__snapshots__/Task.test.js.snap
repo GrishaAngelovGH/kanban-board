@@ -40,13 +40,15 @@ Object {
         <div
           class="text-secondary overflow-auto task-description"
         >
-          <span>
-            <span
-              class=""
-            >
-              Task Description
+          <div>
+            <span>
+              <span
+                class=""
+              >
+                Task Description
+              </span>
             </span>
-          </span>
+          </div>
         </div>
         <div
           class="mb-3 d-flex align-items-center flex-wrap"
@@ -115,13 +117,15 @@ Object {
       <div
         class="text-secondary overflow-auto task-description"
       >
-        <span>
-          <span
-            class=""
-          >
-            Task Description
+        <div>
+          <span>
+            <span
+              class=""
+            >
+              Task Description
+            </span>
           </span>
-        </span>
+        </div>
       </div>
       <div
         class="mb-3 d-flex align-items-center flex-wrap"
@@ -246,13 +250,15 @@ Object {
         <div
           class="text-secondary overflow-auto task-description"
         >
-          <span>
-            <span
-              class=""
-            >
-              Template Description
+          <div>
+            <span>
+              <span
+                class=""
+              >
+                Template Description
+              </span>
             </span>
-          </span>
+          </div>
         </div>
         <div
           class="mb-3 d-flex align-items-center flex-wrap"
@@ -313,13 +319,15 @@ Object {
       <div
         class="text-secondary overflow-auto task-description"
       >
-        <span>
-          <span
-            class=""
-          >
-            Template Description
+        <div>
+          <span>
+            <span
+              class=""
+            >
+              Template Description
+            </span>
           </span>
-        </span>
+        </div>
       </div>
       <div
         class="mb-3 d-flex align-items-center flex-wrap"

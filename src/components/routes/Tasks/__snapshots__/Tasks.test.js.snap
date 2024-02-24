@@ -94,19 +94,24 @@ Object {
                         <h3>
                           Implement ConfirmButton component for ProductModal
                         </h3>
-                        <span>
-                          <span
-                            class=""
-                          >
-                            A ConfirmButton component should be implemented to allow confirming selected product features in ProductModal.
+                        <div
+                          class="mb-3"
+                        >
+                          <span>
+                            <span
+                              class=""
+                            >
+                              A ConfirmButton component should be implemented to allow confirming selected product features in ProductModal.
+                            </span>
                           </span>
-                        </span>
+                        </div>
                         <p
                           class="text-capitalize"
                         >
                           Priority: 
                           medium
                         </p>
+                        <div />
                         <div
                           class="dropdown-menu-header dropdown btn-group"
                           role="group"
@@ -132,13 +137,18 @@ Object {
                         <h3>
                           Redesign ProductPage to allow more space for visualization of products
                         </h3>
-                        <span>
-                          <span
-                            class=""
-                          >
-                            The ProductPage needs a redesign to allow more space for visualization of products.
+                        <div
+                          class="mb-3"
+                        >
+                          <span>
+                            <span
+                              class=""
+                            >
+                              The ProductPage needs a redesign to allow more space for visualization of products.
+                            </span>
                           </span>
-                        </span>
+                        </div>
+                        <div />
                         <div
                           class="dropdown-menu-header dropdown btn-group"
                           role="group"
@@ -261,19 +271,24 @@ Object {
                       <h3>
                         Implement ConfirmButton component for ProductModal
                       </h3>
-                      <span>
-                        <span
-                          class=""
-                        >
-                          A ConfirmButton component should be implemented to allow confirming selected product features in ProductModal.
+                      <div
+                        class="mb-3"
+                      >
+                        <span>
+                          <span
+                            class=""
+                          >
+                            A ConfirmButton component should be implemented to allow confirming selected product features in ProductModal.
+                          </span>
                         </span>
-                      </span>
+                      </div>
                       <p
                         class="text-capitalize"
                       >
                         Priority: 
                         medium
                       </p>
+                      <div />
                       <div
                         class="dropdown-menu-header dropdown btn-group"
                         role="group"
@@ -299,13 +314,18 @@ Object {
                       <h3>
                         Redesign ProductPage to allow more space for visualization of products
                       </h3>
-                      <span>
-                        <span
-                          class=""
-                        >
-                          The ProductPage needs a redesign to allow more space for visualization of products.
+                      <div
+                        class="mb-3"
+                      >
+                        <span>
+                          <span
+                            class=""
+                          >
+                            The ProductPage needs a redesign to allow more space for visualization of products.
+                          </span>
                         </span>
-                      </span>
+                      </div>
+                      <div />
                       <div
                         class="dropdown-menu-header dropdown btn-group"
                         role="group"
