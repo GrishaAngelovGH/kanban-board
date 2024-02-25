@@ -77,28 +77,45 @@ const Tasks = ({ userId }) => {
 
                             <Collaborators ids={v.assignedIds} userId={userId} />
 
-                            <MoveToColumnDropdownButton
-                              columns={allColumns}
-                              column={column}
-                              taskId={v.id}
-                              setShowToast={setShowToast}
-                              setToastMessage={setToastMessage}
-                              setActiveKey={setActiveKey}
-                            />
+                            <div className="task-actions">
+                              <MoveToColumnDropdownButton
+                                columns={allColumns}
+                                column={column}
+                                taskId={v.id}
+                                setShowToast={setShowToast}
+                                setToastMessage={setToastMessage}
+                                setActiveKey={setActiveKey}
+                              />
 
-                            <Button
-                              variant="danger"
-                              size="sm"
-                              className="ms-2"
-                              onClick={() => {
-                                boardRepository.removeAssignedUserFromTask(v.id, column.id, userId)
-                                setActiveKey("")
-                                setToastMessage(`The user is successfully unassigned from "${v.title}" task`)
-                                setShowToast(true)
-                              }}
-                            >
-                              Unassign Me
-                            </Button>
+                              <Button
+                                variant="danger"
+                                size="sm"
+                                onClick={() => {
+                                  boardRepository.removeAssignedUserFromTask(v.id, column.id, userId)
+                                  setActiveKey("")
+                                  setToastMessage(`The user is successfully unassigned from "${v.title}" task`)
+                                  setShowToast(true)
+                                }}
+                              >
+                                Unassign Me
+                              </Button>
+
+                              <Button
+                                variant="danger"
+                                size="sm"
+                                onClick={() => {
+                                  v.assignedIds.forEach(id => {
+                                    id !== userId && boardRepository.removeAssignedUserFromTask(v.id, column.id, id)
+                                  })
+
+                                  setActiveKey("")
+                                  setToastMessage(`The remaining collaborators have been successfully unassigned from task "${v.title}"`)
+                                  setShowToast(true)
+                                }}
+                              >
+                                Leave only me
+                              </Button>
+                            </div>
                           </div>
                         ))
                       }

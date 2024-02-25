@@ -6,3 +6,19 @@
 .accordion-header > button {
   display: block;
 }
+
+.task-actions button {
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 576px) {
+  .dropdown-menu-header {
+    width: 100%;
+  }
+
+  .task-actions button {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+}

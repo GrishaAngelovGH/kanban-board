@@ -113,23 +113,33 @@ Object {
                         </p>
                         <div />
                         <div
-                          class="dropdown-menu-header dropdown btn-group"
-                          role="group"
+                          class="task-actions"
                         >
+                          <div
+                            class="dropdown-menu-header dropdown btn-group"
+                            role="group"
+                          >
+                            <button
+                              aria-expanded="false"
+                              class="dropdown-toggle btn btn-primary btn-sm"
+                              type="button"
+                            >
+                              Move to other column
+                            </button>
+                          </div>
                           <button
-                            aria-expanded="false"
-                            class="dropdown-toggle btn btn-primary btn-sm"
+                            class="btn btn-danger btn-sm"
                             type="button"
                           >
-                            Move to other column
+                            Unassign Me
+                          </button>
+                          <button
+                            class="btn btn-danger btn-sm"
+                            type="button"
+                          >
+                            Leave only me
                           </button>
                         </div>
-                        <button
-                          class="ms-2 btn btn-danger btn-sm"
-                          type="button"
-                        >
-                          Unassign Me
-                        </button>
                       </div>
                       <div
                         class="mt-3 border border-3 shadow rounded p-3 bg-light"
@@ -150,23 +160,33 @@ Object {
                         </div>
                         <div />
                         <div
-                          class="dropdown-menu-header dropdown btn-group"
-                          role="group"
+                          class="task-actions"
                         >
+                          <div
+                            class="dropdown-menu-header dropdown btn-group"
+                            role="group"
+                          >
+                            <button
+                              aria-expanded="false"
+                              class="dropdown-toggle btn btn-primary btn-sm"
+                              type="button"
+                            >
+                              Move to other column
+                            </button>
+                          </div>
                           <button
-                            aria-expanded="false"
-                            class="dropdown-toggle btn btn-primary btn-sm"
+                            class="btn btn-danger btn-sm"
                             type="button"
                           >
-                            Move to other column
+                            Unassign Me
+                          </button>
+                          <button
+                            class="btn btn-danger btn-sm"
+                            type="button"
+                          >
+                            Leave only me
                           </button>
                         </div>
-                        <button
-                          class="ms-2 btn btn-danger btn-sm"
-                          type="button"
-                        >
-                          Unassign Me
-                        </button>
                       </div>
                     </div>
                   </div>
@@ -290,23 +310,33 @@ Object {
                       </p>
                       <div />
                       <div
-                        class="dropdown-menu-header dropdown btn-group"
-                        role="group"
+                        class="task-actions"
                       >
+                        <div
+                          class="dropdown-menu-header dropdown btn-group"
+                          role="group"
+                        >
+                          <button
+                            aria-expanded="false"
+                            class="dropdown-toggle btn btn-primary btn-sm"
+                            type="button"
+                          >
+                            Move to other column
+                          </button>
+                        </div>
                         <button
-                          aria-expanded="false"
-                          class="dropdown-toggle btn btn-primary btn-sm"
+                          class="btn btn-danger btn-sm"
                           type="button"
                         >
-                          Move to other column
+                          Unassign Me
+                        </button>
+                        <button
+                          class="btn btn-danger btn-sm"
+                          type="button"
+                        >
+                          Leave only me
                         </button>
                       </div>
-                      <button
-                        class="ms-2 btn btn-danger btn-sm"
-                        type="button"
-                      >
-                        Unassign Me
-                      </button>
                     </div>
                     <div
                       class="mt-3 border border-3 shadow rounded p-3 bg-light"
@@ -327,23 +357,33 @@ Object {
                       </div>
                       <div />
                       <div
-                        class="dropdown-menu-header dropdown btn-group"
-                        role="group"
+                        class="task-actions"
                       >
+                        <div
+                          class="dropdown-menu-header dropdown btn-group"
+                          role="group"
+                        >
+                          <button
+                            aria-expanded="false"
+                            class="dropdown-toggle btn btn-primary btn-sm"
+                            type="button"
+                          >
+                            Move to other column
+                          </button>
+                        </div>
                         <button
-                          aria-expanded="false"
-                          class="dropdown-toggle btn btn-primary btn-sm"
+                          class="btn btn-danger btn-sm"
                           type="button"
                         >
-                          Move to other column
+                          Unassign Me
+                        </button>
+                        <button
+                          class="btn btn-danger btn-sm"
+                          type="button"
+                        >
+                          Leave only me
                         </button>
                       </div>
-                      <button
-                        class="ms-2 btn btn-danger btn-sm"
-                        type="button"
-                      >
-                        Unassign Me
-                      </button>
                     </div>
                   </div>
                 </div>
