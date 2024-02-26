@@ -9,7 +9,7 @@ import Settings from "components/Settings"
 import boardRepository from "persistent/persistentKanbanBoardRepository"
 import settingsRepository from "persistent/persistentSettingsRepository"
 
-const KanbanBoardRoute = () => {
+const KanbanBoardRoute = ({ showToastWithMessage }) => {
   const [showSettings, setShowSettings] = useState(false)
   const [showCalendar, setShowCalendar] = useState(false)
   const [showUsers, setShowUsers] = useState(false)
@@ -73,6 +73,7 @@ const KanbanBoardRoute = () => {
             showUploadBoardModal={showUploadBoardModal}
             onUpdate={prepareJsonFileDownload}
             onToggleUploadKanbanBoardModal={toggleUploadKanbanBoardModal}
+            showToastWithMessage={showToastWithMessage}
           />
         }
       />

@@ -8,20 +8,16 @@ import useBackgroundImage from "hooks/useBackgroundImage"
 
 import Avatar from "components/Avatar"
 import RichTextDescription from "components/RichTextDescription"
-import Toast from "components/Toast"
 import Collaborators from "./Collaborators"
 import MoveToColumnDropdownButton from "./MoveToColumnDropdownButton"
 
 import Accordion from "react-bootstrap/Accordion"
 import Badge from "react-bootstrap/Badge"
 import Button from "react-bootstrap/Button"
-import ToastContainer from "react-bootstrap/ToastContainer"
 
 import "./Tasks.css"
 
-const Tasks = ({ userId }) => {
-  const [showToast, setShowToast] = useState(false)
-  const [toastMessage, setToastMessage] = useState("")
+const Tasks = ({ userId, showToastWithMessage }) => {
   const [activeKey, setActiveKey] = useState("")
 
   const backgroundImage = useBackgroundImage()
@@ -82,8 +78,7 @@ const Tasks = ({ userId }) => {
                                 columns={allColumns}
                                 column={column}
                                 taskId={v.id}
-                                setShowToast={setShowToast}
-                                setToastMessage={setToastMessage}
+                                showToastWithMessage={showToastWithMessage}
                                 setActiveKey={setActiveKey}
                               />
 
@@ -93,8 +88,7 @@ const Tasks = ({ userId }) => {
                                 onClick={() => {
                                   boardRepository.removeAssignedUserFromTask(v.id, column.id, userId)
                                   setActiveKey("")
-                                  setToastMessage(`The user is successfully unassigned from "${v.title}" task`)
-                                  setShowToast(true)
+                                  showToastWithMessage(`The user is successfully unassigned from "${v.title}" task`)
                                 }}
                               >
                                 Unassign Me
@@ -109,8 +103,7 @@ const Tasks = ({ userId }) => {
                                   })
 
                                   setActiveKey("")
-                                  setToastMessage(`The remaining collaborators have been successfully unassigned from task "${v.title}"`)
-                                  setShowToast(true)
+                                  showToastWithMessage(`The remaining collaborators have been successfully unassigned from task "${v.title}"`)
                                 }}
                               >
                                 Leave only me
@@ -124,10 +117,6 @@ const Tasks = ({ userId }) => {
                 ))
               }
             </Accordion>
-
-            <ToastContainer position="top-center">
-              <Toast show={showToast} title="Kanban Board" body={toastMessage} onClose={() => setShowToast(false)} />
-            </ToastContainer>
           </div>
         </div>
       </div>

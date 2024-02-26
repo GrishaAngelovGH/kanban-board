@@ -6,6 +6,9 @@ Object {
   "baseElement": <body>
     <div>
       <div
+        class="toast-container top-0 start-50 translate-middle-x"
+      />
+      <div
         class="container-fluid"
       >
         <div
@@ -84,9 +87,6 @@ Object {
                   <div
                     class="col-md-12"
                   >
-                    <div
-                      class="toast-container top-0 start-50 translate-middle-x"
-                    />
                     <div
                       class="row justify-content-center p-5 text-secondary"
                     >
@@ -169,6 +169,9 @@ Object {
   </body>,
   "container": <div>
     <div
+      class="toast-container top-0 start-50 translate-middle-x"
+    />
+    <div
       class="container-fluid"
     >
       <div
@@ -247,9 +250,6 @@ Object {
                 <div
                   class="col-md-12"
                 >
-                  <div
-                    class="toast-container top-0 start-50 translate-middle-x"
-                  />
                   <div
                     class="row justify-content-center p-5 text-secondary"
                   >

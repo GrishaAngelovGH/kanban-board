@@ -192,9 +192,6 @@ Object {
                   </div>
                 </div>
               </div>
-              <div
-                class="toast-container top-0 start-50 translate-middle-x"
-              />
             </div>
           </div>
         </div>
@@ -389,9 +386,6 @@ Object {
                 </div>
               </div>
             </div>
-            <div
-              class="toast-container top-0 start-50 translate-middle-x"
-            />
           </div>
         </div>
       </div>

@@ -2,9 +2,6 @@ import { useState, useEffect, useRef, useCallback } from "react"
 import { DndContext } from "@dnd-kit/core"
 
 import EditableText from "components/EditableText"
-import Toast from "components/Toast"
-
-import ToastContainer from "react-bootstrap/ToastContainer"
 
 import ButtonPanel from "./ButtonPanel"
 import Column from "./Column"
@@ -32,7 +29,10 @@ import "./KanbanBoard.css"
 
 import configureHotkeys from "./hotkeys"
 
-const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUploadKanbanBoardModal }) => {
+const KanbanBoard = ({
+  showCalendar, showUploadBoardModal, onUpdate, onToggleUploadKanbanBoardModal,
+  showToastWithMessage
+}) => {
   const [showColumnModal, setShowColumnModal] = useState(false)
   const [showClearBoardModal, setShowClearBoardModal] = useState(false)
   const [showAddTaskModal, setShowAddTaskModal] = useState(false)
@@ -42,15 +42,7 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
   const [columnId, setColumnId] = useState("")
   const [task, setTask] = useState(null)
 
-  const [showToast, setShowToast] = useState(false)
-  const [toastMessage, setToastMessage] = useState("")
-
   const scrollRef = useRef()
-
-  const showToastWithMessage = message => {
-    setToastMessage(message)
-    setShowToast(true)
-  }
 
   const toggleColumnModal = useCallback(() => {
     setShowColumnModal(!showColumnModal)
@@ -221,10 +213,6 @@ const KanbanBoard = ({ showCalendar, showUploadBoardModal, onUpdate, onToggleUpl
     <DndContext onDragEnd={handleDragEnd}>
       <div className="row kanban-board" style={{ backgroundImage: backgroundImage ? `url(${backgroundImage})` : "none" }}>
         <div className="col-md-12">
-          <ToastContainer position="top-center">
-            <Toast show={showToast} title="Kanban Board" body={toastMessage} onClose={() => setShowToast(false)} />
-          </ToastContainer>
-
           {showCalendar && <Calendar />}
 
           {
