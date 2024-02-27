@@ -20,7 +20,8 @@ const Column = ({
   id, title, description, tasks, limit, markedAsDone,
   onDeleteColumn, onAddTask, onEditTask, onDeleteTask,
   onDeleteAllTasks, onAssignUser, onToggleTaskLock,
-  onMarkColumnAsDone, onSetColumnLimit, onColumnUpdate
+  onMarkColumnAsDone, onSetColumnLimit, onColumnUpdate,
+  showToastWithMessage
 }) => {
   const [currentLimit, setCurrentLimit] = useState(limit)
   const [showLimit, setShowLimit] = useState(false)
@@ -163,6 +164,7 @@ const Column = ({
               onDelete={onDeleteTask}
               onAssignUser={onAssignUser}
               onToggleLock={onToggleTaskLock}
+              showToastWithMessage={showToastWithMessage}
             />
           ))
         }

@@ -249,6 +249,8 @@ const KanbanBoard = ({
                   tasks={v.items}
                   limit={v.limit}
                   markedAsDone={v.markedAsDone}
+                  showToastWithMessage={showToastWithMessage}
+
                   {...columnHandlers}
                 />
               ))
