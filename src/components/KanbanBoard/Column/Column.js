@@ -157,10 +157,12 @@ const Column = ({
               isSingleRowView={isSingleRowView}
               markedAsDone={markedAsDone}
               isLocked={v.isLocked}
-              onEdit={handlers.onEditTask}
-              onDelete={handlers.onDeleteTask}
-              onAssignUser={handlers.onAssignUser}
-              onToggleLock={handlers.onToggleTaskLock}
+              handlers={{
+                onEdit: handlers.onEditTask,
+                onDelete: handlers.onDeleteTask,
+                onAssignUser: handlers.onAssignUser,
+                onToggleLock: handlers.onToggleTaskLock
+              }}
               showToastWithMessage={showToastWithMessage}
             />
           ))

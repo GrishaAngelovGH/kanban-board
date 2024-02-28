@@ -4,6 +4,13 @@ import Task from "./Task"
 
 jest.mock('persistent/persistentUserRepository')
 
+const handlers = {
+  onEdit: () => { },
+  onAssignUser: () => { },
+  onToggleLock: () => { },
+  onDelete: () => { }
+}
+
 test("should render Task component", () => {
   const view = render(
     <Task
@@ -13,6 +20,7 @@ test("should render Task component", () => {
       assignedIds={[]}
       priority="medium"
       isLocked={false}
+      handlers={handlers}
     />
   )
 
@@ -28,6 +36,7 @@ test("should render Task component as a template", () => {
       column="Column Title"
       assignedIds={[]}
       priority=""
+      handlers={handlers}
     />
   )
 

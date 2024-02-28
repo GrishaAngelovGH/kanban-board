@@ -29,8 +29,7 @@ const bookmarkStyles = {
 
 const Task = ({
   id, columnId, assignedIds, title, description, priority, isTemplate,
-  isGridView, isSingleRowView, markedAsDone, isLocked,
-  onEdit, onAssignUser, onToggleLock, onDelete, showToastWithMessage
+  isGridView, isSingleRowView, markedAsDone, isLocked, handlers, showToastWithMessage
 }) => {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id,
@@ -42,19 +41,19 @@ const Task = ({
   } : undefined
 
   const handleDelete = () => {
-    onDelete(id, columnId)
+    handlers.onDelete(id, columnId)
   }
 
   const handleEdit = () => {
-    onEdit({ id, title, description, priority, isTemplate }, columnId)
+    handlers.onEdit({ id, title, description, priority, isTemplate }, columnId)
   }
 
   const handleAssignUser = () => {
-    onAssignUser({ id, title, description, priority, isTemplate, assignedIds }, columnId)
+    handlers.onAssignUser({ id, title, description, priority, isTemplate, assignedIds }, columnId)
   }
 
   const handleToggleLock = () => {
-    onToggleLock(id, columnId, !isLocked)
+    handlers.onToggleLock(id, columnId, !isLocked)
   }
 
   const users = userRepository.getUsers()
