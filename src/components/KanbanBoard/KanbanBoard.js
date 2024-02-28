@@ -250,8 +250,7 @@ const KanbanBoard = ({
                   limit={v.limit}
                   markedAsDone={v.markedAsDone}
                   showToastWithMessage={showToastWithMessage}
-
-                  {...columnHandlers}
+                  columnHandlers={columnHandlers}
                 />
               ))
             }

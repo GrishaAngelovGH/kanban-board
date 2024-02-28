@@ -18,10 +18,7 @@ import "./Column.css"
 
 const Column = ({
   id, title, description, tasks, limit, markedAsDone,
-  onDeleteColumn, onAddTask, onEditTask, onDeleteTask,
-  onDeleteAllTasks, onAssignUser, onToggleTaskLock,
-  onMarkColumnAsDone, onSetColumnLimit, onColumnUpdate,
-  showToastWithMessage
+  columnHandlers: handlers, showToastWithMessage
 }) => {
   const [currentLimit, setCurrentLimit] = useState(limit)
   const [showLimit, setShowLimit] = useState(false)
@@ -32,19 +29,19 @@ const Column = ({
   })
 
   const handleAddTask = () => {
-    onAddTask(id)
+    handlers.onAddTask(id)
   }
 
   const handleMarkAsDone = () => {
-    onMarkColumnAsDone(id)
+    handlers.onMarkColumnAsDone(id)
   }
 
   const handleDeleteAction = () => {
-    onDeleteColumn(id)
+    handlers.onDeleteColumn(id)
   }
 
   const handleDeleteAllTasks = () => {
-    onDeleteAllTasks(id)
+    handlers.onDeleteAllTasks(id)
   }
 
   const handleShowLimit = () => {
@@ -62,11 +59,11 @@ const Column = ({
 
   const handleConfirmLimit = () => {
     setShowLimit(false)
-    onSetColumnLimit(id, currentLimit)
+    handlers.onSetColumnLimit(id, currentLimit)
   }
 
   const handleUpdate = (value, isTextArea) => {
-    onColumnUpdate(id, value, isTextArea)
+    handlers.onColumnUpdate(id, value, isTextArea)
   }
 
   const gridViewClasses = "col-md-5 col-lg-3"
@@ -160,10 +157,10 @@ const Column = ({
               isSingleRowView={isSingleRowView}
               markedAsDone={markedAsDone}
               isLocked={v.isLocked}
-              onEdit={onEditTask}
-              onDelete={onDeleteTask}
-              onAssignUser={onAssignUser}
-              onToggleLock={onToggleTaskLock}
+              onEdit={handlers.onEditTask}
+              onDelete={handlers.onDeleteTask}
+              onAssignUser={handlers.onAssignUser}
+              onToggleLock={handlers.onToggleTaskLock}
               showToastWithMessage={showToastWithMessage}
             />
           ))
