@@ -7,6 +7,10 @@
   display: block;
 }
 
+.done.accordion-header > button {
+  background: #20c997;
+}
+
 .task-actions button {
   margin-right: 10px;
 }

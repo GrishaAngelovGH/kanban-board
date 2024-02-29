@@ -48,7 +48,7 @@ const Tasks = ({ userId, showToastWithMessage }) => {
               {
                 relevantColumns.map((column, i) => (
                   <Accordion.Item key={column.id} eventKey={`${i}`}>
-                    <Accordion.Header>
+                    <Accordion.Header className={column.markedAsDone ? "done" : ""}>
                       <h3>
                         {column.title}
                         <Badge bg="primary ms-2">

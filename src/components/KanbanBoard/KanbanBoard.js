@@ -53,11 +53,12 @@ const KanbanBoard = ({
   }, [showClearBoardModal])
 
   const handleGenerateBoardButtonClick = useCallback(() => {
+    console.log("first")
     boardGenerator.generate()
     onUpdate()
 
     showToastWithMessage("Kanban Board is successfully generated")
-  }, [onUpdate])
+  }, [onUpdate, showToastWithMessage])
 
   const handleUpdateBoardTitle = title => {
     boardRepository.updateBoardTitle(title)
