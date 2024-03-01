@@ -146,17 +146,11 @@ const Column = ({
           tasks.map(v => (
             <Task
               key={v.id}
-              id={v.id}
+              {...v}
               columnId={id}
-              assignedIds={v.assignedIds}
-              title={v.title}
-              description={v.description}
-              priority={v.priority}
-              isTemplate={v.isTemplate}
               isGridView={isGridView}
               isSingleRowView={isSingleRowView}
               markedAsDone={markedAsDone}
-              isLocked={v.isLocked}
               handlers={{
                 onEdit: handlers.onEditTask,
                 onDelete: handlers.onDeleteTask,

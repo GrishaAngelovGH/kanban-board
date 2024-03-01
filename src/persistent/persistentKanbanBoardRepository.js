@@ -125,6 +125,7 @@ const tasks = {
       assignedIds: [],
       priority,
       isLocked: false,
+      active: false,
       isTemplate: isTemplate
     })
 
@@ -153,6 +154,13 @@ const tasks = {
     const column = getColumnById(columnId)
     const task = getTaskById(column, taskId)
     task.isLocked = isLocked
+
+    updateColumn(column)
+  },
+  toggleTaskActiveStatus: (taskId, columnId) => {
+    const column = getColumnById(columnId)
+    const task = getTaskById(column, taskId)
+    task.isActive = !task.isActive
 
     updateColumn(column)
   },

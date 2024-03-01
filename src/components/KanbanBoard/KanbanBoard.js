@@ -53,7 +53,6 @@ const KanbanBoard = ({
   }, [showClearBoardModal])
 
   const handleGenerateBoardButtonClick = useCallback(() => {
-    console.log("first")
     boardGenerator.generate()
     onUpdate()
 

@@ -10,8 +10,8 @@ import RichTextDescription from "components/RichTextDescription"
 import Tooltip from "components/Tooltip"
 import WordHighlighter from "components/WordHighlighter"
 
-import userRepository from "persistent/persistentUserRepository"
 import boardRepository from "persistent/persistentKanbanBoardRepository"
+import userRepository from "persistent/persistentUserRepository"
 
 import "./Task.css"
 
@@ -28,7 +28,7 @@ const bookmarkStyles = {
 }
 
 const Task = ({
-  id, columnId, assignedIds, title, description, priority, isTemplate,
+  id, columnId, assignedIds, title, description, priority, isTemplate, isActive,
   isGridView, isSingleRowView, markedAsDone, isLocked, handlers, showToastWithMessage
 }) => {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
@@ -56,6 +56,11 @@ const Task = ({
     handlers.onToggleLock(id, columnId, !isLocked)
   }
 
+  const handleToggleActiveStatus = () => {
+    boardRepository.toggleTaskActiveStatus(id, columnId)
+    showToastWithMessage("Task status is successfully changed")
+  }
+
   const users = userRepository.getUsers()
 
   const bgClass = markedAsDone ? "bg-success-subtle" : "bg-white"
@@ -63,6 +68,14 @@ const Task = ({
 
   return (
     <div ref={setNodeRef} style={style} className={`row m-0 ${bgClass} ${borderClass} mt-3 rounded shadow p-1`}>
+      {
+        isActive && (
+          <div className="bg-primary rounded p-2 text-white text-center text-capitalize mb-2">
+            Active Task
+          </div>
+        )
+      }
+
       <div className={`${isGridView || isSingleRowView ? "col-9" : "col-11"}`}>
         <p className="fw-bold text-capitalize">
           <WordHighlighter text={title} />
@@ -120,6 +133,16 @@ const Task = ({
           )
         }
       </div>
+
+      <Button
+        size="sm"
+        variant="outline-primary"
+        disabled={!assignedIds.length}
+        className="mb-3"
+        onClick={handleToggleActiveStatus}
+      >
+        {isActive ? "Deactivate" : "Activate"}
+      </Button>
 
       <div className="d-flex justify-content-between">
         <div>

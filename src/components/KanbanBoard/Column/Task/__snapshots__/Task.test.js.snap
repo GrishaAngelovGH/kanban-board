@@ -53,6 +53,13 @@ Object {
         <div
           class="mb-3 d-flex align-items-center flex-wrap"
         />
+        <button
+          class="mb-3 btn btn-outline-primary btn-sm"
+          disabled=""
+          type="button"
+        >
+          Activate
+        </button>
         <div
           class="d-flex justify-content-between"
         >
@@ -130,6 +137,13 @@ Object {
       <div
         class="mb-3 d-flex align-items-center flex-wrap"
       />
+      <button
+        class="mb-3 btn btn-outline-primary btn-sm"
+        disabled=""
+        type="button"
+      >
+        Activate
+      </button>
       <div
         class="d-flex justify-content-between"
       >
@@ -263,6 +277,13 @@ Object {
         <div
           class="mb-3 d-flex align-items-center flex-wrap"
         />
+        <button
+          class="mb-3 btn btn-outline-primary btn-sm"
+          disabled=""
+          type="button"
+        >
+          Activate
+        </button>
         <div
           class="d-flex justify-content-between"
         >
@@ -332,6 +353,13 @@ Object {
       <div
         class="mb-3 d-flex align-items-center flex-wrap"
       />
+      <button
+        class="mb-3 btn btn-outline-primary btn-sm"
+        disabled=""
+        type="button"
+      >
+        Activate
+      </button>
       <div
         class="d-flex justify-content-between"
       >

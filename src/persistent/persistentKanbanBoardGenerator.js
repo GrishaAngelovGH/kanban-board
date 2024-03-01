@@ -14,8 +14,8 @@ const persistentKanbanBoardGenerator = {
         description: "Prioritized list of features that should be implemented as part of a project.",
         limit: 0,
         items: [
-          { id: "27833411730699775", title: "Implement ConfirmButton component for ProductModal", description: "A ConfirmButton component should be implemented to allow confirming selected product features in ProductModal.", assignedIds: [], priority: "", isLocked: false, isTemplate: false },
-          { id: "5900400848369358", title: "Redesign ProductPage to allow more space for visualization of products", description: "The ProductPage needs a redesign to allow more space for visualization of products.", assignedIds: [], priority: "", isLocked: false, isTemplate: false }
+          { id: "27833411730699775", title: "Implement ConfirmButton component for ProductModal", description: "A ConfirmButton component should be implemented to allow confirming selected product features in ProductModal.", assignedIds: [], priority: "", isLocked: false, isActive: false, isTemplate: false },
+          { id: "5900400848369358", title: "Redesign ProductPage to allow more space for visualization of products", description: "The ProductPage needs a redesign to allow more space for visualization of products.", assignedIds: [], priority: "", isLocked: false, isActive: false, isTemplate: false }
         ]
       },
       "851904397063169": {
@@ -24,7 +24,7 @@ const persistentKanbanBoardGenerator = {
         description: "Provide the work items that are currently being worked on by the team.",
         limit: 0,
         items: [
-          { id: "2793331195588513", title: "Implement ProductDetailPage component", description: "A ProductDetailPage component should be implemented to be able to visualize all relevant information about given product.", assignedIds: ["9010122801186593", "927257799921221", "9245063188089464", "8944354170460678", "23179223528758852", "7071360811547569"], priority: "medium", isLocked: false, isTemplate: false }
+          { id: "2793331195588513", title: "Implement ProductDetailPage component", description: "A ProductDetailPage component should be implemented to be able to visualize all relevant information about given product.", assignedIds: ["9010122801186593", "927257799921221", "9245063188089464", "8944354170460678", "23179223528758852", "7071360811547569"], priority: "medium", isLocked: false, isActive: false, isTemplate: false }
         ]
       },
       "13372358665210715": {
@@ -34,7 +34,7 @@ const persistentKanbanBoardGenerator = {
         limit: 0,
         markedAsDone: true,
         items: [
-          { id: "3489073798557012", title: "Show notification after successfull order confirmation", description: "The system should be able to show relevant notification after the user successfully confirm current order.", assignedIds: ["7071360811547569", "23179223528758852", "8944354170460678"], priority: "medium", isLocked: false, isTemplate: false }
+          { id: "3489073798557012", title: "Show notification after successfull order confirmation", description: "The system should be able to show relevant notification after the user successfully confirm current order.", assignedIds: ["7071360811547569", "23179223528758852", "8944354170460678"], priority: "medium", isLocked: false, isActive: false, isTemplate: false }
         ]
       }
     }
