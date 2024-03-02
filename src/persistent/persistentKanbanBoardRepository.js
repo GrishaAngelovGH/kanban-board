@@ -174,6 +174,11 @@ const tasks = {
       fromColumn.items = fromColumn.items.filter(v => v.id !== taskId)
 
       const toColumn = columns[toColumnId]
+
+      if (toColumn.markedAsDone) {
+        task.isActive = false
+      }
+
       toColumn.items.push(task)
 
       localStorage.setItem("columns", JSON.stringify({

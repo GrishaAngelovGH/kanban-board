@@ -134,15 +134,19 @@ const Task = ({
         }
       </div>
 
-      <Button
-        size="sm"
-        variant="outline-primary"
-        disabled={!assignedIds.length}
-        className="mb-3"
-        onClick={handleToggleActiveStatus}
-      >
-        {isActive ? "Deactivate" : "Activate"}
-      </Button>
+      {
+        !markedAsDone && (
+          <Button
+            size="sm"
+            variant="outline-primary"
+            disabled={!assignedIds.length}
+            className="mb-3"
+            onClick={handleToggleActiveStatus}
+          >
+            {isActive ? "Deactivate" : "Activate"}
+          </Button>
+        )
+      }
 
       <div className="d-flex justify-content-between">
         <div>
