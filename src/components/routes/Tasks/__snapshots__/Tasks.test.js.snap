@@ -93,6 +93,7 @@ Object {
                       >
                         <h3>
                           Implement ConfirmButton component for ProductModal
+                           
                         </h3>
                         <div
                           class="mb-3"
@@ -146,6 +147,7 @@ Object {
                       >
                         <h3>
                           Redesign ProductPage to allow more space for visualization of products
+                           
                         </h3>
                         <div
                           class="mb-3"
@@ -287,6 +289,7 @@ Object {
                     >
                       <h3>
                         Implement ConfirmButton component for ProductModal
+                         
                       </h3>
                       <div
                         class="mb-3"
@@ -340,6 +343,7 @@ Object {
                     >
                       <h3>
                         Redesign ProductPage to allow more space for visualization of products
+                         
                       </h3>
                       <div
                         class="mb-3"

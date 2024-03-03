@@ -61,7 +61,7 @@ const Tasks = ({ userId, showToastWithMessage }) => {
                       {
                         column.items.map(v => (
                           <div key={v.id} className="mt-3 border border-3 shadow rounded p-3 bg-light">
-                            <h3>{v.title}</h3>
+                            <h3>{v.title} {v.isLocked && <i className="bi bi-lock"></i>}</h3>
 
                             <RichTextDescription description={v.description} className="mb-3" />
 
@@ -80,6 +80,7 @@ const Tasks = ({ userId, showToastWithMessage }) => {
                                 taskId={v.id}
                                 showToastWithMessage={showToastWithMessage}
                                 setActiveKey={setActiveKey}
+                                disabled={v.isLocked}
                               />
 
                               <Button
