@@ -4,12 +4,14 @@ import DropdownButton from "react-bootstrap/DropdownButton"
 
 import boardRepository from "persistent/persistentKanbanBoardRepository"
 
-const MoveToColumnDropdownButton = ({ columns, column, taskId, showToastWithMessage, setActiveKey, disabled }) => {
+const MoveToColumnDropdownButton = ({ column, taskId, showToastWithMessage, setActiveKey, disabled }) => {
   const handleChangeColumnButtonClick = ({ target }) => {
     boardRepository.moveTask(column.id, target.id, taskId)
     showToastWithMessage(`The task is successfully moved to ${target.name}`)
     setActiveKey("")
   }
+
+  const columns = boardRepository.getColumns()
 
   return (
     <DropdownButton

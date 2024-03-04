@@ -1,19 +1,17 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 
-import boardRepository from "persistent/persistentKanbanBoardRepository"
-import userRepository from "persistent/persistentUserRepository"
+import Accordion from "react-bootstrap/Accordion"
+import Badge from "react-bootstrap/Badge"
+
+import Avatar from "components/Avatar"
+
+import Task from "./Task"
 
 import useBackgroundImage from "hooks/useBackgroundImage"
 
-import Avatar from "components/Avatar"
-import RichTextDescription from "components/RichTextDescription"
-import Collaborators from "./Collaborators"
-import MoveToColumnDropdownButton from "./MoveToColumnDropdownButton"
-
-import Accordion from "react-bootstrap/Accordion"
-import Badge from "react-bootstrap/Badge"
-import Button from "react-bootstrap/Button"
+import boardRepository from "persistent/persistentKanbanBoardRepository"
+import userRepository from "persistent/persistentUserRepository"
 
 import "./Tasks.css"
 
@@ -23,8 +21,7 @@ const Tasks = ({ userId, showToastWithMessage }) => {
   const backgroundImage = useBackgroundImage()
   const user = userRepository.findUserById(userId)
 
-  const relevantColumns = boardRepository.getColumnsWithAssignedTasksForUser(user.id)
-  const allColumns = boardRepository.getColumns()
+  const columns = boardRepository.getColumnsWithAssignedTasksForUser(user.id)
 
   return (
     <div className="row g-0 vh-100" style={{ backgroundImage: backgroundImage ? `url(${backgroundImage})` : "none", backgroundSize: "cover" }}>
@@ -46,7 +43,7 @@ const Tasks = ({ userId, showToastWithMessage }) => {
           <div className="col-10">
             <Accordion activeKey={activeKey} onSelect={setActiveKey}>
               {
-                relevantColumns.map((column, i) => (
+                columns.map((column, i) => (
                   <Accordion.Item key={column.id} eventKey={`${i}`}>
                     <Accordion.Header className={column.markedAsDone ? "done" : ""}>
                       <h3>
@@ -60,57 +57,14 @@ const Tasks = ({ userId, showToastWithMessage }) => {
                     <Accordion.Body>
                       {
                         column.items.map(v => (
-                          <div key={v.id} className="mt-3 border border-3 shadow rounded p-3 bg-light">
-                            <h3>{v.title} {v.isLocked && <i className="bi bi-lock"></i>}</h3>
-
-                            <RichTextDescription description={v.description} className="mb-3" />
-
-                            {
-                              v.priority.length > 0 && (
-                                <p className="text-capitalize">Priority: {v.priority}</p>
-                              )
-                            }
-
-                            <Collaborators ids={v.assignedIds} userId={userId} />
-
-                            <div className="task-actions">
-                              <MoveToColumnDropdownButton
-                                columns={allColumns}
-                                column={column}
-                                taskId={v.id}
-                                showToastWithMessage={showToastWithMessage}
-                                setActiveKey={setActiveKey}
-                                disabled={v.isLocked}
-                              />
-
-                              <Button
-                                variant="danger"
-                                size="sm"
-                                onClick={() => {
-                                  boardRepository.removeAssignedUserFromTask(v.id, column.id, userId)
-                                  setActiveKey("")
-                                  showToastWithMessage(`The user is successfully unassigned from "${v.title}" task`)
-                                }}
-                              >
-                                Unassign Me
-                              </Button>
-
-                              <Button
-                                variant="danger"
-                                size="sm"
-                                onClick={() => {
-                                  v.assignedIds.forEach(id => {
-                                    id !== userId && boardRepository.removeAssignedUserFromTask(v.id, column.id, id)
-                                  })
-
-                                  setActiveKey("")
-                                  showToastWithMessage(`The remaining collaborators have been successfully unassigned from task "${v.title}"`)
-                                }}
-                              >
-                                Leave only me
-                              </Button>
-                            </div>
-                          </div>
+                          <Task
+                            key={v.id}
+                            {...v}
+                            userId={userId}
+                            column={column}
+                            setActiveKey={setActiveKey}
+                            showToastWithMessage={showToastWithMessage}
+                          />
                         ))
                       }
                     </Accordion.Body>
