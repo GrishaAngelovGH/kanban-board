@@ -41,10 +41,9 @@ const Task = ({
       <div className="task-actions">
         <MoveToColumnDropdownButton
           column={column}
-          taskId={taskId}
+          task={{ taskId, isLocked }}
           showToastWithMessage={showToastWithMessage}
           setActiveKey={setActiveKey}
-          disabled={isLocked}
         />
 
         <Button

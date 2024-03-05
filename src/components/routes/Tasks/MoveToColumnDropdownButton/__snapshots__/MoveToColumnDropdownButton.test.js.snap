@@ -12,6 +12,7 @@ Object {
         <button
           aria-expanded="false"
           class="dropdown-toggle btn btn-primary btn-sm"
+          disabled=""
           type="button"
         >
           Move to other column
@@ -27,6 +28,7 @@ Object {
       <button
         aria-expanded="false"
         class="dropdown-toggle btn btn-primary btn-sm"
+        disabled=""
         type="button"
       >
         Move to other column

@@ -25,7 +25,13 @@ test("should render MoveToColumnDropdownButton component", () => {
     }
   ]
 
-  const view = render(<MoveToColumnDropdownButton columns={columns} column={columns[0]} />)
+  const view = render(
+    <MoveToColumnDropdownButton
+      columns={columns}
+      column={columns[0]}
+      task={{ taskId: "27833411730699775", isLocked: false }}
+    />
+  )
 
   expect(view).toMatchSnapshot()
 })
