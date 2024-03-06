@@ -50,11 +50,23 @@ Object {
             </div>
           </div>
           <div
-            class="row g-0 mt-3 justify-content-center"
+            class="row g-0 mt-3 justify-content-center overflow-auto tasks"
           >
             <div
               class="col-10"
             >
+              <p
+                class="bg-white rounded text-center p-1"
+              >
+                Completed 
+                0
+                 task
+                 of 
+                2
+                 (
+                0
+                %)
+              </p>
               <div
                 class="accordion"
               >
@@ -246,11 +258,23 @@ Object {
           </div>
         </div>
         <div
-          class="row g-0 mt-3 justify-content-center"
+          class="row g-0 mt-3 justify-content-center overflow-auto tasks"
         >
           <div
             class="col-10"
           >
+            <p
+              class="bg-white rounded text-center p-1"
+            >
+              Completed 
+              0
+               task
+               of 
+              2
+               (
+              0
+              %)
+            </p>
             <div
               class="accordion"
             >

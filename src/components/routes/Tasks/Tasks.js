@@ -7,6 +7,7 @@ import Badge from "react-bootstrap/Badge"
 import Avatar from "components/Avatar"
 
 import Task from "./Task"
+import TaskProgress from "./TaskProgress"
 
 import useBackgroundImage from "hooks/useBackgroundImage"
 
@@ -39,8 +40,10 @@ const Tasks = ({ userId, showToastWithMessage }) => {
           </div>
         </div>
 
-        <div className="row g-0 mt-3 justify-content-center">
+        <div className="row g-0 mt-3 justify-content-center overflow-auto tasks">
           <div className="col-10">
+            <TaskProgress columns={columns} />
+
             <Accordion activeKey={activeKey} onSelect={setActiveKey}>
               {
                 columns.map((column, i) => (
