@@ -6,15 +6,8 @@ import EditableText from "components/EditableText"
 import ButtonPanel from "./ButtonPanel"
 import Column from "./Column"
 import EmptyBoard from "./EmptyBoard"
+import Modals from "./Modals"
 import NavigationButtons from "./NavigationButtons"
-
-import ClearBoardModal from "./modals/ClearBoardModal"
-import ColumnModal from "./modals/ColumnModal"
-
-import AssignUserModal from "./modals/AssignUserModal"
-import EditTaskModal from "./modals/TaskModals/EditTaskModal"
-import NewTaskModal from "./modals/TaskModals/NewTaskModal"
-import UploadBoardModal from "./modals/UploadBoardModal"
 
 import boardGenerator from "persistent/persistentKanbanBoardGenerator"
 import boardRepository from "persistent/persistentKanbanBoardRepository"
@@ -64,55 +57,6 @@ const KanbanBoard = ({
     onUpdate()
 
     showToastWithMessage("Board title is successfully changed")
-  }
-
-  const handleConfirmCreateColumn = (title, description) => {
-    boardRepository.createColumn(title, description)
-    setShowColumnModal(!showColumnModal)
-    onUpdate()
-
-    showToastWithMessage("New column is successfully created")
-  }
-
-  const handleConfirmClearBoard = () => {
-    boardRepository.clearBoard()
-    setShowClearBoardModal(!showClearBoardModal)
-    onUpdate()
-
-    showToastWithMessage("Kanban Board is successfully cleared")
-  }
-
-  const handleConfirmCreateTask = (title, description, priority, isTemplate) => {
-    boardRepository.createTask(columnId, title, description, priority, isTemplate)
-    setShowAddTaskModal(!showAddTaskModal)
-    onUpdate()
-
-    showToastWithMessage("New task is successfully created")
-  }
-
-  const handleConfirmEditTask = task => {
-    boardRepository.updateTask(task, columnId)
-    setShowEditTaskModal(!showEditTaskModal)
-    onUpdate()
-
-    showToastWithMessage("Task is successfully edited")
-  }
-
-  const handleConfirmAssignUsers = (taskId, assignedIds) => {
-    boardRepository.assignUsersToTask(taskId, columnId, assignedIds)
-    setShowAssignUserModal(!showAssignUserModal)
-    onUpdate()
-
-    showToastWithMessage("Users are successfully assigned")
-  }
-
-  const handleConfirmKanbanBoardImport = ({ title, columns }) => {
-    boardRepository.updateBoardTitle(title)
-    boardRepository.setColumnsJSON(columns)
-    onToggleUploadKanbanBoardModal()
-    onUpdate()
-
-    showToastWithMessage("Kanban Board is successfully imported")
   }
 
   const handleDragEnd = ({ active: { id, data: { current: { columnId } } }, over }) => {
@@ -256,42 +200,29 @@ const KanbanBoard = ({
             }
           </div>
 
-          <ColumnModal
-            show={showColumnModal}
-            onClose={toggleColumnModal}
-            onConfirm={handleConfirmCreateColumn}
-          />
-
-          <ClearBoardModal
-            show={showClearBoardModal}
-            onClose={toggleClearBoardModal}
-            onConfirm={handleConfirmClearBoard}
-          />
-
-          <NewTaskModal
-            show={showAddTaskModal}
-            onClose={() => { setShowAddTaskModal(!showAddTaskModal) }}
-            onConfirm={handleConfirmCreateTask}
-          />
-
-          <EditTaskModal
-            show={showEditTaskModal}
+          <Modals
+            columnId={columnId}
             task={task}
-            onClose={() => { setShowEditTaskModal(!showEditTaskModal) }}
-            onConfirm={handleConfirmEditTask}
-          />
-
-          <AssignUserModal
-            show={showAssignUserModal}
-            task={task}
-            onClose={() => { setShowAssignUserModal(!showAssignUserModal) }}
-            onConfirm={handleConfirmAssignUsers}
-          />
-
-          <UploadBoardModal
-            show={showUploadBoardModal}
-            onClose={onToggleUploadKanbanBoardModal}
-            onConfirm={handleConfirmKanbanBoardImport}
+            show={{
+              showColumnModal,
+              showClearBoardModal,
+              showAddTaskModal,
+              showEditTaskModal,
+              showAssignUserModal,
+              showUploadBoardModal,
+              showToastWithMessage
+            }}
+            update={{
+              onUpdate,
+              toggleColumnModal,
+              setShowColumnModal,
+              toggleClearBoardModal,
+              setShowClearBoardModal,
+              setShowAddTaskModal,
+              setShowEditTaskModal,
+              setShowAssignUserModal,
+              onToggleUploadKanbanBoardModal
+            }}
           />
 
           <ButtonPanel
