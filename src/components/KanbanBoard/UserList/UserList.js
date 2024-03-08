@@ -8,8 +8,8 @@ import userRepository from "persistent/persistentUserRepository"
 
 import "./UserList.css"
 
-const UserList = ({ task, onUpdate }) => {
-  const [ids, setIds] = useState(task.assignedIds)
+const UserList = ({ assignedIds, onUpdate }) => {
+  const [ids, setIds] = useState(assignedIds)
 
   const handleSelectUser = (shouldAdd, id) => {
     if (shouldAdd) {
