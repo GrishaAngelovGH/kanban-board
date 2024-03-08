@@ -1,24 +1,17 @@
-import { useState } from "react"
-
-import Modal from "components/Modal"
-import UserList from "components/KanbanBoard/UserList"
+import UserModal from "components/KanbanBoard/Modals/UserModal"
 
 const AssignUserModal = ({ show, task, onClose, onConfirm }) => {
-  const [ids, setIds] = useState([])
-
-  const handleConfirm = () => {
+  const handleConfirm = ids => {
     onConfirm(task.id, ids)
   }
 
   return (
-    <Modal
+    <UserModal
       show={show}
+      title={<span>Assign users to the <span className="fw-bold">"{task?.title}"</span> task</span>}
+      assignedIds={task?.assignedIds}
       onClose={onClose}
       onConfirm={handleConfirm}
-      title={<span>Assign users to the <span className="fw-bold">"{task?.title}"</span> task</span>}
-      body={
-        <UserList task={task} onUpdate={setIds} />
-      }
     />
   )
 }
