@@ -12,6 +12,7 @@ describe("Modals", () => {
     setShowAddTaskModal: () => { },
     setShowEditTaskModal: () => { },
     setShowAssignUserModal: () => { },
+    setShowAutoAssignUserModal: () => { },
     onToggleUploadKanbanBoardModal: () => { }
   }
 
@@ -24,6 +25,7 @@ describe("Modals", () => {
           showAddTaskModal: false,
           showEditTaskModal: false,
           showAssignUserModal: false,
+          showAutoAssignUserModal: false,
           showUploadBoardModal: false,
           showToastWithMessage: false,
         }}
@@ -43,6 +45,7 @@ describe("Modals", () => {
           showAddTaskModal: false,
           showEditTaskModal: false,
           showAssignUserModal: false,
+          showAutoAssignUserModal: false,
           showUploadBoardModal: false,
           showToastWithMessage: false,
         }}
@@ -62,6 +65,7 @@ describe("Modals", () => {
           showAddTaskModal: true,
           showEditTaskModal: false,
           showAssignUserModal: false,
+          showAutoAssignUserModal: false,
           showUploadBoardModal: false,
           showToastWithMessage: false,
         }}
@@ -81,6 +85,7 @@ describe("Modals", () => {
           showAddTaskModal: false,
           showEditTaskModal: true,
           showAssignUserModal: false,
+          showAutoAssignUserModal: false,
           showUploadBoardModal: false,
           showToastWithMessage: false,
         }}
@@ -105,6 +110,7 @@ describe("Modals", () => {
           showAddTaskModal: false,
           showEditTaskModal: false,
           showAssignUserModal: true,
+          showAutoAssignUserModal: false,
           showUploadBoardModal: false,
           showToastWithMessage: false,
         }}
@@ -124,7 +130,29 @@ describe("Modals", () => {
           showAddTaskModal: false,
           showEditTaskModal: false,
           showAssignUserModal: false,
+          showAutoAssignUserModal: false,
           showUploadBoardModal: true,
+          showToastWithMessage: false,
+        }}
+        update={update}
+      />
+    )
+
+    expect(view).toMatchSnapshot()
+  })
+
+  test("should render AutoAssignUserModal component", () => {
+    const view = render(
+      <Modals
+        column={{ id: 123, title: "Column 1", assignedIds: ["9010122801186593"] }}
+        show={{
+          showColumnModal: false,
+          showClearBoardModal: false,
+          showAddTaskModal: false,
+          showEditTaskModal: false,
+          showAssignUserModal: false,
+          showAutoAssignUserModal: true,
+          showUploadBoardModal: false,
           showToastWithMessage: false,
         }}
         update={update}

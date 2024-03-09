@@ -6,7 +6,7 @@ const columns = {
 
     const newColumn = JSON.stringify({
       ...columns,
-      [id]: { id, title, description, limit: 0, items: [] }
+      [id]: { id, title, description, limit: 0, assignedIds: [], items: [] }
     })
 
     localStorage.setItem("columns", newColumn)
@@ -23,6 +23,7 @@ const columns = {
         title: "Templates",
         description: "This column provides all available templates",
         limit: 0,
+        assignedIds: [],
         items: []
       }
 
@@ -99,6 +100,12 @@ const columns = {
 
     updateColumn(column)
   },
+  assignUsersToColumn: (columnId, assignedIds) => {
+    const columns = JSON.parse(localStorage.getItem("columns"))
+    columns[columnId].assignedIds = assignedIds
+
+    localStorage.setItem("columns", JSON.stringify(columns))
+  },
   deleteColumn: columnId => {
     const columns = JSON.parse(localStorage.getItem("columns"))
     const { [columnId]: value, ...restColumns } = columns
@@ -122,7 +129,7 @@ const tasks = {
       id,
       title: taskTitle,
       description: taskDescription,
-      assignedIds: [],
+      assignedIds: column.assignedIds.length > 0 ? column.assignedIds : [],
       priority,
       isLocked: false,
       active: false,

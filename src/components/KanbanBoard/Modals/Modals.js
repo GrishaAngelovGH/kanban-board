@@ -4,10 +4,11 @@ import ColumnModal from "./ColumnModal"
 import EditTaskModal from "./TaskModals/EditTaskModal"
 import NewTaskModal from "./TaskModals/NewTaskModal"
 import UploadBoardModal from "./UploadBoardModal"
+import AutoAssignUserModal from "./AutoAssignUserModal"
 
 import boardRepository from "persistent/persistentKanbanBoardRepository"
 
-const Modals = ({ columnId, task, show, update }) => {
+const Modals = ({ column, task, show, update }) => {
   const {
     showColumnModal,
     showClearBoardModal,
@@ -15,6 +16,7 @@ const Modals = ({ columnId, task, show, update }) => {
     showAddTaskModal,
     showEditTaskModal,
     showAssignUserModal,
+    showAutoAssignUserModal,
     showUploadBoardModal
   } = show
 
@@ -27,6 +29,7 @@ const Modals = ({ columnId, task, show, update }) => {
     setShowAddTaskModal,
     setShowEditTaskModal,
     setShowAssignUserModal,
+    setShowAutoAssignUserModal,
     onToggleUploadKanbanBoardModal
   } = update
 
@@ -47,7 +50,7 @@ const Modals = ({ columnId, task, show, update }) => {
   }
 
   const handleConfirmCreateTask = (title, description, priority, isTemplate) => {
-    boardRepository.createTask(columnId, title, description, priority, isTemplate)
+    boardRepository.createTask(column.id, title, description, priority, isTemplate)
     setShowAddTaskModal(!showAddTaskModal)
     onUpdate()
 
@@ -55,7 +58,7 @@ const Modals = ({ columnId, task, show, update }) => {
   }
 
   const handleConfirmEditTask = task => {
-    boardRepository.updateTask(task, columnId)
+    boardRepository.updateTask(task, column.id)
     setShowEditTaskModal(!showEditTaskModal)
     onUpdate()
 
@@ -63,11 +66,19 @@ const Modals = ({ columnId, task, show, update }) => {
   }
 
   const handleConfirmAssignUsers = (taskId, assignedIds) => {
-    boardRepository.assignUsersToTask(taskId, columnId, assignedIds)
+    boardRepository.assignUsersToTask(taskId, column.id, assignedIds)
     setShowAssignUserModal(!showAssignUserModal)
     onUpdate()
 
     showToastWithMessage("Users are successfully assigned")
+  }
+
+  const handleConfirmAutoAssignUsers = (columnId, assignedIds) => {
+    boardRepository.assignUsersToColumn(columnId, assignedIds)
+    setShowAutoAssignUserModal(!showAutoAssignUserModal)
+    onUpdate()
+
+    showToastWithMessage("Users are successfully auto assigned")
   }
 
   const handleConfirmKanbanBoardImport = ({ title, columns }) => {
@@ -111,6 +122,13 @@ const Modals = ({ columnId, task, show, update }) => {
         task={task}
         onClose={() => { setShowAssignUserModal(!showAssignUserModal) }}
         onConfirm={handleConfirmAssignUsers}
+      />
+
+      <AutoAssignUserModal
+        show={showAutoAssignUserModal}
+        column={column}
+        onClose={() => { setShowAutoAssignUserModal(!showAutoAssignUserModal) }}
+        onConfirm={handleConfirmAutoAssignUsers}
       />
 
       <UploadBoardModal

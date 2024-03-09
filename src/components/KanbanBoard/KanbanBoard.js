@@ -31,6 +31,7 @@ const KanbanBoard = ({
   const [showAddTaskModal, setShowAddTaskModal] = useState(false)
   const [showEditTaskModal, setShowEditTaskModal] = useState(false)
   const [showAssignUserModal, setShowAssignUserModal] = useState(false)
+  const [showAutoAssignUserModal, setShowAutoAssignUserModal] = useState(false)
 
   const [columnId, setColumnId] = useState("")
   const [task, setTask] = useState(null)
@@ -113,6 +114,10 @@ const KanbanBoard = ({
       setTask(task)
       setColumnId(columnId)
       setShowAssignUserModal(!showAssignUserModal)
+    },
+    onAutoAssignUser: columnId => {
+      setColumnId(columnId)
+      setShowAutoAssignUserModal(!showAutoAssignUserModal)
     },
     onToggleTaskLock: (taskId, columnId, isLocked) => {
       boardRepository.updateTaskLockStatus(taskId, columnId, isLocked)
@@ -201,7 +206,7 @@ const KanbanBoard = ({
           </div>
 
           <Modals
-            columnId={columnId}
+            column={columns.find(v => v.id === columnId)}
             task={task}
             show={{
               showColumnModal,
@@ -209,6 +214,7 @@ const KanbanBoard = ({
               showAddTaskModal,
               showEditTaskModal,
               showAssignUserModal,
+              showAutoAssignUserModal,
               showUploadBoardModal,
               showToastWithMessage
             }}
@@ -221,6 +227,7 @@ const KanbanBoard = ({
               setShowAddTaskModal,
               setShowEditTaskModal,
               setShowAssignUserModal,
+              setShowAutoAssignUserModal,
               onToggleUploadKanbanBoardModal
             }}
           />

@@ -66,6 +66,10 @@ const Column = ({
     handlers.onColumnUpdate(id, value, isTextArea)
   }
 
+  const handleAutoAssignUsers = () => {
+    handlers.onAutoAssignUser(id)
+  }
+
   const gridViewClasses = "col-md-5 col-lg-3"
   const singleColumnViewClasses = "col-md-12 col-lg-7"
   const isGridView = settingsRepository.isGridView()
@@ -89,7 +93,8 @@ const Column = ({
     { label: markedAsDone ? "Unmark as Done" : "Mark as Done", icon: "bi bi-check-square-fill text-success mx-1", onClick: handleMarkAsDone },
     { label: "Delete Column", icon: "bi bi-x-circle-fill text-danger mx-1", onClick: handleDeleteAction },
     { label: "Delete All Tasks", icon: "bi bi-x-circle-fill text-danger mx-1", onClick: handleDeleteAllTasks },
-    { label: "Set Task Limit", icon: "bi bi-exclamation-circle-fill text-warning mx-1", onClick: handleShowLimit }
+    { label: "Set Task Limit", icon: "bi bi-exclamation-circle-fill text-warning mx-1", onClick: handleShowLimit },
+    { label: "Auto Assign Users", icon: "bi bi-star-fill text-warning mx-1", onClick: handleAutoAssignUsers }
   ]
 
   return (
