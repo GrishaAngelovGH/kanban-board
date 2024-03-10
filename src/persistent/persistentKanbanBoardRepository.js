@@ -101,10 +101,21 @@ const columns = {
     updateColumn(column)
   },
   assignUsersToColumn: (columnId, assignedIds) => {
-    const columns = JSON.parse(localStorage.getItem("columns"))
-    columns[columnId].assignedIds = assignedIds
+    const column = getColumnById(columnId)
+    column.assignedIds = assignedIds
 
-    localStorage.setItem("columns", JSON.stringify(columns))
+    updateColumn(column)
+  },
+  removeAssignedUserFromColumns: assignedId => {
+    const columns = JSON.parse(localStorage.getItem("columns"))
+
+    if (columns) {
+      Object.values(columns).forEach(column => {
+        column.assignedIds = column.assignedIds.filter(v => v !== assignedId)
+      })
+
+      localStorage.setItem("columns", JSON.stringify(columns))
+    }
   },
   deleteColumn: columnId => {
     const columns = JSON.parse(localStorage.getItem("columns"))
@@ -207,22 +218,24 @@ const tasks = {
   removeAssignedUserFromTasks: assignedId => {
     const columns = JSON.parse(localStorage.getItem("columns"))
 
-    Object.values(columns).forEach(column => {
-      column.items.forEach(item => {
-        item.assignedIds = item.assignedIds.filter(v => v !== assignedId)
+    if (columns) {
+      Object.values(columns).forEach(column => {
+        column.items.forEach(item => {
+          item.assignedIds = item.assignedIds.filter(v => v !== assignedId)
+        })
       })
-    })
 
-    localStorage.setItem("columns", JSON.stringify(columns))
+      localStorage.setItem("columns", JSON.stringify(columns))
+    }
   },
   removeAssignedUserFromTask: (taskId, columnId, userId) => {
-    const columns = JSON.parse(localStorage.getItem("columns"))
+    const column = getColumnById(columnId)
 
-    const task = columns[columnId].items.find(v => v.id === taskId)
+    const task = column.items.find(v => v.id === taskId)
 
     task.assignedIds = task.assignedIds.filter(v => v !== userId)
 
-    localStorage.setItem("columns", JSON.stringify(columns))
+    updateColumn(column)
   },
   deleteTask: (taskId, columnId) => {
     const column = getColumnById(columnId)

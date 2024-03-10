@@ -14,6 +14,7 @@ const User = forwardRef(function User({ id, name, image, onUpdate }, ref) {
   const handleRemove = () => {
     userRepository.deleteUser(id)
     boardRepository.removeAssignedUserFromTasks(id)
+    boardRepository.removeAssignedUserFromColumns(id)
     onUpdate()
   }
 
