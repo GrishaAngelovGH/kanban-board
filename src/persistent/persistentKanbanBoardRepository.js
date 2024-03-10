@@ -129,7 +129,7 @@ const tasks = {
       id,
       title: taskTitle,
       description: taskDescription,
-      assignedIds: column.assignedIds.length > 0 ? column.assignedIds : [],
+      assignedIds: !isTemplate && column.assignedIds.length > 0 ? column.assignedIds : [],
       priority,
       isLocked: false,
       active: false,
