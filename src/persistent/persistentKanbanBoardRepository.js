@@ -104,6 +104,12 @@ const columns = {
     const column = getColumnById(columnId)
     column.assignedIds = assignedIds
 
+    column.items.forEach(v => {
+      v.assignedIds = [
+        ...new Set(v.assignedIds.concat(assignedIds))
+      ]
+    })
+
     updateColumn(column)
   },
   removeAssignedUserFromColumns: assignedId => {
