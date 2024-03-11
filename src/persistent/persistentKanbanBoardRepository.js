@@ -197,6 +197,12 @@ const tasks = {
         task.isActive = false
       }
 
+      if (toColumn.assignedIds.length) {
+        task.assignedIds = [
+          ...new Set(task.assignedIds.concat(toColumn.assignedIds))
+        ]
+      }
+
       toColumn.items.push(task)
 
       localStorage.setItem("columns", JSON.stringify({
