@@ -8,6 +8,7 @@ import {
 import Notification from "components/Notification"
 import KanbanBoard from "components/routes/KanbanBoard"
 import Tasks from "components/routes/Tasks"
+import History from "components/routes/History"
 
 const TasksRoute = ({ showToastWithMessage }) => {
   const { userId } = useParams()
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Notification><KanbanBoard /></Notification>} />
         <Route path="/tasks/:userId" element={<Notification><TasksRoute /></Notification>} />
+        <Route path="/history" element={<Notification><History /></Notification>} />
       </Routes>
     </Router>
   )

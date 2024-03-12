@@ -36,6 +36,7 @@ const BoardMenu = ({
         onUpdate()
       }
     },
+    { label: "History", icon: "bi bi-clock-history", href: "/history" },
     { label: "Settings", icon: "bi bi-gear", onClick: onSettingsClick }
   ]
 
