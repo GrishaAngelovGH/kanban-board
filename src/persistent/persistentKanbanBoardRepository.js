@@ -1,3 +1,5 @@
+import history from "./history"
+
 const columns = {
   createColumn: (title, description) => {
     const columns = JSON.parse(localStorage.getItem("columns"))
@@ -125,7 +127,9 @@ const columns = {
   },
   deleteColumn: columnId => {
     const columns = JSON.parse(localStorage.getItem("columns"))
-    const { [columnId]: value, ...restColumns } = columns
+    const { [columnId]: column, ...restColumns } = columns
+
+    history.pushColumn(column)
 
     localStorage.setItem("columns", JSON.stringify(restColumns))
   },
@@ -251,6 +255,9 @@ const tasks = {
   },
   deleteTask: (taskId, columnId) => {
     const column = getColumnById(columnId)
+
+    history.pushTask(column, taskId)
+
     column.items = column.items.filter(v => v.id !== taskId)
 
     updateColumn(column)
@@ -289,6 +296,7 @@ const board = {
     localStorage.removeItem("priority")
     localStorage.removeItem("searchCriteria")
     localStorage.removeItem("boardTitle")
+    localStorage.setItem("history", JSON.stringify("{}"))
   }
 }
 
