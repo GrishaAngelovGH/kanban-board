@@ -1,7 +1,7 @@
 const historyItem = JSON.parse(localStorage.getItem("history"))
 
 if (!historyItem) {
-  localStorage.setItem("history", JSON.stringify("{}"))
+  localStorage.setItem("history", JSON.stringify({}))
 }
 
 const history = {
@@ -9,13 +9,16 @@ const history = {
     if (column.items.length) {
       const history = JSON.parse(localStorage.getItem("history"))
 
-      if (history) {
-        history[column.id] = column
-        localStorage.setItem("history", JSON.stringify(history))
-      }
+      column.assignedIds = []
+
+      column.items.forEach(v => {
+        v.assignedIds = []
+      })
+
+      history[column.id] = column
+      localStorage.setItem("history", JSON.stringify(history))
     }
   },
-
   pushTask: (column, taskId) => {
     const history = JSON.parse(localStorage.getItem("history"))
 
@@ -25,8 +28,11 @@ const history = {
       history[column.id] = newColumn
     }
 
-    const task = column.items.filter(v => v.id === taskId)
+    const task = column.items.find(v => v.id === taskId)
+    task.assignedIds = []
+
     history[column.id].items.push(task)
+
     localStorage.setItem("history", JSON.stringify(history))
   }
 }
