@@ -296,7 +296,7 @@ const board = {
     localStorage.removeItem("priority")
     localStorage.removeItem("searchCriteria")
     localStorage.removeItem("boardTitle")
-    localStorage.setItem("history", JSON.stringify("{}"))
+    localStorage.setItem("history", JSON.stringify({}))
   }
 }
 

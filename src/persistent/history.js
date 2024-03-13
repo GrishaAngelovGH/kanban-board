@@ -4,7 +4,7 @@ if (!historyItem) {
   localStorage.setItem("history", JSON.stringify({}))
 }
 
-const history = {
+const columns = {
   pushColumn: column => {
     if (column.items.length) {
       const history = JSON.parse(localStorage.getItem("history"))
@@ -18,7 +18,10 @@ const history = {
       history[column.id] = column
       localStorage.setItem("history", JSON.stringify(history))
     }
-  },
+  }
+}
+
+const tasks = {
   pushTask: (column, taskId) => {
     const history = JSON.parse(localStorage.getItem("history"))
 
@@ -35,6 +38,11 @@ const history = {
 
     localStorage.setItem("history", JSON.stringify(history))
   }
+}
+
+const history = {
+  ...columns,
+  ...tasks
 }
 
 export default history
