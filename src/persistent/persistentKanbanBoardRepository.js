@@ -135,6 +135,9 @@ const columns = {
   },
   deleteAllTasksForColumn: columnId => {
     const column = getColumnById(columnId)
+
+    history.pushColumn(column)
+
     column.items = []
 
     updateColumn(column)
