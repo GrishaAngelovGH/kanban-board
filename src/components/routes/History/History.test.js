@@ -8,6 +8,8 @@ import {
 
 import History from "./History"
 
+jest.mock("persistent/history")
+
 test("should render History route component", () => {
   const view = render(
     <Router>

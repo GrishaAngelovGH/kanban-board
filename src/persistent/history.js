@@ -18,6 +18,10 @@ const columns = {
       history[column.id] = column
       localStorage.setItem("history", JSON.stringify(history))
     }
+  },
+  getColumns: () => {
+    const history = JSON.parse(localStorage.getItem("history"))
+    return Object.values(history)
   }
 }
 
