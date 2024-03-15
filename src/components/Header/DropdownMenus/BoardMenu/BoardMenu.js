@@ -2,6 +2,7 @@ import ButtonGroup from "react-bootstrap/ButtonGroup"
 import Dropdown from "react-bootstrap/Dropdown"
 import DropdownButton from "react-bootstrap/DropdownButton"
 
+import history from "persistent/history"
 import boardRepository from "persistent/persistentKanbanBoardRepository"
 
 import "../DropdownMenu.css"
@@ -36,7 +37,7 @@ const BoardMenu = ({
         onUpdate()
       }
     },
-    { label: "History", icon: "bi bi-clock-history", href: "/history" },
+    { label: "History", icon: "bi bi-clock-history", href: "/history", disabled: !history.getColumns().length },
     { label: "Settings", icon: "bi bi-gear", onClick: onSettingsClick }
   ]
 
