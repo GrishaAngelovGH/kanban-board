@@ -7,6 +7,7 @@ import UploadBoardModal from "./UploadBoardModal"
 import AutoAssignUserModal from "./AutoAssignUserModal"
 
 import boardRepository from "persistent/persistentKanbanBoardRepository"
+import history from "persistent/history"
 
 const Modals = ({ column, task, show, update }) => {
   const {
@@ -81,9 +82,10 @@ const Modals = ({ column, task, show, update }) => {
     showToastWithMessage("Users are successfully auto assigned")
   }
 
-  const handleConfirmKanbanBoardImport = ({ title, columns }) => {
+  const handleConfirmKanbanBoardImport = ({ title, columns, history: historyItems }) => {
     boardRepository.updateBoardTitle(title)
     boardRepository.setColumnsJSON(columns)
+    history.setColumnsJSON(historyItems)
     onToggleUploadKanbanBoardModal()
     onUpdate()
 

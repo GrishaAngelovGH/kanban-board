@@ -22,6 +22,12 @@ const columns = {
   getColumns: () => {
     const history = JSON.parse(localStorage.getItem("history"))
     return Object.values(history)
+  },
+  getStringifiedColumns: () => {
+    return localStorage.getItem("history")
+  },
+  setColumnsJSON: historyJSON => {
+    localStorage.setItem("history", JSON.stringify(historyJSON))
   }
 }
 

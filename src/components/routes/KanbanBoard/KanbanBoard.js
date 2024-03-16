@@ -8,6 +8,7 @@ import Settings from "components/Settings"
 
 import boardRepository from "persistent/persistentKanbanBoardRepository"
 import settingsRepository from "persistent/persistentSettingsRepository"
+import history from "persistent/history"
 
 const KanbanBoardRoute = ({ showToastWithMessage }) => {
   const [showSettings, setShowSettings] = useState(false)
@@ -29,9 +30,11 @@ const KanbanBoardRoute = ({ showToastWithMessage }) => {
   }
 
   const prepareJsonFileDownload = useCallback(() => {
-    const columns = boardRepository.getStringifiedColumns()
     const title = boardRepository.getBoardTitle()
-    const jsonString = `{"title": "${title}", "columns": ${columns}}`
+    const columns = boardRepository.getStringifiedColumns()
+    const historyColumns = history.getStringifiedColumns()
+
+    const jsonString = `{"title": "${title}", "columns": ${columns}, "history": ${historyColumns}}`
     const blob = new Blob([jsonString], { type: "application/json" })
     setDownloadJsonHref(URL.createObjectURL(blob))
   }, [])
