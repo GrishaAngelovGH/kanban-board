@@ -95,6 +95,16 @@ Object {
                           Priority: 
                           medium
                         </p>
+                        <div
+                          class="task-actions"
+                        >
+                          <button
+                            class="btn btn-primary btn-sm"
+                            type="button"
+                          >
+                            Restore
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -197,6 +207,16 @@ Object {
                         Priority: 
                         medium
                       </p>
+                      <div
+                        class="task-actions"
+                      >
+                        <button
+                          class="btn btn-primary btn-sm"
+                          type="button"
+                        >
+                          Restore
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>

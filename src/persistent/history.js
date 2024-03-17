@@ -47,6 +47,32 @@ const tasks = {
     history[column.id].items.push(task)
 
     localStorage.setItem("history", JSON.stringify(history))
+  },
+  restoreTask: (taskId, columnId) => {
+    const columns = JSON.parse(localStorage.getItem("columns"))
+    const history = JSON.parse(localStorage.getItem("history"))
+    const currentColumn = history[columnId]
+
+    const task = currentColumn.items.find(v => v.id === taskId)
+
+    if (!columns[columnId]) {
+      const newColumn = { ...currentColumn }
+      newColumn.items = []
+      columns[columnId] = newColumn
+    }
+
+    columns[columnId].items.push(task)
+
+    currentColumn.items = currentColumn.items.filter(v => v.id !== taskId)
+
+    if (!currentColumn.items.length) {
+      const { [columnId]: column, ...restHistory } = history
+      localStorage.setItem("history", JSON.stringify(restHistory))
+    } else {
+      localStorage.setItem("history", JSON.stringify(history))
+    }
+
+    localStorage.setItem("columns", JSON.stringify(columns))
   }
 }
 

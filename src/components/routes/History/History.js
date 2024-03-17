@@ -8,7 +8,7 @@ import useBackgroundImage from "hooks/useBackgroundImage"
 
 import history from "persistent/history"
 
-const History = () => {
+const History = ({ showToastWithMessage }) => {
   const backgroundImage = useBackgroundImage()
   const columns = history.getColumns()
 
@@ -45,6 +45,8 @@ const History = () => {
                           <Task
                             key={v.id}
                             {...v}
+                            column={column}
+                            showToastWithMessage={showToastWithMessage}
                           />
                         ))
                       }

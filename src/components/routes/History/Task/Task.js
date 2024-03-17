@@ -1,6 +1,13 @@
 import RichTextDescription from "components/RichTextDescription"
+import Button from "react-bootstrap/Button"
 
-const Task = ({ title, description, priority }) => {
+import history from "persistent/history"
+
+const Task = ({ id, title, description, priority, column, showToastWithMessage }) => {
+  const handleRestore = () => {
+    history.restoreTask(id, column.id)
+    showToastWithMessage("The task is successfully restored")
+  }
 
   return (
     <div className="mt-3 border border-3 shadow rounded p-3 bg-light">
@@ -13,6 +20,16 @@ const Task = ({ title, description, priority }) => {
           <p className="text-capitalize">Priority: {priority}</p>
         )
       }
+
+      <div className="task-actions">
+        <Button
+          variant="primary"
+          size="sm"
+          onClick={handleRestore}
+        >
+          Restore
+        </Button>
+      </div>
     </div>
   )
 }
