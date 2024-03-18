@@ -22,7 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Notification><KanbanBoard /></Notification>} />
         <Route path="/tasks/:userId" element={<Notification><TasksRoute /></Notification>} />
-        <Route path="/history" element={<Notification><History /></Notification>} />
+        <Route path="/history" element={<Notification delay={1000}><History /></Notification>} />
       </Routes>
     </Router>
   )

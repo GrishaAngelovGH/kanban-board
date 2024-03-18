@@ -72,6 +72,12 @@ Object {
                     <div
                       class="accordion-body"
                     >
+                      <button
+                        class="btn btn-primary"
+                        type="button"
+                      >
+                        Restore column
+                      </button>
                       <div
                         class="mt-3 border border-3 shadow rounded p-3 bg-light"
                       >
@@ -184,6 +190,12 @@ Object {
                   <div
                     class="accordion-body"
                   >
+                    <button
+                      class="btn btn-primary"
+                      type="button"
+                    >
+                      Restore column
+                    </button>
                     <div
                       class="mt-3 border border-3 shadow rounded p-3 bg-light"
                     >

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 
 import Accordion from "react-bootstrap/Accordion"
 import Badge from "react-bootstrap/Badge"
+import Button from "react-bootstrap/Button"
 import Task from "./Task"
 
 import useBackgroundImage from "hooks/useBackgroundImage"
@@ -40,6 +41,15 @@ const History = ({ showToastWithMessage }) => {
                       <p>{column.description}</p>
                     </Accordion.Header>
                     <Accordion.Body>
+                      <Button
+                        variant="primary"
+                        onClick={() => {
+                          history.restoreColumn(column.id)
+                          showToastWithMessage("The column is successfully restored")
+                        }}
+                      >
+                        Restore column
+                      </Button>
                       {
                         column.items.map(v => (
                           <Task

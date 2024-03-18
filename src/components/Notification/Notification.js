@@ -6,7 +6,7 @@ import Toast from "components/Toast"
 
 import ToastContainer from "react-bootstrap/ToastContainer"
 
-const Notification = ({ children }) => {
+const Notification = ({ delay, children }) => {
   const [showToast, setShowToast] = useState(false)
   const [toastMessage, setToastMessage] = useState("")
 
@@ -18,7 +18,7 @@ const Notification = ({ children }) => {
   return (
     <>
       <ToastContainer position="top-center">
-        <Toast show={showToast} title="Kanban Board" body={toastMessage} onClose={() => setShowToast(false)} />
+        <Toast show={showToast} delay={delay} title="Kanban Board" body={toastMessage} onClose={() => setShowToast(false)} />
       </ToastContainer>
       {React.cloneElement(children, { showToastWithMessage })}
     </>

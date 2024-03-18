@@ -28,6 +28,22 @@ const columns = {
   },
   setColumnsJSON: historyJSON => {
     localStorage.setItem("history", JSON.stringify(historyJSON))
+  },
+  restoreColumn: id => {
+    const history = JSON.parse(localStorage.getItem("history"))
+    const columns = JSON.parse(localStorage.getItem("columns"))
+    const currentColumn = history[id]
+
+    if (!columns[id]) {
+      columns[id] = currentColumn
+    } else {
+      columns[id].items = columns[id].items.concat(currentColumn.items)
+    }
+
+    const { [id]: column, ...restHistory } = history
+
+    localStorage.setItem("history", JSON.stringify(restHistory))
+    localStorage.setItem("columns", JSON.stringify(columns))
   }
 }
 
