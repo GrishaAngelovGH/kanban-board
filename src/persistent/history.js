@@ -44,6 +44,11 @@ const columns = {
 
     localStorage.setItem("history", JSON.stringify(restHistory))
     localStorage.setItem("columns", JSON.stringify(columns))
+  },
+  deleteColumn: id => {
+    const history = JSON.parse(localStorage.getItem("history"))
+    const { [id]: column, ...restHistory } = history
+    localStorage.setItem("history", JSON.stringify(restHistory))
   }
 }
 
@@ -90,7 +95,7 @@ const tasks = {
 
     localStorage.setItem("columns", JSON.stringify(columns))
   },
-  removeTask: (taskId, columnId) => {
+  deleteTask: (taskId, columnId) => {
     const history = JSON.parse(localStorage.getItem("history"))
     history[columnId].items = history[columnId].items.filter(v => v.id !== taskId)
     localStorage.setItem("history", JSON.stringify(history))

@@ -43,12 +43,22 @@ const History = ({ showToastWithMessage }) => {
                     <Accordion.Body>
                       <Button
                         variant="primary"
+                        className="me-2"
                         onClick={() => {
                           history.restoreColumn(column.id)
                           showToastWithMessage("The column is successfully restored")
                         }}
                       >
                         Restore column
+                      </Button>
+                      <Button
+                        variant="danger"
+                        onClick={() => {
+                          history.deleteColumn(column.id)
+                          showToastWithMessage("The column is successfully deleted")
+                        }}
+                      >
+                        Delete column
                       </Button>
                       {
                         column.items.map(v => (

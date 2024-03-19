@@ -10,8 +10,8 @@ const Task = ({ id, title, description, priority, column, showToastWithMessage }
   }
 
   const handleDelete = () => {
-    history.removeTask(id, column.id)
-    showToastWithMessage("The task is successfully removed")
+    history.deleteTask(id, column.id)
+    showToastWithMessage("The task is successfully deleted")
   }
 
   return (
