@@ -89,6 +89,11 @@ const tasks = {
     }
 
     localStorage.setItem("columns", JSON.stringify(columns))
+  },
+  removeTask: (taskId, columnId) => {
+    const history = JSON.parse(localStorage.getItem("history"))
+    history[columnId].items = history[columnId].items.filter(v => v.id !== taskId)
+    localStorage.setItem("history", JSON.stringify(history))
   }
 }
 

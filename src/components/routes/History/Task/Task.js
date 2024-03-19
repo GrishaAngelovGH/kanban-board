@@ -9,6 +9,11 @@ const Task = ({ id, title, description, priority, column, showToastWithMessage }
     showToastWithMessage("The task is successfully restored")
   }
 
+  const handleDelete = () => {
+    history.removeTask(id, column.id)
+    showToastWithMessage("The task is successfully removed")
+  }
+
   return (
     <div className="mt-3 border border-3 shadow rounded p-3 bg-light">
       <h3>{title}</h3>
@@ -28,6 +33,13 @@ const Task = ({ id, title, description, priority, column, showToastWithMessage }
           onClick={handleRestore}
         >
           Restore
+        </Button>
+        <Button
+          variant="danger"
+          size="sm"
+          onClick={handleDelete}
+        >
+          Delete
         </Button>
       </div>
     </div>

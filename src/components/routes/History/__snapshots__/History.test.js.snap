@@ -110,6 +110,12 @@ Object {
                           >
                             Restore
                           </button>
+                          <button
+                            class="btn btn-danger btn-sm"
+                            type="button"
+                          >
+                            Delete
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -227,6 +233,12 @@ Object {
                           type="button"
                         >
                           Restore
+                        </button>
+                        <button
+                          class="btn btn-danger btn-sm"
+                          type="button"
+                        >
+                          Delete
                         </button>
                       </div>
                     </div>
