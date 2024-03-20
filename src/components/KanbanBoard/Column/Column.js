@@ -70,6 +70,14 @@ const Column = ({
     handlers.onAutoAssignUser(id)
   }
 
+  const handleSwapToLeft = () => {
+    handlers.onSwapColumn(id, true)
+  }
+
+  const handleSwapToRight = () => {
+    handlers.onSwapColumn(id, false)
+  }
+
   const gridViewClasses = "col-md-5 col-lg-3"
   const singleColumnViewClasses = "col-md-12 col-lg-7"
   const isGridView = settingsRepository.isGridView()
@@ -105,6 +113,12 @@ const Column = ({
     >
       <div className="row">
         <div className={`${isGridView || isSingleRowView ? "col-7 col-lg-8" : "col-10"}`}>
+
+          <ButtonGroup size="sm" className="mb-2">
+            <Button variant="light" className="bi bi-arrow-left" onClick={handleSwapToLeft}></Button>
+            <Button variant="light" className="bi bi-arrow-right" onClick={handleSwapToRight}></Button>
+          </ButtonGroup>
+
           <EditableText onBlur={handleUpdate}>
             <h3 className={`${titleClass} text-break text-capitalize`}>{title}</h3>
           </EditableText>

@@ -16,6 +16,19 @@ Object {
             class="col-7 col-lg-8"
           >
             <div
+              class="mb-2 btn-group btn-group-sm"
+              role="group"
+            >
+              <button
+                class="bi bi-arrow-left btn btn-light"
+                type="button"
+              />
+              <button
+                class="bi bi-arrow-right btn btn-light"
+                type="button"
+              />
+            </div>
+            <div
               class="editable-text"
             >
               <h3
@@ -244,6 +257,19 @@ Object {
         <div
           class="col-7 col-lg-8"
         >
+          <div
+            class="mb-2 btn-group btn-group-sm"
+            role="group"
+          >
+            <button
+              class="bi bi-arrow-left btn btn-light"
+              type="button"
+            />
+            <button
+              class="bi bi-arrow-right btn btn-light"
+              type="button"
+            />
+          </div>
           <div
             class="editable-text"
           >

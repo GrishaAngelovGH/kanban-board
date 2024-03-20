@@ -125,6 +125,41 @@ const columns = {
       localStorage.setItem("columns", JSON.stringify(columns))
     }
   },
+  swapColumn: (id, toLeft) => {
+    const columns = Object.values(JSON.parse(localStorage.getItem("columns")))
+    const currentColumn = columns.find(v => v.id === id)
+    const currentIndex = columns.indexOf(currentColumn)
+
+    const moveFirstColumnToLeft = (currentIndex === 0) && toLeft
+    const moveFistColumnToRight = (currentIndex === 0) && !toLeft
+
+    const moveInnerColumnToLeft = (currentIndex > 0 && currentIndex < columns.length - 1) && toLeft
+    const moveInnerColumnToRight = (currentIndex > 0 && currentIndex < columns.length - 1) && !toLeft
+
+    const moveLastColumnToLeft = (currentIndex === columns.length - 1) && toLeft
+    const moveLastColumnToRight = (currentIndex === columns.length - 1) && !toLeft
+
+    const moveToRight = moveFistColumnToRight || moveInnerColumnToRight
+    const moveToLeft = moveLastColumnToLeft || moveInnerColumnToLeft
+
+    moveFirstColumnToLeft && (
+      [columns[currentIndex], columns[columns.length - 1]] = [columns[columns.length - 1], columns[currentIndex]]
+    )
+
+    moveToRight && (
+      [columns[currentIndex], columns[currentIndex + 1]] = [columns[currentIndex + 1], columns[currentIndex]]
+    )
+
+    moveToLeft && (
+      [columns[currentIndex], columns[currentIndex - 1]] = [columns[currentIndex - 1], columns[currentIndex]]
+    )
+
+    moveLastColumnToRight && (
+      [columns[currentIndex], columns[0]] = [columns[0], columns[currentIndex]]
+    )
+
+    localStorage.setItem("columns", JSON.stringify(columns))
+  },
   deleteColumn: columnId => {
     const columns = JSON.parse(localStorage.getItem("columns"))
     const { [columnId]: column, ...restColumns } = columns

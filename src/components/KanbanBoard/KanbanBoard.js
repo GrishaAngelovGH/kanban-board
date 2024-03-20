@@ -145,6 +145,12 @@ const KanbanBoard = ({
       onUpdate()
 
       showToastWithMessage("Column is successfully updated")
+    },
+    onSwapColumn: (id, toLeft) => {
+      boardRepository.swapColumn(id, toLeft)
+      onUpdate()
+
+      showToastWithMessage("Column is successfully swapped")
     }
   }
 
