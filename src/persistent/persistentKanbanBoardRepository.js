@@ -158,7 +158,9 @@ const columns = {
       [columns[currentIndex], columns[0]] = [columns[0], columns[currentIndex]]
     )
 
-    localStorage.setItem("columns", JSON.stringify(columns))
+    const cols = columns.reduce((a, b) => { a[b.id] = b; return a }, {})
+
+    localStorage.setItem("columns", JSON.stringify(cols))
   },
   deleteColumn: columnId => {
     const columns = JSON.parse(localStorage.getItem("columns"))
@@ -167,6 +169,15 @@ const columns = {
     history.pushColumn(column)
 
     localStorage.setItem("columns", JSON.stringify(restColumns))
+  },
+  deleteEmptyColumns: () => {
+    const columns = JSON.parse(localStorage.getItem("columns"))
+
+    const newColumns = Object.values(columns)
+      .filter(v => v.items.length)
+      .reduce((a, b) => { a[b.id] = b; return a }, {})
+
+    localStorage.setItem("columns", JSON.stringify(newColumns))
   },
   deleteAllTasksForColumn: columnId => {
     const column = getColumnById(columnId)

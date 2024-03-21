@@ -46,6 +46,13 @@ const KanbanBoard = ({
     setShowClearBoardModal(!showClearBoardModal)
   }, [showClearBoardModal])
 
+  const handleDeleteEmptyColumns = () => {
+    boardRepository.deleteEmptyColumns()
+    onUpdate()
+
+    showToastWithMessage("All empty columns are successfully deleted")
+  }
+
   const handleGenerateBoardButtonClick = useCallback(() => {
     boardGenerator.generate()
     onUpdate()
@@ -241,6 +248,7 @@ const KanbanBoard = ({
           <ButtonPanel
             onColumnButtonClick={toggleColumnModal}
             onClearBoardButtonClick={toggleClearBoardModal}
+            onDeleteEmptyColumnsButtonClick={handleDeleteEmptyColumns}
             onGenerateBoardButtonClick={handleGenerateBoardButtonClick}
           />
         </div>

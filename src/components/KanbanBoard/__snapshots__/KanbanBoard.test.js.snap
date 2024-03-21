@@ -57,12 +57,18 @@ Object {
                 >
                   New Column
                 </button>
-                <button
-                  class="btn btn-danger"
-                  type="button"
+                <div
+                  class="dropdown btn-group"
+                  role="group"
                 >
-                  Clear Board
-                </button>
+                  <button
+                    aria-expanded="false"
+                    class="dropdown-toggle btn btn-danger"
+                    type="button"
+                  >
+                    Clear Board
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -140,12 +146,18 @@ Object {
               >
                 New Column
               </button>
-              <button
-                class="btn btn-danger"
-                type="button"
+              <div
+                class="dropdown btn-group"
+                role="group"
               >
-                Clear Board
-              </button>
+                <button
+                  aria-expanded="false"
+                  class="dropdown-toggle btn btn-danger"
+                  type="button"
+                >
+                  Clear Board
+                </button>
+              </div>
             </div>
           </div>
         </div>
