@@ -5,9 +5,9 @@ import Accordion from "react-bootstrap/Accordion"
 import Badge from "react-bootstrap/Badge"
 
 import Avatar from "components/Avatar"
+import TaskProgress from "components/TaskProgress"
 
 import Task from "./Task"
-import TaskProgress from "./TaskProgress"
 
 import useBackgroundImage from "hooks/useBackgroundImage"
 

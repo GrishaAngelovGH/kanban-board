@@ -27,13 +27,30 @@ Object {
                   class="row bg-secondary-subtle p-2 justify-content-between align-items-center"
                 >
                   <div
-                    class="col-4 col-md-4 col-lg-3"
+                    class="col-4 col-md-4 col-lg-2"
                   >
                     <h3
-                      class="m-0"
+                      class="m-0 text-center"
                     >
                       Kanban Board
                     </h3>
+                  </div>
+                  <div
+                    class="col-4 col-md"
+                  >
+                    <p
+                      class="bg-white rounded text-center p-1 m-0 p-md-2 p-lg-1 bg-transparent text-secondary"
+                    >
+                      Completed 
+                      0
+                       task
+                      s
+                       of 
+                      0
+                       (
+                      0
+                      %)
+                    </p>
                   </div>
                   <div
                     class="col-4 col-md-2 col-lg-1"
@@ -196,13 +213,30 @@ Object {
                 class="row bg-secondary-subtle p-2 justify-content-between align-items-center"
               >
                 <div
-                  class="col-4 col-md-4 col-lg-3"
+                  class="col-4 col-md-4 col-lg-2"
                 >
                   <h3
-                    class="m-0"
+                    class="m-0 text-center"
                   >
                     Kanban Board
                   </h3>
+                </div>
+                <div
+                  class="col-4 col-md"
+                >
+                  <p
+                    class="bg-white rounded text-center p-1 m-0 p-md-2 p-lg-1 bg-transparent text-secondary"
+                  >
+                    Completed 
+                    0
+                     task
+                    s
+                     of 
+                    0
+                     (
+                    0
+                    %)
+                  </p>
                 </div>
                 <div
                   class="col-4 col-md-2 col-lg-1"

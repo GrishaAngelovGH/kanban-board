@@ -56,11 +56,12 @@ Object {
               class="col-10"
             >
               <p
-                class="bg-white rounded text-center p-1"
+                class="bg-white rounded text-center p-1 undefined"
               >
                 Completed 
                 0
                  task
+                s
                  of 
                 2
                  (
@@ -264,11 +265,12 @@ Object {
             class="col-10"
           >
             <p
-              class="bg-white rounded text-center p-1"
+              class="bg-white rounded text-center p-1 undefined"
             >
               Completed 
               0
                task
+              s
                of 
               2
                (
