@@ -81,6 +81,19 @@ Object {
             Column Description
           </p>
         </div>
+        <p
+          class="bg-white rounded text-center p-1"
+        >
+          Active 
+          0
+           task
+          s
+           of 
+          2
+           (
+          0
+          %)
+        </p>
         <div
           class="overflow-hidden"
         >
@@ -323,6 +336,19 @@ Object {
           Column Description
         </p>
       </div>
+      <p
+        class="bg-white rounded text-center p-1"
+      >
+        Active 
+        0
+         task
+        s
+         of 
+        2
+         (
+        0
+        %)
+      </p>
       <div
         class="overflow-hidden"
       >

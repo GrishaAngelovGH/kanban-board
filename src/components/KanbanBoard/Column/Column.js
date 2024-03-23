@@ -11,6 +11,7 @@ import Task from "./Task"
 import TaskLimitInput from "./TaskLimitInput"
 
 import EditableText from "components/EditableText"
+import ActiveTasksProgress from "components/KanbanBoard/ActiveTasksProgress"
 
 import settingsRepository from "persistent/persistentSettingsRepository"
 
@@ -147,6 +148,8 @@ const Column = ({
       <EditableText isTextArea onBlur={handleUpdate}>
         <p className={`${descriptionClass} column-description`}>{description}</p>
       </EditableText>
+
+      {!markedAsDone && <ActiveTasksProgress tasks={tasks} />}
 
       {
         showLimit && (
