@@ -123,6 +123,7 @@ const Task = ({
                   onClick={() => {
                     assignedIds.forEach(assignedId => {
                       boardRepository.removeAssignedUserFromTask(id, columnId, assignedId)
+                      boardRepository.toggleTaskActiveStatus(id, columnId, false)
                     })
                     showToastWithMessage("All assigned users were successfully removed")
                   }}

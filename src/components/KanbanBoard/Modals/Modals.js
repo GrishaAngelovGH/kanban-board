@@ -67,6 +67,10 @@ const Modals = ({ column, task, show, update }) => {
   }
 
   const handleConfirmAssignUsers = (taskId, assignedIds) => {
+    if (!assignedIds.length) {
+      boardRepository.toggleTaskActiveStatus(taskId, column.id, false)
+    }
+
     boardRepository.assignUsersToTask(taskId, column.id, assignedIds)
     setShowAssignUserModal(!showAssignUserModal)
     onUpdate()

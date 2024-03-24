@@ -234,10 +234,10 @@ const tasks = {
 
     updateColumn(column)
   },
-  toggleTaskActiveStatus: (taskId, columnId) => {
+  toggleTaskActiveStatus: (taskId, columnId, optIsActive) => {
     const column = getColumnById(columnId)
     const task = getTaskById(column, taskId)
-    task.isActive = !task.isActive
+    task.isActive = optIsActive === undefined ? !task.isActive : optIsActive
 
     updateColumn(column)
   },
