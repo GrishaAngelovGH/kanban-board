@@ -13,6 +13,7 @@ const columns = {
 
       column.items.forEach(v => {
         v.assignedIds = []
+        v.isActive = false
       })
 
       history[column.id] = column
@@ -64,6 +65,7 @@ const tasks = {
 
     const task = column.items.find(v => v.id === taskId)
     task.assignedIds = []
+    task.isActive = false
 
     history[column.id].items.push(task)
 
