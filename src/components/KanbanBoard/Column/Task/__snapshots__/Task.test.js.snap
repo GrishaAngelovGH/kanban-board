@@ -9,6 +9,10 @@ Object {
         class="row m-0 bg-white border border-3 border-success mt-3 rounded shadow p-1"
         style="transform: translate3d(0px, 0px, 0);"
       >
+        <i
+          class="bi bi-chevron-up text-center rounded move-btn mb-1"
+          data-swap-with-prev="true"
+        />
         <div
           class="col-11"
         >
@@ -78,6 +82,10 @@ Object {
             class="bi bi-bookmark-fill fs-4 text-success"
           />
         </div>
+        <div
+          class="bi bi-chevron-down text-center rounded move-btn"
+          data-task-swap-with-prev="false"
+        />
       </div>
     </div>
   </body>,
@@ -86,6 +94,10 @@ Object {
       class="row m-0 bg-white border border-3 border-success mt-3 rounded shadow p-1"
       style="transform: translate3d(0px, 0px, 0);"
     >
+      <i
+        class="bi bi-chevron-up text-center rounded move-btn mb-1"
+        data-swap-with-prev="true"
+      />
       <div
         class="col-11"
       >
@@ -155,6 +167,10 @@ Object {
           class="bi bi-bookmark-fill fs-4 text-success"
         />
       </div>
+      <div
+        class="bi bi-chevron-down text-center rounded move-btn"
+        data-task-swap-with-prev="false"
+      />
     </div>
   </div>,
   "debug": [Function],
@@ -220,6 +236,10 @@ Object {
         class="row m-0 bg-white undefined mt-3 rounded shadow p-1"
         style="transform: translate3d(0px, 0px, 0);"
       >
+        <i
+          class="bi bi-chevron-up text-center rounded move-btn mb-1"
+          data-swap-with-prev="true"
+        />
         <div
           class="col-11"
         >
@@ -281,6 +301,10 @@ Object {
             />
           </div>
         </div>
+        <div
+          class="bi bi-chevron-down text-center rounded move-btn"
+          data-task-swap-with-prev="false"
+        />
       </div>
     </div>
   </body>,
@@ -289,6 +313,10 @@ Object {
       class="row m-0 bg-white undefined mt-3 rounded shadow p-1"
       style="transform: translate3d(0px, 0px, 0);"
     >
+      <i
+        class="bi bi-chevron-up text-center rounded move-btn mb-1"
+        data-swap-with-prev="true"
+      />
       <div
         class="col-11"
       >
@@ -350,6 +378,10 @@ Object {
           />
         </div>
       </div>
+      <div
+        class="bi bi-chevron-down text-center rounded move-btn"
+        data-task-swap-with-prev="false"
+      />
     </div>
   </div>,
   "debug": [Function],

@@ -125,42 +125,16 @@ const columns = {
       localStorage.setItem("columns", JSON.stringify(columns))
     }
   },
-  swapColumn: (id, toLeft) => {
+  swapColumn: (id, swapWithPrev) => {
     const columns = Object.values(JSON.parse(localStorage.getItem("columns")))
-    const currentColumn = columns.find(v => v.id === id)
-    const currentIndex = columns.indexOf(currentColumn)
 
-    const moveFirstColumnToLeft = (currentIndex === 0) && toLeft
-    const moveFistColumnToRight = (currentIndex === 0) && !toLeft
+    if (columns.length > 1) {
+      swapObjectsInCollection(columns, id, swapWithPrev)
 
-    const moveInnerColumnToLeft = (currentIndex > 0 && currentIndex < columns.length - 1) && toLeft
-    const moveInnerColumnToRight = (currentIndex > 0 && currentIndex < columns.length - 1) && !toLeft
+      const cols = columns.reduce((a, b) => { a[b.id] = b; return a }, {})
 
-    const moveLastColumnToLeft = (currentIndex === columns.length - 1) && toLeft
-    const moveLastColumnToRight = (currentIndex === columns.length - 1) && !toLeft
-
-    const moveToRight = moveFistColumnToRight || moveInnerColumnToRight
-    const moveToLeft = moveLastColumnToLeft || moveInnerColumnToLeft
-
-    moveFirstColumnToLeft && (
-      [columns[currentIndex], columns[columns.length - 1]] = [columns[columns.length - 1], columns[currentIndex]]
-    )
-
-    moveToRight && (
-      [columns[currentIndex], columns[currentIndex + 1]] = [columns[currentIndex + 1], columns[currentIndex]]
-    )
-
-    moveToLeft && (
-      [columns[currentIndex], columns[currentIndex - 1]] = [columns[currentIndex - 1], columns[currentIndex]]
-    )
-
-    moveLastColumnToRight && (
-      [columns[currentIndex], columns[0]] = [columns[0], columns[currentIndex]]
-    )
-
-    const cols = columns.reduce((a, b) => { a[b.id] = b; return a }, {})
-
-    localStorage.setItem("columns", JSON.stringify(cols))
+      localStorage.setItem("columns", JSON.stringify(cols))
+    }
   },
   deleteColumn: columnId => {
     const columns = JSON.parse(localStorage.getItem("columns"))
@@ -273,6 +247,15 @@ const tasks = {
       localStorage.removeItem("priority")
     }
   },
+  swapTask: (taskId, columnId, swapWithPrev) => {
+    const column = getColumnById(columnId)
+
+    if (column.items.length > 1) {
+      swapObjectsInCollection(column.items, taskId, swapWithPrev)
+
+      updateColumn(column)
+    }
+  },
   assignUsersToTask: (taskId, columnId, assignedIds) => {
     const column = getColumnById(columnId)
     const task = getTaskById(column, taskId)
@@ -359,6 +342,39 @@ const getTaskById = (column, taskId) => column.items.find(v => v.id === taskId)
 const updateColumn = column => {
   const columns = JSON.parse(localStorage.getItem("columns"))
   localStorage.setItem("columns", JSON.stringify({ ...columns, [column.id]: column }))
+}
+
+const swapObjectsInCollection = (collection, id, swapWithPrev) => {
+  const currentElement = collection.find(v => v.id === id)
+  const currentIndex = collection.indexOf(currentElement)
+
+  const swapFirstElementWithPrev = (currentIndex === 0) && swapWithPrev
+  const swapFistElementWithNext = (currentIndex === 0) && !swapWithPrev
+
+  const swapInnerElementWithPrev = (currentIndex > 0 && currentIndex < collection.length - 1) && swapWithPrev
+  const swapInnerElementWithNext = (currentIndex > 0 && currentIndex < collection.length - 1) && !swapWithPrev
+
+  const swapLastElementWithPrev = (currentIndex === collection.length - 1) && swapWithPrev
+  const swapLastElementWithNext = (currentIndex === collection.length - 1) && !swapWithPrev
+
+  const swapElementWithPrev = swapLastElementWithPrev || swapInnerElementWithPrev
+  const swapElementWithNext = swapFistElementWithNext || swapInnerElementWithNext
+
+  swapFirstElementWithPrev && (
+    [collection[currentIndex], collection[collection.length - 1]] = [collection[collection.length - 1], collection[currentIndex]]
+  )
+
+  swapElementWithNext && (
+    [collection[currentIndex], collection[currentIndex + 1]] = [collection[currentIndex + 1], collection[currentIndex]]
+  )
+
+  swapElementWithPrev && (
+    [collection[currentIndex], collection[currentIndex - 1]] = [collection[currentIndex - 1], collection[currentIndex]]
+  )
+
+  swapLastElementWithNext && (
+    [collection[currentIndex], collection[0]] = [collection[0], collection[currentIndex]]
+  )
 }
 
 const persistentKanbanBoardRepository = {

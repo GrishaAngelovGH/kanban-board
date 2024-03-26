@@ -61,6 +61,12 @@ const Task = ({
     showToastWithMessage("Task status is successfully changed")
   }
 
+  const handleTaskSwap = ({ currentTarget }) => {
+    const swapWithPrev = currentTarget.getAttribute("data-swap-with-prev") === "true"
+    boardRepository.swapTask(id, columnId, swapWithPrev)
+    showToastWithMessage("Task is successfully swapped")
+  }
+
   const users = userRepository.getUsers()
 
   const bgClass = markedAsDone ? "bg-success-subtle" : "bg-white"
@@ -68,6 +74,7 @@ const Task = ({
 
   return (
     <div ref={setNodeRef} style={style} className={`row m-0 ${bgClass} ${borderClass} mt-3 rounded shadow p-1`}>
+      <i className="bi bi-chevron-up text-center rounded move-btn mb-1" data-swap-with-prev={true} onClick={handleTaskSwap}></i>
       {
         isActive && (
           <div className="bg-primary rounded p-2 text-white text-center text-capitalize mb-2">
@@ -164,6 +171,7 @@ const Task = ({
           )
         }
       </div>
+      <div className="bi bi-chevron-down text-center rounded move-btn" data-task-swap-with-prev={false} onClick={handleTaskSwap}></div>
     </div>
   )
 }
