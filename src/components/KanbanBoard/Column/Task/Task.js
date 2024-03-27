@@ -148,13 +148,20 @@ const Task = ({
             size="sm"
             variant="outline-primary"
             disabled={!assignedIds.length}
-            className="mb-3"
+            className="mb-1"
             onClick={handleToggleActiveStatus}
           >
             {isActive ? "Deactivate" : "Activate"}
           </Button>
         )
       }
+
+      <Link
+        to={`/task/${columnId}/${id}/dependencies`}
+        className="btn btn-outline-secondary btn-sm mb-3"
+      >
+        Manage Dependencies
+      </Link>
 
       <div className="d-flex justify-content-between">
         <div>
