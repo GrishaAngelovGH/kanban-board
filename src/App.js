@@ -9,11 +9,25 @@ import Notification from "components/Notification"
 import KanbanBoard from "components/routes/KanbanBoard"
 import Tasks from "components/routes/Tasks"
 import History from "components/routes/History"
+import TaskDependencies from "components/routes/TaskDependencies"
 
 const TasksRoute = ({ showToastWithMessage }) => {
   const { userId } = useParams()
 
-  return <Tasks userId={userId} showToastWithMessage={showToastWithMessage} />
+  return (
+    <Tasks
+      userId={userId}
+      showToastWithMessage={showToastWithMessage}
+    />
+  )
+}
+
+const TaskDependenciesRoute = () => {
+  const { taskId } = useParams()
+
+  return (
+    <TaskDependencies taskId={taskId} />
+  )
 }
 
 function App() {
@@ -23,6 +37,7 @@ function App() {
         <Route path="/" element={<Notification><KanbanBoard /></Notification>} />
         <Route path="/tasks/:userId" element={<Notification><TasksRoute /></Notification>} />
         <Route path="/history" element={<Notification delay={1000}><History /></Notification>} />
+        <Route path="/tasks/:taskId/dependencies" element={<TaskDependenciesRoute />} />
       </Routes>
     </Router>
   )
