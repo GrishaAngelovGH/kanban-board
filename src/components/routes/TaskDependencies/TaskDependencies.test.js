@@ -8,6 +8,8 @@ import {
 
 import TaskDependencies from "./TaskDependencies"
 
+jest.mock('persistent/persistentKanbanBoardRepository')
+
 test("should render TaskDependencies route component", () => {
   const view = render(
     <Router>

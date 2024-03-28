@@ -1,5 +1,7 @@
 import history from "./history"
 
+const getTaskById = (column, taskId) => column.items.find(v => v.id === taskId)
+
 const columns = {
   createColumn: (title, description) => {
     const columns = JSON.parse(localStorage.getItem("columns"))
@@ -182,6 +184,7 @@ const tasks = {
 
     updateColumn(column)
   },
+  getTaskById,
   getAllTemplates: () => {
     const columns = JSON.parse(localStorage.getItem("columns"))
 
@@ -336,8 +339,6 @@ const getColumnById = id => {
   const columns = JSON.parse(localStorage.getItem("columns"))
   return columns[id]
 }
-
-const getTaskById = (column, taskId) => column.items.find(v => v.id === taskId)
 
 const updateColumn = column => {
   const columns = JSON.parse(localStorage.getItem("columns"))

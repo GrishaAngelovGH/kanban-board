@@ -37,6 +37,7 @@ const persistentKanbanBoardRepository = {
       }
     ]
   },
+  getTaskById: () => ({ id: "3792131195588513", title: "Main Task", description: "Task Description", assignedIds: [], priority: "medium", isLocked: false, isTemplate: false }),
   getSearchFilter: () => ""
 }
 

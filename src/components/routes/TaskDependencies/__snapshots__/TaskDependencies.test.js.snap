@@ -33,6 +33,19 @@ Object {
               </h3>
             </div>
           </div>
+          <div
+            class="row g-0 mt-3 justify-content-center"
+          >
+            <div
+              class="col-6 bg-light rounded"
+            >
+              <h3
+                class="m-0 text-center"
+              >
+                Main Task
+              </h3>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -63,6 +76,19 @@ Object {
               class="m-0 text-center"
             >
               Task Dependencies
+            </h3>
+          </div>
+        </div>
+        <div
+          class="row g-0 mt-3 justify-content-center"
+        >
+          <div
+            class="col-6 bg-light rounded"
+          >
+            <h3
+              class="m-0 text-center"
+            >
+              Main Task
             </h3>
           </div>
         </div>
