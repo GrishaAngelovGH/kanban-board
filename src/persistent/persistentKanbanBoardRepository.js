@@ -176,6 +176,7 @@ const tasks = {
       title: taskTitle,
       description: taskDescription,
       assignedIds: !isTemplate && column.assignedIds.length > 0 ? column.assignedIds : [],
+      dependencyTasksIds: [],
       priority,
       isLocked: false,
       active: false,
@@ -264,6 +265,12 @@ const tasks = {
     const task = getTaskById(column, taskId)
     task.assignedIds = assignedIds
 
+    updateColumn(column)
+  },
+  addDependencyTask: (taskId, columnId, dependencyTaskId) => {
+    const column = getColumnById(columnId)
+    const task = getTaskById(column, taskId)
+    task.dependencyTasksIds.push(dependencyTaskId)
     updateColumn(column)
   },
   removeAssignedUserFromTasks: assignedId => {

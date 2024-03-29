@@ -7,7 +7,7 @@ const persistentKanbanBoardRepository = {
       limit: 0,
       assignedIds: [],
       items: [
-        { id: "2793331195588513", title: "Implement ProductDetailPage component", description: "A ProductDetailPage component should be implemented to be able to visualize all relevant information about given product.", assignedIds: [], priority: "medium", isLocked: false, isTemplate: false }
+        { id: "2793331195588513", title: "Implement ProductDetailPage component", description: "A ProductDetailPage component should be implemented to be able to visualize all relevant information about given product.", assignedIds: [], dependencyTasksIds: [], priority: "medium", isLocked: false, isTemplate: false }
       ]
     },
     {
@@ -18,7 +18,7 @@ const persistentKanbanBoardRepository = {
       markedAsDone: true,
       assignedIds: [],
       items: [
-        { id: "3489073798557012", title: "Show notification after successfull order confirmation", description: "The system should be able to show relevant notification after the user successfully confirm current order.", assignedIds: [], priority: "medium", isLocked: false, isTemplate: false }
+        { id: "3489073798557012", title: "Show notification after successfull order confirmation", description: "The system should be able to show relevant notification after the user successfully confirm current order.", assignedIds: [], dependencyTasksIds: [], priority: "medium", isLocked: false, isTemplate: false }
       ]
     }
   ],
@@ -31,13 +31,13 @@ const persistentKanbanBoardRepository = {
         limit: 0,
         assignedIds: [],
         items: [
-          { id: "27833411730699775", title: "Implement ConfirmButton component for ProductModal", description: "A ConfirmButton component should be implemented to allow confirming selected product features in ProductModal.", assignedIds: [userId], priority: "medium", isLocked: false, isTemplate: false },
-          { id: "5900400848369358", title: "Redesign ProductPage to allow more space for visualization of products", description: "The ProductPage needs a redesign to allow more space for visualization of products.", assignedIds: [userId], priority: "", isLocked: false, isTemplate: false }
+          { id: "27833411730699775", title: "Implement ConfirmButton component for ProductModal", description: "A ConfirmButton component should be implemented to allow confirming selected product features in ProductModal.", assignedIds: [userId], dependencyTasksIds: [], priority: "medium", isLocked: false, isTemplate: false },
+          { id: "5900400848369358", title: "Redesign ProductPage to allow more space for visualization of products", description: "The ProductPage needs a redesign to allow more space for visualization of products.", assignedIds: [userId], dependencyTasksIds: [], priority: "", isLocked: false, isTemplate: false }
         ]
       }
     ]
   },
-  getTaskById: () => ({ id: "3792131195588513", title: "Main Task", description: "Task Description", assignedIds: [], priority: "medium", isLocked: false, isTemplate: false }),
+  getTaskById: () => ({ id: "3792131195588513", title: "Main Task", description: "Task Description", assignedIds: [], dependencyTasksIds: [], priority: "medium", isLocked: false, isTemplate: false }),
   getSearchFilter: () => ""
 }
 
