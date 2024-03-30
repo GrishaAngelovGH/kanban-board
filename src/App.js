@@ -22,11 +22,11 @@ const TasksRoute = ({ showToastWithMessage }) => {
   )
 }
 
-const TaskDependenciesRoute = () => {
+const TaskDependenciesRoute = ({ showToastWithMessage }) => {
   const { columnId, taskId } = useParams()
 
   return (
-    <TaskDependencies columnId={columnId} taskId={taskId} />
+    <TaskDependencies columnId={columnId} taskId={taskId} showToastWithMessage={showToastWithMessage} />
   )
 }
 
@@ -37,7 +37,7 @@ function App() {
         <Route path="/" element={<Notification><KanbanBoard /></Notification>} />
         <Route path="/tasks/:userId" element={<Notification><TasksRoute /></Notification>} />
         <Route path="/history" element={<Notification delay={1000}><History /></Notification>} />
-        <Route path="/task/:columnId/:taskId/dependencies" element={<TaskDependenciesRoute />} />
+        <Route path="/task/:columnId/:taskId/dependencies" element={<Notification delay={1000}><TaskDependenciesRoute /></Notification>} />
       </Routes>
     </Router>
   )

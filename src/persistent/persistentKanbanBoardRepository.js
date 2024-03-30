@@ -194,6 +194,15 @@ const tasks = {
       return [...filtered, ...templates]
     }), [])) || []
   },
+  getDependencyTasks: (taskId, columnId) => {
+    const column = getColumnById(columnId)
+    const task = getTaskById(column, taskId)
+
+    return task.dependencyTasksIds.map(v => getTaskById(
+      getColumnById(v.columnId),
+      v.taskId
+    ))
+  },
   updateTask: (task, columnId) => {
     const column = getColumnById(columnId)
 
@@ -267,10 +276,11 @@ const tasks = {
 
     updateColumn(column)
   },
-  addDependencyTask: (taskId, columnId, dependencyTaskId) => {
+  addDependencyTask: (taskId, columnId, dependencyTaskId, dependencyColumnId) => {
     const column = getColumnById(columnId)
     const task = getTaskById(column, taskId)
-    task.dependencyTasksIds.push(dependencyTaskId)
+
+    task.dependencyTasksIds.push({ taskId: dependencyTaskId, columnId: dependencyColumnId })
     updateColumn(column)
   },
   removeAssignedUserFromTasks: assignedId => {

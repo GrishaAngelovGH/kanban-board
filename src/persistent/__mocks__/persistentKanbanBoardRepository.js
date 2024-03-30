@@ -37,7 +37,10 @@ const persistentKanbanBoardRepository = {
       }
     ]
   },
-  getTaskById: () => ({ id: "3792131195588513", title: "Main Task", description: "Task Description", assignedIds: [], dependencyTasksIds: [], priority: "medium", isLocked: false, isTemplate: false }),
+  getTaskById: () => ({ id: "3792131195588513", title: "Main Task", description: "Task Description", assignedIds: [], dependencyTasksIds: ["8242131195588513"], priority: "medium", isLocked: false, isTemplate: false }),
+  getDependencyTasks: () => [
+    { id: "8242131195588513", title: "Dependency Task", description: "Task Description", assignedIds: [], dependencyTasksIds: [], priority: "medium", isLocked: false, isTemplate: false }
+  ],
   getSearchFilter: () => ""
 }
 

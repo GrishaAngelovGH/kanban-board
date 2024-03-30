@@ -10,11 +10,13 @@ import useBackgroundImage from "hooks/useBackgroundImage"
 
 import "./TaskDependencies.css"
 
-const TaskDependencies = ({ taskId, columnId }) => {
+const TaskDependencies = ({ taskId, columnId, showToastWithMessage }) => {
   const backgroundImage = useBackgroundImage()
   const columns = boardRepository.getColumns()
   const column = columns.find(v => v.id === columnId)
   const task = boardRepository.getTaskById(column, taskId)
+
+  const dependencyTasks = boardRepository.getDependencyTasks(taskId, columnId)
 
   return (
     <div className="row g-0 vh-100" style={{ backgroundImage: backgroundImage ? `url(${backgroundImage})` : "none", backgroundSize: "cover" }}>
@@ -29,13 +31,13 @@ const TaskDependencies = ({ taskId, columnId }) => {
         </div>
 
         <div className="row g-0 mt-3 justify-content-center">
-          <div className="col-6 bg-light rounded">
+          <div className="col-10 col-md-6 bg-light rounded">
             <h3 className="m-0 text-center">{task.title}</h3>
           </div>
         </div>
 
         <div className="row g-0 mt-3 justify-content-around overflow-auto task-dependencies">
-          <div className="col-4">
+          <div className="col-10 col-md-4">
             <ListGroup>
               <ListGroup.Item className="bg-secondary-subtle text-secondary fw-bold text-center">
                 All columns with tasks
@@ -56,7 +58,8 @@ const TaskDependencies = ({ taskId, columnId }) => {
                               className="w-100"
                               disabled={v.id === taskId}
                               onClick={(() => {
-                                boardRepository.addDependencyTask(taskId, columnId, v.id)
+                                boardRepository.addDependencyTask(taskId, columnId, v.id, col.id)
+                                showToastWithMessage("The dependency task is successfully added")
                               })}
                             >
                               Add as a dependency
@@ -66,6 +69,27 @@ const TaskDependencies = ({ taskId, columnId }) => {
                       }
                     </ListGroup.Item>
                   ))
+              }
+            </ListGroup>
+          </div>
+          <div className="col-10 col-md-4">
+            <ListGroup className="mt-3 mt-md-0">
+              <ListGroup.Item className="bg-secondary-subtle text-secondary fw-bold text-center">
+                Dependency tasks
+              </ListGroup.Item>
+              {
+                dependencyTasks.map(v => (
+                  <ListGroup.Item key={v.id}>
+                    <p>{v.title}</p>
+                    <Button
+                      size="sm"
+                      variant="outline-danger"
+                      className="w-100"
+                    >
+                      Remove as a dependency
+                    </Button>
+                  </ListGroup.Item>
+                ))
               }
             </ListGroup>
           </div>
