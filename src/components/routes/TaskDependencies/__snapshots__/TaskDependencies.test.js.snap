@@ -68,18 +68,20 @@ Object {
                   >
                     In Progress
                   </span>
-                  <div
-                    class="border border-3 rounded mb-3 list-group-item"
-                  >
-                    <p>
-                      Implement ProductDetailPage component
-                    </p>
-                    <button
-                      class="w-100 btn btn-outline-primary btn-sm"
-                      type="button"
+                  <div>
+                    <div
+                      class="border border-3 rounded mb-3 list-group-item"
                     >
-                      Add as a dependency
-                    </button>
+                      <p>
+                        Implement ProductDetailPage component
+                      </p>
+                      <button
+                        class="w-100 btn btn-outline-primary btn-sm"
+                        type="button"
+                      >
+                        Add as a dependency
+                      </button>
+                    </div>
                   </div>
                 </div>
                 <div
@@ -90,18 +92,20 @@ Object {
                   >
                     Done
                   </span>
-                  <div
-                    class="border border-3 rounded mb-3 list-group-item"
-                  >
-                    <p>
-                      Show notification after successfull order confirmation
-                    </p>
-                    <button
-                      class="w-100 btn btn-outline-primary btn-sm"
-                      type="button"
+                  <div>
+                    <div
+                      class="border border-3 rounded mb-3 list-group-item"
                     >
-                      Add as a dependency
-                    </button>
+                      <p>
+                        Show notification after successfull order confirmation
+                      </p>
+                      <button
+                        class="w-100 btn btn-outline-primary btn-sm"
+                        type="button"
+                      >
+                        Add as a dependency
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -201,18 +205,20 @@ Object {
                 >
                   In Progress
                 </span>
-                <div
-                  class="border border-3 rounded mb-3 list-group-item"
-                >
-                  <p>
-                    Implement ProductDetailPage component
-                  </p>
-                  <button
-                    class="w-100 btn btn-outline-primary btn-sm"
-                    type="button"
+                <div>
+                  <div
+                    class="border border-3 rounded mb-3 list-group-item"
                   >
-                    Add as a dependency
-                  </button>
+                    <p>
+                      Implement ProductDetailPage component
+                    </p>
+                    <button
+                      class="w-100 btn btn-outline-primary btn-sm"
+                      type="button"
+                    >
+                      Add as a dependency
+                    </button>
+                  </div>
                 </div>
               </div>
               <div
@@ -223,18 +229,20 @@ Object {
                 >
                   Done
                 </span>
-                <div
-                  class="border border-3 rounded mb-3 list-group-item"
-                >
-                  <p>
-                    Show notification after successfull order confirmation
-                  </p>
-                  <button
-                    class="w-100 btn btn-outline-primary btn-sm"
-                    type="button"
+                <div>
+                  <div
+                    class="border border-3 rounded mb-3 list-group-item"
                   >
-                    Add as a dependency
-                  </button>
+                    <p>
+                      Show notification after successfull order confirmation
+                    </p>
+                    <button
+                      class="w-100 btn btn-outline-primary btn-sm"
+                      type="button"
+                    >
+                      Add as a dependency
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

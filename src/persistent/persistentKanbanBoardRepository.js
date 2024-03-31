@@ -203,6 +203,23 @@ const tasks = {
       v.taskId
     ))
   },
+  isDependencyTask: taskId => {
+    const columns = Object.values(JSON.parse(localStorage.getItem("columns")))
+
+    for (let i = 0; i < columns.length; i++) {
+      const column = columns[i]
+
+      for (let j = 0; j < column.items.length; j++) {
+        const task = column.items[j]
+
+        if (task.dependencyTasksIds.find(v => v.taskId === taskId)) {
+          return true
+        }
+      }
+    }
+
+    return false
+  },
   updateTask: (task, columnId) => {
     const column = getColumnById(columnId)
 

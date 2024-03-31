@@ -50,21 +50,28 @@ const TaskDependencies = ({ taskId, columnId, showToastWithMessage }) => {
                       <Badge className="mb-3">{col.title}</Badge>
                       {
                         col.items.map(v => (
-                          <ListGroup.Item key={v.id} className="border border-3 rounded mb-3">
-                            <p>{v.title}</p>
-                            <Button
-                              size="sm"
-                              variant="outline-primary"
-                              className="w-100"
-                              disabled={v.id === taskId}
-                              onClick={(() => {
-                                boardRepository.addDependencyTask(taskId, columnId, v.id, col.id)
-                                showToastWithMessage("The dependency task is successfully added")
-                              })}
-                            >
-                              Add as a dependency
-                            </Button>
-                          </ListGroup.Item>
+                          <div key={v.id}>
+                            {
+                              !boardRepository.isDependencyTask(v.id) && (
+                                <ListGroup.Item className="border border-3 rounded mb-3">
+                                  <p>{v.title}</p>
+                                  <Button
+                                    size="sm"
+                                    variant="outline-primary"
+                                    className="w-100"
+                                    disabled={v.id === taskId}
+                                    onClick={(() => {
+                                      boardRepository.addDependencyTask(taskId, columnId, v.id, col.id)
+                                      showToastWithMessage("The dependency task is successfully added")
+                                    })}
+                                  >
+                                    Add as a dependency
+                                  </Button>
+                                </ListGroup.Item>
+                              )
+                            }
+                          </div>
+
                         ))
                       }
                     </ListGroup.Item>

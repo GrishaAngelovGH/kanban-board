@@ -41,6 +41,7 @@ const persistentKanbanBoardRepository = {
   getDependencyTasks: () => [
     { id: "8242131195588513", title: "Dependency Task", description: "Task Description", assignedIds: [], dependencyTasksIds: [], priority: "medium", isLocked: false, isTemplate: false }
   ],
+  isDependencyTask: () => false,
   getSearchFilter: () => ""
 }
 
