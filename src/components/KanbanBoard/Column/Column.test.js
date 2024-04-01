@@ -23,8 +23,8 @@ test("should render Column component", () => {
               description="Column Description"
               limit={0}
               tasks={[
-                { id: 1, title: "Task 1", description: "Description 1", assignedIds: [], priority: "medium", isLocked: false },
-                { id: 2, title: "Task 2", description: "Description 2", assignedIds: [], priority: "medium", isLocked: false }
+                { id: 1, title: "Task 1", description: "Description 1", assignedIds: [], dependencyTasksIds: [], priority: "medium", isLocked: false },
+                { id: 2, title: "Task 2", description: "Description 2", assignedIds: [], dependencyTasksIds: [], priority: "medium", isLocked: false }
               ]}
               columnHandlers={{
                 onDeleteColumn: () => { },

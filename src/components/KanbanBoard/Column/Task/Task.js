@@ -28,7 +28,7 @@ const bookmarkStyles = {
 }
 
 const Task = ({
-  id, columnId, assignedIds, title, description, priority, isTemplate, isActive,
+  id, columnId, assignedIds, dependencyTasksIds, title, description, priority, isTemplate, isActive,
   isGridView, isSingleRowView, markedAsDone, isLocked, handlers, showToastWithMessage
 }) => {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
@@ -160,7 +160,7 @@ const Task = ({
         to={`/task/${columnId}/${id}/dependencies`}
         className="btn btn-outline-secondary btn-sm mb-3"
       >
-        Manage Dependencies
+        Manage Dependencies {dependencyTasksIds.length > 0 && `(${dependencyTasksIds.length})`}
       </Link>
 
       <div className="d-flex justify-content-between">

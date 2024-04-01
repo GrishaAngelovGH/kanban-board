@@ -59,7 +59,7 @@ Object {
           class="btn btn-outline-secondary btn-sm mb-3"
           href="/task/columnId/taskId/dependencies"
         >
-          Manage Dependencies
+          Manage Dependencies 
         </a>
         <div
           class="d-flex justify-content-between"
@@ -148,7 +148,7 @@ Object {
         class="btn btn-outline-secondary btn-sm mb-3"
         href="/task/columnId/taskId/dependencies"
       >
-        Manage Dependencies
+        Manage Dependencies 
       </a>
       <div
         class="d-flex justify-content-between"
@@ -293,7 +293,7 @@ Object {
           class="btn btn-outline-secondary btn-sm mb-3"
           href="/task/columnId/taskId/dependencies"
         >
-          Manage Dependencies
+          Manage Dependencies 
         </a>
         <div
           class="d-flex justify-content-between"
@@ -374,7 +374,7 @@ Object {
         class="btn btn-outline-secondary btn-sm mb-3"
         href="/task/columnId/taskId/dependencies"
       >
-        Manage Dependencies
+        Manage Dependencies 
       </a>
       <div
         class="d-flex justify-content-between"

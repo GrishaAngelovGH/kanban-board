@@ -31,6 +31,7 @@ test("should render Task component", () => {
               description="Task Description"
               column="Column Title"
               assignedIds={[]}
+              dependencyTasksIds={[]}
               priority="medium"
               isLocked={false}
               handlers={handlers}
@@ -59,6 +60,7 @@ test("should render Task component as a template", () => {
               description="Template Description"
               column="Column Title"
               assignedIds={[]}
+              dependencyTasksIds={[]}
               priority=""
               handlers={handlers}
             />
