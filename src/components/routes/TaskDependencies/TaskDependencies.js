@@ -44,7 +44,7 @@ const TaskDependencies = ({ taskId, columnId, showToastWithMessage }) => {
               </ListGroup.Item>
               {
                 columns
-                  .filter(col => col.items.length)
+                  .filter(col => !col.markedAsDone && !col.items.every(v => boardRepository.isDependencyTask(v.id)))
                   .map(col => (
                     <ListGroup.Item key={col.id}>
                       <Badge className="mb-3">{col.title}</Badge>
