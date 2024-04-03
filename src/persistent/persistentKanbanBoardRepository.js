@@ -322,6 +322,12 @@ const tasks = {
 
     updateColumn(column)
   },
+  removeDependencyTask: (taskId, columnId, dependencyTaskId) => {
+    const column = getColumnById(columnId)
+    const task = getTaskById(column, taskId)
+    task.dependencyTasksIds = task.dependencyTasksIds.filter(v => v.taskId !== dependencyTaskId)
+    updateColumn(column)
+  },
   deleteTask: (taskId, columnId) => {
     const column = getColumnById(columnId)
 

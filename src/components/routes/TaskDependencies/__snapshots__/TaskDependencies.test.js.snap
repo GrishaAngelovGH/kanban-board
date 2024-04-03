@@ -84,30 +84,6 @@ Object {
                     </div>
                   </div>
                 </div>
-                <div
-                  class="list-group-item"
-                >
-                  <span
-                    class="mb-3 badge bg-primary"
-                  >
-                    Done
-                  </span>
-                  <div>
-                    <div
-                      class="border border-3 rounded mb-3 list-group-item"
-                    >
-                      <p>
-                        Show notification after successfull order confirmation
-                      </p>
-                      <button
-                        class="w-100 btn btn-outline-primary btn-sm"
-                        type="button"
-                      >
-                        Add as a dependency
-                      </button>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
             <div
@@ -211,30 +187,6 @@ Object {
                   >
                     <p>
                       Implement ProductDetailPage component
-                    </p>
-                    <button
-                      class="w-100 btn btn-outline-primary btn-sm"
-                      type="button"
-                    >
-                      Add as a dependency
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="list-group-item"
-              >
-                <span
-                  class="mb-3 badge bg-primary"
-                >
-                  Done
-                </span>
-                <div>
-                  <div
-                    class="border border-3 rounded mb-3 list-group-item"
-                  >
-                    <p>
-                      Show notification after successfull order confirmation
                     </p>
                     <button
                       class="w-100 btn btn-outline-primary btn-sm"

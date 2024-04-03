@@ -71,7 +71,6 @@ const TaskDependencies = ({ taskId, columnId, showToastWithMessage }) => {
                               )
                             }
                           </div>
-
                         ))
                       }
                     </ListGroup.Item>
@@ -92,6 +91,10 @@ const TaskDependencies = ({ taskId, columnId, showToastWithMessage }) => {
                       size="sm"
                       variant="outline-danger"
                       className="w-100"
+                      onClick={(() => {
+                        boardRepository.removeDependencyTask(taskId, columnId, v.id)
+                        showToastWithMessage("The dependency task is successfully removed")
+                      })}
                     >
                       Remove as a dependency
                     </Button>
