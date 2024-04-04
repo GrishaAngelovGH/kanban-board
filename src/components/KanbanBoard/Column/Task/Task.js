@@ -156,12 +156,16 @@ const Task = ({
         )
       }
 
-      <Link
-        to={`/task/${columnId}/${id}/dependencies`}
-        className="btn btn-outline-secondary btn-sm mb-3"
-      >
-        Manage Dependencies {dependencyTasksIds.length > 0 && `(${dependencyTasksIds.length})`}
-      </Link>
+      {
+        !markedAsDone && (
+          <Link
+            to={`/task/${columnId}/${id}/dependencies`}
+            className="btn btn-outline-secondary btn-sm mb-3"
+          >
+            Manage Dependencies {dependencyTasksIds.length > 0 && `(${dependencyTasksIds.length})`}
+          </Link>
+        )
+      }
 
       <div className="d-flex justify-content-between">
         <div>
