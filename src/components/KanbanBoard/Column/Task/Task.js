@@ -143,7 +143,7 @@ const Task = ({
       </div>
 
       {
-        !markedAsDone && assignedIds.length > 0 && (
+        !markedAsDone && assignedIds.length > 0 && !dependencyTasksIds.length && (
           <Button
             size="sm"
             variant="outline-primary"
