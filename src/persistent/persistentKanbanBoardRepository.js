@@ -256,6 +256,10 @@ const tasks = {
 
       const toColumn = columns[toColumnId]
 
+      if (task.dependencyTasksIds.length > 0 && toColumn.markedAsDone) {
+        return false
+      }
+
       if (toColumn.markedAsDone) {
         task.isActive = false
       }
@@ -275,6 +279,7 @@ const tasks = {
       }))
 
       localStorage.removeItem("priority")
+      return true
     }
   },
   swapTask: (taskId, columnId, swapWithPrev) => {

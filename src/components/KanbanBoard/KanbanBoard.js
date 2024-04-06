@@ -68,15 +68,21 @@ const KanbanBoard = ({
   }
 
   const handleDragEnd = ({ active: { id, data: { current: { columnId } } }, over }) => {
+    if (columnId === over.id) {
+      return
+    }
+
     if (over) {
       const fromColumnId = columnId
       const toColumnId = over.id
       const taskId = id
 
-      boardRepository.moveTask(fromColumnId, toColumnId, taskId)
+      const success = boardRepository.moveTask(fromColumnId, toColumnId, taskId)
       onUpdate()
 
-      showToastWithMessage("Task is successfully moved")
+      success ?
+        showToastWithMessage("Task is successfully moved") :
+        showToastWithMessage("Tasks can only be moved to the 'done' column when all their dependencies are resolved.")
     } else {
       showToastWithMessage("The task could not be moved because the column has reached its limit")
     }

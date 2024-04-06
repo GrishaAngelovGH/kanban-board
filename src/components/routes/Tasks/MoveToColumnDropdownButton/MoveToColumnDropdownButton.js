@@ -6,8 +6,11 @@ import boardRepository from "persistent/persistentKanbanBoardRepository"
 
 const MoveToColumnDropdownButton = ({ column, task: { taskId, isLocked }, showToastWithMessage, setActiveKey }) => {
   const handleChangeColumnButtonClick = ({ target }) => {
-    boardRepository.moveTask(column.id, target.id, taskId)
-    showToastWithMessage(`The task is successfully moved to ${target.name}`)
+    const success = boardRepository.moveTask(column.id, target.id, taskId)
+    success ?
+      showToastWithMessage(`The task is successfully moved to ${target.name}`) :
+      showToastWithMessage("Tasks can only be moved to the 'done' column when all their dependencies are resolved.")
+
     setActiveKey("")
   }
 
