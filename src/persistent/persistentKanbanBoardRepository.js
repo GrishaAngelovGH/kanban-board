@@ -1,7 +1,5 @@
 import history from "./history"
 
-const getTaskById = (column, taskId) => column.items.find(v => v.id === taskId)
-
 const columns = {
   createColumn: (title, description) => {
     const columns = JSON.parse(localStorage.getItem("columns"))
@@ -185,7 +183,7 @@ const tasks = {
 
     updateColumn(column)
   },
-  getTaskById,
+  getTaskById: (column, taskId) => column.items.find(v => v.id === taskId),
   getAllTemplates: () => {
     const columns = JSON.parse(localStorage.getItem("columns"))
 
@@ -196,9 +194,9 @@ const tasks = {
   },
   getDependencyTasks: (taskId, columnId) => {
     const column = getColumnById(columnId)
-    const task = getTaskById(column, taskId)
+    const task = tasks.getTaskById(column, taskId)
 
-    return task.dependencyTasksIds.map(v => getTaskById(
+    return task.dependencyTasksIds.map(v => tasks.getTaskById(
       getColumnById(v.columnId),
       v.taskId
     ))
@@ -223,7 +221,7 @@ const tasks = {
   updateTask: (task, columnId) => {
     const column = getColumnById(columnId)
 
-    const foundTask = getTaskById(column, task.id)
+    const foundTask = tasks.getTaskById(column, task.id)
     foundTask.title = task.title
     foundTask.description = task.description
     foundTask.priority = task.priority
@@ -233,14 +231,14 @@ const tasks = {
   },
   updateTaskLockStatus: (taskId, columnId, isLocked) => {
     const column = getColumnById(columnId)
-    const task = getTaskById(column, taskId)
+    const task = tasks.getTaskById(column, taskId)
     task.isLocked = isLocked
 
     updateColumn(column)
   },
   toggleTaskActiveStatus: (taskId, columnId, optIsActive) => {
     const column = getColumnById(columnId)
-    const task = getTaskById(column, taskId)
+    const task = tasks.getTaskById(column, taskId)
     task.isActive = optIsActive === undefined ? !task.isActive : optIsActive
 
     updateColumn(column)
@@ -250,7 +248,7 @@ const tasks = {
       const columns = JSON.parse(localStorage.getItem("columns"))
 
       const fromColumn = columns[fromColumnId]
-      const task = getTaskById(fromColumn, taskId)
+      const task = tasks.getTaskById(fromColumn, taskId)
 
       fromColumn.items = fromColumn.items.filter(v => v.id !== taskId)
 
@@ -262,6 +260,12 @@ const tasks = {
 
       if (toColumn.markedAsDone) {
         task.isActive = false
+
+        Object.values(columns).forEach(column => {
+          column.items.forEach(v => {
+            v.dependencyTasksIds = v.dependencyTasksIds.filter(v => v.taskId !== taskId)
+          })
+        })
       }
 
       if (toColumn.assignedIds.length) {
@@ -272,13 +276,10 @@ const tasks = {
 
       toColumn.items.push(task)
 
-      localStorage.setItem("columns", JSON.stringify({
-        ...columns,
-        [fromColumnId]: fromColumn,
-        [toColumnId]: toColumn
-      }))
+      localStorage.setItem("columns", JSON.stringify(columns))
 
       localStorage.removeItem("priority")
+
       return true
     }
   },
@@ -293,14 +294,14 @@ const tasks = {
   },
   assignUsersToTask: (taskId, columnId, assignedIds) => {
     const column = getColumnById(columnId)
-    const task = getTaskById(column, taskId)
+    const task = tasks.getTaskById(column, taskId)
     task.assignedIds = assignedIds
 
     updateColumn(column)
   },
   addDependencyTask: (taskId, columnId, dependencyTaskId, dependencyColumnId) => {
     const column = getColumnById(columnId)
-    const task = getTaskById(column, taskId)
+    const task = tasks.getTaskById(column, taskId)
 
     task.dependencyTasksIds.push({ taskId: dependencyTaskId, columnId: dependencyColumnId })
     updateColumn(column)
@@ -329,7 +330,7 @@ const tasks = {
   },
   removeDependencyTask: (taskId, columnId, dependencyTaskId) => {
     const column = getColumnById(columnId)
-    const task = getTaskById(column, taskId)
+    const task = tasks.getTaskById(column, taskId)
     task.dependencyTasksIds = task.dependencyTasksIds.filter(v => v.taskId !== dependencyTaskId)
     updateColumn(column)
   },
