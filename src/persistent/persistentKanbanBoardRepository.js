@@ -261,11 +261,7 @@ const tasks = {
       if (toColumn.markedAsDone) {
         task.isActive = false
 
-        Object.values(columns).forEach(column => {
-          column.items.forEach(v => {
-            v.dependencyTasksIds = v.dependencyTasksIds.filter(v => v.taskId !== taskId)
-          })
-        })
+        tasks.removeDependencyTaskFromAllTasks(columns, taskId)
       }
 
       if (toColumn.assignedIds.length) {
@@ -334,14 +330,24 @@ const tasks = {
     task.dependencyTasksIds = task.dependencyTasksIds.filter(v => v.taskId !== dependencyTaskId)
     updateColumn(column)
   },
+  removeDependencyTaskFromAllTasks: (columns, taskId) => {
+    Object.values(columns).forEach(column => {
+      column.items.forEach(v => {
+        v.dependencyTasksIds = v.dependencyTasksIds.filter(v => v.taskId !== taskId)
+      })
+    })
+  },
   deleteTask: (taskId, columnId) => {
-    const column = getColumnById(columnId)
+    const columns = JSON.parse(localStorage.getItem("columns"))
+    const column = columns[columnId]
+
+    tasks.removeDependencyTaskFromAllTasks(columns, taskId)
 
     history.pushTask(column, taskId)
 
     column.items = column.items.filter(v => v.id !== taskId)
 
-    updateColumn(column)
+    localStorage.setItem("columns", JSON.stringify(columns))
   }
 }
 
