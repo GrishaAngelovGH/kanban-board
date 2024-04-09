@@ -125,6 +125,18 @@ Object {
                           Priority: 
                           medium
                         </p>
+                        <div
+                          class="fw-bold"
+                        >
+                          Dependency tasks (
+                          1
+                          )
+                        </div>
+                        <div
+                          class="m-2 bg-secondary-subtle rounded p-1 ps-3"
+                        >
+                          Dependency Task
+                        </div>
                         <div />
                         <div
                           class="task-actions"
@@ -172,6 +184,18 @@ Object {
                               The ProductPage needs a redesign to allow more space for visualization of products.
                             </span>
                           </span>
+                        </div>
+                        <div
+                          class="fw-bold"
+                        >
+                          Dependency tasks (
+                          1
+                          )
+                        </div>
+                        <div
+                          class="m-2 bg-secondary-subtle rounded p-1 ps-3"
+                        >
+                          Dependency Task
                         </div>
                         <div />
                         <div
@@ -334,6 +358,18 @@ Object {
                         Priority: 
                         medium
                       </p>
+                      <div
+                        class="fw-bold"
+                      >
+                        Dependency tasks (
+                        1
+                        )
+                      </div>
+                      <div
+                        class="m-2 bg-secondary-subtle rounded p-1 ps-3"
+                      >
+                        Dependency Task
+                      </div>
                       <div />
                       <div
                         class="task-actions"
@@ -381,6 +417,18 @@ Object {
                             The ProductPage needs a redesign to allow more space for visualization of products.
                           </span>
                         </span>
+                      </div>
+                      <div
+                        class="fw-bold"
+                      >
+                        Dependency tasks (
+                        1
+                        )
+                      </div>
+                      <div
+                        class="m-2 bg-secondary-subtle rounded p-1 ps-3"
+                      >
+                        Dependency Task
                       </div>
                       <div />
                       <div

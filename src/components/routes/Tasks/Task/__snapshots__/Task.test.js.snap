@@ -29,6 +29,18 @@ Object {
           Priority: 
           medium
         </p>
+        <div
+          class="fw-bold"
+        >
+          Dependency tasks (
+          1
+          )
+        </div>
+        <div
+          class="m-2 bg-secondary-subtle rounded p-1 ps-3"
+        >
+          Dependency Task
+        </div>
         <div />
         <div
           class="task-actions"
@@ -40,7 +52,6 @@ Object {
             <button
               aria-expanded="false"
               class="dropdown-toggle btn btn-primary btn-sm"
-              disabled=""
               type="button"
             >
               Move to other column
@@ -87,6 +98,18 @@ Object {
         Priority: 
         medium
       </p>
+      <div
+        class="fw-bold"
+      >
+        Dependency tasks (
+        1
+        )
+      </div>
+      <div
+        class="m-2 bg-secondary-subtle rounded p-1 ps-3"
+      >
+        Dependency Task
+      </div>
       <div />
       <div
         class="task-actions"
@@ -98,7 +121,6 @@ Object {
           <button
             aria-expanded="false"
             class="dropdown-toggle btn btn-primary btn-sm"
-            disabled=""
             type="button"
           >
             Move to other column

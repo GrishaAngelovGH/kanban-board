@@ -2,6 +2,8 @@ import { render } from "@testing-library/react"
 
 import Task from "./Task"
 
+jest.mock('persistent/persistentKanbanBoardRepository')
+
 test("should render Tasks/Task component", () => {
   const view = render(
     <Task
