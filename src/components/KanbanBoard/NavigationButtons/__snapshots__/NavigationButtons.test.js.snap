@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render ScrollNavigationButtons component 1`] = `
+exports[`should render NavigationButtons component 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <div
-        class="mt-3 ms-5 btn-group btn-group-sm"
+        class="btn-group btn-group-sm"
         role="group"
       >
         <button
@@ -22,7 +22,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="mt-3 ms-5 btn-group btn-group-sm"
+      class="btn-group btn-group-sm"
       role="group"
     >
       <button

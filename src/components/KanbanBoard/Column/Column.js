@@ -12,6 +12,7 @@ import TaskLimitInput from "./TaskLimitInput"
 
 import EditableText from "components/EditableText"
 import ActiveTasksProgress from "components/KanbanBoard/ActiveTasksProgress"
+import NavigationButtons from "components/KanbanBoard/NavigationButtons"
 
 import settingsRepository from "persistent/persistentSettingsRepository"
 
@@ -114,11 +115,12 @@ const Column = ({
     >
       <div className="row">
         <div className={`${isGridView || isSingleRowView ? "col-7 col-lg-8" : "col-10"}`}>
-
-          <ButtonGroup size="sm" className="mb-2">
-            <Button variant="light" className="bi bi-arrow-left" onClick={handleSwapToLeft}></Button>
-            <Button variant="light" className="bi bi-arrow-right" onClick={handleSwapToRight}></Button>
-          </ButtonGroup>
+          <NavigationButtons
+            size="sm"
+            className="mb-2"
+            onLeftClick={handleSwapToLeft}
+            onRightClick={handleSwapToRight}
+          />
 
           <EditableText onBlur={handleUpdate}>
             <h3 className={`${titleClass} text-break text-capitalize`}>{title}</h3>
