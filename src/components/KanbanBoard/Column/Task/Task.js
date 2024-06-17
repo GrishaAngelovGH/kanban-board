@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 import Badge from "react-bootstrap/Badge"
 import Button from "react-bootstrap/Button"
 
-import Avatar from "components/Avatar"
+import AssignedUsers from "components/KanbanBoard/Column/Task/AssignedUsers"
 import RichTextDescription from "components/RichTextDescription"
 import Tooltip from "components/Tooltip"
 import WordHighlighter from "components/WordHighlighter"
@@ -102,45 +102,12 @@ const Task = ({
         <RichTextDescription description={description} />
       </div>
 
-      <div className="mb-3 d-flex align-items-center flex-wrap">
-        {
-          assignedIds.map(v => {
-            const user = users.find(u => u.id === v)
-
-            return (
-              <Tooltip key={v} label={user.name}>
-                <Link to={`/tasks/${user.id}`} className="text-decoration-none">
-                  <Avatar user={user} size={35} />
-                </Link>
-              </Tooltip>
-            )
-          })
-        }
-        {
-          assignedIds.length > 0 && (
-            <>
-              <Tooltip label="Click on a user to see their assigned tasks">
-                <i className="m-1 bi bi-info fs-3 text-primary border border-3 border-primary rounded-circle d-flex bg-light"></i>
-              </Tooltip>
-              <Tooltip label="Remove all assignments">
-                <Button
-                  variant="outline-danger"
-                  className="rounded-circle bi bi-x d-flex justify-content-center align-items-center"
-                  style={{ width: 35, height: 35 }}
-                  onClick={() => {
-                    assignedIds.forEach(assignedId => {
-                      boardRepository.removeAssignedUserFromTask(id, columnId, assignedId)
-                      boardRepository.toggleTaskActiveStatus(id, columnId, false)
-                    })
-                    showToastWithMessage("All assigned users were successfully removed")
-                  }}
-                >
-                </Button>
-              </Tooltip>
-            </>
-          )
-        }
-      </div>
+      <AssignedUsers
+        taskId={id}
+        columnId={columnId}
+        assignedIds={assignedIds}
+        showToastWithMessage={showToastWithMessage}
+      />
 
       {
         !markedAsDone && assignedIds.length > 0 && !dependencyTasksIds.length && (
