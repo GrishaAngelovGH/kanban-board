@@ -68,7 +68,7 @@ const KanbanBoard = ({
   }
 
   const handleDragEnd = ({ active: { id, data: { current: { columnId } } }, over }) => {
-    if (columnId === over.id) {
+    if (!over || (columnId === over.id)) {
       return
     }
 
