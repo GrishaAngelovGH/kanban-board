@@ -4,9 +4,8 @@ import { useDroppable } from "@dnd-kit/core"
 
 import Button from "react-bootstrap/Button"
 import ButtonGroup from "react-bootstrap/ButtonGroup"
-import Dropdown from "react-bootstrap/Dropdown"
-import DropdownButton from "react-bootstrap/DropdownButton"
 
+import Menu from "./Menu"
 import Task from "./Task"
 import TaskLimitInput from "./TaskLimitInput"
 
@@ -98,15 +97,6 @@ const Column = ({
   const checkButtonClass = hasSolidColumnStyle ? "secondary-subtle" : "light"
   const taskLengthButtonClass = hasSolidColumnStyle ? "secondary" : "light"
 
-  const menuItems = [
-    { label: "Add Task", icon: "bi bi-plus-circle-fill text-primary mx-1", onClick: handleAddTask },
-    { label: markedAsDone ? "Unmark as Done" : "Mark as Done", icon: "bi bi-check-square-fill text-success mx-1", onClick: handleMarkAsDone },
-    { label: "Delete Column", icon: "bi bi-x-circle-fill text-danger mx-1", onClick: handleDeleteAction },
-    { label: "Delete All Tasks", icon: "bi bi-x-circle-fill text-danger mx-1", onClick: handleDeleteAllTasks },
-    { label: "Set Task Limit", icon: "bi bi-exclamation-circle-fill text-warning mx-1", onClick: handleShowLimit },
-    { label: "Auto Assign Users", icon: "bi bi-star-fill text-warning mx-1", onClick: handleAutoAssignUsers }
-  ]
-
   return (
     <div
       ref={setNodeRef}
@@ -133,16 +123,15 @@ const Column = ({
 
             <Button variant={taskLengthButtonClass} disabled>{tasks.length}</Button>
 
-            <DropdownButton as={ButtonGroup} size="sm" variant="light" title={<i className="bi bi-three-dots-vertical"></i>}>
-              {
-                menuItems.map((v, i) => (
-                  <Dropdown.Item key={i} onClick={v.onClick}>
-                    <i className={v.icon}></i>
-                    {v.label}
-                  </Dropdown.Item>
-                ))
-              }
-            </DropdownButton>
+            <Menu
+              markedAsDone={markedAsDone}
+              handleAddTask={handleAddTask}
+              handleMarkAsDone={handleMarkAsDone}
+              handleDeleteAction={handleDeleteAction}
+              handleDeleteAllTasks={handleDeleteAllTasks}
+              handleShowLimit={handleShowLimit}
+              handleAutoAssignUsers={handleAutoAssignUsers}
+            />
           </ButtonGroup>
         </div>
       </div>
