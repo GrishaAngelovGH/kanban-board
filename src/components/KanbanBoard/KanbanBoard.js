@@ -7,7 +7,7 @@ import ButtonPanel from "./ButtonPanel"
 import Column from "./Column"
 import EmptyBoard from "./EmptyBoard"
 import Modals from "./Modals"
-import NavigationButtons from "./NavigationButtons"
+import ScrollNavigationButtons from "./ScrollNavigationButtons"
 
 import boardGenerator from "persistent/persistentKanbanBoardGenerator"
 import boardRepository from "persistent/persistentKanbanBoardRepository"
@@ -193,7 +193,7 @@ const KanbanBoard = ({
                 {
                   isSingleRowView && (
                     <div className="col-2">
-                      <NavigationButtons ref={scrollRef} />
+                      <ScrollNavigationButtons ref={scrollRef} />
                     </div>
                   )
                 }
