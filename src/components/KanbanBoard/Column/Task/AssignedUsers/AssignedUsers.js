@@ -8,7 +8,7 @@ import Tooltip from "components/Tooltip"
 import boardRepository from "persistent/persistentKanbanBoardRepository"
 import userRepository from "persistent/persistentUserRepository"
 
-const AssignedUsers = ({ taskId, columnId, assignedIds, showToastWithMessage }) => {
+const AssignedUsers = ({ ids: { taskId, columnId, assignedIds }, showToastWithMessage }) => {
   const users = userRepository.getUsers()
 
   return (

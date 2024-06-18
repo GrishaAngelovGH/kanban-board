@@ -94,9 +94,7 @@ const Task = ({
       </div>
 
       <AssignedUsers
-        taskId={id}
-        columnId={columnId}
-        assignedIds={assignedIds}
+        ids={{ taskId: id, columnId, assignedIds }}
         showToastWithMessage={showToastWithMessage}
       />
 

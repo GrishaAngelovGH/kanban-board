@@ -17,7 +17,7 @@ test("should render Task/AssignedUsers component", () => {
         <Route
           path="/"
           element={
-            <AssignedUsers assignedIds={[1, 2]} />
+            <AssignedUsers ids={{ assignedIds: [1, 2] }} />
           }
         />
       </Routes>
