@@ -8,7 +8,6 @@ import {
 
 import Column from "./Column"
 
-
 jest.mock('persistent/persistentUserRepository')
 
 test("should render Column component", () => {

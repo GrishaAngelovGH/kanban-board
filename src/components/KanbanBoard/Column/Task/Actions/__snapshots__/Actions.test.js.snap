@@ -1,0 +1,753 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Actions component not showing the activation/deactivation button 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="d-flex justify-content-between"
+      >
+        <div>
+          <i
+            class="bi bi-trash fs-4 text-danger"
+            role="button"
+          />
+          <i
+            class="bi bi-pencil-square fs-4 text-secondary mx-1"
+            role="button"
+          />
+          <i
+            class="bi bi-person-circle fs-4 text-secondary mx-1"
+            role="button"
+          />
+          <i
+            class="bi bi-unlock-fill fs-4 text-secondary mx-1"
+            role="button"
+          />
+        </div>
+        <i
+          class="bi bi-bookmark-fill fs-4 text-success"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="d-flex justify-content-between"
+    >
+      <div>
+        <i
+          class="bi bi-trash fs-4 text-danger"
+          role="button"
+        />
+        <i
+          class="bi bi-pencil-square fs-4 text-secondary mx-1"
+          role="button"
+        />
+        <i
+          class="bi bi-person-circle fs-4 text-secondary mx-1"
+          role="button"
+        />
+        <i
+          class="bi bi-unlock-fill fs-4 text-secondary mx-1"
+          role="button"
+        />
+      </div>
+      <i
+        class="bi bi-bookmark-fill fs-4 text-success"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`should render Actions component not showing the delete button for locked status 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <a
+        class="btn btn-outline-secondary btn-sm mb-3"
+        href="/task/columnId-1/taskId-1/dependencies"
+      >
+        Manage Dependencies 
+        (2)
+      </a>
+      <div
+        class="d-flex justify-content-between"
+      >
+        <div>
+          <i
+            class="bi bi-pencil-square fs-4 text-secondary mx-1"
+            role="button"
+          />
+          <i
+            class="bi bi-person-circle fs-4 text-secondary mx-1"
+            role="button"
+          />
+          <i
+            class="bi bi-lock-fill fs-4 text-secondary mx-1"
+            role="button"
+          />
+        </div>
+        <i
+          class="bi bi-bookmark-fill fs-4 text-success"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <a
+      class="btn btn-outline-secondary btn-sm mb-3"
+      href="/task/columnId-1/taskId-1/dependencies"
+    >
+      Manage Dependencies 
+      (2)
+    </a>
+    <div
+      class="d-flex justify-content-between"
+    >
+      <div>
+        <i
+          class="bi bi-pencil-square fs-4 text-secondary mx-1"
+          role="button"
+        />
+        <i
+          class="bi bi-person-circle fs-4 text-secondary mx-1"
+          role="button"
+        />
+        <i
+          class="bi bi-lock-fill fs-4 text-secondary mx-1"
+          role="button"
+        />
+      </div>
+      <i
+        class="bi bi-bookmark-fill fs-4 text-success"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`should render Actions component not showing the user assign button for template 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <a
+        class="btn btn-outline-secondary btn-sm mb-3"
+        href="/task/columnId-1/taskId-1/dependencies"
+      >
+        Manage Dependencies 
+        (2)
+      </a>
+      <div
+        class="d-flex justify-content-between"
+      >
+        <div>
+          <i
+            class="bi bi-trash fs-4 text-danger"
+            role="button"
+          />
+          <i
+            class="bi bi-pencil-square fs-4 text-secondary mx-1"
+            role="button"
+          />
+          <i
+            class="bi bi-unlock-fill fs-4 text-secondary mx-1"
+            role="button"
+          />
+        </div>
+        <i
+          class="bi bi-bookmark-fill fs-4 text-success"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <a
+      class="btn btn-outline-secondary btn-sm mb-3"
+      href="/task/columnId-1/taskId-1/dependencies"
+    >
+      Manage Dependencies 
+      (2)
+    </a>
+    <div
+      class="d-flex justify-content-between"
+    >
+      <div>
+        <i
+          class="bi bi-trash fs-4 text-danger"
+          role="button"
+        />
+        <i
+          class="bi bi-pencil-square fs-4 text-secondary mx-1"
+          role="button"
+        />
+        <i
+          class="bi bi-unlock-fill fs-4 text-secondary mx-1"
+          role="button"
+        />
+      </div>
+      <i
+        class="bi bi-bookmark-fill fs-4 text-success"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`should render Actions component showing the activation button 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <button
+        class="mb-1 btn btn-outline-primary btn-sm"
+        type="button"
+      >
+        Activate
+      </button>
+      <a
+        class="btn btn-outline-secondary btn-sm mb-3"
+        href="/task/undefined/taskId-1/dependencies"
+      >
+        Manage Dependencies 
+      </a>
+      <div
+        class="d-flex justify-content-between"
+      >
+        <div>
+          <i
+            class="bi bi-trash fs-4 text-danger"
+            role="button"
+          />
+          <i
+            class="bi bi-pencil-square fs-4 text-secondary mx-1"
+            role="button"
+          />
+          <i
+            class="bi bi-person-circle fs-4 text-secondary mx-1"
+            role="button"
+          />
+          <i
+            class="bi bi-unlock-fill fs-4 text-secondary mx-1"
+            role="button"
+          />
+        </div>
+        <i
+          class="bi bi-bookmark-fill fs-4 text-success"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <button
+      class="mb-1 btn btn-outline-primary btn-sm"
+      type="button"
+    >
+      Activate
+    </button>
+    <a
+      class="btn btn-outline-secondary btn-sm mb-3"
+      href="/task/undefined/taskId-1/dependencies"
+    >
+      Manage Dependencies 
+    </a>
+    <div
+      class="d-flex justify-content-between"
+    >
+      <div>
+        <i
+          class="bi bi-trash fs-4 text-danger"
+          role="button"
+        />
+        <i
+          class="bi bi-pencil-square fs-4 text-secondary mx-1"
+          role="button"
+        />
+        <i
+          class="bi bi-person-circle fs-4 text-secondary mx-1"
+          role="button"
+        />
+        <i
+          class="bi bi-unlock-fill fs-4 text-secondary mx-1"
+          role="button"
+        />
+      </div>
+      <i
+        class="bi bi-bookmark-fill fs-4 text-success"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`should render Actions component showing the deactivation button 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <button
+        class="mb-1 btn btn-outline-primary btn-sm"
+        type="button"
+      >
+        Deactivate
+      </button>
+      <a
+        class="btn btn-outline-secondary btn-sm mb-3"
+        href="/task/columnId-1/taskId-1/dependencies"
+      >
+        Manage Dependencies 
+      </a>
+      <div
+        class="d-flex justify-content-between"
+      >
+        <div>
+          <i
+            class="bi bi-trash fs-4 text-danger"
+            role="button"
+          />
+          <i
+            class="bi bi-pencil-square fs-4 text-secondary mx-1"
+            role="button"
+          />
+          <i
+            class="bi bi-person-circle fs-4 text-secondary mx-1"
+            role="button"
+          />
+          <i
+            class="bi bi-unlock-fill fs-4 text-secondary mx-1"
+            role="button"
+          />
+        </div>
+        <i
+          class="bi bi-bookmark-fill fs-4 text-success"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <button
+      class="mb-1 btn btn-outline-primary btn-sm"
+      type="button"
+    >
+      Deactivate
+    </button>
+    <a
+      class="btn btn-outline-secondary btn-sm mb-3"
+      href="/task/columnId-1/taskId-1/dependencies"
+    >
+      Manage Dependencies 
+    </a>
+    <div
+      class="d-flex justify-content-between"
+    >
+      <div>
+        <i
+          class="bi bi-trash fs-4 text-danger"
+          role="button"
+        />
+        <i
+          class="bi bi-pencil-square fs-4 text-secondary mx-1"
+          role="button"
+        />
+        <i
+          class="bi bi-person-circle fs-4 text-secondary mx-1"
+          role="button"
+        />
+        <i
+          class="bi bi-unlock-fill fs-4 text-secondary mx-1"
+          role="button"
+        />
+      </div>
+      <i
+        class="bi bi-bookmark-fill fs-4 text-success"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`should render Actions component showing the manage dependencies button 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <a
+        class="btn btn-outline-secondary btn-sm mb-3"
+        href="/task/columnId-1/taskId-1/dependencies"
+      >
+        Manage Dependencies 
+        (2)
+      </a>
+      <div
+        class="d-flex justify-content-between"
+      >
+        <div>
+          <i
+            class="bi bi-trash fs-4 text-danger"
+            role="button"
+          />
+          <i
+            class="bi bi-pencil-square fs-4 text-secondary mx-1"
+            role="button"
+          />
+          <i
+            class="bi bi-person-circle fs-4 text-secondary mx-1"
+            role="button"
+          />
+          <i
+            class="bi bi-unlock-fill fs-4 text-secondary mx-1"
+            role="button"
+          />
+        </div>
+        <i
+          class="bi bi-bookmark-fill fs-4 text-success"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <a
+      class="btn btn-outline-secondary btn-sm mb-3"
+      href="/task/columnId-1/taskId-1/dependencies"
+    >
+      Manage Dependencies 
+      (2)
+    </a>
+    <div
+      class="d-flex justify-content-between"
+    >
+      <div>
+        <i
+          class="bi bi-trash fs-4 text-danger"
+          role="button"
+        />
+        <i
+          class="bi bi-pencil-square fs-4 text-secondary mx-1"
+          role="button"
+        />
+        <i
+          class="bi bi-person-circle fs-4 text-secondary mx-1"
+          role="button"
+        />
+        <i
+          class="bi bi-unlock-fill fs-4 text-secondary mx-1"
+          role="button"
+        />
+      </div>
+      <i
+        class="bi bi-bookmark-fill fs-4 text-success"
+      />
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

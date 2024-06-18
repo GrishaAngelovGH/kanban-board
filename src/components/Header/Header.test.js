@@ -12,7 +12,7 @@ afterEach(() => {
   jest.useRealTimers()
 })
 
-test("should render Header component", async () => {
+test("should render Header component", () => {
   const onUpdate = jest.fn()
 
   const handlers = {
@@ -31,7 +31,7 @@ test("should render Header component", async () => {
     fireEvent.click(menu.firstChild)
   })
 
-  await waitFor(() => {
+  waitFor(() => {
     expect(view).toMatchSnapshot()
   })
 })

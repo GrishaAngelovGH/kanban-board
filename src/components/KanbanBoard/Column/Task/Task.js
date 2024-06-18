@@ -1,13 +1,10 @@
 import { useDraggable } from "@dnd-kit/core"
 
-import { Link } from "react-router-dom"
-
 import Badge from "react-bootstrap/Badge"
-import Button from "react-bootstrap/Button"
 
+import Actions from "components/KanbanBoard/Column/Task/Actions"
 import AssignedUsers from "components/KanbanBoard/Column/Task/AssignedUsers"
 import RichTextDescription from "components/RichTextDescription"
-import Tooltip from "components/Tooltip"
 import WordHighlighter from "components/WordHighlighter"
 
 import boardRepository from "persistent/persistentKanbanBoardRepository"
@@ -19,12 +16,6 @@ const priorityStyles = {
   "low": "border border-3 border-warning",
   "medium": "border border-3 border-success",
   "high": "border border-3 border-danger"
-}
-
-const bookmarkStyles = {
-  "low": "text-warning",
-  "medium": "text-success",
-  "high": "text-danger"
 }
 
 const Task = ({
@@ -109,46 +100,13 @@ const Task = ({
         showToastWithMessage={showToastWithMessage}
       />
 
-      {
-        !markedAsDone && assignedIds.length > 0 && !dependencyTasksIds.length && (
-          <Button
-            size="sm"
-            variant="outline-primary"
-            disabled={!assignedIds.length}
-            className="mb-1"
-            onClick={handleToggleActiveStatus}
-          >
-            {isActive ? "Deactivate" : "Activate"}
-          </Button>
-        )
-      }
+      <Actions
+        ids={{ taskId: id, columnId, assignedIds, dependencyTasksIds }}
+        handlers={{ handleToggleActiveStatus, handleDelete, handleEdit, handleAssignUser, handleToggleLock }}
+        statuses={{ markedAsDone, isActive, isLocked, isTemplate, hasUsers: users.length > 0 }}
+        priority={priority}
+      />
 
-      {
-        !markedAsDone && (
-          <Link
-            to={`/task/${columnId}/${id}/dependencies`}
-            className="btn btn-outline-secondary btn-sm mb-3"
-          >
-            Manage Dependencies {dependencyTasksIds.length > 0 && `(${dependencyTasksIds.length})`}
-          </Link>
-        )
-      }
-
-      <div className="d-flex justify-content-between">
-        <div>
-          {!isLocked && <i role="button" onClick={handleDelete} className="bi bi-trash fs-4 text-danger"></i>}
-          <i role="button" onClick={handleEdit} className="bi bi-pencil-square fs-4 text-secondary mx-1"></i>
-          {!isTemplate && users.length > 0 && <i role="button" onClick={handleAssignUser} className="bi bi-person-circle fs-4 text-secondary mx-1"></i>}
-          <i role="button" onClick={handleToggleLock} className={`bi bi-${isLocked ? "lock-fill" : "unlock-fill"} fs-4 text-secondary mx-1`}></i>
-        </div>
-        {
-          priority.length > 0 && (
-            <Tooltip label={`${priority} Priority`} className="text-capitalize">
-              <i className={`bi bi-bookmark-fill fs-4 ${bookmarkStyles[priority]}`}></i>
-            </Tooltip>
-          )
-        }
-      </div>
       <div className="bi bi-chevron-down text-center rounded move-btn" data-task-swap-with-prev={false} onClick={handleTaskSwap}></div>
     </div>
   )

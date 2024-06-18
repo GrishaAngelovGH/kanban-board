@@ -4,7 +4,7 @@ import FilterMenu from "./FilterMenu"
 
 import boardRepository from "persistent/persistentKanbanBoardRepository"
 
-test("should render FilterMenu component", async () => {
+test("should render FilterMenu component", () => {
   jest.spyOn(boardRepository, 'getPriorityFilter').mockReturnValue(null)
 
   const view = render(<FilterMenu />)
@@ -16,12 +16,12 @@ test("should render FilterMenu component", async () => {
     fireEvent.click(dropdownButton)
   })
 
-  await waitFor(() => {
+  waitFor(() => {
     expect(view).toMatchSnapshot()
   })
 })
 
-test("should render FilterMenu component with priority", async () => {
+test("should render FilterMenu component with priority", () => {
   jest.spyOn(boardRepository, 'getPriorityFilter').mockReturnValue("Medium")
 
   const view = render(<FilterMenu />)
@@ -33,7 +33,7 @@ test("should render FilterMenu component with priority", async () => {
     fireEvent.click(dropdownButton)
   })
 
-  await waitFor(() => {
+  waitFor(() => {
     expect(view).toMatchSnapshot()
   })
 })

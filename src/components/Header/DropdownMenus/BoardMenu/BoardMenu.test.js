@@ -12,7 +12,7 @@ afterEach(() => {
   jest.restoreAllMocks()
 })
 
-test("should render BoardMenu component", async () => {
+test("should render BoardMenu component", () => {
   const view = render(<BoardMenu />)
 
   act(() => {
@@ -22,7 +22,7 @@ test("should render BoardMenu component", async () => {
     fireEvent.click(dropdownButton)
   })
 
-  await waitFor(() => {
+  waitFor(() => {
     expect(view).toMatchSnapshot()
   })
 })

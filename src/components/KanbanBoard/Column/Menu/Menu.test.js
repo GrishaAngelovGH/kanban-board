@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from "@testing-library/react"
+import { render, screen, fireEvent, act, waitFor } from "@testing-library/react"
 
 import Menu from "./Menu"
 
@@ -7,7 +7,11 @@ test("should render Column/Menu component", () => {
 
   const toggleButton = screen.getByRole("button")
 
-  fireEvent.click(toggleButton)
+  act(() => {
+    fireEvent.click(toggleButton)
+  })
 
-  expect(view).toMatchSnapshot()
+  waitFor(() => {
+    expect(view).toMatchSnapshot()
+  })
 })
