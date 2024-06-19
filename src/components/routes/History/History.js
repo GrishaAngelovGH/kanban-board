@@ -11,6 +11,27 @@ import history from "persistent/history"
 const History = ({ showToastWithMessage }) => {
   const columns = history.getColumns()
 
+  const buttons = [
+    {
+      variant: "primary",
+      className: "me-2",
+      label: "Restore column",
+      onClick: id => {
+        history.restoreColumn(id)
+        showToastWithMessage("The column is successfully restored")
+      }
+    },
+    {
+      variant: "danger",
+      className: "",
+      label: "Delete column",
+      onClick: id => {
+        history.deleteColumn(id)
+        showToastWithMessage("The column is successfully deleted")
+      }
+    }
+  ]
+
   const description = (
     <div className="col-10">
       <h3 className="m-0 text-center">History</h3>
@@ -35,25 +56,20 @@ const History = ({ showToastWithMessage }) => {
                     <p>{column.description}</p>
                   </Accordion.Header>
                   <Accordion.Body>
-                    <Button
-                      variant="primary"
-                      className="me-2"
-                      onClick={() => {
-                        history.restoreColumn(column.id)
-                        showToastWithMessage("The column is successfully restored")
-                      }}
-                    >
-                      Restore column
-                    </Button>
-                    <Button
-                      variant="danger"
-                      onClick={() => {
-                        history.deleteColumn(column.id)
-                        showToastWithMessage("The column is successfully deleted")
-                      }}
-                    >
-                      Delete column
-                    </Button>
+                    {
+                      buttons.map((v, i) => (
+                        <Button
+                          key={i}
+                          variant={v.variant}
+                          className={v.className}
+                          onClick={() => {
+                            v.onClick(column.id)
+                          }}
+                        >
+                          {v.label}
+                        </Button>
+                      ))
+                    }
                     {
                       column.items.map(v => (
                         <Task
