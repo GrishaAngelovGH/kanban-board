@@ -37,6 +37,7 @@ const BoardMenu = ({
         onUpdate()
       }
     },
+    { label: "Dashboard", icon: "bi bi-pie-chart", href: "/dashboard" },
     { label: "History", icon: "bi bi-clock-history", href: "/history", disabled: !history.getColumns().length },
     { label: "Settings", icon: "bi bi-gear", onClick: onSettingsClick }
   ]

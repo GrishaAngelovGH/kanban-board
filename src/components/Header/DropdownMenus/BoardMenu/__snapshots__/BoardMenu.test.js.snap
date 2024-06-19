@@ -135,6 +135,22 @@ Object {
           <a
             class="dropdown-item"
             data-rr-ui-dropdown-item=""
+            href="/dashboard"
+            icon="bi bi-pie-chart"
+            label="Dashboard"
+          >
+            <i
+              class="bi bi-pie-chart"
+            />
+            <span
+              class="mx-2"
+            >
+              Dashboard
+            </span>
+          </a>
+          <a
+            class="dropdown-item"
+            data-rr-ui-dropdown-item=""
             href="/history"
             icon="bi bi-clock-history"
             label="History"
@@ -296,6 +312,22 @@ Object {
             class="mx-2"
           >
             Group Templates
+          </span>
+        </a>
+        <a
+          class="dropdown-item"
+          data-rr-ui-dropdown-item=""
+          href="/dashboard"
+          icon="bi bi-pie-chart"
+          label="Dashboard"
+        >
+          <i
+            class="bi bi-pie-chart"
+          />
+          <span
+            class="mx-2"
+          >
+            Dashboard
           </span>
         </a>
         <a

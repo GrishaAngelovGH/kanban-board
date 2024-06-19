@@ -8,6 +8,7 @@ import {
 import Notification from "components/Notification"
 import KanbanBoard from "components/routes/KanbanBoard"
 import Tasks from "components/routes/Tasks"
+import Dashboard from "components/routes/Dashboard"
 import History from "components/routes/History"
 import TaskDependencies from "components/routes/TaskDependencies"
 
@@ -36,6 +37,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Notification><KanbanBoard /></Notification>} />
         <Route path="/tasks/:userId" element={<Notification><TasksRoute /></Notification>} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/history" element={<Notification delay={1000}><History /></Notification>} />
         <Route path="/task/:columnId/:taskId/dependencies" element={<Notification delay={1000}><TaskDependenciesRoute /></Notification>} />
       </Routes>
