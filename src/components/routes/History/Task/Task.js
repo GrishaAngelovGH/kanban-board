@@ -14,6 +14,21 @@ const Task = ({ id, title, description, priority, column, showToastWithMessage }
     showToastWithMessage("The task is successfully deleted")
   }
 
+  const buttons = [
+    {
+      variant: "primary",
+      size: "sm",
+      label: "Restore",
+      onClick: handleRestore
+    },
+    {
+      variant: "danger",
+      size: "sm",
+      label: "Delete",
+      onClick: handleDelete
+    }
+  ]
+
   return (
     <div className="mt-3 border border-3 shadow rounded p-3 bg-light">
       <h3>{title}</h3>
@@ -27,20 +42,18 @@ const Task = ({ id, title, description, priority, column, showToastWithMessage }
       }
 
       <div className="task-actions">
-        <Button
-          variant="primary"
-          size="sm"
-          onClick={handleRestore}
-        >
-          Restore
-        </Button>
-        <Button
-          variant="danger"
-          size="sm"
-          onClick={handleDelete}
-        >
-          Delete
-        </Button>
+        {
+          buttons.map((v, i) => (
+            <Button
+              key={i}
+              variant={v.variant}
+              size={v.size}
+              onClick={v.onClick}
+            >
+              {v.label}
+            </Button>
+          ))
+        }
       </div>
     </div>
   )
