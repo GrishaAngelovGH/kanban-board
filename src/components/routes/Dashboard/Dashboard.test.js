@@ -8,6 +8,8 @@ import {
 
 import Dashboard from "./Dashboard"
 
+jest.mock('react-chartjs-2', () => ({ Bar: () => <div>Bar Chart</div> }))
+
 test("should render Dashboard route component", () => {
   const view = render(
     <Router>

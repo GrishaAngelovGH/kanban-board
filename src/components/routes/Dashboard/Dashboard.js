@@ -1,5 +1,7 @@
 import Page from "components/routes/Page"
 
+import TasksPerMemberCard from "./Cards/TasksPerMemberCard"
+
 const Dashboard = () => {
   const description = (
     <div className="col-10">
@@ -11,7 +13,9 @@ const Dashboard = () => {
     <Page description={description}>
       <div className="row g-0 mt-3 justify-content-center overflow-auto tasks">
         <div className="col-10">
-          Content
+          <div className="row mb-5 gap-5 justify-content-between">
+            <TasksPerMemberCard />
+          </div>
         </div>
       </div>
     </Page>
