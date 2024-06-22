@@ -1,12 +1,12 @@
 import { render } from "@testing-library/react"
 
-import TasksPerMemberCard from "./TasksPerMemberCard"
+import TasksPerColumnCard from "./TasksPerColumnCard"
 
 jest.mock('react-chartjs-2', () => ({ Bar: () => <div>Bar Chart</div> }))
 
-test("should render TasksPerMemberCard component", () => {
+test("should render TasksPerColumnCard component", () => {
   const view = render(
-    <TasksPerMemberCard />
+    <TasksPerColumnCard />
   )
 
   expect(view).toMatchSnapshot()

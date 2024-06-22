@@ -11,7 +11,6 @@ import {
 import { Bar } from "react-chartjs-2"
 import Card from "../Card"
 
-import userRepository from "persistent/persistentUserRepository"
 import boardRepository from "persistent/persistentKanbanBoardRepository"
 
 ChartJS.register(
@@ -23,11 +22,11 @@ ChartJS.register(
   Legend
 )
 
-const users = userRepository.getUsers()
+const columns = boardRepository.getColumns()
 
-const labels = users.map(v => v.name)
+const labels = columns.map(v => v.title)
 
-const chartData = users.map(v => boardRepository.getColumnsWithAssignedTasksForUser(v.id).reduce((a, b) => a + b.items.length, 0))
+const chartData = columns.map(v => v.items.length)
 
 const options = {
   responsive: true,
@@ -42,17 +41,17 @@ const data = {
   labels,
   datasets: [
     {
-      label: "Tasks Per Member",
+      label: "Tasks Per Column Card",
       data: chartData,
       backgroundColor: "#80b3ce",
     }
   ],
 }
 
-const TasksPerMemberCard = () => (
-  <Card title="Tasks Per Member Card">
+const TasksPerColumnCard = () => (
+  <Card title="Tasks Per Column Card">
     <Bar options={options} data={data} />
   </Card>
 )
 
-export default TasksPerMemberCard
+export default TasksPerColumnCard

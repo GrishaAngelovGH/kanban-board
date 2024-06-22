@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render TasksPerMemberCard component 1`] = `
+exports[`should render TasksPerColumnCard component 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
@@ -15,7 +15,7 @@ Object {
           <p
             class="m-0 ms-2"
           >
-            Tasks Per Member Card
+            Tasks Per Column Card
           </p>
           <div
             class="d-flex align-items-center"
@@ -49,7 +49,7 @@ Object {
         <p
           class="m-0 ms-2"
         >
-          Tasks Per Member Card
+          Tasks Per Column Card
         </p>
         <div
           class="d-flex align-items-center"
