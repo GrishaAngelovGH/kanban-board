@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="row g-0 vh-100"
+        class="row g-0 min-vh-100"
         style="background-image: url(geometric-triangle-shapes-background.jpg); background-size: cover;"
       >
         <div
@@ -105,6 +105,41 @@ Object {
                   </div>
                 </div>
               </div>
+              <div
+                class="row mb-5 gap-5 justify-content-between"
+              >
+                <div
+                  class="col col-md-5 bg-white rounded shadow"
+                  style="height: 350px;"
+                >
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <p
+                      class="m-0 ms-2"
+                    >
+                      Tasks Per Priority Card
+                    </p>
+                    <div
+                      class="d-flex align-items-center"
+                    >
+                      <i
+                        class="bi bi-star fs-4 text-warning"
+                      />
+                      <i
+                        class="bi bi-x fs-2"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="d-flex justify-content-center"
+                  >
+                    <div>
+                      Bar Chart
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -113,7 +148,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="row g-0 vh-100"
+      class="row g-0 min-vh-100"
       style="background-image: url(geometric-triangle-shapes-background.jpg); background-size: cover;"
     >
       <div
@@ -191,6 +226,41 @@ Object {
                     class="m-0 ms-2"
                   >
                     Tasks Per Column Card
+                  </p>
+                  <div
+                    class="d-flex align-items-center"
+                  >
+                    <i
+                      class="bi bi-star fs-4 text-warning"
+                    />
+                    <i
+                      class="bi bi-x fs-2"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="d-flex justify-content-center"
+                >
+                  <div>
+                    Bar Chart
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="row mb-5 gap-5 justify-content-between"
+            >
+              <div
+                class="col col-md-5 bg-white rounded shadow"
+                style="height: 350px;"
+              >
+                <div
+                  class="d-flex justify-content-between align-items-center"
+                >
+                  <p
+                    class="m-0 ms-2"
+                  >
+                    Tasks Per Priority Card
                   </p>
                   <div
                     class="d-flex align-items-center"

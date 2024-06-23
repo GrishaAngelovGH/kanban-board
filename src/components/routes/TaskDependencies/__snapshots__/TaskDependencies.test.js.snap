@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="row g-0 vh-100"
+        class="row g-0 min-vh-100"
         style="background-image: url(geometric-triangle-shapes-background.jpg); background-size: cover;"
       >
         <div
@@ -119,7 +119,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="row g-0 vh-100"
+      class="row g-0 min-vh-100"
       style="background-image: url(geometric-triangle-shapes-background.jpg); background-size: cover;"
     >
       <div
