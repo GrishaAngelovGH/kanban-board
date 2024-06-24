@@ -139,6 +139,37 @@ Object {
                     </div>
                   </div>
                 </div>
+                <div
+                  class="col col-md-5 bg-white rounded shadow"
+                  style="height: 350px;"
+                >
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <p
+                      class="m-0 ms-2"
+                    >
+                      Tasks Activity
+                    </p>
+                    <div
+                      class="d-flex align-items-center"
+                    >
+                      <i
+                        class="bi bi-star fs-4 text-warning"
+                      />
+                      <i
+                        class="bi bi-x fs-2"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="d-flex justify-content-center"
+                  >
+                    <div>
+                      Bar Chart
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -261,6 +292,37 @@ Object {
                     class="m-0 ms-2"
                   >
                     Tasks Per Priority Card
+                  </p>
+                  <div
+                    class="d-flex align-items-center"
+                  >
+                    <i
+                      class="bi bi-star fs-4 text-warning"
+                    />
+                    <i
+                      class="bi bi-x fs-2"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="d-flex justify-content-center"
+                >
+                  <div>
+                    Bar Chart
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col col-md-5 bg-white rounded shadow"
+                style="height: 350px;"
+              >
+                <div
+                  class="d-flex justify-content-between align-items-center"
+                >
+                  <p
+                    class="m-0 ms-2"
+                  >
+                    Tasks Activity
                   </p>
                   <div
                     class="d-flex align-items-center"

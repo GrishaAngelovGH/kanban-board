@@ -3,6 +3,7 @@ import Page from "components/routes/Page"
 import TasksPerMemberCard from "./Cards/TasksPerMemberCard"
 import TasksPerColumnCard from "./Cards/TasksPerColumnCard"
 import TasksPerPriorityCard from "./Cards/TasksPerPriorityCard"
+import TasksActivityCard from "./Cards/TasksActivityCard"
 
 const Dashboard = () => {
   const description = (
@@ -21,6 +22,7 @@ const Dashboard = () => {
           </div>
           <div className="row mb-5 gap-5 justify-content-between">
             <TasksPerPriorityCard />
+            <TasksActivityCard />
           </div>
         </div>
       </div>
