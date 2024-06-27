@@ -1,4 +1,4 @@
-const Toolbar = ({ items }) => (
+const Toolbar = ({ items, onClick }) => (
   <div className="mt-2 row g-0 justify-content-center">
     <div className="col-11 bg-primary-subtle rounded p-2">
       <p className="text-secondary text-center">Click on any item to add the corresponding card to the dashboard</p>
@@ -7,8 +7,10 @@ const Toolbar = ({ items }) => (
           items
             .map((v, i) => (
               <div
+                data-testid="toolbar-item"
                 key={i}
                 className="col-md-2 bg-primary text-white text-center rounded"
+                onClick={() => { onClick(v.id) }}
               >
                 {v.title}
               </div>

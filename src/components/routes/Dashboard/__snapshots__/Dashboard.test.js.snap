@@ -34,7 +34,269 @@ Object {
             </div>
           </div>
           <div
-            class="row g-0 mt-3 justify-content-center overflow-auto tasks"
+            class="mt-2 row g-0 justify-content-center"
+          >
+            <div
+              class="col-11 bg-primary-subtle rounded p-2"
+            >
+              <p
+                class="text-secondary text-center"
+              >
+                Click on any item to add the corresponding card to the dashboard
+              </p>
+              <div
+                class="row flex-column flex-md-row g-1 justify-content-evenly"
+              >
+                <div
+                  class="col-md-2 bg-primary text-white text-center rounded"
+                  data-testid="toolbar-item"
+                >
+                  Tasks Per Member Card
+                </div>
+                <div
+                  class="col-md-2 bg-primary text-white text-center rounded"
+                  data-testid="toolbar-item"
+                >
+                  Tasks Per Column Card
+                </div>
+                <div
+                  class="col-md-2 bg-primary text-white text-center rounded"
+                  data-testid="toolbar-item"
+                >
+                  Tasks Per Priority Card
+                </div>
+                <div
+                  class="col-md-2 bg-primary text-white text-center rounded"
+                  data-testid="toolbar-item"
+                >
+                  Tasks Activity Card
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="row g-0 mt-3 justify-content-center"
+          >
+            <div
+              class="col-10"
+            >
+              <div
+                class="row mb-5 gap-5 justify-content-between"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="row g-0 min-vh-100"
+      style="background-image: url(geometric-triangle-shapes-background.jpg); background-size: cover;"
+    >
+      <div
+        class="col-12"
+      >
+        <div
+          class="row g-0 bg-light p-2 shadow align-items-center"
+        >
+          <div
+            class="col-2 col-md-1"
+          >
+            <a
+              class="btn btn-light bi bi-arrow-left border"
+              href="/"
+            />
+          </div>
+          <div
+            class="col-10"
+          >
+            <h3
+              class="m-0 text-center"
+            >
+              Dashboard
+            </h3>
+          </div>
+        </div>
+        <div
+          class="mt-2 row g-0 justify-content-center"
+        >
+          <div
+            class="col-11 bg-primary-subtle rounded p-2"
+          >
+            <p
+              class="text-secondary text-center"
+            >
+              Click on any item to add the corresponding card to the dashboard
+            </p>
+            <div
+              class="row flex-column flex-md-row g-1 justify-content-evenly"
+            >
+              <div
+                class="col-md-2 bg-primary text-white text-center rounded"
+                data-testid="toolbar-item"
+              >
+                Tasks Per Member Card
+              </div>
+              <div
+                class="col-md-2 bg-primary text-white text-center rounded"
+                data-testid="toolbar-item"
+              >
+                Tasks Per Column Card
+              </div>
+              <div
+                class="col-md-2 bg-primary text-white text-center rounded"
+                data-testid="toolbar-item"
+              >
+                Tasks Per Priority Card
+              </div>
+              <div
+                class="col-md-2 bg-primary text-white text-center rounded"
+                data-testid="toolbar-item"
+              >
+                Tasks Activity Card
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="row g-0 mt-3 justify-content-center"
+        >
+          <div
+            class="col-10"
+          >
+            <div
+              class="row mb-5 gap-5 justify-content-between"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`should render Dashboard route component with selected card 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="row g-0 min-vh-100"
+        style="background-image: url(geometric-triangle-shapes-background.jpg); background-size: cover;"
+      >
+        <div
+          class="col-12"
+        >
+          <div
+            class="row g-0 bg-light p-2 shadow align-items-center"
+          >
+            <div
+              class="col-2 col-md-1"
+            >
+              <a
+                class="btn btn-light bi bi-arrow-left border"
+                href="/"
+              />
+            </div>
+            <div
+              class="col-10"
+            >
+              <h3
+                class="m-0 text-center"
+              >
+                Dashboard
+              </h3>
+            </div>
+          </div>
+          <div
+            class="mt-2 row g-0 justify-content-center"
+          >
+            <div
+              class="col-11 bg-primary-subtle rounded p-2"
+            >
+              <p
+                class="text-secondary text-center"
+              >
+                Click on any item to add the corresponding card to the dashboard
+              </p>
+              <div
+                class="row flex-column flex-md-row g-1 justify-content-evenly"
+              >
+                <div
+                  class="col-md-2 bg-primary text-white text-center rounded"
+                  data-testid="toolbar-item"
+                >
+                  Tasks Per Column Card
+                </div>
+                <div
+                  class="col-md-2 bg-primary text-white text-center rounded"
+                  data-testid="toolbar-item"
+                >
+                  Tasks Per Priority Card
+                </div>
+                <div
+                  class="col-md-2 bg-primary text-white text-center rounded"
+                  data-testid="toolbar-item"
+                >
+                  Tasks Activity Card
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="row g-0 mt-3 justify-content-center"
           >
             <div
               class="col-10"
@@ -53,82 +315,6 @@ Object {
                       class="m-0"
                     >
                       Tasks Per Member Card
-                    </p>
-                    <i
-                      class="bi bi-star fs-4 text-warning"
-                    />
-                  </div>
-                  <div
-                    class="d-flex justify-content-center"
-                  >
-                    <div>
-                      Bar Chart
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="col col-md-5 bg-white rounded shadow"
-                  style="height: 350px;"
-                >
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <p
-                      class="m-0"
-                    >
-                      Tasks Per Column Card
-                    </p>
-                    <i
-                      class="bi bi-star fs-4 text-warning"
-                    />
-                  </div>
-                  <div
-                    class="d-flex justify-content-center"
-                  >
-                    <div>
-                      Bar Chart
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="row mb-5 gap-5 justify-content-between"
-              >
-                <div
-                  class="col col-md-5 bg-white rounded shadow"
-                  style="height: 350px;"
-                >
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <p
-                      class="m-0"
-                    >
-                      Tasks Per Priority Card
-                    </p>
-                    <i
-                      class="bi bi-star fs-4 text-warning"
-                    />
-                  </div>
-                  <div
-                    class="d-flex justify-content-center"
-                  >
-                    <div>
-                      Bar Chart
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="col col-md-5 bg-white rounded shadow"
-                  style="height: 350px;"
-                >
-                  <div
-                    class="d-flex justify-content-between align-items-center"
-                  >
-                    <p
-                      class="m-0"
-                    >
-                      Tasks Activity
                     </p>
                     <i
                       class="bi bi-star fs-4 text-warning"
@@ -179,7 +365,42 @@ Object {
           </div>
         </div>
         <div
-          class="row g-0 mt-3 justify-content-center overflow-auto tasks"
+          class="mt-2 row g-0 justify-content-center"
+        >
+          <div
+            class="col-11 bg-primary-subtle rounded p-2"
+          >
+            <p
+              class="text-secondary text-center"
+            >
+              Click on any item to add the corresponding card to the dashboard
+            </p>
+            <div
+              class="row flex-column flex-md-row g-1 justify-content-evenly"
+            >
+              <div
+                class="col-md-2 bg-primary text-white text-center rounded"
+                data-testid="toolbar-item"
+              >
+                Tasks Per Column Card
+              </div>
+              <div
+                class="col-md-2 bg-primary text-white text-center rounded"
+                data-testid="toolbar-item"
+              >
+                Tasks Per Priority Card
+              </div>
+              <div
+                class="col-md-2 bg-primary text-white text-center rounded"
+                data-testid="toolbar-item"
+              >
+                Tasks Activity Card
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="row g-0 mt-3 justify-content-center"
         >
           <div
             class="col-10"
@@ -198,82 +419,6 @@ Object {
                     class="m-0"
                   >
                     Tasks Per Member Card
-                  </p>
-                  <i
-                    class="bi bi-star fs-4 text-warning"
-                  />
-                </div>
-                <div
-                  class="d-flex justify-content-center"
-                >
-                  <div>
-                    Bar Chart
-                  </div>
-                </div>
-              </div>
-              <div
-                class="col col-md-5 bg-white rounded shadow"
-                style="height: 350px;"
-              >
-                <div
-                  class="d-flex justify-content-between align-items-center"
-                >
-                  <p
-                    class="m-0"
-                  >
-                    Tasks Per Column Card
-                  </p>
-                  <i
-                    class="bi bi-star fs-4 text-warning"
-                  />
-                </div>
-                <div
-                  class="d-flex justify-content-center"
-                >
-                  <div>
-                    Bar Chart
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="row mb-5 gap-5 justify-content-between"
-            >
-              <div
-                class="col col-md-5 bg-white rounded shadow"
-                style="height: 350px;"
-              >
-                <div
-                  class="d-flex justify-content-between align-items-center"
-                >
-                  <p
-                    class="m-0"
-                  >
-                    Tasks Per Priority Card
-                  </p>
-                  <i
-                    class="bi bi-star fs-4 text-warning"
-                  />
-                </div>
-                <div
-                  class="d-flex justify-content-center"
-                >
-                  <div>
-                    Bar Chart
-                  </div>
-                </div>
-              </div>
-              <div
-                class="col col-md-5 bg-white rounded shadow"
-                style="height: 350px;"
-              >
-                <div
-                  class="d-flex justify-content-between align-items-center"
-                >
-                  <p
-                    class="m-0"
-                  >
-                    Tasks Activity
                   </p>
                   <i
                     class="bi bi-star fs-4 text-warning"

@@ -21,11 +21,13 @@ Object {
           >
             <div
               class="col-md-2 bg-primary text-white text-center rounded"
+              data-testid="toolbar-item"
             >
               Item 1
             </div>
             <div
               class="col-md-2 bg-primary text-white text-center rounded"
+              data-testid="toolbar-item"
             >
               Item 2
             </div>
@@ -51,11 +53,13 @@ Object {
         >
           <div
             class="col-md-2 bg-primary text-white text-center rounded"
+            data-testid="toolbar-item"
           >
             Item 1
           </div>
           <div
             class="col-md-2 bg-primary text-white text-center rounded"
+            data-testid="toolbar-item"
           >
             Item 2
           </div>
