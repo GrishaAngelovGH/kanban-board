@@ -17,9 +17,16 @@ Object {
           >
             Tasks Per Column Card
           </p>
-          <i
-            class="bi bi-star fs-4 text-warning"
-          />
+          <div
+            class="d-flex align-items-center"
+          >
+            <i
+              class="bi bi-star fs-4 text-warning"
+            />
+            <i
+              class="bi bi-x fs-2"
+            />
+          </div>
         </div>
         <div
           class="d-flex justify-content-center"
@@ -44,9 +51,16 @@ Object {
         >
           Tasks Per Column Card
         </p>
-        <i
-          class="bi bi-star fs-4 text-warning"
-        />
+        <div
+          class="d-flex align-items-center"
+        >
+          <i
+            class="bi bi-star fs-4 text-warning"
+          />
+          <i
+            class="bi bi-x fs-2"
+          />
+        </div>
       </div>
       <div
         class="d-flex justify-content-center"

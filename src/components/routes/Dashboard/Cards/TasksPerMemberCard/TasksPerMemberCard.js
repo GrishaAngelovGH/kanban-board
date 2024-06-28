@@ -49,8 +49,8 @@ const data = {
   ],
 }
 
-const TasksPerMemberCard = () => (
-  <Card title="Tasks Per Member Card">
+const TasksPerMemberCard = ({ id, onClose }) => (
+  <Card id={id} title="Tasks Per Member Card" onClose={onClose}>
     <Bar options={options} data={data} />
   </Card>
 )

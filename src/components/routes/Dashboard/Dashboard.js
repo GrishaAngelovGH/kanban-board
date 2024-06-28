@@ -23,6 +23,12 @@ const Dashboard = () => {
     setItems(newItems)
   }
 
+  const handleCardCloseClick = id => {
+    const newItems = { ...items }
+    newItems[id].show = false
+    setItems(newItems)
+  }
+
   const showToolbar = !Object.values(items).every(v => v.show)
 
   const toolbarItems = Object.values(items).filter(v => !v.show)
@@ -47,7 +53,7 @@ const Dashboard = () => {
               Object.values(items)
                 .filter(v => v.show)
                 .map(({ id, Component }) => (
-                  <Component key={id} />
+                  <Component key={id} id={id} onClose={handleCardCloseClick} />
                 ))
             }
           </div>

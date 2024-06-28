@@ -60,8 +60,8 @@ const data = {
   ],
 }
 
-const TasksActivityCard = () => (
-  <Card title="Tasks Activity">
+const TasksActivityCard = ({ id, onClose }) => (
+  <Card id={id} title="Tasks Activity" onClose={onClose}>
     <Bar options={options} data={data} />
   </Card>
 )

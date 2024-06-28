@@ -48,8 +48,8 @@ const data = {
   ],
 }
 
-const TasksPerColumnCard = () => (
-  <Card title="Tasks Per Column Card">
+const TasksPerColumnCard = ({ id, onClose }) => (
+  <Card id={id} title="Tasks Per Column Card" onClose={onClose}>
     <Bar options={options} data={data} />
   </Card>
 )

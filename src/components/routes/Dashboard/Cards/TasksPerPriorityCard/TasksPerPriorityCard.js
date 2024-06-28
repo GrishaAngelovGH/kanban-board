@@ -60,8 +60,8 @@ const data = {
   ],
 }
 
-const TasksPerPriorityCard = () => (
-  <Card title="Tasks Per Priority Card">
+const TasksPerPriorityCard = ({ id, onClose }) => (
+  <Card id={id} title="Tasks Per Priority Card" onClose={onClose}>
     <Bar options={options} data={data} />
   </Card>
 )
