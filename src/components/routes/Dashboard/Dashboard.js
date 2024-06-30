@@ -9,12 +9,14 @@ import TasksPerColumnCard from "./Cards/TasksPerColumnCard"
 import TasksPerPriorityCard from "./Cards/TasksPerPriorityCard"
 import TasksActivityCard from "./Cards/TasksActivityCard"
 
+import dashboardRepository from "persistent/persistentDashboardRepository"
+
 const Dashboard = () => {
   const [items, setItems] = useState({
-    "2739616380548479": { id: "2739616380548479", title: "Tasks Per Member Card", show: false, pinned: false, Component: TasksPerMemberCard },
-    "8793129700401691": { id: "8793129700401691", title: "Tasks Per Column Card", show: false, pinned: false, Component: TasksPerColumnCard },
-    "1758635645386716": { id: "1758635645386716", title: "Tasks Per Priority Card", show: false, pinned: false, Component: TasksPerPriorityCard },
-    "7538651463334785": { id: "7538651463334785", title: "Tasks Activity Card", show: false, pinned: false, Component: TasksActivityCard }
+    "2739616380548479": { id: "2739616380548479", title: "Tasks Per Member Card", show: false, isFavorite: dashboardRepository.isFavoriteCard("2739616380548479"), Component: TasksPerMemberCard },
+    "8793129700401691": { id: "8793129700401691", title: "Tasks Per Column Card", show: false, isFavorite: dashboardRepository.isFavoriteCard("8793129700401691"), Component: TasksPerColumnCard },
+    "1758635645386716": { id: "1758635645386716", title: "Tasks Per Priority Card", show: false, isFavorite: dashboardRepository.isFavoriteCard("1758635645386716"), Component: TasksPerPriorityCard },
+    "7538651463334785": { id: "7538651463334785", title: "Tasks Activity Card", show: false, isFavorite: dashboardRepository.isFavoriteCard("7538651463334785"), Component: TasksActivityCard }
   })
 
   const handleToolbarItemClick = id => {
@@ -29,9 +31,25 @@ const Dashboard = () => {
     setItems(newItems)
   }
 
-  const showToolbar = !Object.values(items).every(v => v.show)
+  const handleSaveCardAsFavorite = id => {
+    dashboardRepository.saveCardAsFavorite(id)
 
-  const toolbarItems = Object.values(items).filter(v => !v.show)
+    const newItems = { ...items }
+    newItems[id].isFavorite = true
+    setItems(newItems)
+  }
+
+  const handleRemoveCardAsFavorite = id => {
+    dashboardRepository.removeCardAsFavorite(id)
+
+    const newItems = { ...items }
+    newItems[id].isFavorite = false
+    setItems(newItems)
+  }
+
+  const showToolbar = !Object.values(items).every(v => v.show || v.isFavorite)
+
+  const toolbarItems = Object.values(items).filter(v => !v.show && !v.isFavorite)
 
   const description = (
     <div className="col-10">
@@ -51,9 +69,16 @@ const Dashboard = () => {
           <div className="row mb-5 gap-5 justify-content-between">
             {
               Object.values(items)
-                .filter(v => v.show)
+                .filter(v => v.show || v.isFavorite)
                 .map(({ id, Component }) => (
-                  <Component key={id} id={id} onClose={handleCardCloseClick} />
+                  <Component
+                    key={id}
+                    id={id}
+                    isFavorite={dashboardRepository.isFavoriteCard(id)}
+                    onAddAsFavorite={handleSaveCardAsFavorite}
+                    onRemoveAsFavorite={handleRemoveCardAsFavorite}
+                    onClose={handleCardCloseClick}
+                  />
                 ))
             }
           </div>

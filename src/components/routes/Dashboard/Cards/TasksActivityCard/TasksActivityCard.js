@@ -60,8 +60,15 @@ const data = {
   ],
 }
 
-const TasksActivityCard = ({ id, onClose }) => (
-  <Card id={id} title="Tasks Activity" onClose={onClose}>
+const TasksActivityCard = ({ id, isFavorite, onAddAsFavorite, onRemoveAsFavorite, onClose }) => (
+  <Card
+    id={id}
+    title="Tasks Activity"
+    isFavorite={isFavorite}
+    onAddAsFavorite={onAddAsFavorite}
+    onRemoveAsFavorite={onRemoveAsFavorite}
+    onClose={onClose}
+  >
     <Bar options={options} data={data} />
   </Card>
 )

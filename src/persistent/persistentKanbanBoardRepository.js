@@ -382,6 +382,7 @@ const board = {
     localStorage.removeItem("columns")
     localStorage.removeItem("priority")
     localStorage.removeItem("searchCriteria")
+    localStorage.removeItem("dashboardCards")
     localStorage.removeItem("boardTitle")
     localStorage.setItem("history", JSON.stringify({}))
   }

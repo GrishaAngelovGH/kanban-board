@@ -60,8 +60,15 @@ const data = {
   ],
 }
 
-const TasksPerPriorityCard = ({ id, onClose }) => (
-  <Card id={id} title="Tasks Per Priority Card" onClose={onClose}>
+const TasksPerPriorityCard = ({ id, isFavorite, onAddAsFavorite, onRemoveAsFavorite, onClose }) => (
+  <Card
+    id={id}
+    title="Tasks Per Priority Card"
+    isFavorite={isFavorite}
+    onAddAsFavorite={onAddAsFavorite}
+    onRemoveAsFavorite={onRemoveAsFavorite}
+    onClose={onClose}
+  >
     <Bar options={options} data={data} />
   </Card>
 )
