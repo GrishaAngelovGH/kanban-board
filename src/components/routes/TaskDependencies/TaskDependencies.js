@@ -1,8 +1,8 @@
-import Badge from "react-bootstrap/Badge"
 import Button from "react-bootstrap/Button"
 import ListGroup from "react-bootstrap/ListGroup"
 
 import Page from "components/routes/Page"
+import TaskList from "./TaskList"
 
 import boardRepository from "persistent/persistentKanbanBoardRepository"
 
@@ -32,45 +32,12 @@ const TaskDependencies = ({ taskId, columnId, showToastWithMessage }) => {
 
         <div className="row g-0 mt-3 justify-content-around overflow-auto task-dependencies">
           <div className="col-10 col-md-4">
-            <ListGroup>
-              <ListGroup.Item className="bg-secondary-subtle text-secondary fw-bold text-center">
-                All columns with tasks
-              </ListGroup.Item>
-              {
-                columns
-                  .filter(col => !col.markedAsDone && !col.items.every(v => boardRepository.isDependencyTask(v.id)))
-                  .map(col => (
-                    <ListGroup.Item key={col.id}>
-                      <Badge className="mb-3">{col.title}</Badge>
-                      {
-                        col.items.map(v => (
-                          <div key={v.id}>
-                            {
-                              !boardRepository.isDependencyTask(v.id) && (
-                                <ListGroup.Item className="border border-3 rounded mb-3">
-                                  <p>{v.title}</p>
-                                  <Button
-                                    size="sm"
-                                    variant="outline-primary"
-                                    className="w-100"
-                                    disabled={v.id === taskId}
-                                    onClick={(() => {
-                                      boardRepository.addDependencyTask(taskId, columnId, v.id, col.id)
-                                      showToastWithMessage("The dependency task is successfully added")
-                                    })}
-                                  >
-                                    Add as a dependency
-                                  </Button>
-                                </ListGroup.Item>
-                              )
-                            }
-                          </div>
-                        ))
-                      }
-                    </ListGroup.Item>
-                  ))
-              }
-            </ListGroup>
+            <TaskList
+              columnId={columnId}
+              taskId={taskId}
+              columns={columns}
+              showToastWithMessage={showToastWithMessage}
+            />
           </div>
           <div className="col-10 col-md-4">
             <ListGroup className="mt-3 mt-md-0">

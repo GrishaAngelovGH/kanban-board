@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render TaskDependencies/TaskList component 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="list-group"
+      >
+        <div
+          class="bg-secondary-subtle text-secondary fw-bold text-center list-group-item"
+        >
+          All columns with tasks
+        </div>
+        <div
+          class="list-group-item"
+        >
+          <span
+            class="mb-3 badge bg-primary"
+          >
+            In Progress
+          </span>
+          <div>
+            <div
+              class="border border-3 rounded mb-3 list-group-item"
+            >
+              <p>
+                Implement ProductDetailPage component
+              </p>
+              <button
+                class="w-100 btn btn-outline-primary btn-sm"
+                disabled=""
+                type="button"
+              >
+                Add as a dependency
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="list-group"
+    >
+      <div
+        class="bg-secondary-subtle text-secondary fw-bold text-center list-group-item"
+      >
+        All columns with tasks
+      </div>
+      <div
+        class="list-group-item"
+      >
+        <span
+          class="mb-3 badge bg-primary"
+        >
+          In Progress
+        </span>
+        <div>
+          <div
+            class="border border-3 rounded mb-3 list-group-item"
+          >
+            <p>
+              Implement ProductDetailPage component
+            </p>
+            <button
+              class="w-100 btn btn-outline-primary btn-sm"
+              disabled=""
+              type="button"
+            >
+              Add as a dependency
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
