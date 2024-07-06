@@ -6,6 +6,17 @@ import Modal from "components/Modal"
 
 import settingsRepository from "persistent/persistentSettingsRepository"
 
+const Setting = ({ title, children }) => (
+  <>
+    <ListGroup.Item className="fw-bold bg-secondary-subtle">
+      {title}
+    </ListGroup.Item>
+    {
+      children
+    }
+  </>
+)
+
 const Settings = ({ show, onClose, onConfirm }) => {
   const [background, setBackground] = useState(settingsRepository.getBackground())
   const [layout, setLayout] = useState(settingsRepository.getLayout())
@@ -48,67 +59,66 @@ const Settings = ({ show, onClose, onConfirm }) => {
       title="Settings"
       body={
         <ListGroup className="overflow-auto" style={{ height: 320 }}>
-          <ListGroup.Item className="fw-bold bg-secondary-subtle">
-            Background
-          </ListGroup.Item>
-          {
-            backgrounds.map((v, i) => (
-              <ListGroup.Item
-                key={i}
-                action
-                onClick={handleBackgroundClick}
-                className="d-flex justify-content-between align-items-center"
-                style={{ height: 50 }}
-              >
-                <span>{v}</span>
-                {v === background && <i className="bi bi-check-circle-fill text-primary fs-5"></i>}
-              </ListGroup.Item>
-            ))
-          }
-          <ListGroup.Item className="fw-bold bg-secondary-subtle">
-            Layout View
-          </ListGroup.Item>
-          {
-            layoutOptions.map((v, i) => (
-              <ListGroup.Item
-                key={i}
-                action
-                onClick={handleLayoutClick}
-                className="d-flex justify-content-between align-items-center"
-                style={{ height: 50 }}
-              >
-                <span><i className={`bi bi-${v.icon} me-2`}></i>{v.label}</span>
-                {v.label === layout && <i className="bi bi-check-circle-fill text-primary fs-5"></i>}
-              </ListGroup.Item>
-            ))
-          }
-          <ListGroup.Item className="fw-bold bg-secondary-subtle">
-            Column Style
-          </ListGroup.Item>
-          {
-            columnStyleOptions.map((v, i) => (
-              <ListGroup.Item
-                key={i}
-                action
-                onClick={handleColumnStyleClick}
-                className="d-flex justify-content-between align-items-center"
-                style={{ height: 50 }}
-              >
-                <span>{v}</span>
-                {v === columnStyle && <i className="bi bi-check-circle-fill text-primary fs-5"></i>}
-              </ListGroup.Item>
-            ))
-          }
-          <ListGroup.Item className="fw-bold bg-secondary-subtle">
-            Keyboard Shortcuts
-          </ListGroup.Item>
-          {
-            keyboardShortcuts.map((v, i) => (
-              <ListGroup.Item key={i}>
-                Press {v.shortcut} to {v.action}
-              </ListGroup.Item>
-            ))
-          }
+          <Setting title="Background">
+            {
+              backgrounds.map((v, i) => (
+                <ListGroup.Item
+                  key={i}
+                  action
+                  onClick={handleBackgroundClick}
+                  className="d-flex justify-content-between align-items-center"
+                  style={{ height: 50 }}
+                >
+                  <span>{v}</span>
+                  {v === background && <i className="bi bi-check-circle-fill text-primary fs-5"></i>}
+                </ListGroup.Item>
+              ))
+            }
+          </Setting>
+
+          <Setting title="Layout View">
+            {
+              layoutOptions.map((v, i) => (
+                <ListGroup.Item
+                  key={i}
+                  action
+                  onClick={handleLayoutClick}
+                  className="d-flex justify-content-between align-items-center"
+                  style={{ height: 50 }}
+                >
+                  <span><i className={`bi bi-${v.icon} me-2`}></i>{v.label}</span>
+                  {v.label === layout && <i className="bi bi-check-circle-fill text-primary fs-5"></i>}
+                </ListGroup.Item>
+              ))
+            }
+          </Setting>
+
+          <Setting title="Column Style">
+            {
+              columnStyleOptions.map((v, i) => (
+                <ListGroup.Item
+                  key={i}
+                  action
+                  onClick={handleColumnStyleClick}
+                  className="d-flex justify-content-between align-items-center"
+                  style={{ height: 50 }}
+                >
+                  <span>{v}</span>
+                  {v === columnStyle && <i className="bi bi-check-circle-fill text-primary fs-5"></i>}
+                </ListGroup.Item>
+              ))
+            }
+          </Setting>
+
+          <Setting title="Keyboard Shortcuts">
+            {
+              keyboardShortcuts.map((v, i) => (
+                <ListGroup.Item key={i}>
+                  Press {v.shortcut} to {v.action}
+                </ListGroup.Item>
+              ))
+            }
+          </Setting>
         </ListGroup>
       }
     />
