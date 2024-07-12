@@ -56,7 +56,7 @@ const TaskModal = ({
                         id="tbg-check-1"
                         value={1}
                         variant="outline-primary"
-                        onChange={onTemplateChange}
+                        onChange={({ target: { checked } }) => { onTemplateChange(checked) }}
                       >
                         Use as a template
                       </ToggleButton>)
@@ -80,18 +80,27 @@ const TaskModal = ({
                   value={title}
                   placeholder="Title"
                   className="mb-3"
-                  onChange={onTitleChange}
+                  onChange={({ target: { value } }) => { onTitleChange(value) }}
                 />
               )
             }
 
             {
-              !showTemplates && <Editor value={description} onChange={onDescriptionChange} />
+              !showTemplates && (
+                <Editor
+                  value={description}
+                  onChange={({ target: { value } }) => { onDescriptionChange(value) }}
+                />
+              )
             }
 
             {
               !isTemplate && !showTemplates && (
-                <Form.Select value={priority} onChange={onPriorityChange} className="mt-3">
+                <Form.Select
+                  value={priority}
+                  onChange={({ target: { value } }) => { onPriorityChange(value) }}
+                  className="mt-3"
+                >
                   <option value="" className="text-secondary fw-bold">No Priority</option>
                   <option value="low" className="text-warning fw-bold">Low Priority</option>
                   <option value="medium" className="text-success fw-bold">Medium Priority</option>
@@ -107,7 +116,7 @@ const TaskModal = ({
                   <button
                     className="btn btn-primary w-100"
                     onClick={() => {
-                      onDescriptionChange({ target: { value: v.description } })
+                      onDescriptionChange(v.description)
                       onShowTemplatesChange()
                       setValue([])
                     }}

@@ -11,19 +11,7 @@ const NewTaskModal = ({ show, onClose, onConfirm }) => {
   const [isTemplate, setIsTemplate] = useState(false)
   const [showTemplates, setShowTemplates] = useState(false)
 
-  const handleTitleChange = ({ target: { value } }) => {
-    setTitle(value)
-  }
-
-  const handleDescriptionChange = ({ target: { value } }) => {
-    setDescription(value)
-  }
-
-  const handlePriorityChange = ({ target: { value } }) => {
-    setPriority(value)
-  }
-
-  const handleTemplateChange = ({ target: { checked } }) => {
+  const handleTemplateChange = checked => {
     setIsTemplate(checked)
     setTitle("")
     setPriority("")
@@ -34,17 +22,16 @@ const NewTaskModal = ({ show, onClose, onConfirm }) => {
   }
 
   const handleClose = () => {
-    setTitle("")
-    setDescription("")
-    setPriority("")
-    setIsTemplate(false)
-    setShowTemplates(false)
-
+    clearFields()
     onClose()
   }
 
   const handleConfirm = () => {
     onConfirm(title, description, priority, isTemplate)
+    clearFields()
+  }
+
+  const clearFields = () => {
     setTitle("")
     setDescription("")
     setPriority("")
@@ -56,9 +43,9 @@ const NewTaskModal = ({ show, onClose, onConfirm }) => {
 
   const handlers = {
     onShowTemplatesChange: handleShowTemplatesChange,
-    onTitleChange: handleTitleChange,
-    onDescriptionChange: handleDescriptionChange,
-    onPriorityChange: handlePriorityChange,
+    onTitleChange: setTitle,
+    onDescriptionChange: setDescription,
+    onPriorityChange: setPriority,
     onTemplateChange: handleTemplateChange,
     onClose: handleClose,
     onConfirm: handleConfirm
