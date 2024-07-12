@@ -218,7 +218,6 @@ Object {
                     contenteditable="true"
                   >
                     Task Description
-                    
                   </div>
                 </div>
                 <select
@@ -540,7 +539,6 @@ Object {
                     contenteditable="true"
                   >
                     Template Description
-                    
                   </div>
                 </div>
               </div>

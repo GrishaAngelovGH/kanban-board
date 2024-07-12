@@ -16,9 +16,18 @@ describe("Modals", () => {
     onToggleUploadKanbanBoardModal: () => { }
   }
 
+  const task = {
+    title: "Task 1",
+    description: "Task Description",
+    assignedIds: ["9010122801186593"],
+    priority: "medium",
+    isTemplate: false
+  }
+
   test("should render ColumnModal component", () => {
     const view = render(
       <Modals
+        task={task}
         show={{
           showColumnModal: true,
           showClearBoardModal: false,
@@ -39,6 +48,7 @@ describe("Modals", () => {
   test("should render ClearBoardModal component", () => {
     const view = render(
       <Modals
+        task={task}
         show={{
           showColumnModal: false,
           showClearBoardModal: true,
@@ -59,6 +69,7 @@ describe("Modals", () => {
   test("should render NewTaskModal component", () => {
     const view = render(
       <Modals
+        task={task}
         show={{
           showColumnModal: false,
           showClearBoardModal: false,
@@ -79,6 +90,7 @@ describe("Modals", () => {
   test("should render EditTaskModal component", () => {
     const view = render(
       <Modals
+        task={task}
         show={{
           showColumnModal: false,
           showClearBoardModal: false,
@@ -99,11 +111,7 @@ describe("Modals", () => {
   test("should render AssignUserModal component", () => {
     const view = render(
       <Modals
-        task={{
-          title: "Task 1",
-          description: "Task Description",
-          assignedIds: ["9010122801186593"]
-        }}
+        task={task}
         show={{
           showColumnModal: false,
           showClearBoardModal: false,
@@ -124,6 +132,7 @@ describe("Modals", () => {
   test("should render UploadBoardModal component", () => {
     const view = render(
       <Modals
+        task={task}
         show={{
           showColumnModal: false,
           showClearBoardModal: false,
@@ -144,6 +153,7 @@ describe("Modals", () => {
   test("should render AutoAssignUserModal component", () => {
     const view = render(
       <Modals
+        task={task}
         column={{ id: 123, title: "Column 1", assignedIds: ["9010122801186593"] }}
         show={{
           showColumnModal: false,

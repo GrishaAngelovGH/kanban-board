@@ -551,7 +551,7 @@ Object {
                 <input
                   class="mb-3 form-control"
                   placeholder="Title"
-                  value=""
+                  value="Task 1"
                 />
                 <div
                   class="rsw-editor"
@@ -721,7 +721,9 @@ Object {
                   <div
                     class="rsw-ce"
                     contenteditable="true"
-                  />
+                  >
+                    Task Description
+                  </div>
                 </div>
                 <select
                   class="mt-3 form-select"
@@ -765,7 +767,6 @@ Object {
             </button>
             <button
               class="btn btn-primary"
-              disabled=""
               type="button"
             >
               Confirm

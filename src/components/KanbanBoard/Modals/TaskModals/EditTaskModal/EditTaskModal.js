@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 import TaskModal from "../TaskModal"
 
 const EditTaskModal = ({ show, task, onClose, onConfirm }) => {
-  const [title, setTitle] = useState("")
-  const [description, setDescription] = useState("")
-  const [priority, setPriority] = useState("")
-  const [isTemplate, setIsTemplate] = useState(false)
+  const [title, setTitle] = useState(task.title)
+  const [description, setDescription] = useState(task.description)
+  const [priority, setPriority] = useState(task.priority)
+  const [isTemplate, setIsTemplate] = useState(task.isTemplate)
 
   const handleTitleChange = ({ target: { value } }) => {
     setTitle(value)
@@ -31,15 +31,6 @@ const EditTaskModal = ({ show, task, onClose, onConfirm }) => {
     setPriority("")
     setIsTemplate(false)
   }
-
-  useEffect(() => {
-    if (task) {
-      setTitle(task.title)
-      setDescription(task.description)
-      setPriority(task.priority)
-      setIsTemplate(task.isTemplate)
-    }
-  }, [task])
 
   const handlers = {
     onTitleChange: handleTitleChange,

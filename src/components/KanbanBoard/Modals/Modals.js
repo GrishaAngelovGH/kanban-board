@@ -116,12 +116,16 @@ const Modals = ({ column, task, show, update }) => {
         onConfirm={handleConfirmCreateTask}
       />
 
-      <EditTaskModal
-        show={showEditTaskModal}
-        task={task}
-        onClose={() => { setShowEditTaskModal(!showEditTaskModal) }}
-        onConfirm={handleConfirmEditTask}
-      />
+      {
+        showEditTaskModal && (
+          <EditTaskModal
+            show={showEditTaskModal}
+            task={task}
+            onClose={() => { setShowEditTaskModal(!showEditTaskModal) }}
+            onConfirm={handleConfirmEditTask}
+          />
+        )
+      }
 
       <AssignUserModal
         show={showAssignUserModal}
