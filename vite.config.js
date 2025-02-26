@@ -8,7 +8,8 @@ export default defineConfig({
     alias: {
       components: "/src/components",
       hooks: "/src/hooks",
-      persistent: "/src/persistent"
+      persistent: "/src/persistent",
+      assets: "/src/assets"
     }
   },
 })
