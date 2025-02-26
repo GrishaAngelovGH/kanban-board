@@ -8,7 +8,7 @@ const AssignUserModal = ({ show, task, onClose, onConfirm }) => {
   return (
     <UserModal
       show={show}
-      title={<span>Assign users to the <span className="fw-bold">"{task?.title}"</span> task</span>}
+      title={<span>Assign users to the <span className="fw-bold">&quot;{task?.title}&quot;</span> task</span>}
       assignedIds={task?.assignedIds}
       onClose={onClose}
       onConfirm={handleConfirm}

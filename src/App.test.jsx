@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react"
-import { vi } from "vitest"
+import { vi, afterEach } from "vitest"
 
 import App from "./App"
 

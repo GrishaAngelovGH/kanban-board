@@ -22,7 +22,7 @@ const persistentUserRepository = {
   },
   deleteUser: id => {
     const users = JSON.parse(localStorage.getItem("users"))
-
+    // eslint-disable-next-line no-unused-vars
     const { [id]: userId, ...restUsers } = users
 
     localStorage.setItem("users", JSON.stringify(restUsers))

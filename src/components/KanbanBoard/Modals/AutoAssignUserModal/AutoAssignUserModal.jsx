@@ -8,7 +8,7 @@ const AutoAssignUserModal = ({ show, column, onClose, onConfirm }) => {
   return (
     <UserModal
       show={show}
-      title={<span>Auto assign users to the <span className="fw-bold">"{column?.title}"</span> column</span>}
+      title={<span>Auto assign users to the <span className="fw-bold">&quot;{column?.title}&quot;</span> column</span>}
       assignedIds={column?.assignedIds || []}
       onClose={onClose}
       onConfirm={handleConfirm}

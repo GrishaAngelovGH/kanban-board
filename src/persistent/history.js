@@ -40,7 +40,7 @@ const columns = {
     } else {
       columns[id].items = columns[id].items.concat(currentColumn.items)
     }
-
+    // eslint-disable-next-line no-unused-vars
     const { [id]: column, ...restHistory } = history
 
     localStorage.setItem("history", JSON.stringify(restHistory))
@@ -48,6 +48,7 @@ const columns = {
   },
   deleteColumn: id => {
     const history = JSON.parse(localStorage.getItem("history"))
+    // eslint-disable-next-line no-unused-vars
     const { [id]: column, ...restHistory } = history
     localStorage.setItem("history", JSON.stringify(restHistory))
   }
@@ -89,6 +90,7 @@ const tasks = {
     currentColumn.items = currentColumn.items.filter(v => v.id !== taskId)
 
     if (!currentColumn.items.length) {
+      // eslint-disable-next-line no-unused-vars
       const { [columnId]: column, ...restHistory } = history
       localStorage.setItem("history", JSON.stringify(restHistory))
     } else {
