@@ -1,8 +1,9 @@
 import { render } from "@testing-library/react"
+import { vi } from "vitest"
 
 import Task from "./Task"
 
-jest.mock('persistent/persistentKanbanBoardRepository')
+vi.mock('persistent/persistentKanbanBoardRepository')
 
 test("should render Tasks/Task component", () => {
   const view = render(

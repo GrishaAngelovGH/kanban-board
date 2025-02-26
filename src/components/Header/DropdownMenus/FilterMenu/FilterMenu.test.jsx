@@ -1,11 +1,12 @@
 import { render, fireEvent, act, waitFor } from "@testing-library/react"
+import { vi } from "vitest"
 
 import FilterMenu from "./FilterMenu"
 
 import boardRepository from "persistent/persistentKanbanBoardRepository"
 
 test("should render FilterMenu component", () => {
-  jest.spyOn(boardRepository, 'getPriorityFilter').mockReturnValue(null)
+  vi.spyOn(boardRepository, 'getPriorityFilter').mockReturnValue(null)
 
   const view = render(<FilterMenu />)
 
@@ -22,7 +23,7 @@ test("should render FilterMenu component", () => {
 })
 
 test("should render FilterMenu component with priority", () => {
-  jest.spyOn(boardRepository, 'getPriorityFilter').mockReturnValue("Medium")
+  vi.spyOn(boardRepository, 'getPriorityFilter').mockReturnValue("Medium")
 
   const view = render(<FilterMenu />)
 

@@ -1,15 +1,16 @@
 import { render, fireEvent, act, waitFor } from "@testing-library/react"
+import { vi, beforeEach, afterEach } from "vitest"
 
 import BoardMenu from "./BoardMenu"
 
-jest.mock("persistent/history")
+vi.mock("persistent/history")
 
 beforeEach(() => {
-  jest.spyOn(Date.prototype, "toString").mockReturnValue("Wed Jan 03 2024 09:31:43")
+  vi.spyOn(Date.prototype, "toString").mockReturnValue("Wed Jan 03 2024 09:31:43")
 })
 
 afterEach(() => {
-  jest.restoreAllMocks()
+  vi.restoreAllMocks()
 })
 
 test("should render BoardMenu component", () => {

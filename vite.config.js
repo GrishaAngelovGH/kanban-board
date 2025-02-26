@@ -12,4 +12,9 @@ export default defineConfig({
       assets: "/src/assets"
     }
   },
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: './tests/setup.js'
+  }
 })

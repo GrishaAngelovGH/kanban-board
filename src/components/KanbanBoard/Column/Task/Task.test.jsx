@@ -1,4 +1,5 @@
 import { render } from "@testing-library/react"
+import { vi } from "vitest"
 
 import {
   BrowserRouter as Router,
@@ -8,7 +9,7 @@ import {
 
 import Task from "./Task"
 
-jest.mock('persistent/persistentUserRepository')
+vi.mock('persistent/persistentUserRepository')
 
 const handlers = {
   onEdit: () => { },

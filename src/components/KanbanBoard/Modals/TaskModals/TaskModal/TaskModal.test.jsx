@@ -1,8 +1,9 @@
 import { render } from "@testing-library/react"
+import { vi } from "vitest"
 
 import TaskModal from "./TaskModal"
 
-const onUpdate = jest.fn()
+const onUpdate = vi.fn()
 
 const handlers = {
   onTitleChange: onUpdate,

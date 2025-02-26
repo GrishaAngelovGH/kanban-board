@@ -1,4 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react"
+import { vi } from "vitest"
 
 import {
   BrowserRouter as Router,
@@ -8,7 +9,9 @@ import {
 
 import Dashboard from "./Dashboard"
 
-jest.mock('react-chartjs-2', () => ({ Bar: () => <div>Bar Chart</div> }))
+vi.mock('react-chartjs-2', () => ({
+  Bar: () => <div>Bar Chart</div>
+}))
 
 test("should render Dashboard route component", () => {
   const view = render(

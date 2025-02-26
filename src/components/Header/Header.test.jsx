@@ -1,19 +1,20 @@
 import { render, fireEvent, act, waitFor } from "@testing-library/react"
+import { vi, beforeEach, afterEach } from "vitest"
 
 import Header from "./Header"
 
 beforeEach(() => {
-  const mockedDate = new Date(2023, 11, 22)
-  jest.useFakeTimers("modern")
-  jest.setSystemTime(mockedDate)
-})
+  const mockedDate = new Date(2023, 11, 22);
+  vi.useFakeTimers()
+  vi.setSystemTime(mockedDate)
+});
 
 afterEach(() => {
-  jest.useRealTimers()
+  vi.useRealTimers()
 })
 
 test("should render Header component", () => {
-  const onUpdate = jest.fn()
+  const onUpdate = vi.fn()
 
   const handlers = {
     onCalendarClick: onUpdate,

@@ -1,4 +1,5 @@
 import { render } from "@testing-library/react"
+import { vi } from "vitest"
 
 import {
   BrowserRouter as Router,
@@ -8,7 +9,7 @@ import {
 
 import History from "./History"
 
-jest.mock("persistent/history")
+vi.mock("persistent/history")
 
 test("should render History route component", () => {
   const view = render(

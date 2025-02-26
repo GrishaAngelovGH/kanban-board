@@ -1,0 +1,422 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should render BoardMenu component 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="dropdown-menu-header show dropdown btn-group"
+        role="group"
+      >
+        <button
+          aria-expanded="true"
+          class="dropdown-toggle show btn btn-light btn-sm"
+          type="button"
+        >
+          <i
+            class="bi bi-grid-fill text-primary"
+          />
+        </button>
+        <div
+          aria-labelledby=""
+          class="dropdown-menu show"
+          x-placement="bottom-start"
+        >
+          <a
+            class="dropdown-item"
+            data-rr-ui-dropdown-item=""
+            href="#"
+            icon="bi bi-arrows-fullscreen"
+            label="Toggle Fullscreen"
+            role="button"
+            tabindex="0"
+          >
+            <i
+              class="bi bi-arrows-fullscreen"
+            />
+            <span
+              class="mx-2"
+            >
+              Toggle Fullscreen
+            </span>
+          </a>
+          <a
+            class="dropdown-item"
+            data-rr-ui-dropdown-item=""
+            href="#"
+            icon="bi bi-calendar2-week"
+            label="Toggle Calendar"
+            role="button"
+            tabindex="0"
+          >
+            <i
+              class="bi bi-calendar2-week"
+            />
+            <span
+              class="mx-2"
+            >
+              Toggle Calendar
+            </span>
+          </a>
+          <a
+            class="dropdown-item"
+            data-rr-ui-dropdown-item=""
+            download="kanban-board-wed-jan-03-2024-09:31:43.json"
+            href="#"
+            icon="bi bi-box-arrow-up"
+            label="Export to JSON"
+            role="button"
+            tabindex="0"
+          >
+            <i
+              class="bi bi-box-arrow-up"
+            />
+            <span
+              class="mx-2"
+            >
+              Export to JSON
+            </span>
+          </a>
+          <a
+            class="dropdown-item"
+            data-rr-ui-dropdown-item=""
+            href="#"
+            icon="bi bi-box-arrow-down"
+            label="Import from JSON"
+            role="button"
+            tabindex="0"
+          >
+            <i
+              class="bi bi-box-arrow-down"
+            />
+            <span
+              class="mx-2"
+            >
+              Import from JSON
+            </span>
+          </a>
+          <a
+            class="dropdown-item"
+            data-rr-ui-dropdown-item=""
+            href="#"
+            icon="bi bi-people"
+            label="Manage Users"
+            role="button"
+            tabindex="0"
+          >
+            <i
+              class="bi bi-people"
+            />
+            <span
+              class="mx-2"
+            >
+              Manage Users
+            </span>
+          </a>
+          <a
+            class="dropdown-item disabled"
+            data-rr-ui-dropdown-item=""
+            href="#"
+            icon="bi bi-collection"
+            label="Group Templates"
+            role="button"
+            tabindex="0"
+          >
+            <i
+              class="bi bi-collection"
+            />
+            <span
+              class="mx-2"
+            >
+              Group Templates
+            </span>
+          </a>
+          <a
+            class="dropdown-item"
+            data-rr-ui-dropdown-item=""
+            href="/dashboard"
+            icon="bi bi-pie-chart"
+            label="Dashboard"
+          >
+            <i
+              class="bi bi-pie-chart"
+            />
+            <span
+              class="mx-2"
+            >
+              Dashboard
+            </span>
+          </a>
+          <a
+            class="dropdown-item"
+            data-rr-ui-dropdown-item=""
+            href="/history"
+            icon="bi bi-clock-history"
+            label="History"
+          >
+            <i
+              class="bi bi-clock-history"
+            />
+            <span
+              class="mx-2"
+            >
+              History
+            </span>
+          </a>
+          <a
+            class="dropdown-item"
+            data-rr-ui-dropdown-item=""
+            href="#"
+            icon="bi bi-gear"
+            label="Settings"
+            role="button"
+            tabindex="0"
+          >
+            <i
+              class="bi bi-gear"
+            />
+            <span
+              class="mx-2"
+            >
+              Settings
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="dropdown-menu-header show dropdown btn-group"
+      role="group"
+    >
+      <button
+        aria-expanded="true"
+        class="dropdown-toggle show btn btn-light btn-sm"
+        type="button"
+      >
+        <i
+          class="bi bi-grid-fill text-primary"
+        />
+      </button>
+      <div
+        aria-labelledby=""
+        class="dropdown-menu show"
+        x-placement="bottom-start"
+      >
+        <a
+          class="dropdown-item"
+          data-rr-ui-dropdown-item=""
+          href="#"
+          icon="bi bi-arrows-fullscreen"
+          label="Toggle Fullscreen"
+          role="button"
+          tabindex="0"
+        >
+          <i
+            class="bi bi-arrows-fullscreen"
+          />
+          <span
+            class="mx-2"
+          >
+            Toggle Fullscreen
+          </span>
+        </a>
+        <a
+          class="dropdown-item"
+          data-rr-ui-dropdown-item=""
+          href="#"
+          icon="bi bi-calendar2-week"
+          label="Toggle Calendar"
+          role="button"
+          tabindex="0"
+        >
+          <i
+            class="bi bi-calendar2-week"
+          />
+          <span
+            class="mx-2"
+          >
+            Toggle Calendar
+          </span>
+        </a>
+        <a
+          class="dropdown-item"
+          data-rr-ui-dropdown-item=""
+          download="kanban-board-wed-jan-03-2024-09:31:43.json"
+          href="#"
+          icon="bi bi-box-arrow-up"
+          label="Export to JSON"
+          role="button"
+          tabindex="0"
+        >
+          <i
+            class="bi bi-box-arrow-up"
+          />
+          <span
+            class="mx-2"
+          >
+            Export to JSON
+          </span>
+        </a>
+        <a
+          class="dropdown-item"
+          data-rr-ui-dropdown-item=""
+          href="#"
+          icon="bi bi-box-arrow-down"
+          label="Import from JSON"
+          role="button"
+          tabindex="0"
+        >
+          <i
+            class="bi bi-box-arrow-down"
+          />
+          <span
+            class="mx-2"
+          >
+            Import from JSON
+          </span>
+        </a>
+        <a
+          class="dropdown-item"
+          data-rr-ui-dropdown-item=""
+          href="#"
+          icon="bi bi-people"
+          label="Manage Users"
+          role="button"
+          tabindex="0"
+        >
+          <i
+            class="bi bi-people"
+          />
+          <span
+            class="mx-2"
+          >
+            Manage Users
+          </span>
+        </a>
+        <a
+          class="dropdown-item disabled"
+          data-rr-ui-dropdown-item=""
+          href="#"
+          icon="bi bi-collection"
+          label="Group Templates"
+          role="button"
+          tabindex="0"
+        >
+          <i
+            class="bi bi-collection"
+          />
+          <span
+            class="mx-2"
+          >
+            Group Templates
+          </span>
+        </a>
+        <a
+          class="dropdown-item"
+          data-rr-ui-dropdown-item=""
+          href="/dashboard"
+          icon="bi bi-pie-chart"
+          label="Dashboard"
+        >
+          <i
+            class="bi bi-pie-chart"
+          />
+          <span
+            class="mx-2"
+          >
+            Dashboard
+          </span>
+        </a>
+        <a
+          class="dropdown-item"
+          data-rr-ui-dropdown-item=""
+          href="/history"
+          icon="bi bi-clock-history"
+          label="History"
+        >
+          <i
+            class="bi bi-clock-history"
+          />
+          <span
+            class="mx-2"
+          >
+            History
+          </span>
+        </a>
+        <a
+          class="dropdown-item"
+          data-rr-ui-dropdown-item=""
+          href="#"
+          icon="bi bi-gear"
+          label="Settings"
+          role="button"
+          tabindex="0"
+        >
+          <i
+            class="bi bi-gear"
+          />
+          <span
+            class="mx-2"
+          >
+            Settings
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

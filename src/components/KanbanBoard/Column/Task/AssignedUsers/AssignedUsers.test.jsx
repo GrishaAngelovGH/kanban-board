@@ -1,4 +1,5 @@
 import { render } from "@testing-library/react"
+import { vi } from "vitest"
 
 import {
   BrowserRouter as Router,
@@ -8,7 +9,7 @@ import {
 
 import AssignedUsers from "./AssignedUsers"
 
-jest.mock('persistent/persistentUserRepository')
+vi.mock('persistent/persistentUserRepository')
 
 test("should render Task/AssignedUsers component", () => {
   const view = render(

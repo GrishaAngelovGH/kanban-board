@@ -1,8 +1,9 @@
 import { render } from "@testing-library/react"
+import { vi } from "vitest"
 
 import KanbanBoard from "./KanbanBoard"
 
-window.URL.createObjectURL = jest.fn()
+window.URL.createObjectURL = vi.fn()
 
 afterEach(() => {
   window.URL.createObjectURL.mockReset()

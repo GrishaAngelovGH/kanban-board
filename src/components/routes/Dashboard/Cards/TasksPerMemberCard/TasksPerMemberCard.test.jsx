@@ -1,8 +1,11 @@
 import { render } from "@testing-library/react"
+import { vi } from "vitest"
 
 import TasksPerMemberCard from "./TasksPerMemberCard"
 
-jest.mock('react-chartjs-2', () => ({ Bar: () => <div>Bar Chart</div> }))
+vi.mock('react-chartjs-2', () => ({
+  Bar: () => <div>Bar Chart</div>
+}))
 
 test("should render TasksPerMemberCard component", () => {
   const view = render(

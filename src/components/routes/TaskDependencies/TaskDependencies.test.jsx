@@ -1,4 +1,5 @@
 import { render } from "@testing-library/react"
+import { vi } from "vitest"
 
 import {
   BrowserRouter as Router,
@@ -8,7 +9,7 @@ import {
 
 import TaskDependencies from "./TaskDependencies"
 
-jest.mock('persistent/persistentKanbanBoardRepository')
+vi.mock('persistent/persistentKanbanBoardRepository')
 
 test("should render TaskDependencies route component", () => {
   const view = render(

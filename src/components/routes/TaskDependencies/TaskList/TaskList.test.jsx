@@ -1,8 +1,9 @@
 import { render } from "@testing-library/react"
+import { vi } from "vitest"
 
 import TaskList from "./TaskList"
 
-jest.mock('persistent/persistentKanbanBoardRepository')
+vi.mock('persistent/persistentKanbanBoardRepository')
 
 test("should render TaskDependencies/TaskList component", () => {
   const columns = [

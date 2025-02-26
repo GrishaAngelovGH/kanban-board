@@ -1,4 +1,5 @@
 import { render } from "@testing-library/react"
+import { vi } from "vitest"
 
 import {
   BrowserRouter as Router,
@@ -8,7 +9,7 @@ import {
 
 import Column from "./Column"
 
-jest.mock('persistent/persistentUserRepository')
+vi.mock('persistent/persistentUserRepository')
 
 test("should render Column component", () => {
   const view = render(
