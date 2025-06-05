@@ -6,7 +6,7 @@ exports[`Modals > should render AssignUserModal component 1`] = `
   "baseElement": <body
     class="modal-open"
     data-rr-ui-modal-open=""
-    style="padding-right: 1024px;"
+    style="overflow: hidden; padding-right: 1024px;"
   >
     <div />
     <div
@@ -132,7 +132,7 @@ exports[`Modals > should render AutoAssignUserModal component 1`] = `
   "baseElement": <body
     class="modal-open"
     data-rr-ui-modal-open=""
-    style="padding-right: 1024px;"
+    style="overflow: hidden; padding-right: 1024px;"
   >
     <div />
     <div
@@ -258,7 +258,7 @@ exports[`Modals > should render ClearBoardModal component 1`] = `
   "baseElement": <body
     class="modal-open"
     data-rr-ui-modal-open=""
-    style="padding-right: 1024px;"
+    style="overflow: hidden; padding-right: 1024px;"
   >
     <div />
     <div
@@ -374,7 +374,7 @@ exports[`Modals > should render ColumnModal component 1`] = `
   "baseElement": <body
     class="modal-open"
     data-rr-ui-modal-open=""
-    style="padding-right: 1024px;"
+    style="overflow: hidden; padding-right: 1024px;"
   >
     <div />
     <div
@@ -511,7 +511,7 @@ exports[`Modals > should render EditTaskModal component 1`] = `
   "baseElement": <body
     class="modal-open"
     data-rr-ui-modal-open=""
-    style="padding-right: 1024px;"
+    style="overflow: hidden; padding-right: 1024px;"
   >
     <div />
     <div
@@ -850,7 +850,7 @@ exports[`Modals > should render NewTaskModal component 1`] = `
   "baseElement": <body
     class="modal-open"
     data-rr-ui-modal-open=""
-    style="padding-right: 1024px;"
+    style="overflow: hidden; padding-right: 1024px;"
   >
     <div />
     <div
@@ -1222,7 +1222,7 @@ exports[`Modals > should render UploadBoardModal component 1`] = `
   "baseElement": <body
     class="modal-open"
     data-rr-ui-modal-open=""
-    style="padding-right: 1024px;"
+    style="overflow: hidden; padding-right: 1024px;"
   >
     <div />
     <div

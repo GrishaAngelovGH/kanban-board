@@ -7,7 +7,7 @@ exports[`should render Dashboard route component 1`] = `
     <div>
       <div
         class="row g-0 min-vh-100"
-        style="background-image: url(/src/assets/images/backgrounds/geometric-triangle-shapes-background.jpg); background-size: cover;"
+        style="background-image: url("/src/assets/images/backgrounds/geometric-triangle-shapes-background.jpg"); background-size: cover;"
       >
         <div
           class="col-12"
@@ -93,7 +93,7 @@ exports[`should render Dashboard route component 1`] = `
   "container": <div>
     <div
       class="row g-0 min-vh-100"
-      style="background-image: url(/src/assets/images/backgrounds/geometric-triangle-shapes-background.jpg); background-size: cover;"
+      style="background-image: url("/src/assets/images/backgrounds/geometric-triangle-shapes-background.jpg"); background-size: cover;"
     >
       <div
         class="col-12"
@@ -236,7 +236,7 @@ exports[`should render Dashboard route component with selected card 1`] = `
     <div>
       <div
         class="row g-0 min-vh-100"
-        style="background-image: url(/src/assets/images/backgrounds/geometric-triangle-shapes-background.jpg); background-size: cover;"
+        style="background-image: url("/src/assets/images/backgrounds/geometric-triangle-shapes-background.jpg"); background-size: cover;"
       >
         <div
           class="col-12"
@@ -348,7 +348,7 @@ exports[`should render Dashboard route component with selected card 1`] = `
   "container": <div>
     <div
       class="row g-0 min-vh-100"
-      style="background-image: url(/src/assets/images/backgrounds/geometric-triangle-shapes-background.jpg); background-size: cover;"
+      style="background-image: url("/src/assets/images/backgrounds/geometric-triangle-shapes-background.jpg"); background-size: cover;"
     >
       <div
         class="col-12"

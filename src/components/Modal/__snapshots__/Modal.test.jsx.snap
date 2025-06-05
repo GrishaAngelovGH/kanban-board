@@ -6,7 +6,7 @@ exports[`should render Modal component 1`] = `
   "baseElement": <body
     class="modal-open"
     data-rr-ui-modal-open=""
-    style="padding-right: 1024px;"
+    style="overflow: hidden; padding-right: 1024px;"
   >
     <div />
     <div
@@ -120,7 +120,7 @@ exports[`should render Modal component with hidden confirm button 1`] = `
   "baseElement": <body
     class="modal-open"
     data-rr-ui-modal-open=""
-    style="padding-right: 1024px;"
+    style="overflow: hidden; padding-right: 1024px;"
   >
     <div />
     <div

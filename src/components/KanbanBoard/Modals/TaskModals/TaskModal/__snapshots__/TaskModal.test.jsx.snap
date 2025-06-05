@@ -6,7 +6,7 @@ exports[`should render TaskModal component 1`] = `
   "baseElement": <body
     class="modal-open"
     data-rr-ui-modal-open=""
-    style="padding-right: 1024px;"
+    style="overflow: hidden; padding-right: 1024px;"
   >
     <div />
     <div
@@ -379,7 +379,7 @@ exports[`should render TaskModal component as a template 1`] = `
   "baseElement": <body
     class="modal-open"
     data-rr-ui-modal-open=""
-    style="padding-right: 1024px;"
+    style="overflow: hidden; padding-right: 1024px;"
   >
     <div />
     <div
@@ -719,7 +719,7 @@ exports[`should render TaskModal component in edit mode 1`] = `
   "baseElement": <body
     class="modal-open"
     data-rr-ui-modal-open=""
-    style="padding-right: 1024px;"
+    style="overflow: hidden; padding-right: 1024px;"
   >
     <div />
     <div
@@ -1025,7 +1025,7 @@ exports[`should render TaskModal component with visualized templates 1`] = `
   "baseElement": <body
     class="modal-open"
     data-rr-ui-modal-open=""
-    style="padding-right: 1024px;"
+    style="overflow: hidden; padding-right: 1024px;"
   >
     <div />
     <div

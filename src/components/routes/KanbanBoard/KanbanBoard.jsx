@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react"
+import { useState, useCallback } from "react"
 
 import Layout from "components/Layout"
 import Header from "components/Header"
@@ -10,11 +10,21 @@ import boardRepository from "persistent/persistentKanbanBoardRepository"
 import settingsRepository from "persistent/persistentSettingsRepository"
 import history from "persistent/history"
 
+const getDownloadJsonHref = () => {
+  const title = boardRepository.getBoardTitle()
+  const columns = boardRepository.getStringifiedColumns()
+  const historyColumns = history.getStringifiedColumns()
+
+  const jsonString = `{"title": "${title}", "columns": ${columns}, "history": ${historyColumns}}`
+  const blob = new Blob([jsonString], { type: "application/json" })
+  return URL.createObjectURL(blob)
+}
+
 const KanbanBoardRoute = ({ showToastWithMessage }) => {
   const [showSettings, setShowSettings] = useState(false)
   const [showCalendar, setShowCalendar] = useState(false)
   const [showUsers, setShowUsers] = useState(false)
-  const [downloadJsonHref, setDownloadJsonHref] = useState("")
+  const [downloadJsonHref, setDownloadJsonHref] = useState(getDownloadJsonHref)
   const [showUploadBoardModal, setShowUploadBoardModal] = useState(false)
 
   const toggleSettings = () => {
@@ -30,13 +40,7 @@ const KanbanBoardRoute = ({ showToastWithMessage }) => {
   }
 
   const prepareJsonFileDownload = useCallback(() => {
-    const title = boardRepository.getBoardTitle()
-    const columns = boardRepository.getStringifiedColumns()
-    const historyColumns = history.getStringifiedColumns()
-
-    const jsonString = `{"title": "${title}", "columns": ${columns}, "history": ${historyColumns}}`
-    const blob = new Blob([jsonString], { type: "application/json" })
-    setDownloadJsonHref(URL.createObjectURL(blob))
+    setDownloadJsonHref(getDownloadJsonHref())
   }, [])
 
   const toggleUploadKanbanBoardModal = () => {
@@ -47,8 +51,6 @@ const KanbanBoardRoute = ({ showToastWithMessage }) => {
     settingsRepository.saveSettings(settings)
     setShowSettings(false)
   }
-
-  useEffect(prepareJsonFileDownload, [prepareJsonFileDownload])
 
   const disabledExport = !boardRepository.getColumns().length
 
